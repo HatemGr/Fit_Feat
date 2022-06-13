@@ -7,6 +7,9 @@ class Event < ApplicationRecord
   has_many :users, through: :participations
 
   validate :start_after_now, on: :create
+  validates :title, :date, presence: true
+  validates :title, length: { in: 4..30 }
+
 
   def start_after_now
     if date.present? && date < Date.today
