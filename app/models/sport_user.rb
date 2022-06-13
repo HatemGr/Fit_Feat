@@ -4,4 +4,5 @@ class SportUser < ApplicationRecord
   has_one :running_performance
   has_one :workout_performance
   has_one :climbing_performance
+  has_one :tennis_performance
 end
