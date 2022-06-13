@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sport: one
+  user: one
+  experience: 1
+  franquency: 1
+  perf_score: 1.5
+
+two:
+  sport: two
+  user: two
+  experience: 1
+  franquency: 1
+  perf_score: 1.5
