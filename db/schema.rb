@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_06_13_154728) do
 
   # These are extensions that must be enabled in order to support this database
@@ -47,6 +48,17 @@ ActiveRecord::Schema.define(version: 2022_06_13_154728) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_participations_on_event_id"
     t.index ["user_id"], name: "index_participations_on_user_id"
+
+  create_table "sport_users", force: :cascade do |t|
+    t.bigint "sport_id"
+    t.bigint "user_id"
+    t.integer "experience"
+    t.integer "frequency"
+    t.float "perf_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sport_id"], name: "index_sport_users_on_sport_id"
+    t.index ["user_id"], name: "index_sport_users_on_user_id"
   end
 
   create_table "sports", force: :cascade do |t|
@@ -74,9 +86,12 @@ ActiveRecord::Schema.define(version: 2022_06_13_154728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
   add_foreign_key "events", "cities"
   add_foreign_key "events", "sports"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
+  add_foreign_key "sport_users", "sports"
+  add_foreign_key "sport_users", "users"
   add_foreign_key "users", "cities"
 end
