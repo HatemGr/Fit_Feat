@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sport_user: one
+  benchpress_weight: 1
+  squat_weight: 1
+
+two:
+  sport_user: two
+  benchpress_weight: 1
+  squat_weight: 1

@@ -10,4 +10,7 @@ class User < ApplicationRecord
   has_many :events, through: :participations
   has_many :sport_users
   has_many :sports , through: :sport_users
+  has_many :suggestions
+  has_many :friends
+
 end

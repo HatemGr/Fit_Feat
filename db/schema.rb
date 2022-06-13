@@ -23,6 +23,24 @@ ActiveRecord::Schema.define(version: 2022_06_13_154728) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "friends", force: :cascade do |t|
+    t.bigint "partner_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["partner_id"], name: "index_friends_on_partner_id"
+    t.index ["user_id"], name: "index_friends_on_user_id"
+  end
+
+  create_table "climbing_performances", force: :cascade do |t|
+    t.bigint "sport_user_id"
+    t.integer "level", default: 0
+    t.string "block_color", default: "Unknown"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sport_user_id"], name: "index_climbing_performances_on_sport_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.bigint "admin_id"
     t.bigint "sport_id"
@@ -48,6 +66,18 @@ ActiveRecord::Schema.define(version: 2022_06_13_154728) do
     t.index ["event_id"], name: "index_participations_on_event_id"
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
+<<<<<<< HEAD
+=======
+
+  create_table "running_performances", force: :cascade do |t|
+    t.bigint "sport_user_id"
+    t.integer "distance"
+    t.integer "speed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sport_user_id"], name: "index_running_performances_on_sport_user_id"
+  end
+>>>>>>> main
 
   create_table "sport_users", force: :cascade do |t|
     t.bigint "sport_id"
@@ -65,6 +95,25 @@ ActiveRecord::Schema.define(version: 2022_06_13_154728) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.bigint "partner_id"
+    t.bigint "user_id"
+    t.boolean "accepted"
+    t.boolean "refused"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["partner_id"], name: "index_suggestions_on_partner_id"
+    t.index ["user_id"], name: "index_suggestions_on_user_id"
+  end
+
+  create_table "tennis_performances", force: :cascade do |t|
+    t.bigint "sport_user_id"
+    t.string "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sport_user_id"], name: "index_tennis_performances_on_sport_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,11 +135,27 @@ ActiveRecord::Schema.define(version: 2022_06_13_154728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
+=======
+  create_table "workout_performances", force: :cascade do |t|
+    t.bigint "sport_user_id"
+    t.integer "benchpress_weight"
+    t.integer "squat_weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sport_user_id"], name: "index_workout_performances_on_sport_user_id"
+  end
+
+  add_foreign_key "climbing_performances", "sport_users"
+>>>>>>> main
   add_foreign_key "events", "cities"
   add_foreign_key "events", "sports"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
+  add_foreign_key "running_performances", "sport_users"
   add_foreign_key "sport_users", "sports"
   add_foreign_key "sport_users", "users"
+  add_foreign_key "tennis_performances", "sport_users"
   add_foreign_key "users", "cities"
+  add_foreign_key "workout_performances", "sport_users"
 end
