@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin: one
+  sport: one
+  city: one
+  title: MyString
+  description: MyString
+  date: 2022-06-13 16:59:00
+  address: MyString
+  longitude: 1.5
+  latitude: 1.5
+
+two:
+  admin: two
+  sport: two
+  city: two
+  title: MyString
+  description: MyString
+  date: 2022-06-13 16:59:00
+  address: MyString
+  longitude: 1.5
+  latitude: 1.5

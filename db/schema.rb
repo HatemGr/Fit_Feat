@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_143411) do
+ActiveRecord::Schema.define(version: 2022_06_13_154728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,32 @@ ActiveRecord::Schema.define(version: 2022_06_13_143411) do
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "admin_id"
+    t.bigint "sport_id"
+    t.bigint "city_id"
+    t.string "title"
+    t.string "description"
+    t.datetime "date"
+    t.string "address"
+    t.float "longitude"
+    t.float "latitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_events_on_admin_id"
+    t.index ["city_id"], name: "index_events_on_city_id"
+    t.index ["sport_id"], name: "index_events_on_sport_id"
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_participations_on_event_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
   create_table "sports", force: :cascade do |t|
@@ -48,5 +74,9 @@ ActiveRecord::Schema.define(version: 2022_06_13_143411) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "cities"
+  add_foreign_key "events", "sports"
+  add_foreign_key "participations", "events"
+  add_foreign_key "participations", "users"
   add_foreign_key "users", "cities"
 end
