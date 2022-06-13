@@ -6,4 +6,7 @@ class User < ApplicationRecord
   belongs_to :city, optional: true
   has_many :sport_users
   has_many :sports , through: :sport_users
+  has_many :suggestions
+  has_many :friends
+
 end

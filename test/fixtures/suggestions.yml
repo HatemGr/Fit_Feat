@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partner: one
+  accepted: false
+  refused: false
+
+two:
+  partner: two
+  accepted: false
+  refused: false

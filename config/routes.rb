@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  resources :friends
+  resources :suggestions
   devise_for :users
   resources :users
   resources :cities
   resources :sports
+  resources :sport_users
 
-  root to: "user#show"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
