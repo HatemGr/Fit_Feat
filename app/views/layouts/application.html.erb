@@ -5,8 +5,36 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      #map {
+        position: absolute;
+        height: 500px;
+        width: 500px;
+      }
+
+    .marker {
+        background-image: url('https://play-lh.googleusercontent.com/eNustQYcjMXlZAteHQmdB6E2r0-E0cl3utGPvO51ZC-50rhqkYFTuhVp4ip_tZL-la8=w240-h480-rw');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+    .mapboxgl-popup {
+      max-width: 200px;
+    }
+
+    .mapboxgl-popup-content {
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+    }
+    </style>
   </head>
 
   <body>

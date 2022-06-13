@@ -4,6 +4,15 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        name: user.full_name,
+        user_id: user.id
+      }
+    end
+    puts @markers
   end
 
   # GET /users/1 or /users/1.json

@@ -16,4 +16,12 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, length: { maximum: 15 }
 
+  geocoded_by :address
+  after_validation :geocode
+  before_validation :geocode
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 end

@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.text :description
       t.float :latitude
       t.float :longitude
-      t.references :city, foreign_key: true
+      t.references :city, index: true
 
       t.timestamps
     end
