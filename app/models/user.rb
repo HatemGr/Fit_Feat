@@ -11,7 +11,8 @@ class User < ApplicationRecord
   has_many :sport_users, dependent: :delete_all
   has_many :sports , through: :sport_users
   has_many :suggestions, dependent: :delete_all
-  has_many :friends, dependent: :delete_all
+  has_many :connections, dependent: :delete_all
+  has_many :friends, through: :connections, class_name: "User"
 
   validates :first_name, :last_name, length: { maximum: 15 }
 
