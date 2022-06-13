@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_06_13_170115) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,15 +21,6 @@ ActiveRecord::Schema.define(version: 2022_06_13_170115) do
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "friends", force: :cascade do |t|
-    t.bigint "partner_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["partner_id"], name: "index_friends_on_partner_id"
-    t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
   create_table "climbing_performances", force: :cascade do |t|
@@ -57,6 +47,15 @@ ActiveRecord::Schema.define(version: 2022_06_13_170115) do
     t.index ["admin_id"], name: "index_events_on_admin_id"
     t.index ["city_id"], name: "index_events_on_city_id"
     t.index ["sport_id"], name: "index_events_on_sport_id"
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.bigint "partner_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["partner_id"], name: "index_friends_on_partner_id"
+    t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
   create_table "participations", force: :cascade do |t|
