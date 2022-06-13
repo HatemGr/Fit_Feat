@@ -1,6 +1,7 @@
 body {
    margin: 0 auto;
-   background-color: var(--grey);
+   background-color: var(--grey-bg);
+   font-family: var(--regular-font) ;
 }
 
 
@@ -12,13 +13,18 @@ body {
    --white :255, 255, 255; 
    --black :#000000;
    --grey :#F9F9F9;
-   --text_grey :#575757;
+   --grey-bg :#F4F4F4;
+   --text-grey :#575757;
 
    /* PRIMARY */
   --purple: 147, 73, 241;
   --purple_bg: rgba(var(--purple), 0.05);
 
   /* SECONDARIES */
+  --orange: 238, 177, 21;
+
+
+  /* SPORTS TAGS */
   --text_tennis: 249, 190, 38;
   --bg_tennis : rgba(var(--text_tennis), 0.28); 
   
@@ -33,8 +39,7 @@ body {
 
   --text_running: 88, 74, 232;
   --bg_running:rgba(var(--text_running), 0.28);
-  
-  
+
 
    /* MESSAGES */
    --warning: 212, 22, 22;
@@ -50,6 +55,7 @@ body {
    --black-font: "SanaSansAltW00-Black", "Arial", sans-serif;
    --bold-font: "SanaSansAltW00-Bold", "Arial", sans-serif;
    --medium-font: "SanaSansAltW00-Medium", "Arial", sans-serif;
+   --regular-font: "SanaSansAltW00-Regular", "Arial", sans-serif;
    
    
    /* size */
@@ -59,6 +65,10 @@ body {
    --little: clamp(0.9rem, 4vw, 1rem);
 
    /* weight */
+   /* weight */
+   h1, h2, h3, h4, h5, h6, p{
+      margin: 0;
+   }
    
 
    
@@ -79,6 +89,7 @@ body {
    border-style: none;
    color: rgb(var(--white));
    cursor: pointer;
+   font-family: var(--medium-font);
 }
 
 .outlined{
@@ -122,5 +133,14 @@ a{
 /* 	    ICONS       */
 /************************/
 i{
-margin-right: 10px;
+   margin-right: 10px;
+}
+
+
+/************************/
+/* 	    LISTS       */
+/************************/
+li{
+   list-style:none;
+   font-size: 1rem;
 }
