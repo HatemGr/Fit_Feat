@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2022_06_13_170115) do
-
+ActiveRecord::Schema.define(version: 2022_06_13_181449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +32,15 @@ ActiveRecord::Schema.define(version: 2022_06_13_170115) do
     t.index ["sport_user_id"], name: "index_climbing_performances_on_sport_user_id"
   end
 
+  create_table "connections", force: :cascade do |t|
+    t.bigint "friend_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_connections_on_friend_id"
+    t.index ["user_id"], name: "index_connections_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.bigint "admin_id"
     t.bigint "sport_id"
@@ -49,15 +56,6 @@ ActiveRecord::Schema.define(version: 2022_06_13_170115) do
     t.index ["admin_id"], name: "index_events_on_admin_id"
     t.index ["city_id"], name: "index_events_on_city_id"
     t.index ["sport_id"], name: "index_events_on_sport_id"
-  end
-
-  create_table "friends", force: :cascade do |t|
-    t.bigint "partner_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["partner_id"], name: "index_friends_on_partner_id"
-    t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -77,7 +75,6 @@ ActiveRecord::Schema.define(version: 2022_06_13_170115) do
     t.datetime "updated_at", null: false
     t.index ["sport_user_id"], name: "index_running_performances_on_sport_user_id"
   end
-
 
   create_table "sport_users", force: :cascade do |t|
     t.bigint "sport_id"
@@ -134,7 +131,6 @@ ActiveRecord::Schema.define(version: 2022_06_13_170115) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 
   create_table "workout_performances", force: :cascade do |t|
     t.bigint "sport_user_id"
