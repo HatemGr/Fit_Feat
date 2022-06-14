@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :friends
   resources :suggestions
   resources :events
-  devise_for :users
+  devise_for :users 
   resources :users
   resources :cities
   resources :sports
