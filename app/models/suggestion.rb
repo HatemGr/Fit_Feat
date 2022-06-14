@@ -11,11 +11,19 @@ class Suggestion < ApplicationRecord
     Suggestion.find_by(user: partner, partner: user)
   end
 
+  def is_full_accepted
+    accepted && self.pair_suggestion.accepted
+  end
+
+  def is_refused
+    refused || self.pair_suggestion.refused 
+  end
+
   def check_suggestion_status
     if refused || self.pair_suggestion.refused 
       self.update(refused: true)
       self.pair_suggestion.update(refused: true)
-    elsif accepted && self.pair_suggestion.accepted 
+    elsif self.is_full_accepted
       Connection.create(user:self.user,friend: self.pair_suggestion.user)
     end
   end

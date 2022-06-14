@@ -1,0 +1,10 @@
+<div class="friends-list">
+    <h3>Amis</h3>
+    <ul>
+      <% current_user.friends.each do |friend|%>
+        <li>
+          <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
+        </li>
+      <%end%>
+    </ul>
+  </div>
