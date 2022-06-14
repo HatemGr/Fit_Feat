@@ -1,0 +1,41 @@
+// CHAMPS INPUT
+
+.input {
+
+   .input-name{
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+
+   }
+
+   .input-wrapper{
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      
+
+      input[type=text] {
+         width: 490px;
+         border: 1px solid var(--border-grey);
+         border-radius: 5px;
+         padding: 24px 0px;
+         padding-left: 15px;
+   
+   
+         &::placeholder{
+            font-size: 0.8rem;
+            color: var(--border-grey);
+         }  
+         
+      }
+
+      i{
+         position: absolute;
+         top: 40%;
+         right: 10px;
+         color: var(--border-grey);
+
+      }
+   }
+
+} 
