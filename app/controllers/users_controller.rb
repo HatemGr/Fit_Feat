@@ -1,37 +1,35 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :authenticate_user, only: [:edit, :show, :update, :new]
 
-  # GET /users or /users.json
   def index
     @users = User.all
   end
 
-  # GET /users/1 or /users/1.json
   def show
-    @markers = @user.nearbys(10).geocoded.map do |user|
-      {
-        lat: user.latitude,
-        lng: user.longitude,
-        name: user.full_name,
-        user_id: user.id,
-      }
+    if @user.latitude
+      @markers = @user.nearbys(10).geocoded.map do |user|
+        {
+          lat: user.latitude,
+          lng: user.longitude,
+          name: user.full_name,
+          user_id: user.id,
+        }
+      end
+      @markers << {lat: @user.latitude,
+        lng: @user.longitude,
+        name: @user.full_name,
+        user_id: @user.id,}
     end
-    @markers << {lat: @user.latitude,
-      lng: @user.longitude,
-      name: @user.full_name,
-      user_id: @user.id,}
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
   end
 
-  # POST /users or /users.json
   def create
     @user = User.new(user_params)
 
@@ -46,7 +44,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1 or /users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -59,7 +56,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
 
@@ -70,13 +66,18 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :description, :latitude, :longitude, :city_id)
+      params.require(:user).permit(:email, :encrypted_password, :description, :first_name, :last_name,:address)
+    end
+
+    def authenticate_user
+      unless current_user
+        flash[:danger] = "Please log in."
+        redirect_to new_user_registration_path 
+      end
     end
 end
