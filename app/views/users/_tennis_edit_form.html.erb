@@ -1,0 +1,9 @@
+<%=form_for :tennis_perfomances, url: tennis_performances_path, method: :post do |f|%>
+  <div class="field">
+    <%= f.label :rank %><br />
+    <%= f.number_field :rank, autofocus: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit('Soumettre') %>
+  </div>
+<%end%>

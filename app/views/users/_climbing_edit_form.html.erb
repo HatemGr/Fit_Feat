@@ -1,0 +1,13 @@
+<%=form_for :climbing_performances, url: climbing_performances_path, method: :post do |f|%>
+    <div class="field">
+      <%= f.label :level %><br />
+      <%= f.number_field :level, autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.label :block_color %><br />
+      <%= f.text_field :block_color, autofocus: true %>
+    </div>
+    <div class="actions">
+      <%= f.submit('Soumettre') %>
+    </div>
+  <%end%>
