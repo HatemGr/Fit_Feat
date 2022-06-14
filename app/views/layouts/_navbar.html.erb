@@ -10,8 +10,10 @@
 
             <% if current_page?(user_path(current_user)) %>
                <%= render "layouts/tabs/home_tab" %>
-            <% elsif current_page?(team_index_path)%>
+            <% elsif current_page?(friends_path)%>
                <%= render "layouts/tabs/friends_tab" %>
+            <% elsif current_page?(edit_user_path(current_user))%>
+               <%= render "layouts/tabs/edit_tab" %>
             <% end%>
             
 
@@ -20,11 +22,9 @@
 
       <div class="nav-down">
          <div class="separate"></div>
-         <a href="#"> <i class="fa-solid fa-gear"></i> Paramètres</a>
-         <%= link_to :logout, destroy_user_session_path, :method => :delete, class: 'button primary'%>
-          
-
-         <a href="#"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Se déconnecter</a>
+         <%= link_to destroy_user_session_path, :method => :delete do %>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter 
+         <% end%>
       </div>
    </div>
 <%end%>

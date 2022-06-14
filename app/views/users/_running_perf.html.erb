@@ -1,0 +1,9 @@
+<%if user.last_running_perf %>
+<p>Il fait du running</p>
+<ul>
+  <li> Experience : <%= user.running_exp %> ans </li>
+  <li> Frequence : <%= user.running_freq %> seances par semaines </li>
+  <li> Vitesse moyenne :  <%= user.last_running_perf.speed %></li>
+  <li> Distance moyenne :  <%= user.last_running_perf.distance %></li>
+</ul>
+<%end%>

@@ -7,7 +7,7 @@ class TennisPerformance < ApplicationRecord
   end
 
   def calc_perf_score 
-    ranks = 0
+    score = 0
     case rank 
     when "6"
       score += 1
