@@ -66,11 +66,15 @@ body {
    --medium: clamp(0.9rem, 4vw, 1rem);
    --normal: clamp(0.9rem, 4vw, 1rem);
    --little: clamp(0.9rem, 4vw, 1rem);
+   --paragraphe: 1.3rem;
+   --title: 3.438rem;
+
 
    /* weight */
    /* weight */
    h1, h2, h3, h4, h5, h6, p{
       margin: 0;
+      width: fit-content;
    }
    
    /************************/
@@ -103,4 +107,11 @@ i{
 li{
    list-style:none;
    font-size: 1rem;
+}
+
+/************************/
+/* 	    FORM       */
+/************************/
+form{
+   width: fit-content;
 }
