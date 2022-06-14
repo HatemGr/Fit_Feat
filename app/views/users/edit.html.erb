@@ -1,3 +1,4 @@
+
 <div>
   <h1>Editing User</h1>
   <%= render 'form', user: @user %>
@@ -76,3 +77,13 @@
     <div class="perf-container"><%= render partial: 'tennis_perf', locals: {user: @user}%></div>
   <%end%>
 </div>
+
+<div class="container-dashboard">
+
+   <h1>Editing User</h1>
+
+   <%= render 'edit_info', user: @user %>
+
+
+</div>
+
