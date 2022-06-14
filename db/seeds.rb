@@ -43,12 +43,12 @@ Sport.create(name: "Running")
 Sport.create(name: "Workout")
 Sport.create(name: "Futsal")
 Sport.create(name: "Climbing")
-Sport.create(name: "Running")
+Sport.create(name: "Tennis")
 puts "Sports created"
 
 block_colors = ["vert", "bleu", "rouge", "violet", "orange"]
 levels = [5,6,7,8]
-ranks = ["6", "15/1", "15/2", "15/3", "15/4", "15/5", "30", "31/1", "30/2", "30/3", "30/4", "40"]
+ranks = ["6", "15/1", "15/2", "15/3", "15/4", "15/5", "30", "30/1", "30/2", "30/3", "30/4", "40"]
 benchpress_weights = [10, 20, 50, 60, 80, 100]
 squat_weights = [20, 40, 60, 80, 100, 120]
 

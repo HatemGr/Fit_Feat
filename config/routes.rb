@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users 
+  devise_for :users
 
   root to: 'static_pages#new', as: 'home'
   resources :static_pages, only: [:index], path: :team, as: 'team'
 
-  resources :friends
+  resources :connections
   resources :suggestions
   resources :events
   resources :users
