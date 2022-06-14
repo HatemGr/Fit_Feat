@@ -1,0 +1,13 @@
+<%=form_for :workout_performances, url: workout_performances_path, method: :post do |f|%>
+  <div class="field">
+    <%= f.label :benchpress_weight %><br />
+    <%= f.number_field :benchpress_weight, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :squat_weight %><br />
+    <%= f.text_field :squat_weight, autofocus: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit('Soumettre') %>
+  </div>
+<%end%>

@@ -1,0 +1,13 @@
+<%=form_for :running_performances, url: running_performances_path, method: :post do |f|%>
+  <div class="field">
+    <%= f.label :speed %><br />
+    <%= f.number_field :speed, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :distance %><br />
+    <%= f.text_field :distance, autofocus: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit('Soumettre') %>
+  </div>
+<%end%>
