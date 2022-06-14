@@ -3,4 +3,28 @@
    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
    border-radius: 9px;
    position: relative;
+   height: fit-content;
+   padding: 80px 25px 25px 25px;
+}
+
+.card-icon{
+   position: absolute;
+   right: 13px;
+   top: 15px;
+   padding: 12px;
+   background-color: var(--grey-bg);
+   border-radius: 5px;
+
+   i{
+      margin: 0px;
+      color: var(--border-grey);
+   }
+}
+
+.card-title{
+   position: absolute;
+   left: 25px;
+   top: 23px;
+   color: var(--border-grey);
+   font-family: var(--bold-font);
 }
