@@ -17,10 +17,10 @@ Sport.all.destroy_all
 
 city = City.create(name:"Paris")
 
-User.create(email: "jf@thp.com", password: "password", first_name:"Joffrey", last_name:"Frexinet", city: city )
-User.create(email: "jf@thp.com", password: "password",first_name:"Foucaut", last_name:"Beaumont", city: city )
-User.create(email: "jf@thp.com", password: "password",first_name:"Hatem", last_name:"Gribi", city: city )
-User.create(email: "jf@thp.com", password: "password",first_name:"Lydia", last_name:"Valena", city: city )
+User.create(email: "jf@thp.com", password: "password", first_name:"Joffrey", last_name:"Frexinet", city: city, address: "17 Rue de Rambouillet Paris")
+User.create(email: "fb@thp.com", password: "password",first_name:"Foucaut", last_name:"Beaumont", city: city , address: "61 Rue Rodier Paris")
+User.create(email: "hg@thp.com", password: "password",first_name:"Hatem", last_name:"Gribi", city: city , address: "27 Rue de Fontarabie Paris" )
+User.create(email: "ll@thp.com", password: "password",first_name:"Lydia", last_name:"Valena", city: city , address: "47 Rue de Laborde Paris" )
 
 adresses = ["100 Rue Saint-Martin", "10 Avenue George V", "12 Rue Marie et Louise", "125 Avenue des Champs-Elysees", "2 Rue Cauchy", "19 Rue Pavee", "28 Boulevard Diderot", "35 Rue de la Grange aux Belles", "88 Rue Blanche", " 	40 Rue Saint-Louis en l'Ile"]
 
@@ -42,6 +42,6 @@ User.all.each do |user|
     end
 end
 
-
+puts "Seed performed!"
 
 
