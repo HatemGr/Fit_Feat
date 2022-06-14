@@ -1,10 +1,14 @@
 
-<div>
-  <h1>Editing User</h1>
-  <%= render 'form', user: @user %>
-  <%= link_to 'Show', @user %> |
-  <%= link_to 'Back', users_path %>
+
+<div class="container-dashboard">
+
+   <h1>Editing User</h1>
+
+   <%= render 'edit_info', user: @user %>
+
+
 </div>
+
 <div>
   <h2>Climbing Performances</h2>
   <%=form_for @user.last_climbing_perf, url: climbing_performances_path, method: :post do |f|%>
@@ -76,14 +80,5 @@
   <%if !@user.tennis_perf.empty? %>
     <div class="perf-container"><%= render partial: 'tennis_perf', locals: {user: @user}%></div>
   <%end%>
-</div>
-
-<div class="container-dashboard">
-
-   <h1>Editing User</h1>
-
-   <%= render 'edit_info', user: @user %>
-
-
 </div>
 
