@@ -35,11 +35,3 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
-
-
-<div id='map'
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-      data-markers="<%= @markers.to_json %>">
-</div>
-
-<%= javascript_include_tag 'map_box'%>

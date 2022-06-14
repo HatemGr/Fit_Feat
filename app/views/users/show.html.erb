@@ -27,8 +27,17 @@
 
 <p>
   <strong>City:</strong>
-  <%= @user.city %>
+  <%= @user.city.name %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<div id='map'
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+      data-markers="<%= @markers.to_json %>"
+      data-user-lng="<%= @user.longitude%>"
+      data-user-lat="<%= @user.latitude%>">
+</div>
+
+<%= javascript_include_tag 'map_box'%>

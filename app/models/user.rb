@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend Geocoder::Model::ActiveRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,8 +18,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, length: { maximum: 15 }
 
   geocoded_by :address
-  after_validation :geocode
-  before_validation :geocode
+  after_validation :geocode, if: ->(obj){ obj.address.present? && obj.address_changed? }
 
   def full_name
     "#{first_name} #{last_name}"
@@ -54,6 +54,14 @@ class User < ApplicationRecord
 
   def last_climbing_perf
     self.climbing_perf.order(:created_at).last
+  end
+
+  def distance_with(user_2)
+    Geocoder::Calculations.distance_between([longitude,latitude], [user_2.longitude,user_2.latitude])
+  end
+
+  def users_around(n)
+    self.nearbys(n)
   end
 
 end
