@@ -15,7 +15,7 @@
       
 
       input[type=text] {
-         width: 490px;
+         width: 450px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
          padding: 24px 0px;
@@ -25,6 +25,7 @@
          &::placeholder{
             font-size: 0.8rem;
             color: var(--border-grey);
+            font-family: var(--regular-font);
          }  
          
       }
