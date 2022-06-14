@@ -7,25 +7,27 @@ class Suggestion < ApplicationRecord
   after_create :create_pair_suggestion
   after_update :check_suggestion_status
 
+  def pair_suggestion
+    Suggestion.find_by(user: partner, partner: user)
+  end
+
   def check_suggestion_status
-    pair_suggestion = Suggestion.find_by(user: partner, partner: user)
-    if refused || pair_suggestion.refused 
+    if refused || self.pair_suggestion.refused 
       self.update(refused: true)
-      pair_suggestion.update(refused: true)
-    elsif accepted && pair_suggestion.accepted 
-      Connection.create(user:self.user,friend: pair_suggestion.user)
+      self.pair_suggestion.update(refused: true)
+    elsif accepted && self.pair_suggestion.accepted 
+      Connection.create(user:self.user,friend: self.pair_suggestion.user)
     end
   end
 
-
   def destroy_pair_suggestion 
-    unless Suggestion.find_by(partner: user, user: partner).nil?
-      Suggestion.find_by(partner: user, user: partner).destroy
+    unless self.pair_suggestion.nil?
+      self.pair_suggestion.destroy
     end
   end
 
   def create_pair_suggestion
-    if Suggestion.find_by(partner: user, user: partner).nil?
+    if self.pair_suggestion.nil?
       Suggestion.create(partner: user, user: partner)
     end
   end

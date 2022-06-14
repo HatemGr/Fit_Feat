@@ -1,25 +1,20 @@
 class SuggestionsController < ApplicationController
   before_action :set_suggestion, only: %i[ show edit update destroy ]
 
-  # GET /suggestions or /suggestions.json
   def index
     @suggestions = Suggestion.all
   end
 
-  # GET /suggestions/1 or /suggestions/1.json
   def show
   end
 
-  # GET /suggestions/new
   def new
     @suggestion = Suggestion.new
   end
 
-  # GET /suggestions/1/edit
   def edit
   end
 
-  # POST /suggestions or /suggestions.json
   def create
     @suggestion = Suggestion.new(suggestion_params)
 
@@ -34,17 +29,23 @@ class SuggestionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /suggestions/1 or /suggestions/1.json
   def update
-    respond_to do |format|
-      if @suggestion.update(suggestion_params)
-        format.html { redirect_to suggestion_url(@suggestion), notice: "Suggestion was successfully updated." }
-        format.json { render :show, status: :ok, location: @suggestion }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @suggestion.errors, status: :unprocessable_entity }
-      end
+
+    if params[:accepted]
+      @suggestion.update(accepted:true)
+    else
+      @suggestion.update(refused:true)
     end
+    redirect_to user_path(current_user)
+    # respond_to do |format|
+    #   if @suggestion.update(suggestion_params)
+    #     format.html { redirect_to suggestion_url(@suggestion), notice: "Suggestion was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @suggestion }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @suggestion.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /suggestions/1 or /suggestions/1.json
