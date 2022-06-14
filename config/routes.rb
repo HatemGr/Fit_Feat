@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   resources :sports
   resources :sport_users
 
+  resources :climbing_performances, only: [:create]
+  resources :running_performances, only: [:create]
+  resources :workout_performances, only: [:create]
+  resources :tennis_performances, only: [:create]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
