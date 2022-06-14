@@ -5,7 +5,7 @@
   <div>
     <h2>Climbing Performances</h2>
     <%= render partial: 'climbing_edit_form', locals: {user: @user} %>
-    <%if @user.climbing_perf%>
+    <%if !@user.climbing_perf.empty?%>
       <div class="perf-container"><%= render partial: 'climbing_perf', locals: {user: @user}%></div>
     <%end%>
   </div>
@@ -13,7 +13,7 @@
   <div>
     <h2>Running Performances</h2>
     <%= render partial: 'running_edit_form', locals: {user: @user} %>
-    <%if @user.running_perf%>
+    <%if !@user.running_perf.empty?%>
       <div class="perf-container"><%= render partial: 'running_perf', locals: {user: @user}%></div>
     <%end%>
   </div>
@@ -21,14 +21,14 @@
   <div>
     <h2>Workout Performances</h2>
     <%= render partial: 'workout_edit_form', locals: {user: @user} %>
-    <%if @user.workout_perf%>
+    <%if !@user.workout_perf.empty?%>
       <div class="perf-container"><%= render partial: 'workout_perf', locals: {user: @user}%></div>
     <%end%>
   </div>
   <div>
     <h2>Tennis Performances</h2>
   <%= render partial: 'tennis_edit_form', locals: {user: @user} %>
-    <%if @user.tennis_perf %>
+    <%if !@user.tennis_perf.empty? %>
       <div class="perf-container"><%= render partial: 'tennis_perf', locals: {user: @user}%></div>
     <%end%>
   </div>
