@@ -46,27 +46,35 @@
             <%link_to "Accepter", suggestion_path(suggestion, accpeted: true), method: :patch %>
             <%link_to "Refuser", suggestion_path(suggestion, accpeted: false), method: :patch %>
             <%if !suggestion.accepted && !suggestion.pair_suggestion.accepted%>
-                En attente de validation
+              En attente de validation
             <%end%>
+          </li>
+        <%end%>
+      <%end%>
+    </ul>
+  </div>
+  <div class="friends-list">
+    <h3>Amis</h3>
+    <ul>
+      <% @user.friends.each do |friend|%>
+        <li>
+          <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
         </li>
       <%end%>
-    <%end%>
-  </ul>
-</div>
-<div class="friends-list">
-  <h3>Amis</h3>
-  <ul>
-    <% @user.friends.each do |friend|%>
-      <li>
-        <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
-      </li>
-    <%end%>
-  </ul>
-</div>
-<h2>Partie Sport</h2>
-<div class="perf-container"> <%= render partial: 'running_perf', locals: {user: @user}%> </div>
-<div class="perf-container"> <%= render partial: 'workout_perf', locals: {user: @user}%> </div>
-<div class="perf-container"> <%= render partial: 'climbing_perf', locals: {user: @user}%> </div>
-<div class="perf-container"> <%= render partial: 'tennis_perf', locals: {user: @user}%> </div>
+    </ul>
+  </div>
+  <h2>Partie Sport</h2>
+  <%if !@user.running_perf.empty?%>
+    <div class="perf-container"> <%= render partial: 'running_perf', locals: {user: @user}%> </div>
+  <%end%>
+  <%if !@user.workout_perf.empty?%>
+    <div class="perf-container"> <%= render partial: 'workout_perf', locals: {user: @user}%> </div>
+  <%end%>
+  <%if !@user.climbing_perf.empty?%>
+    <div class="perf-container"> <%= render partial: 'climbing_perf', locals: {user: @user}%> </div>
+  <%end%>
+  <%if !@user.tennis_perf.empty?%>
+    <div class="perf-container"> <%= render partial: 'tennis_perf', locals: {user: @user}%> </div>
+  <%end%>
 </div>
 <%= javascript_include_tag 'map_box'%>

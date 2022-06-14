@@ -1,4 +1,3 @@
-<%if user.last_climbing_perf %>
 <p>Il fait de l'escalade</p>
 <ul>
   <li> Experience : <%= user.climbing_exp%> ans </li>
@@ -6,4 +5,3 @@
   <li> Il a un niveau:   <%= user.last_climbing_perf.level %></li>
   <li> Il parcours des pistes :  <%= user.last_climbing_perf.block_color %></li>
 </ul>
-<%end%>
