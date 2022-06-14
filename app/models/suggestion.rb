@@ -5,6 +5,18 @@ class Suggestion < ApplicationRecord
   validates_uniqueness_of :partner, :scope => [:user]
   after_destroy :destroy_pair_suggestion
   after_create :create_pair_suggestion
+  after_update :check_suggestion_status
+
+  def check_suggestion_status
+    pair_suggestion = Suggestion.find_by(user: partner, partner: user)
+    if refused || pair_suggestion.refused 
+      self.update(refused: true)
+      pair_suggestion.update(refused: true)
+    elsif accepted && pair_suggestion.accepted 
+      Connection.create(user:self.user,friend: pair_suggestion.user)
+    end
+  end
+
 
   def destroy_pair_suggestion 
     unless Suggestion.find_by(partner: user, user: partner).nil?
