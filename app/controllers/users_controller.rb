@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :authenticate_user, only: [:edit, :show, :update, :new]
 
   # GET /users or /users.json
   def index
@@ -8,18 +9,20 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    @markers = @user.nearbys(10).geocoded.map do |user|
-      {
-        lat: user.latitude,
-        lng: user.longitude,
-        name: user.full_name,
-        user_id: user.id,
-      }
+    if @user.latitude
+      @markers = @user.nearbys(10).geocoded.map do |user|
+        {
+          lat: user.latitude,
+          lng: user.longitude,
+          name: user.full_name,
+          user_id: user.id,
+        }
+      end
+      @markers << {lat: @user.latitude,
+        lng: @user.longitude,
+        name: @user.full_name,
+        user_id: @user.id,}
     end
-    @markers << {lat: @user.latitude,
-      lng: @user.longitude,
-      name: @user.full_name,
-      user_id: @user.id,}
   end
 
   # GET /users/new
@@ -75,8 +78,14 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :description, :latitude, :longitude, :city_id)
+      params.require(:user).permit(:email, :encrypted_password, :description, :first_name, :last_name,:address)
+    end
+
+    def authenticate_user
+      unless current_user
+        flash[:danger] = "Please log in."
+        redirect_to new_user_registration_path 
+      end
     end
 end

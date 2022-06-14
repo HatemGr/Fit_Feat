@@ -2,45 +2,50 @@
 
 <p>
   <strong>First name:</strong>
-  <%= @user.first_name %>
+  <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
 </p>
 
 <p>
   <strong>Last name:</strong>
-  <%= @user.last_name %>
+  <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @user.description %>
+  <%= @user.description ? @user.description : 'Donnee non renseignée' %>
 </p>
 
 <p>
-  <strong>Latitude:</strong>
-  <%= @user.latitude %>
+  <strong>Adresse:</strong>
+  <%= @user.address ? @user.address : 'Donnee non renseignée' %>
 </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @user.longitude %>
-</p>
 
 <p>
   <strong>City:</strong>
-  <%= @user.city.name %>
+  <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
 </p>
 
-<%= button_to 'se deco', destroy_user_session_path, :method => :delete, class: 'button primary'%>
+<%= button_to 'Se Déconnecter', destroy_user_session_path, :method => :delete, class: 'button primary'%>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 
-<div id='map'
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-      data-markers="<%= @markers.to_json %>"
-      data-user-lng="<%= @user.longitude%>"
-      data-user-lat="<%= @user.latitude%>">
-</div>
+<% if @user.latitude%>
+  <div id='map'
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+        data-markers="<%= @markers.to_json %>"
+        data-user-lng="<%= @user.longitude%>"
+        data-user-lat="<%= @user.latitude%>">
+  </div>
 
-<%= javascript_include_tag 'map_box'%>
+  <%= javascript_include_tag 'map_box'%>
+<%end%>
+
+<h3>Suggestions </h3>
+<ul>
+  <% @user.suggestions.each do |suggestion|%>
+  <li> <%= link_to suggestion.partner.full_name, users_path(suggestion.partner)%></li>
+  <%end%>
+</ul>
