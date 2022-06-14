@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         lat: user.latitude,
         lng: user.longitude,
         name: user.full_name,
-        user_id: user.id
+        user_id: user.id,
       }
     end
     puts @markers
