@@ -1,25 +1,30 @@
-<div class="navbar">
+<%if current_user %>
+   <div class="navbar">
 
-   <div>
-      <div class="user-name">
-         <span>Foucauld</span>
+      <div>
+         <div class="user-name">
+            <span> <%= current_user.email%> </span>
+         </div>
+         <div class="separate" style="margin-left: 37px"></div>
+         <nav class="menu" role="tablist">
+
+            <% if current_page?(user_path(current_user)) %>
+               <%= render "layouts/tabs/home_tab" %>
+            <% elsif current_page?(team_index_path)%>
+               <%= render "layouts/tabs/friends_tab" %>
+            <% end%>
+            
+
+         </nav>
       </div>
-      <div class="separate" style="margin-left: 37px"></div>
-      <nav class="menu" role="tablist">
-         <% if current_page?(home_path) %>
-            <%= render "layouts/tabs/home_tab" %>
-         <% elsif current_page?(team_index_path)%>
-            <%= render "layouts/tabs/friends_tab" %>
-         <% end%>
-         
 
-      </nav>
+      <div class="nav-down">
+         <div class="separate"></div>
+         <a href="#"> <i class="fa-solid fa-gear"></i> Paramètres</a>
+         <%= link_to :logout, destroy_user_session_path, :method => :delete, class: 'button primary'%>
+          
+
+         <a href="#"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Se déconnecter</a>
+      </div>
    </div>
-
-   <div class="nav-down">
-      <div class="separate"></div>
-      <a href="#"> <i class="fa-solid fa-gear"></i> Paramètres</a>
-      <a href="#"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Se déconnecter</a>
-   </div>
-
-</div>
+<%end%>

@@ -1,0 +1,25 @@
+.navigation-wrapper{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   padding: 25px 34px;
+
+   .logo{
+      font-family: var(--black-font);
+      font-size: 1.6rem;
+   }
+
+   .navigation-list{
+
+      ul{
+         display: flex;
+         gap: 35px;
+
+         li{
+            
+         }
+      }
+   }
+
+}
