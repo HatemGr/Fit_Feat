@@ -17,11 +17,17 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, length: { maximum: 15 }
 
+  after_create :welcome_send
+
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? && obj.address_changed? }
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
   end
 
   def running_perf
