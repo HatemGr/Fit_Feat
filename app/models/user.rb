@@ -32,12 +32,28 @@ class User < ApplicationRecord
     self.running_perf.order(:created_at).last
   end
 
+  def running_freq
+    SportUser.find_by(sport: Sport.find_by(name:"Running"), user: self).frequency
+  end
+
+  def running_exp
+    SportUser.find_by(sport: Sport.find_by(name:"Running"), user: self).experience
+  end
+
   def workout_perf
     WorkoutPerformance.where(sport_user: SportUser.where(sport: Sport.find_by(name:"Workout"), user: self))
   end
 
   def last_workout_perf
     self.workout_perf.order(:created_at).last
+  end
+
+  def workout_freq
+    SportUser.find_by(sport: Sport.find_by(name:"Workout"), user: self).frequency
+  end
+
+  def workout_exp
+    SportUser.find_by(sport: Sport.find_by(name:"Workout"), user: self).experience
   end
 
   def tennis_perf
@@ -48,12 +64,28 @@ class User < ApplicationRecord
     self.tennis_perf.order(:created_at).last
   end
 
+  def tennis_freq
+    SportUser.find_by(sport: Sport.find_by(name:"Tennis"), user: self).frequency
+  end
+
+  def tennis_exp
+    SportUser.find_by(sport: Sport.find_by(name:"Tennis"), user: self).experience
+  end
+
   def climbing_perf
     ClimbingPerformance.where(sport_user: SportUser.where(sport: Sport.find_by(name:"Climbing"), user: self))
   end
 
   def last_climbing_perf
     self.climbing_perf.order(:created_at).last
+  end
+
+  def climbing_freq
+    SportUser.find_by(sport: Sport.find_by(name:"Climbing"), user: self).frequency
+  end
+
+  def climbing_exp
+    SportUser.find_by(sport: Sport.find_by(name:"Climbing"), user: self).experience
   end
 
   def distance_with(user_2)
