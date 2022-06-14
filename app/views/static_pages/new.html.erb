@@ -1,52 +1,7 @@
 <%if !current_user %>
    <div>
-      <div class="navigation-wrapper">
-         <div class="logo">
-            FITFEAT
-         </div>
-         <div class="navigation-list">
-            <ul>
-               <li> Features </li>
-               <li> Sports </li>
-               <li> Témoignages </li>
-               <li> Contact</li>
-            </ul>
-         </div>
-         <div class="button-row" >
-            <%= button_to 'Se connecter', new_user_session_path, class: 'button primary'%>
-            <%= link_to 'Créer un compte', new_user_registration_path, class: 'button primary'%>
-         </div>
-      </div>
-
-      <div class="hero">
-         <div class="hero-content" >
-            <div class="hero-text">
-               <h1> Découvrez FitFeat <br> Redécouvrez le sport </h1>
-               <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no </p> 
-               <button class="primary"> Get starred </button>
-            </div>
-            <div class="linear-layer" > </div>
-            <div class="hero-svg">
-               <svg width="258" height="82" viewBox="0 0 258 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M258 82H126.5H0C49.5323 82 53.3172 0 126.5 0C203.5 0 193.296 82 258 82Z" fill="var(--grey-bg)"/>
-               </svg>
-            </div>
-            <div class="button-svg" >
-            </div>
-         </div>
-      </div>
+      <%= render 'navbar_lp'%>
+      <%= render 'hero_lp'%>
+      <%= render 'features_lp'%>
    </div>
-<br>
-<br>
-<br>
-   <div class="input">
-      <p class="input-name"> Name </p>
-      <div class="input-wrapper">
-         <input type='text' placeholder='Entrez votre mot de passe'>
-         <i class="fa-light fa-user"></i>
-      </div>
-   </div> 
-<br>
-<br>
-<br>
 <%end%>

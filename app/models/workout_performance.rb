@@ -2,7 +2,11 @@ class WorkoutPerformance < ApplicationRecord
   belongs_to :sport_user
 
   validates :benchpress_weight, :squat_weight, numericality: { only_integer: true , :greater_than_or_equal_to => 0}
-  after_validation :calc_perf_score
+  after_validation :calc_perf_score, :remake_suggestions
+
+  def remake_suggestions
+    Suggestion.make_suggestions(self.sport_user.user)
+  end
 
   def calc_perf_score 
     score = 0

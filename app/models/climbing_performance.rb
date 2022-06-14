@@ -1,8 +1,10 @@
 class ClimbingPerformance < ApplicationRecord
   belongs_to :sport_user
+  after_validation :calc_perf_score, :remake_suggestions
 
-  after_validation :calc_perf_score
-
+  def remake_suggestions
+    Suggestion.make_suggestions(self.sport_user.user)
+  end
 
   def calc_perf_score 
     score = 0
@@ -31,10 +33,6 @@ class ClimbingPerformance < ApplicationRecord
     end
 
     score /= 2
-
     SportUser.find(self.sport_user_id).update(perf_score: score)
   end
-
-
-
 end
