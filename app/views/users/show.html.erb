@@ -69,8 +69,13 @@
       </li>
       <%end%>
     </ul>
-
   </div>
+
+    <h2>Partie Sport</h2>
+    <div class="perf-container"> <%= render partial: 'running_perf', locals: {user: @user}%> </div>
+    <div class="perf-container"> <%= render partial: 'workout_perf', locals: {user: @user}%> </div>
+    <div class="perf-container"> <%= render partial: 'climbing_perf', locals: {user: @user}%> </div>
+    <div class="perf-container"> <%= render partial: 'tennis_perf', locals: {user: @user}%> </div>
 
  </div>
 

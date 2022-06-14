@@ -43,7 +43,7 @@ Sport.create(name: "Running")
 Sport.create(name: "Workout")
 Sport.create(name: "Futsal")
 Sport.create(name: "Climbing")
-Sport.create(name: "Running")
+Sport.create(name: "Tennis")
 puts "Sports created"
 
 block_colors = ["vert", "bleu", "rouge", "violet", "orange"]
