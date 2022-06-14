@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users 
 
   root to: 'static_pages#new', as: 'home'
   resources :static_pages, only: [:index], path: :team, as: 'team'
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
   resources :friends
   resources :suggestions
   resources :events
-  devise_for :users 
   resources :users
   resources :cities
   resources :sports
