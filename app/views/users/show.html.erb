@@ -1,46 +1,38 @@
 <div class="user-show">
   <div class="wrapper-not-meteo">
-    <div class="notification-card card">
-
-    </div>
-
-    <div class="meteo-card card">
-
-    </div>
+    <div class="notification-card card"></div>
+    <div class="meteo-card card"></div>
   </div>
-
-
-  <p id="notice"><%= notice %></p>
 
   <p>
     <strong>First name:</strong>
-    <%= @user.first_name %>
+    <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
   </p>
 
   <p>
     <strong>Last name:</strong>
-    <%= @user.last_name %>
+    <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %>
   </p>
 
   <p>
     <strong>Description:</strong>
-    <%= @user.description %>
+    <%= @user.description ? @user.description : 'Donnee non renseignée' %>
   </p>
 
   <p>
-    <strong>Latitude:</strong>
-    <%= @user.latitude %>
+    <strong>Adresse:</strong>
+    <%= @user.address ? @user.address : 'Donnee non renseignée' %>
   </p>
 
-  <p>
-    <strong>Longitude:</strong>
-    <%= @user.longitude %>
-  </p>
 
   <p>
     <strong>City:</strong>
-    <%= @user.city.name %>
+    <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
   </p>
+
+  <%= button_to 'Se Déconnecter', destroy_user_session_path, :method => :delete, class: 'button primary'%>
+  
+  <p id="notice"><%= notice %></p>
 
   <%= button_to 'se deco', destroy_user_session_path, :method => :delete, class: 'button primary'%>
 
@@ -48,12 +40,38 @@
   <%= link_to 'Edit', edit_user_path(@user) %> |
   <%= link_to 'Back', users_path %>
 
-  <div id='map'
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-        data-markers="<%= @markers.to_json %>"
-        data-user-lng="<%= @user.longitude%>"
-        data-user-lat="<%= @user.latitude%>">
+  <%if @user.longitude %>
+    <div id='map'
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+          data-markers="<%= @markers.to_json %>"
+          data-user-lng="<%= @user.longitude%>"
+          data-user-lat="<%= @user.latitude%>">
+    </div>
+  <%end%>
+
+  <div class="suggestions-list">
+    <h3>Suggestions </h3>
+    <ul>
+      <% @user.suggestions.each do |suggestion|%>
+      <li> 
+      <%= link_to suggestion.partner.full_name, controller: "users", action: "show", id: suggestion.partner.id %>
+      </li>
+      <%end%>
+    </ul>
   </div>
 
-  <%= javascript_include_tag 'map_box'%>
+  <div class="friends-list">
+    <h3>Amis</h3>
+        <ul>
+      <% @user.friends.each do |friend|%>
+      <li> 
+      <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
+      </li>
+      <%end%>
+    </ul>
+
+  </div>
+
  </div>
+
+ <%= javascript_include_tag 'map_box'%>
