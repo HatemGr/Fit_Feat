@@ -40,26 +40,33 @@
     <h3>Suggestions </h3>
     <ul>
       <% @user.suggestions.each do |suggestion|%>
-        <li>
- 
+        <%if !suggestion.accepted && (!suggestion.pair_suggestion.refused || !suggestion.refused) %>
+          <li>
+            <%=link_to suggestion.partner.full_name , user_path(suggestion.partner) %>
+            <%link_to "Accepter", suggestion_path(suggestion, accpeted: true), method: :patch %>
+            <%link_to "Refuser", suggestion_path(suggestion, accpeted: false), method: :patch %>
+            <%if !suggestion.accepted && !suggestion.pair_suggestion.accepted%>
+                En attente de validation
+            <%end%>
         </li>
       <%end%>
-    </ul>
-  </div>
-  <div class="friends-list">
-    <h3>Amis</h3>
-    <ul>
-      <% @user.friends.each do |friend|%>
-        <li>
-          <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
-        </li>
-      <%end%>
-    </ul>
-  </div>
-  <h2>Partie Sport</h2>
-  <div class="perf-container"> <%= render partial: 'running_perf', locals: {user: @user}%> </div>
-  <div class="perf-container"> <%= render partial: 'workout_perf', locals: {user: @user}%> </div>
-  <div class="perf-container"> <%= render partial: 'climbing_perf', locals: {user: @user}%> </div>
-  <div class="perf-container"> <%= render partial: 'tennis_perf', locals: {user: @user}%> </div>
+    <%end%>
+  </ul>
+</div>
+<div class="friends-list">
+  <h3>Amis</h3>
+  <ul>
+    <% @user.friends.each do |friend|%>
+      <li>
+        <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
+      </li>
+    <%end%>
+  </ul>
+</div>
+<h2>Partie Sport</h2>
+<div class="perf-container"> <%= render partial: 'running_perf', locals: {user: @user}%> </div>
+<div class="perf-container"> <%= render partial: 'workout_perf', locals: {user: @user}%> </div>
+<div class="perf-container"> <%= render partial: 'climbing_perf', locals: {user: @user}%> </div>
+<div class="perf-container"> <%= render partial: 'tennis_perf', locals: {user: @user}%> </div>
 </div>
 <%= javascript_include_tag 'map_box'%>
