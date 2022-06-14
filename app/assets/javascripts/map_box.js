@@ -11,7 +11,9 @@ var map = new mapboxgl.Map({
 
 var markers = JSON.parse(mapElement.dataset.markers);
   markers.forEach((marker) => {
-    new mapboxgl.Marker()
+  const el = document.createElement('div');
+  el.className = 'marker';
+    new mapboxgl.Marker(el)
     .setLngLat([marker.lng,marker.lat])
     .setPopup(new mapboxgl.Popup({offset:25})
       .setHTML(
