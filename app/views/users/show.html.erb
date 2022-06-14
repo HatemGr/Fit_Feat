@@ -1,46 +1,59 @@
-<p id="notice"><%= notice %></p>
+<div class="user-show">
+  <div class="wrapper-not-meteo">
+    <div class="notification-card card">
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+    </div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+    <div class="meteo-card card">
 
-<p>
-  <strong>Description:</strong>
-  <%= @user.description %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @user.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @user.longitude %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @user.city.name %>
-</p>
-
-<%= button_to 'se deco', destroy_user_session_path, :method => :delete, class: 'button primary'%>
+    </div>
+  </div>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <p id="notice"><%= notice %></p>
 
-<div id='map'
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-      data-markers="<%= @markers.to_json %>"
-      data-user-lng="<%= @user.longitude%>"
-      data-user-lat="<%= @user.latitude%>">
-</div>
+  <p>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
 
-<%= javascript_include_tag 'map_box'%>
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @user.description %>
+  </p>
+
+  <p>
+    <strong>Latitude:</strong>
+    <%= @user.latitude %>
+  </p>
+
+  <p>
+    <strong>Longitude:</strong>
+    <%= @user.longitude %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= @user.city.name %>
+  </p>
+
+  <%= button_to 'se deco', destroy_user_session_path, :method => :delete, class: 'button primary'%>
+
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+
+  <div id='map'
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+        data-markers="<%= @markers.to_json %>"
+        data-user-lng="<%= @user.longitude%>"
+        data-user-lat="<%= @user.latitude%>">
+  </div>
+
+  <%= javascript_include_tag 'map_box'%>
+ </div>
