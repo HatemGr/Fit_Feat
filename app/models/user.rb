@@ -24,4 +24,36 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def running_perf
+    RunningPerformance.where(sport_user: SportUser.where(sport: Sport.find_by(name:"Running"), user: self))
+  end
+
+  def last_running_perf
+    self.running_perf.order(:created_at).last
+  end
+
+  def workout_perf
+    WorkoutPerformance.where(sport_user: SportUser.where(sport: Sport.find_by(name:"Workout"), user: self))
+  end
+
+  def last_workout_perf
+    self.workout_perf.order(:created_at).last
+  end
+
+  def tennis_perf
+    TennisPerformance.where(sport_user: SportUser.where(sport: Sport.find_by(name:"Tennis"), user: self))
+  end
+
+  def last_tennis_perf
+    self.tennis_perf.order(:created_at).last
+  end
+
+  def climbing_perf
+    ClimbingPerformance.where(sport_user: SportUser.where(sport: Sport.find_by(name:"Climbing"), user: self))
+  end
+
+  def last_climbing_perf
+    self.climbing_perf.order(:created_at).last
+  end
+
 end
