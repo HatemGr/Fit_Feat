@@ -70,55 +70,12 @@ body {
       margin: 0;
    }
    
-
-   
-   
    /************************/
    /* 	    SPACING       */
    /************************/
    --clamp-vw: 4vw;
  }
 
-    /************************/
-   /* 	    BUTTON       */
-   /************************/
- button{
-   padding: 10px 16px;
-   border-radius: 7px;
-   font-size: 1rem;
-   border-style: none;
-   color: rgb(var(--white));
-   cursor: pointer;
-   font-family: var(--medium-font);
-}
-
-.outlined{
-   border: 1px solid;
-   background-color: transparent;
-   padding: 4px 13px !important;
-   font-size: 0.8rem !important;
-}
-
-.primary{
-   background-color: rgb(var(--purple));
-}
-.primary:hover{
-   background-color: rgba(var(--purple), 0.8);
-}
-
-.primary-outlined{
-   border-color: rgb(var(--purple));
-   color: rgb(var(--purple));
-}
-
-.primary-outlined:hover{
-   background-color: rgb(var(--purple));
-   color: rgb(var(--white));
-}
-
-.primary{
-   background-color: rgb(var(--purple));
-}
 
 /************************/
 /* 	    LINK       */
