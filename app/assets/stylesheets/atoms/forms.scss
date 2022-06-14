@@ -14,7 +14,7 @@
       height: fit-content;
       
 
-      input[type=text] {
+      input[type=text], input[type=password], input[type=email] {
          width: 450px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
@@ -39,4 +39,19 @@
       }
    }
 
-} 
+   input[type=submit]{
+      padding: 10px 16px;
+      border-radius: 7px;
+      font-size: 1rem;
+      border-style: none;
+      color: rgb(var(--white));
+      background-color: rgb(var(--purple));
+      cursor: pointer;
+      font-family: var(--medium-font);
+   }
+
+}
+
+
+
+
