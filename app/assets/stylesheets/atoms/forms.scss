@@ -15,7 +15,7 @@
       
 
       input[type=text], input[type=password], input[type=email] {
-         width: 450px;
+         width: 500px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
          padding: 24px 0px;
@@ -44,12 +44,21 @@
       border-radius: 7px;
       font-size: 1rem;
       border-style: none;
+      width: 100px;
       color: rgb(var(--white));
       background-color: rgb(var(--purple));
       cursor: pointer;
       font-family: var(--medium-font);
+
+      &:hover{
+         background-color: rgba(var(--purple), 0.8);
+      }
    }
 
+}
+
+input[type=checkbox]{
+   cursor: pointer;
 }
 
 
