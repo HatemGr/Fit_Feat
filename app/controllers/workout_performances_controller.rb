@@ -5,6 +5,6 @@ class WorkoutPerformancesController < ApplicationController
     end
 
     def workout_perf_params
-        params.require(:workout_performance).permit(:benchpress_weight, :squat_weight)
+        params.require(:workout_performances).permit(:benchpress_weight, :squat_weight)
     end
 end

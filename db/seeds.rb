@@ -70,21 +70,23 @@ squat_weights = [20, 40, 60, 80, 100, 120]
 User.all.each do |user|
     rand(1..3).times do
         sport = Sport.all.sample
-        sport_user = SportUser.create!(sport: sport, user: user, experience: rand(0..10), frequency: rand(1..5))
-        puts "SportUser created"
-        case sport.name
-        when "Climbing"
-            ClimbingPerformance.create!(sport_user: sport_user, block_color: ClimbingBlockColor.all.sample.block_color, level: ClimbingLevel.all.sample.level )
-            puts "Climbing perf created"
-        when "Running"
-            RunningPerformance.create!(sport_user: sport_user,distance: rand(5..50), speed: rand(5..18))
-            puts "Running perf created"
-        when "Tennis"
-            TennisPerformance.create!(sport_user: sport_user,rank: TennisRank.all.sample.rank)
-            puts "Tennis perf created"
-        else
-            WorkoutPerformance.create!(sport_user: sport_user,benchpress_weight: benchpress_weights.sample, squat_weight: squat_weights.sample)
-            puts "Workout perf created"
+        sport_user = SportUser.new(sport: sport, user: user, experience: rand(0..10), frequency: rand(1..5))
+        if sport_user.save
+            puts "SportUser created"
+            case sport.name
+            when "Climbing"
+                ClimbingPerformance.create!(sport_user: sport_user, block_color: ClimbingBlockColor.all.sample.block_color, level: ClimbingLevel.all.sample.level )
+                puts "Climbing perf created"
+            when "Running"
+                RunningPerformance.create!(sport_user: sport_user,distance: rand(5..50), speed: rand(5..18))
+                puts "Running perf created"
+            when "Tennis"
+                TennisPerformance.create!(sport_user: sport_user,rank: TennisRank.all.sample.rank)
+                puts "Tennis perf created"
+            else
+                WorkoutPerformance.create!(sport_user: sport_user,benchpress_weight: benchpress_weights.sample, squat_weight: squat_weights.sample)
+                puts "Workout perf created"
+            end
         end
     end
 end
