@@ -1,5 +1,6 @@
 var mapElement = document.getElementById('map');
-mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+if (typeof mapElement != "undefined") {
+  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
 var map = new mapboxgl.Map({
   container: 'map', //Container ID
@@ -24,3 +25,6 @@ var markers = JSON.parse(mapElement.dataset.markers);
       ))
       .addTo(map);
   });
+;
+}
+
