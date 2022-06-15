@@ -33,6 +33,10 @@
    width: fit-content;
    min-width: 195px;
    border-radius: 7px;
+
+   &:hover{
+      background-color: rgba(var(--purple), 0.05);
+   }
 }
 
 .menu a[aria-selected]{
