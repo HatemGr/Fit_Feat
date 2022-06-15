@@ -1,0 +1,51 @@
+ <div class="middle-element">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+           <div class= "middle-content-email">
+             <div class="modify-email input">
+               <p class="input-name">Email</p>
+               <div class= "input-wrapper">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Rentrez votre email"%>
+                <i class="fa-solid fa-envelope"></i>
+               </div>
+             </div> 
+           </div>
+
+
+            <div class ="middle-content-password">
+             <div class="input">
+              <p class="input-name">Password</p>
+              <div class="input-wrapper">
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password", placeholder: "Rentrez votre nouveau mot de passe" %>
+                <i class="fa-solid fa-lock"></i>
+              </div>
+             </div>
+            </div> 
+
+
+           <div class ="middle-content-password">
+            <div class="input">
+             <div class="input-wrapper">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmer votre mot de passe" %>
+                <i class="fa-solid fa-lock"></i>
+             </div>
+            </div> 
+           </div> 
+        </div>
+
+         <div class="bottom-signup bottom">
+           <div class="input">
+              <div class="action">
+                <%= f.submit "S'inscrire" %>
+                <div class="under-button">
+                <p>Déjà un compte? <%= link_to "Connecte-toi", new_session_path(resource_name), class:"subscribe" %><br /></p>
+                </div>
+              </div>
+            </div>  
+          </div>  
+
+          <% end %>
