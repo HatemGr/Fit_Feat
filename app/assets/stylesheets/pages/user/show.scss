@@ -41,4 +41,33 @@
     }
 }
 
+.performance-show-items{
+   display: flex;
+   gap: 20px;
+   justify-content: space-evenly;
+
+   .performance-show-item{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .performance-show-title{
+
+         
+      }
+      .performance-show-data{
+         font-size: 1.875rem;
+         font-family: var(--black-font);
+         color: #454545;
+
+      }
+   }
+}
+
+.perf-divide{
+   width: 1px;
+   height: 80px;
+   background-color: var(--border-grey);
+}
+
 

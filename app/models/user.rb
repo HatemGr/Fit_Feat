@@ -19,8 +19,9 @@ class User < ApplicationRecord
 
   after_create :welcome_send
 
-  geocoded_by :address
-  after_validation :geocode, if: ->(obj){ obj.address.present? && obj.address_changed? }
+  geocoded_by :full_address
+  after_validation :geocode
+  # if: ->(obj){ obj.full_address.present? && obj.address_changed? }
 
   def full_name
     "#{first_name} #{last_name}"
@@ -28,6 +29,12 @@ class User < ApplicationRecord
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
+  end
+
+  def full_address
+    if city
+      [address, city.name].compact.join(', ')
+    end
   end
 
   def running_perf

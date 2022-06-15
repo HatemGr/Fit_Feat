@@ -1,6 +1,23 @@
-<ul>
-  <li> Experience : <%= user.climbing_exp%> ans </li>
-  <li> Frequence : <%= user.climbing_freq%> seances par semaines </li>
-  <li> Il a un niveau:   <%= user.last_climbing_perf.level %></li>
-  <li> Il parcours des pistes :  <%= user.last_climbing_perf.block_color %></li>
-</ul>
+
+
+<div class="performance-show-items">
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.climbing_exp%> ans </p>
+      <p class="performance-show-title"> D'experience </p>
+    </div>
+     <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.climbing_freq%> /sem  </p>
+      <p class="performance-show-title"> Frequence moyenne </p>
+    </div>
+     <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.last_climbing_perf.level %>  </p>
+      <p class="performance-show-title"> Niveau </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.last_climbing_perf.block_color %>  </p>
+      <p class="performance-show-title"> Couleur favorite</p>
+    </div>
+</div>
