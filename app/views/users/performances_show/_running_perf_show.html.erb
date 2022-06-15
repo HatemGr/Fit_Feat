@@ -1,6 +1,21 @@
-<ul>  
-  <li> Experience : <%= user.running_exp %> ans </li>
-  <li> Frequence : <%= user.running_freq %> seances par semaines </li>
-  <li> Vitesse moyenne :  <%= user.last_running_perf.speed %></li>
-  <li> Distance moyenne :  <%= user.last_running_perf.distance %></li>
-</ul>
+<div class="performance-show-items">
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Experience </p>
+      <p class="performance-show-data"> <%= user.running_exp %> ans </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Frequence </p>
+      <p class="performance-show-data"> <%= user.running_freq %> /sem  </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Vitesse moyenne </p>
+      <p class="performance-show-data"> <%= user.last_running_perf.speed %>km/h  </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Distance moyenne </p>
+      <p class="performance-show-data"> <%= user.last_running_perf.speed %>km/h  </p>
+    </div>
+</div>

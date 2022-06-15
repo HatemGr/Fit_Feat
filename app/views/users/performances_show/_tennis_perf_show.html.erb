@@ -1,5 +1,16 @@
-<ul>
-  <li> Experience : <%= user.tennis_exp %> ans </li>
-  <li> Frequence : <%= user.tennis_freq %> seances par semaines </li>
-  <li> Il a le rang : <%= user.last_tennis_perf.rank %></li>
-</ul>
+<div class="performance-show-items">
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Experience </p>
+      <p class="performance-show-data"> <%= user.tennis_exp%> ans </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Frequence </p>
+      <p class="performance-show-data"> <%= user.tennis_freq %> /sem  </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Rang </p>
+      <p class="performance-show-data"> <%= user.last_tennis_perf.rank %>  </p>
+    </div>
+</div>
