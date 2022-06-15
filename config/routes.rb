@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'sport_users/create'
-  get 'sport_users/update'
-  get 'sport_users/destroy'
-  devise_for :users
+  
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
   root to: 'static_pages#new', as: 'home'
   resources :static_pages, only: [:index], path: :team, as: 'team'
