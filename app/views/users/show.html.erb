@@ -3,6 +3,9 @@
     <div class="notification-card card"></div>
     <div class="meteo-card card"></div>
   </div>
+    <%= render 'performance_usershow'%>
+
+
   <p>
     <strong>First name:</strong>
     <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
@@ -66,6 +69,8 @@
     </ul>
   </div>
   <h2>Partie Sport</h2>
+
+
   <%if !@user.running_perf.empty?%>
     <div class="perf-container"> <%= render partial: 'users/performances/running_perf', locals: {user: @user}%> </div>
   <%end%>
