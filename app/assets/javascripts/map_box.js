@@ -9,19 +9,4 @@ var map = new mapboxgl.Map({
 });
 
 
-var markers = JSON.parse(mapElement.dataset.markers);
 
-for (const marker of markers){
-  const el = document.createElement('div');
-  el.className = 'marker';
-    new mapboxgl.Marker(el)
-    .setLngLat([marker.lng,marker.lat])
-    .setPopup(new mapboxgl.Popup({offset:25})
-      .setHTML(
-        "<div>" + 
-          "<h1>" + marker.name + "</h1>" +
-          "<h3> ID:" + marker.user_id + "</h3>" +
-        "</div>"
-      ))
-      .addTo(map);
-};
