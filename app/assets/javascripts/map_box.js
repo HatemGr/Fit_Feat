@@ -10,7 +10,8 @@ var map = new mapboxgl.Map({
 
 
 var markers = JSON.parse(mapElement.dataset.markers);
-  markers.forEach(function(marker){
+
+for (const marker of markers){
   const el = document.createElement('div');
   el.className = 'marker';
     new mapboxgl.Marker(el)
@@ -23,4 +24,4 @@ var markers = JSON.parse(mapElement.dataset.markers);
         "</div>"
       ))
       .addTo(map);
-  });
+};
