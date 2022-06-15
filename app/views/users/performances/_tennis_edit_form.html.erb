@@ -3,7 +3,7 @@
       <div class="input">
         <p class="input-name">Experience</p>
         <div class="input-wrapper">
-          <%= f.number_field :experience, placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+          <%= f.number_field :experience, value:user.get_sport_user("Tennis").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
@@ -11,7 +11,7 @@
       <div class="input">
         <p class="input-name">Frequence</p>
         <div class="input-wrapper">
-          <%= f.number_field :frequency, placeholder: "Combien de fois par semaines en fait tu ?" %>
+          <%= f.number_field :frequency, value:user.get_sport_user("Tennis").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
@@ -19,7 +19,7 @@
       <div class="input">
         <p class="input-name">Rang</p>
         <div class="input-wrapper">
-          <%= f.select :rank, TennisRank.all.map{|rank| rank.rank} ,placeholder: "Entrez votre rang" %>
+          <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank} , user.last_tennis_perf.rank),placeholder: "Entrez votre niveau" %>
           <i class="fa-solid fa-calendar-range"></i>
         </div> 
       </div>

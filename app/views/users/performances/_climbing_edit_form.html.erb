@@ -3,7 +3,7 @@
       <div class="input">
         <p class="input-name">Experience</p>
         <div class="input-wrapper">
-          <%= f.number_field :experience, placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+          <%= f.number_field :experience, value:user.get_sport_user("Climbing").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
@@ -11,7 +11,7 @@
       <div class="input">
         <p class="input-name">Frequence</p>
         <div class="input-wrapper">
-          <%= f.number_field :frequency, placeholder: "Combien de fois par semaines en fait tu ?" %>
+          <%= f.number_field :frequency, value:user.get_sport_user("Climbing").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
@@ -19,7 +19,7 @@
       <div class="input">
         <p class="input-name">Level</p>
         <div class="input-wrapper">
-          <%= f.select :level, ClimbingLevel.all.map{|level| level.level} ,placeholder: "Entrez votre niveau" %>
+          <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level}, user.last_climbing_perf.level),placeholder: "Entrez votre niveau" %>
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
@@ -27,7 +27,8 @@
       <div class="input">
         <p class="input-name">Block color</p>
         <div class="input-wrapper">
-          <%= f.select :block_color, ClimbingBlockColor.all.map{|block| block.block_color} ,placeholder: "Rentrez votre couleur de block" %>
+          <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block| block.block_color}, user.last_climbing_perf.block_color) ,placeholder: "Rentrez votre couleur de block" %>
+          
           <i class="fa-solid fa-paintbrush"></i>
         </div> 
       </div>

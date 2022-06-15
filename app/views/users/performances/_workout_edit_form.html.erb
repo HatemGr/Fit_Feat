@@ -3,7 +3,7 @@
           <div class="input">
             <p class="input-name">Experience</p>
             <div class="input-wrapper">
-              <%= f.number_field :experience, placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+              <%= f.number_field :experience, value:user.get_sport_user("Workout").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
               <i class="fa-solid fa-signal"></i>
             </div> 
           </div>
@@ -11,7 +11,7 @@
           <div class="input">
             <p class="input-name">Frequence</p>
             <div class="input-wrapper">
-              <%= f.number_field :frequency, placeholder: "Combien de fois par semaines en fait tu ?" %>
+              <%= f.number_field :frequency, value:user.get_sport_user("Workout").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
               <i class="fa-solid fa-signal"></i>
             </div> 
           </div>
@@ -19,7 +19,7 @@
           <div class="input">
             <p class="input-name">Benchpress</p>
             <div class="input-wrapper">
-              <%= f.number_field :benchpress_weight, placeholder: "Rentrez votre vitesse" %>
+              <%= f.number_field :benchpress_weight, value:user.last_workout_perf.benchpress_weight , placeholder: "Rentrez votre vitesse" %>
               <i class="fa-solid fa-table-picnic"></i>
             </div> 
           </div>
@@ -27,7 +27,7 @@
           <div class="input">
             <p class="input-name">Squat</p>
             <div class="input-wrapper">
-              <%= f.text_field :squat_weight, placeholder: "Rentrez votre nombre de squat" %>
+              <%= f.text_field :squat_weight, value:user.last_workout_perf.squat_weight,placeholder: "Rentrez votre nombre de squat" %>
              <i class="fa-solid fa-transporter"></i>
             </div> 
           </div>
