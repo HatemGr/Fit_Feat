@@ -1,80 +1,77 @@
 <div class="card">
-
    <p class="card-title"> Profil </p>
    <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
-
-
    <%= form_with(model: user, local: true) do |form| %>
-   <% if user.errors.any? %>
-      <div id="error_explanation">
-         <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <% if user.errors.any? %>
+         <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-         <ul>
-         <% user.errors.full_messages.each do |message| %>
-         <li><%= message %></li>
-         <% end %>
-         </ul>
+            <ul>
+            <% user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+            </ul>
+         </div>
+      <% end %>
+
+      <div class="user-info_wrapper">
+         <div class="input">
+            <p class="input-name">Email </p>
+            <div class="input-wrapper">
+            <%= form.text_field :email, autofocus: true%>
+            <i class="fa-solid fa-user"></i>
+            </div> 
+         </div>
+
+         <div class="input">
+            <p class="input-name">First name</p>
+            <div class="input-wrapper">
+            <%= form.text_field :first_name, autofocus: true%>
+            <i class="fa-solid fa-user"></i>
+            </div> 
+         </div>
+
+         <div class="input">
+            <p class="input-name">Last name</p>
+            <div class="input-wrapper">
+            <%= form.text_field :last_name%>
+            <i class="fa-solid fa-user"></i>
+            </div> 
+         </div>
       </div>
-   <% end %>
 
-   <div class="user-info_wrapper">
+      <div class="user-info_wrapper">
       <div class="input">
-         <p class="input-name">Email </p>
+         <p class="input-name">Description</p>
          <div class="input-wrapper">
-         <%= form.text_field :email, autofocus: true%>
-         <i class="fa-solid fa-user"></i>
+         <%= form.text_field :description, style:"height:70px; "%>
+         <i class="fa-solid fa-align-left"></i>
          </div> 
       </div>
 
       <div class="input">
-         <p class="input-name">First name</p>
+         <p class="input-name">Adresse</p>
          <div class="input-wrapper">
-         <%= form.text_field :first_name, autofocus: true%>
-         <i class="fa-solid fa-user"></i>
+         <%= form.text_field :address%>
+         <i class="fa-solid fa-address-book"></i>
          </div> 
+      </div>
+
+
+      <div class="input">
+         <p class="input-name">City</p>
+         <div class="input-wrapper">
+         <%= form.text_field :city_id%>
+         <i class="fa-solid fa-location-dot"></i>
+         </div> 
+      </div>
       </div>
 
       <div class="input">
-         <p class="input-name">Last name</p>
-         <div class="input-wrapper">
-         <%= form.text_field :last_name%>
-         <i class="fa-solid fa-user"></i>
-         </div> 
-      </div>
-   </div>
-
-   <div class="user-info_wrapper">
-   <div class="input">
-      <p class="input-name">Description</p>
-      <div class="input-wrapper">
-      <%= form.text_field :description, style:"height:70px; "%>
-      <i class="fa-solid fa-align-left"></i>
-      </div> 
-   </div>
-
-   <div class="input">
-      <p class="input-name">Adresse</p>
-      <div class="input-wrapper">
-      <%= form.text_field :address%>
-      <i class="fa-solid fa-address-book"></i>
-      </div> 
-   </div>
-
-
-   <div class="input">
-      <p class="input-name">City</p>
-      <div class="input-wrapper">
-      <%= form.text_field :city_id%>
-      <i class="fa-solid fa-location-dot"></i>
-      </div> 
-   </div>
-   </div>
-
-   <div class="input">
-      <div class="action">
-         <%= form.submit "Sauvegarder" %>
-      </div>
-   </div>  
+         <div class="action">
+            <%= form.submit "Sauvegarder" %>
+         </div>
+      </div>  
    <% end %>
 
 </div>
