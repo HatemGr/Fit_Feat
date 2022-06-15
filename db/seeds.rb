@@ -47,11 +47,25 @@ Sport.create(name: "Tennis")
 puts "Sports created"
 
 block_colors = ["vert", "bleu", "rouge", "violet", "orange"]
+block_colors.each do |color|
+  ClimbingBlockColor.create(block_color: color)
+end
+puts "Climbing colors created"
+
 levels = [5,6,7,8]
+levels.each do |level|
+  ClimbingLevel.create(level: level)
+end
+puts "Climbing levels created"
+
 ranks = ["6", "15/1", "15/2", "15/3", "15/4", "15/5", "30", "30/1", "30/2", "30/3", "30/4", "40"]
+ranks.each do |rank|
+  TennisRank.create(rank:rank)
+end
+puts "Tennis ranks created"
+
 benchpress_weights = [10, 20, 50, 60, 80, 100]
 squat_weights = [20, 40, 60, 80, 100, 120]
-
 
 User.all.each do |user|
     rand(1..3).times do
@@ -60,13 +74,13 @@ User.all.each do |user|
         puts "SportUser created"
         case sport.name
         when "Climbing"
-            ClimbingPerformance.create!(sport_user: sport_user, block_color: block_colors.sample, level: levels.sample )
+            ClimbingPerformance.create!(sport_user: sport_user, block_color: ClimbingBlockColor.all.sample.block_color, level: ClimbingLevel.all.sample.level )
             puts "Climbing perf created"
         when "Running"
             RunningPerformance.create!(sport_user: sport_user,distance: rand(5..50), speed: rand(5..18))
             puts "Running perf created"
         when "Tennis"
-            TennisPerformance.create!(sport_user: sport_user,rank: ranks.sample)
+            TennisPerformance.create!(sport_user: sport_user,rank: TennisRank.all.sample.rank)
             puts "Tennis perf created"
         else
             WorkoutPerformance.create!(sport_user: sport_user,benchpress_weight: benchpress_weights.sample, squat_weight: squat_weights.sample)
