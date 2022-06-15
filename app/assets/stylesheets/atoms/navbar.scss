@@ -5,6 +5,13 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   position: fixed;
+}
+
+.ghost-div{
+   width: 320px;
+   height :100vh;
+   display: block;
 }
 
 
