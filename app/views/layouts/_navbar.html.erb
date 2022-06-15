@@ -3,17 +3,19 @@
    <div class="navbar">
       <div>
          <div class="user-name">
-            <span> <%= current_user.email%> </span>
+            <span> <%= current_user.first_name%> </span>
          </div>
          <div class="separate" style="margin-left: 37px"></div>
          <nav class="menu" role="tablist">
 
-            <% if current_page?(user_path(current_user)) %>
+            <% if current_page?(user_path(current_user))%>
                <%= render "layouts/tabs/home_tab" %>
-            <% elsif current_page?(connections_path)%>
+            <% elsif current_page?(connection_path(current_user))%>
                <%= render "layouts/tabs/friends_tab" %>
             <% elsif current_page?(edit_user_path(current_user))%>
                <%= render "layouts/tabs/edit_tab" %>
+            <% elsif current_page?(user_path(@user))%>
+               <%= render "layouts/tabs/inactive_tab" %>
             <% end%>
             
 
