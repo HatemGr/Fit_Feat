@@ -1,6 +1,21 @@
-<ul>
-  <li> Experience : <%= user.workout_exp%> ans </li>
-  <li> Frequence : <%= user.workout_freq %> seances par semaines </li>
-  <li> Poids au benchpress :   <%= user.last_workout_perf.benchpress_weight %> kg</li>
-  <li> Poids au squats :  <%= user.last_workout_perf.squat_weight %> kg</li>
-</ul>
+<div class="performance-show-items">
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Experience </p>
+      <p class="performance-show-data"> <%= user.workout_exp%> ans </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Frequence </p>
+      <p class="performance-show-data"> <%= user.workout_freq %> /sem  </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Poids au benchpress </p>
+      <p class="performance-show-data"> <%= user.last_workout_perf.benchpress_weight %>kg  </p>
+    </div>
+     <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-title"> Poids au squats </p>
+      <p class="performance-show-data"> <%= user.last_workout_perf.squat_weight %>kg  </p>
+    </div>
+</div>
