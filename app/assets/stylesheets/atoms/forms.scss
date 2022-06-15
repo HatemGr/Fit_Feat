@@ -15,11 +15,17 @@
 
 
       input[type=text], input[type=password], input[type=email] {
-         width: 500px;
+         width: 450px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
          padding: 20px 0px;
          padding-left: 15px;
+         transition: all 0.3s ease;
+
+         @media screen and (max-width: 1500px) {
+            width: 400px;
+            padding: 18px 0px;
+         }
    
    
          &::placeholder{
@@ -44,7 +50,6 @@
       border-radius: 7px;
       font-size: 1rem;
       border-style: none;
-      width: 100px;
       color: rgb(var(--white));
       background-color: rgb(var(--purple));
       cursor: pointer;
