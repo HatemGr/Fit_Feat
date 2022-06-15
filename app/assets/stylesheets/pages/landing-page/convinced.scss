@@ -1,0 +1,46 @@
+.convinced-container{
+   width: 100vw !important;
+   height: 314px !important;
+   padding: 0px !important;
+
+   .convinced-content{
+   background: url(https://images.unsplash.com/photo-1557564437-0995702f88fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80) !important;
+   background-repeat: no-repeat !important;
+   background-size: cover !important;
+   background-position: 50% 75% !important;
+   gap: 0px !important;
+   border-radius: 0px !important;
+
+   .element-container{
+      gap: 8px !important;
+   }
+
+   h1{
+      font-size: 3rem !important;
+   }
+
+   p{
+      font-family: var(--medium-font) !important;
+      font-size: 1rem !important;
+      max-width: 549px !important;
+   }
+  
+   .linear-background{
+      background: linear-gradient(270.09deg, rgba(79, 79, 79, 0) 0.08%, rgba(15, 15, 15, 0.82) 39.62%, rgba(15, 15, 15, 0.87) 47.2%, rgba(4, 4, 4, 0.87) 55.08%, rgba(2, 2, 2, 0.88) 71.19%, rgba(0, 0, 0, 0.69) 99.35%) !important;
+   }
+
+   .button-container{
+      display: flex;
+      flex-direction: row;
+      
+      .button{
+        position: relative;
+        display: flex;
+        margin-left: 10px;
+        justify-content: flex-start;
+        bottom: 30px;
+        left: 6px;
+      }
+   }
+ }
+}

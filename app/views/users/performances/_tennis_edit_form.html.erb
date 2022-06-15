@@ -1,9 +1,9 @@
 <div class="flex-row-between-flex-start">
-    <%=form_for :tennis_perfomances, url: tennis_performances_path, method: :post do |f|%>
+    <%=form_for :tennis_performances, url: tennis_performances_path, method: :post do |f|%>
       <div class="input">
         <p class="input-name">Rank</p>
         <div class="input-wrapper">
-          <%= f.number_field :rank, placeholder: "Rentrez votre rang" %>
+          <%= f.text_field :rank, placeholder: "Rentrez votre rang" %>
           <i class="fa-solid fa-calendar-range"></i>
         </div> 
       </div>

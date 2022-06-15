@@ -5,7 +5,9 @@ class RunningPerformancesController < ApplicationController
         redirect_to user_path(current_user)
     end
 
+    private
+
     def running_perf_params
-        params.require(:running_performance).permit(:speed, :distance)
+        params.require(:running_performances).permit(:speed, :distance)
     end
 end
