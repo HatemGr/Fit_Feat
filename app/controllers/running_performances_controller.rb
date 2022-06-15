@@ -1,6 +1,9 @@
 class RunningPerformancesController < ApplicationController
 
     def create
+        experience = params[:running_performances][:experience]
+        frequency = params[:running_performances][:frequency]
+        current_user.get_sport_user("Running").update(experience: experience, frequency: frequency)
         RunningPerformance.create(running_perf_params.merge(sport_user: current_user.get_sport_user("Running")))
         redirect_to user_path(current_user)
     end
