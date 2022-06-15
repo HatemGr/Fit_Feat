@@ -16,10 +16,10 @@
             <div class ="middle-content-password">
              <div class="input">
               <p class="input-name">Password</p>
-              <div class="input-wrapper">
                 <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
+              <div class="input-wrapper"> 
                 <%= f.password_field :password, autocomplete: "new-password", placeholder: "Rentrez votre nouveau mot de passe" %>
                 <i class="fa-solid fa-lock"></i>
               </div>
