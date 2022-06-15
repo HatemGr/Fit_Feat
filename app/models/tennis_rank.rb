@@ -1,0 +1,2 @@
+class TennisRank < ApplicationRecord
+end

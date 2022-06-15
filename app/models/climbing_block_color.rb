@@ -1,0 +1,2 @@
+class ClimbingBlockColor < ApplicationRecord
+end
