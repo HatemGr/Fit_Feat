@@ -9,10 +9,10 @@ class User < ApplicationRecord
   has_many :admin_events, foreign_key: 'admin_id', class_name: "Event", dependent: :delete_all
   has_many :participations, dependent: :delete_all
   has_many :events, through: :participations
-  has_many :sport_users, dependent: :delete_all
+  has_many :sport_users, dependent: :destroy
   has_many :sports , through: :sport_users
-  has_many :suggestions, dependent: :delete_all
-  has_many :connections, dependent: :delete_all
+  has_many :suggestions, dependent: :destroy
+  has_many :connections, dependent: :destroy
   has_many :friends, through: :connections, class_name: "User"
 
   validates :first_name, :last_name, length: { maximum: 15 }

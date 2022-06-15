@@ -142,14 +142,14 @@ ActiveRecord::Schema.define(version: 2022_06_13_205205) do
     t.index ["sport_user_id"], name: "index_workout_performances_on_sport_user_id"
   end
 
-  add_foreign_key "climbing_performances", "sport_users"
+  add_foreign_key "climbing_performances", "sport_users", on_delete: :cascade
   add_foreign_key "events", "cities"
   add_foreign_key "events", "sports"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
-  add_foreign_key "running_performances", "sport_users"
+  add_foreign_key "running_performances", "sport_users", on_delete: :cascade
   add_foreign_key "sport_users", "sports"
   add_foreign_key "sport_users", "users"
-  add_foreign_key "tennis_performances", "sport_users"
-  add_foreign_key "workout_performances", "sport_users"
+  add_foreign_key "tennis_performances", "sport_users", on_delete: :cascade
+  add_foreign_key "workout_performances", "sport_users", on_delete: :cascade
 end

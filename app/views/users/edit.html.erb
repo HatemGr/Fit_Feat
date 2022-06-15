@@ -5,4 +5,7 @@
   <br>
   <%= render 'edit_info', user: @user %>
 
+<div><%=link_to "Retour sur le Profil", user_path(@user)%></div>
+<div><%=link_to "Supprimer le compte", user_path(@user), method: :delete%></div>
+
 </div>
