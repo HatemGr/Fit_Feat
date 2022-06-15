@@ -14,7 +14,7 @@
                <%= render "layouts/tabs/friends_tab" %>
             <% elsif current_page?(edit_user_path(current_user))%>
                <%= render "layouts/tabs/edit_tab" %>
-            <% elsif current_page?(user_path(@user))%>
+            <% else %>
                <%= render "layouts/tabs/inactive_tab" %>
             <% end%>
             
