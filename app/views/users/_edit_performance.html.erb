@@ -1,17 +1,18 @@
-  <div class="card">
+  <div class="card" >
       <p class="card-title"> Performance </p>
       <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
       
 
       <div class="tab">
-        <button class="tablinks" onclick="openPerf(event, 'Climbing')" id="defaultOpen">Climbing</button>
+        <button class="tablinks test" onclick="openPerf(event, 'Climbing')" id="defaultOpen">Climbing</button>
         <button class="tablinks" onclick="openPerf(event, 'Running')">Running</button>
         <button class="tablinks" onclick="openPerf(event, 'Workout')">Workout</button>
         <button class="tablinks" onclick="openPerf(event, 'Tennis')">Tennis</button>
       </div>
 
-      <div id="Climbing" class="tabcontent">
+      <div id="Climbing" class="tabcontent" style="display:block">
       <%if !@user.climbing_perf.empty?%>
+
         <%= render partial: 'users/performances/climbing_edit_form', locals: {user: @user} %>
         <div class="perf-container">
           <%= render partial: 'users/performances/climbing_perf', locals: {user: @user}%>
