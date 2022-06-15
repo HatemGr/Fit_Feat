@@ -33,7 +33,7 @@
             <div class="input">
               <p class="input-name">Password</p>
              <div class="input-wrapper">
-              <%= f.password_field :password, autocomplete: "current-password" %>
+              <%= f.password_field :password, autocomplete: "current-password", placeholder: "Rentrez votre mot de passe" %>
               <i class="fa-solid fa-lock"></i>
              </div>  
             </div>
@@ -49,6 +49,7 @@
             
             <% end %>
         </div>
+
         <div class="bottom">
          <div class="input">
             <div class="action">
