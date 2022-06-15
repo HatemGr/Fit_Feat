@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_205205) do
+ActiveRecord::Schema.define(version: 2022_06_15_105402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 2022_06_13_205205) do
     t.string "name"
     t.float "longitude"
     t.float "latitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "climbing_block_colors", force: :cascade do |t|
+    t.string "block_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "climbing_levels", force: :cascade do |t|
+    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -111,6 +123,12 @@ ActiveRecord::Schema.define(version: 2022_06_13_205205) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sport_user_id"], name: "index_tennis_performances_on_sport_user_id"
+  end
+
+  create_table "tennis_ranks", force: :cascade do |t|
+    t.string "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
