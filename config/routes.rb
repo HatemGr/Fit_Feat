@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   root to: 'static_pages#new', as: 'home'
   resources :static_pages, only: [:index], path: :team, as: 'team'
 
-  resources :connections
+  
   resources :suggestions
   resources :events
-  resources :users
+  resources :users do
+    resources :connections
+  end
   resources :cities
   resources :sports
   resources :sport_users
