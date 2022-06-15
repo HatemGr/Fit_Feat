@@ -5,8 +5,10 @@ class ClimbingPerformancesController < ApplicationController
         redirect_to user_path(current_user)
     end
 
+    private
+
     def climbing_perf_params
-        params.require(:climbing_performance).permit(:level, :block_color)
+        params.require(:climbing_performances).permit(:level, :block_color)
     end
 
 end

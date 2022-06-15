@@ -5,7 +5,9 @@ class TennisPerformancesController < ApplicationController
         redirect_to user_path(current_user)
     end
 
+    private
+
     def tennis_perf_params
-        params.require(:tennis_performance).permit(:rank)
+        params.require(:tennis_performances).permit(:rank)
     end
 end
