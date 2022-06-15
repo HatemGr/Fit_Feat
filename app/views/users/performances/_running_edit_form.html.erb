@@ -1,13 +1,28 @@
-<%=form_for :running_performances, url: running_performances_path, method: :post do |f|%>
-  <div class="field">
-    <%= f.label :speed %><br />
-    <%= f.number_field :speed, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :distance %><br />
-    <%= f.text_field :distance, autofocus: true %>
-  </div>
-  <div class="actions">
-    <%= f.submit('Soumettre') %>
-  </div>
-<%end%>
+<div class="flex-row-between-flex-start">
+    <%=form_for :running_performances, url: running_performances_path, method: :post do |f|%>
+
+      <div class="input">
+        <p class="input-name">Speed</p>
+        <div class="input-wrapper">
+          <%= f.number_field :speed, placeholder: "Rentrez votre vitesse" %>
+          <i class="fa-solid fa-gauge"></i>
+        </div> 
+      </div>
+
+      <div class="input">
+        <p class="input-name">Distance</p>
+        <div class="input-wrapper">
+          <%= f.text_field :distance, placeholder: "Rentrez votre distance" %>
+          <i class="fa-solid fa-ruler-horizontal"></i>
+        </div> 
+      </div>
+
+      <div class="input">
+      <div class="actions">
+        <%= f.submit('Soumettre') %>
+      </div>
+      </div>
+    <%end%>
+
+    <div > <%= image_tag "running.png" %> </div>
+</div>

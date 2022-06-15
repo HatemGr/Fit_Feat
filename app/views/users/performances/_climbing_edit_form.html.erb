@@ -1,13 +1,26 @@
-<%=form_for :climbing_performances, url: climbing_performances_path, method: :post do |f|%>
-    <div class="field">
-      <%= f.label :level %><br />
-      <%= f.number_field :level, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= f.label :block_color %><br />
-      <%= f.text_field :block_color, autofocus: true %>
-    </div>
-    <div class="actions">
-      <%= f.submit('Soumettre') %>
-    </div>
-  <%end%>
+<div class="flex-row-between-flex-start">
+  <%=form_for :climbing_performances, url: climbing_performances_path, method: :post do |f|%>
+      <div class="input">
+        <p class="input-name">Level</p>
+        <div class="input-wrapper">
+          <%= f.number_field :level, placeholder: "Rentrez votre niveau" %>
+          <i class="fa-solid fa-signal"></i>
+        </div> 
+      </div>
+
+      <div class="input">
+        <p class="input-name">Block color</p>
+        <div class="input-wrapper">
+          <%= f.text_field :block_color, placeholder: "Rentrez votre couleur de block" %>
+          <i class="fa-solid fa-paintbrush"></i>
+        </div> 
+      </div>
+      
+      <div class="input">
+      <div class="actions">
+        <%= f.submit('Soumettre') %>
+      </div>
+      </div>
+    <%end%>
+    <div > <%= image_tag "climbing.png" %> </div>
+</div>

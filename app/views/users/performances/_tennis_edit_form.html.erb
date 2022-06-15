@@ -1,9 +1,17 @@
-<%=form_for :tennis_perfomances, url: tennis_performances_path, method: :post do |f|%>
-  <div class="field">
-    <%= f.label :rank %><br />
-    <%= f.number_field :rank, autofocus: true %>
-  </div>
-  <div class="actions">
-    <%= f.submit('Soumettre') %>
-  </div>
-<%end%>
+<div class="flex-row-between-flex-start">
+    <%=form_for :tennis_perfomances, url: tennis_performances_path, method: :post do |f|%>
+      <div class="input">
+        <p class="input-name">Rank</p>
+        <div class="input-wrapper">
+          <%= f.number_field :rank, placeholder: "Rentrez votre rang" %>
+          <i class="fa-solid fa-calendar-range"></i>
+        </div> 
+      </div>
+      <div class="input">
+        <div class="actions">
+          <%= f.submit('Soumettre') %>
+        </div>
+      </div>
+    <%end%>
+    <div > <%= image_tag "tennis.png" %> </div>
+</div>
