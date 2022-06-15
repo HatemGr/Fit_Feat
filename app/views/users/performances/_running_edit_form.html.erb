@@ -1,5 +1,20 @@
 <div class="flex-row-between-flex-start">
     <%=form_for :running_performances, url: running_performances_path, method: :post do |f|%>
+      <div class="input">
+        <p class="input-name">Experience</p>
+        <div class="input-wrapper">
+          <%= f.number_field :experience, placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+          <i class="fa-solid fa-signal"></i>
+        </div> 
+      </div>
+
+      <div class="input">
+        <p class="input-name">Frequence</p>
+        <div class="input-wrapper">
+          <%= f.number_field :frequency, placeholder: "Combien de fois par semaines en fait tu ?" %>
+          <i class="fa-solid fa-signal"></i>
+        </div> 
+      </div>
 
       <div class="input">
         <p class="input-name">Speed</p>
