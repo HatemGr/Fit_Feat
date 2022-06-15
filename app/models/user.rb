@@ -67,7 +67,7 @@ class User < ApplicationRecord
   end
 
   def last_tennis_perf
-    self.tennis_perf.nil? ? self.tennis_perf.order(:created_at).last : TennisPerformance.new
+    self.tennis_perf.order(:created_at).last
   end
 
   def tennis_freq
@@ -105,4 +105,21 @@ class User < ApplicationRecord
   def get_sport_user(sport)
       SportUser.find_by(sport: Sport.find_by(name: sport).id, user: self)
   end
+
+  def does_climbing?
+    !SportUser.find_by(user: self, sport: Sport.find_by(name:"Climbing")).nil?
+  end
+
+  def does_running?
+    !SportUser.find_by(user: self, sport: Sport.find_by(name:"Running")).nil?
+  end
+
+  def does_tennis?
+    !SportUser.find_by(user: self, sport: Sport.find_by(name:"Tennis")).nil?
+  end
+
+  def does_workout?
+    !SportUser.find_by(user: self, sport: Sport.find_by(name:"Workout")).nil?
+  end
+
 end

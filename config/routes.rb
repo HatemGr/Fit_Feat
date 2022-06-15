@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sport_users/create'
+  get 'sport_users/update'
+  get 'sport_users/destroy'
   devise_for :users
 
   root to: 'static_pages#new', as: 'home'

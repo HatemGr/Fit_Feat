@@ -7,6 +7,7 @@ class SportUser < ApplicationRecord
   has_one :tennis_performance, dependent: :destroy
 
   validates :experience, :frequency, numericality: { only_integer: true , :greater_than_or_equal_to => 0}
+  validates_uniqueness_of :user, :scope => [:sport]
  
 
 end
