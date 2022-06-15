@@ -25,7 +25,7 @@
   </p>
   <%= button_to 'Se Déconnecter', destroy_user_session_path, :method => :delete, class: 'button primary'%>
   <p id="notice"><%= notice %></p>
-  <%= button_to 'se deco', destroy_user_session_path, :method => :delete, class: 'button primary'%>
+
   <%= link_to 'Edit', edit_user_path(@user) %> |
   <%= link_to 'Back', users_path %>
   <%if @user.longitude %>
@@ -37,18 +37,20 @@
     </div>
   <%end%>
   <div class="suggestions-list">
+    <h3><%=@user.full_name%></h3>
     <h3>Suggestions </h3>
     <ul>
       <% @user.suggestions.each do |suggestion|%>
-        <%if !suggestion.accepted && (!suggestion.pair_suggestion.refused || !suggestion.refused) %>
-          <li>
-            <%=link_to suggestion.partner.full_name , user_path(suggestion.partner) %>
-            <%link_to "Accepter", suggestion_path(suggestion, accpeted: true), method: :patch %>
-            <%link_to "Refuser", suggestion_path(suggestion, accpeted: false), method: :patch %>
-            <%if !suggestion.accepted && !suggestion.pair_suggestion.accepted%>
-              En attente de validation
+      <li>
+        <%if suggestion.refused.nil? %>
+          <%=link_to suggestion.partner.full_name , user_path(suggestion.partner) %>
+          <%if suggestion.accepted %>
+              En attente de validation de l'autre côté
+            <%else%>
+              <%=link_to "Accepter", suggestion_path(suggestion, answer: "accepted"), method: :patch %>
+              <%=link_to "Refuser", suggestion_path(suggestion, answer: "refused"), method: :patch %>
             <%end%>
-          </li>
+        </li>
         <%end%>
       <%end%>
     </ul>
