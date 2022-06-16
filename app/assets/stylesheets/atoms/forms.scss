@@ -23,7 +23,7 @@
       }
 
 
-      input[type=text], input[type=password], input[type=email], input[type=number], select {
+      input[type=text], input[type=password], input[type=email], input[type=number], textarea[type=text], select {
          width: 450px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
@@ -75,7 +75,3 @@
 input[type=checkbox]{
    cursor: pointer;
 }
-
-
-
-
