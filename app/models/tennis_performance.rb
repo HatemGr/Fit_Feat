@@ -1,6 +1,6 @@
 class TennisPerformance < ApplicationRecord
   belongs_to :sport_user
-  after_validation :calc_perf_score, :remake_suggestions
+  after_create :calc_perf_score, :remake_suggestions
 
   def remake_suggestions
     Suggestion.make_suggestions(self.sport_user.user)
