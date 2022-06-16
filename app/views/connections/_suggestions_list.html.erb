@@ -7,7 +7,7 @@
     <li class="suggest-friends">
       <%if suggestion.refused.nil? %>
       <div>
-        <%= image_tag "avatar" %>
+        <%= image_tag "avatar.png" %>
         <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>
       </div>
         <%if suggestion.accepted %>
