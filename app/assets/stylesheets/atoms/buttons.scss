@@ -23,6 +23,18 @@
       background-color: rgba(var(--purple), 0.8);
    }
 
+   .primary-outline {
+      background-color: white;
+      color: rgb(var(--purple));
+      border: solid rgb(var(--purple)) 1px;
+   }
+
+   .primary-outline:hover {
+      background-color: rgb(var(--purple));
+      color: white;
+      border: solid rgb(var(--purple)) 1px;
+   }
+
    
    .secondary{
       padding: 7px 12px !important;

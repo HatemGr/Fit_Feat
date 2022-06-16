@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'participations/create'
+  get 'participations/destroy'
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   root to: 'static_pages#new', as: 'home'
@@ -7,10 +9,14 @@ Rails.application.routes.draw do
 
   
   resources :suggestions
-  resources :events
+  resources :events do
+    resources :participations, only: [:create, :destroy]
+  end
+
   resources :users do
     resources :connections
   end
+
   resources :cities
   resources :sports
   resources :sport_users
