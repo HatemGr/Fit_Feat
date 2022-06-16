@@ -32,18 +32,4 @@
   <%= link_to 'Edit', edit_user_path(@user), class:'button primary' %>
   <%= link_to 'Back', users_path, class: 'button primary' %>
 
-
-
-
-  <div class="friends-list">
-    <h3>Amis</h3>
-    <ul>
-      <% @user.friends.each do |friend|%>
-        <li>
-          <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
-        </li>
-      <%end%>
-    </ul>
-  </div>
-
 </div>
