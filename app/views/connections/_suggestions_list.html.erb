@@ -1,17 +1,25 @@
 <div class='card container-suggestions-list'>
    <p class="card-title"> Suggestion d'amis </p>
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
-<div class="suggestions-list">
+<div>
   <ul>
     <% current_user.suggestions.each do |suggestion|%>
-    <li>
+    <li class="suggest-friends">
       <%if suggestion.refused.nil? %>
-        <%=link_to suggestion.partner.full_name , user_path(suggestion.partner) %>
+      <div>
+        <%= image_tag "avatar" %>
+        <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>
+      </div>
         <%if suggestion.accepted %>
             En attente de validation de l'autre côté
           <%else%>
-            <%=link_to "Accepter", suggestion_path(suggestion, answer: "accepted"), method: :patch %>
-            <%=link_to "Refuser", suggestion_path(suggestion, answer: "refused"), method: :patch %>
+          <div class="button-row">
+            
+            <%=link_to suggestion_path(suggestion, answer: "accepted"), class: 'button secondary', method: :patch do %>
+                  <i class="fa-solid fa-circle-check"></i> accepter
+            <%end%>
+            <%=link_to "Refuser", suggestion_path(suggestion, answer: "refused"), class:'button refuse-btn', method: :patch %>
+          </div>
           <%end%>
       </li>
       <%end%>

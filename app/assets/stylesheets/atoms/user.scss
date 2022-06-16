@@ -1,0 +1,8 @@
+.user-link{
+   color: rgb(var(--purple));
+   margin-left: 8px;
+
+   &:hover{
+      color:rgba(var(--purple), 0.7)
+   }
+}
