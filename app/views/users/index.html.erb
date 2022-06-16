@@ -23,7 +23,7 @@
         <td><%= user.description %></td>
         <td><%= user.latitude %></td>
         <td><%= user.longitude %></td>
-        <td><%= user.city.name %></td>
+        <td><%= user.city ? user.city.name : "Donnee non renseignée" %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
