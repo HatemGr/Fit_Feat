@@ -8,20 +8,6 @@ class UsersController < ApplicationController
 
   def show
 
-    if @user.latitude
-      @markers = @user.nearbys(10).geocoded.map do |user|
-        {
-          lat: user.latitude,
-          lng: user.longitude,
-          name: user.full_name,
-          user_id: user.id,
-        }
-      end
-      @markers << {lat: @user.latitude,
-        lng: @user.longitude,
-        name: @user.full_name,
-        user_id: @user.id,}
-    end
   end
 
   def new
