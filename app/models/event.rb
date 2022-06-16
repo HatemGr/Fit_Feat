@@ -11,7 +11,7 @@ class Event < ApplicationRecord
   validates :title, length: { in: 4..30 }
 
   geocoded_by :full_address
-  after_validation :geocode
+  after_validation :geocode, :start_after_now
 
 
   def start_after_now

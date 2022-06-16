@@ -8,6 +8,8 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    @cities = City.all
+    @sports = Sport.all
   end
 
   # GET /events/new
@@ -42,6 +44,8 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
+    @cities = City.all
+    @sports = Sport.all
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
