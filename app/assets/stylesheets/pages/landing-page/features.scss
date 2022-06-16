@@ -5,6 +5,13 @@
    align-items: center;
    margin-top: 80px;
 
+   .title-lign {
+      top: 33px;
+      right: -25px;
+      width: 240px;
+   }
+
+
   
    
    .black-layer{
@@ -70,6 +77,7 @@
    align-items: center;
    margin-bottom: 50px;
 
+   
    .title{
       text-align: center;
       font-size: var(--title);

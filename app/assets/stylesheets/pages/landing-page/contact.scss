@@ -1,3 +1,16 @@
+.contact-wrapper{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 80px;
+
+   .title-lign{
+      right: -30px;
+   }
+}
+
+
 .element-contain{
 display: flex;
 align-items: center;
