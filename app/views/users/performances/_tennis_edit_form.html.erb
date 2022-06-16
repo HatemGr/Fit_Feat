@@ -5,7 +5,11 @@
           <div class="input col-sm">
             <p class="input-name">Experience</p>
             <div class="input-wrapper">
+            <% if user.get_sport_user("Tennis") %>
               <%= f.number_field :experience, value:user.get_sport_user("Tennis").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%else%>
+              <%= f.number_field :experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%end%> 
               <i class="fa-solid fa-signal"></i>
             </div> 
           </div>
@@ -13,7 +17,11 @@
           <div class="input col-sm">
             <p class="input-name">Frequence</p>
             <div class="input-wrapper">
-              <%= f.number_field :frequency, value:user.get_sport_user("Tennis").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
+              <% if user.get_sport_user("Tennis") %>
+              <%= f.number_field :frequency, value:user.get_sport_user("Tennis").frequency , placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%else%>
+              <%= f.number_field :frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%end%> 
               <i class="fa-solid fa-signal"></i>
             </div> 
           </div>
@@ -21,7 +29,11 @@
           <div class="input col-sm">
             <p class="input-name">Rang</p>
             <div class="input-wrapper">
-              <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank} , user.last_tennis_perf.rank),placeholder: "Entrez votre niveau" %>
+            <%if user.last_tennis_perf %>
+              <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank} , user.last_tennis_perf.rank ),placeholder: "Entrez votre niveau" %>
+            <%else%>
+            <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank}),placeholder: "Entrez votre niveau" %>
+            <%end%>
               <i class="fa-solid fa-calendar-range"></i>
             </div> 
           </div>

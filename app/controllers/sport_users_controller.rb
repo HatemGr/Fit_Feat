@@ -1,5 +1,8 @@
 class SportUsersController < ApplicationController
+  
   def create
+    @user = current_user
+    @sport_user = SportUser.new
     sport = Sport.find_by(name: params[:sport])
     sport_user = SportUser.find_by(sport:sport, user:current_user)
     unless sport_user
@@ -15,7 +18,12 @@ class SportUsersController < ApplicationController
     when "Tennis"
       TennisPerformance.create(sport_user:sport_user,rank:"6")
     end
-    redirect_to edit_user_path(current_user)
+
+    respond_to do |format|
+      format.js { }
+      format.html { redirect_to user_path(@user)}
+    end
+
   end
 
   def update
