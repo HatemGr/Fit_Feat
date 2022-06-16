@@ -10,10 +10,19 @@ class Event < ApplicationRecord
   validates :title, :date, presence: true
   validates :title, length: { in: 4..30 }
 
+  geocoded_by :full_address
+  after_validation :geocode
+
 
   def start_after_now
     if date.present? && date < Date.today
       errors.add(:date, "can't be in the past")
+    end
+  end
+
+  def full_address
+    if city
+      [address, city.name].compact.join(', ')
     end
   end
 

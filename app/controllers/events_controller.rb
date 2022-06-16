@@ -13,15 +13,20 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @cities = City.all
+    @sports = Sport.all
   end
 
   # GET /events/1/edit
   def edit
+    @cities = City.all
+    @sports = Sport.all
   end
 
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
+    @event.update(admin: current_user)
 
     respond_to do |format|
       if @event.save
@@ -32,6 +37,7 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /events/1 or /events/1.json
