@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    @events = Event.all.select{|e| current_user.admin_events.exclude?(e)}
   end
 
   # GET /events/1 or /events/1.json
