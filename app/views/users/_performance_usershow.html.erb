@@ -1,10 +1,28 @@
 <div class="d-flex align-items-start wrapper-performance" style="width:100%">
   <div class="nav flex-column nav-pills me-3 tabs-items" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-     <% @user.sports.each do |sport| %>
-        <button class="nav-link" id="v-pills-<%= sport.id%>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<%= sport.id%>" type="button" role="tab" aria-controls="v-pills-<%= sport.id%>" aria-selected="false"><%= sport.name%></button>
+      <%# Ajout du 1er bouton en dur avec la classe 'active' et aria-selected=true%>
+      <button class="nav-link active" id="v-pills-<%= @user.sports[0].id%>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<%= @user.sports[0].id%>" type="button" role="tab" aria-controls="v-pills-<%= @user.sports[0].id%>" aria-selected="true"><%= @user.sports[0].name%></button>
+     <% @user.sports.drop(1).each do |sport| %>
+            <button class="nav-link" id="v-pills-<%= sport.id%>-tab" data-bs-toggle="pill" data-bs-target="#v-pills-<%= sport.id%>" type="button" role="tab" aria-controls="v-pills-<%= sport.id%>" aria-selected="false"><%= sport.name%></button>
      <%end%>
   </div>
    <div class="tab-content tabs-content" id="v-pills-tabContent">
+   <%# Ajout du 1er content en dur avec la classe 'active' et 'show'%>
+      <div class="tab-pane fade active show" id="v-pills-<%= @user.sports[0].id%>" role="tabpanel" aria-labelledby="v-pills-<%= @user.sports[0].id%>-tab">
+            <div class="card">
+                  <p class="card-title"> Performance </p>
+                  <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
+                  <% if @user.sports[0].name == "Workout" && !@user.workout_perf.empty?%>
+                        <div> <%= render partial: 'users/performances_show/workout_perf_show', locals: {user: @user}%> </div>
+                  <%elsif @user.sports[0].name == "Running" && !@user.running_perf.empty?%>
+                        <div> <%= render partial: 'users/performances_show/running_perf_show', locals: {user: @user}%> </div>
+                  <%elsif @user.sports[0].name == "Tennis" && !@user.tennis_perf.empty?%>
+                        <div> <%= render partial: 'users/performances_show/tennis_perf_show', locals: {user: @user}%> </div>
+                  <%elsif @user.sports[0].name == "Climbing" && !@user.climbing_perf.empty?%>
+                        <div> <%= render partial: 'users/performances_show/climbing_perf_show', locals: {user: @user}%> </div>
+                  <%end%>
+            </div>
+      </div>
    <% @user.sports.each do |sport| %>
       <div class="tab-pane fade" id="v-pills-<%= sport.id%>" role="tabpanel" aria-labelledby="v-pills-<%= sport.id%>-tab">
             <div class="card">
