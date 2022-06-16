@@ -6,8 +6,10 @@
       <div class="list-container">
          <h2> List friends </h2>
          
-         <% @markers.each do |marker| %>
-            <li class="user-link"> <%= marker[:name] %> </li>
+         <% if @markers%>
+            <% @markers.each do |marker| %>
+               <li class="user-link"> <%= marker[:name] %> </li>
+            <%end%>
           <%end%>
       </div>
       <%if @user.longitude %>
