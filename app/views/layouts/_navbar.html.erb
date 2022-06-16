@@ -5,7 +5,7 @@
          <div class="user-name">
             <span> <%= current_user.first_name%> </span>
          </div>
-         <div class="separate" style="margin-left: 37px"></div>
+         <div class="separate-div" style="margin-left: 37px"></div>
          <nav class="menu" role="tablist">
 
             <% if current_page?(user_path(current_user))%>
@@ -23,7 +23,7 @@
       </div>
 
       <div class="nav-down">
-         <div class="separate"></div>
+         <div class="separate-div"></div>
          <%= link_to destroy_user_session_path, :method => :delete do %>
             <i class="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter 
          <% end%>

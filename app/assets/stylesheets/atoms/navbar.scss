@@ -45,19 +45,19 @@
    position:relative
 }
 
-.indicator{
-   top:0px;
-   left:0;
-   position: absolute;
-   height: 100px;
-   width: 6px;
-   background-color:rgb(var(--purple));
-   border-radius: 4px;
-   transform-origin: 0 0;
-}
+// .indicator{
+//    top:0px;
+//    left:0;
+//    position: absolute;
+//    height: 100px;
+//    width: 6px;
+//    background-color:rgb(var(--purple));
+//    border-radius: 4px;
+//    transform-origin: 0 0;
+// }
 
 
-.separate{
+.separate-div{
    border: 1px solid #ececec;
    width : 220px;
    margin-bottom: 20px;   
@@ -96,12 +96,12 @@
    font-size: 1.5rem;
 }
 
-.span-indicator{
+.span-indicator1{
    width:6px; 
    height:58px; 
    background-color:rgb(var(--purple)); 
    position:absolute; 
    top:0; 
-   left:-37px; 
+   left:-54px; 
    border-radius: 4px; 
 }

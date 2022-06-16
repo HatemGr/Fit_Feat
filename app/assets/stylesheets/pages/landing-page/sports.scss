@@ -5,7 +5,7 @@
    }
 }
 
-.card-container {
+.cart-contain {
    display: flex;
    flex-direction: row;
    align-items: flex-start;
@@ -14,89 +14,86 @@
    border-left: 30px solid transparent;
    border-right: 30px solid transparent;
    box-sizing: border-box;
-   position: relative;
    width: 100vw;
    height: 500px;
    overflow-y: hidden;
 
-   .card{
+   .cart{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 19px 22px;
-      width: 355px;
-      height: 334px;
+      padding: 25px;
+      background-color: white;
+      border-radius: 5px;
 
-      .card-element{
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-
-         .background{
+         .back{
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 311px;
+            height: 241px;
             position: relative;
             background: var(--grey-bg);
             border-radius: 5px;
-            width: 350px;
-            height: 300px;
             z-index: 0;
 
-         }
+         
 
-         .circle{
-            position: absolute;
-            width: 115px;
-            height: 115px;
-            border-radius: 50%;
-            background-color: black;
-            z-index: -1;
+            .circle{
+               position: absolute;
+               width: 115px;
+               height: 115px;
+               border-radius: 50%;
+               background-color: black;
+               z-index: -1;
 
-            &:nth-child(1){
-               top: 85px;
-               left: 100px;
+               &:nth-child(1){
+                  top: 55px;
+                  left: 80px;
+               }
+
+               &:nth-child(2){
+                  top: 80px;
+                  left: 112px;
+               }
             }
 
-            &:nth-child(2){
-               top: 110px;
-               left: 135px;
+            .circle-futsal{
+               background: rgba($color: #9349F1, $alpha: 0.21);
+            }
+
+            .circle-workout{
+               background: rgba($color: #F353E3, $alpha: 0.21);
+
+            }
+
+            .circle-running{
+               background: rgba($color: #9349F1, $alpha: 0.21);
+            }
+
+            .circle-climbing{
+               background: rgba($color: #42B90A, $alpha: 0.21);
+            }
+
+            .circle-tennis{
+               background: rgba($color: #9349F1, $alpha: 0.21);
+            }
+
+         
+
+            .cart-img{
+               display: flex;
+               justify-content: center;
+               
             }
          }
-
-         .circle-futsal{
-            background: rgba($color: #9349F1, $alpha: 0.21);
-         }
-
-         .circle-workout{
-            background: rgba($color: #F353E3, $alpha: 0.21);
-
-         }
-
-         .circle-running{
-            background: rgba($color: #9349F1, $alpha: 0.21);
-         }
-
-         .circle-climbing{
-            background: rgba($color: #42B90A, $alpha: 0.21);
-         }
-
-         .circle-tennis{
-            background: rgba($color: #9349F1, $alpha: 0.21);
-         }
-
-         .card-img{
-            display: flex;
-            justify-content: center;
-            
-         }
-         .text-card{
+      
+         .text-cart{
             padding-top: 15px;
          }
 
-      }
+      
 
    }
 
