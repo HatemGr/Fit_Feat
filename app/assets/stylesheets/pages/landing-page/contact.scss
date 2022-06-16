@@ -26,7 +26,7 @@ width: 100vw;
    flex-direction: row;
    align-items: flex-start;
    padding: 15px;
-   
+   flex: 6;
    border: 15px solid var(--grey-bg);
    box-sizing: border-box;
    
@@ -53,6 +53,12 @@ width: 100vw;
    justify-content: center;
    align-items: center;
    padding: 45px 0px 45px 100px;
+
+   form{
+      display: flex;
+      flex-direction: column;
+      flex: 4;
+   }
 
 
    .fa-comment{
