@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'sanasansaltw00-blackregular';
+    src: url('fonts/sana_sans_alt_w00_black-webfont.woff2') format('woff2'),
+         url('fonts/sana_sans_alt_w00_black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sanasansaltw00-boldregular';
+    src: url('fonts/sana_sans_alt_w00_bold-webfont.woff2') format('woff2'),
+         url('fonts/sana_sans_alt_w00_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sanasansaltw00-mediumregular';
+    src: url('fonts/sana_sans_alt_w00_medium-webfont.woff2') format('woff2'),
+         url('fonts/sana_sans_alt_w00_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sanasansaltw00-regularregular';
+    src: url('fonts/sana_sans_alt_w00_regular-webfont.woff2') format('woff2'),
+         url('fonts/sana_sans_alt_w00_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

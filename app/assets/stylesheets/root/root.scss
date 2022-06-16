@@ -25,6 +25,7 @@ body {
 
   /* SECONDARIES */
   --orange: 238, 177, 21;
+  --green: 102, 163, 92;
 
 
   /* SPORTS TAGS */
@@ -55,10 +56,10 @@ body {
    /* 	    TYPO        */
    /************************/
    /* font */
-   --black-font: "SanaSansAltW00-Black", "Arial", sans-serif;
-   --bold-font: "SanaSansAltW00-Bold", "Arial", sans-serif;
-   --medium-font: "SanaSansAltW00-Medium", "Arial", sans-serif;
-   --regular-font: "SanaSansAltW00-Regular", "Arial", sans-serif;
+   --black-font: "sanasansaltw00-blackregular", "Arial", sans-serif;
+   --bold-font: "sanasansaltw00-boldregular", "Arial", sans-serif;
+   --medium-font: "sanasansaltw00-mediumregular", "Arial", sans-serif;
+   --regular-font: "sanasansaltw00-regularregular", "Arial", sans-serif;
    
    
    /* size */
@@ -112,6 +113,11 @@ i{
 li{
    list-style:none;
    font-size: 1rem;
+}
+
+ul{
+   padding: 0;
+   margin: 0;
 }
 
 /************************/
