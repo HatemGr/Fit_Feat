@@ -11,20 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :admin_id %>
-    <%= form.text_field :admin_id %>
-  </div>
 
   <div class="field">
     <%= form.label :sport_id %>
-    <%= form.text_field :sport_id %>
+    <%= form.select(:sport_id, options_for_select(sports.collect{ |s| [s.name, s.id] }, sports.first)) %>
   </div>
 
-  <div class="field">
-    <%= form.label :city_id %>
-    <%= form.text_field :city_id %>
-  </div>
 
   <div class="field">
     <%= form.label :title %>
@@ -38,7 +30,7 @@
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.datetime_select :date %>
+    <%= form.datetime_field :date %>
   </div>
 
   <div class="field">
@@ -46,15 +38,13 @@
     <%= form.text_field :address %>
   </div>
 
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude %>
-  </div>
+  <div class="input col-sm">
+    <p class="input-name">City</p>
+    <div class="input-wrapper">
+    <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, cities.first)) %>
+    <i class="fa-solid fa-location-dot"></i>
+  </div> 
 
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
