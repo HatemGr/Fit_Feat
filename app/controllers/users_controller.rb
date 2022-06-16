@@ -8,20 +8,6 @@ class UsersController < ApplicationController
 
   def show
 
-    if @user.latitude
-      @markers = @user.nearbys(10).geocoded.map do |user|
-        {
-          lat: user.latitude,
-          lng: user.longitude,
-          name: user.full_name,
-          user_id: user.id,
-        }
-      end
-      @markers << {lat: @user.latitude,
-        lng: @user.longitude,
-        name: @user.full_name,
-        user_id: @user.id,}
-    end
   end
 
   def new
@@ -49,7 +35,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
+        flash[:success] = "Ton compte à bien été modifié"
+        format.html { redirect_to user_url(@user)}
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,6 +47,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    flash[:error] = "Ton compte à bien été supprimé"
     redirect_to home_path
   end
 

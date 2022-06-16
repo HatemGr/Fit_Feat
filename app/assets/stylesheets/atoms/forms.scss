@@ -7,12 +7,20 @@
       margin-bottom: 0.5rem;
       font-size: 1.2rem;
 
+      span{
+         font-size: 0.8rem;
+      }
+
    }
 
    .input-wrapper{
       position: relative;
       width: fit-content;
       height: fit-content;
+
+      input[type=number], select{
+         width: 225px !important;
+      }
 
 
       input[type=text], input[type=password], input[type=email], input[type=number], textarea[type=text], select {
@@ -26,6 +34,7 @@
          @media screen and (max-width: 1500px) {
             width: 400px;
             padding: 18px 0px;
+            padding-left: 15px;
          }
    
    
