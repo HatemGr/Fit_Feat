@@ -4,7 +4,11 @@
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
    <div class="container-geoloc">
       <div class="list-container">
-         samlut
+         <h2> List friends </h2>
+         
+         <% @markers.each do |marker| %>
+            <li class="user-link"> <%= marker[:name] %> </li>
+          <%end%>
       </div>
       <%if @user.longitude %>
          <div id='map' class="mapbox-container"
