@@ -34,7 +34,8 @@
       .right-content{
          display: flex;
          flex-direction: column;
-         gap: 80px;
+         gap: 20px;
+         width: fit-content;
 
          .top-element{
             display: flex;
@@ -46,6 +47,7 @@
             .under-title{
                font-family: var(--medium-font);
                color: var(--text-grey);
+               width: 80%;
             }
          }
          .middle-element{
@@ -61,12 +63,15 @@
            
             .middle-content-password{
                margin-bottom: 15px;
+
             }  
             
             .forgot-your-password{
                display: flex;
                justify-content: flex-start; 
                text-decoration: none;
+               color: rgb(var(--purple));
+               margin-top: -14px;
 
                &:hover{
                   opacity: 0.8;
@@ -76,6 +81,11 @@
             .checkbox{
                display: flex;
                justify-content: flex-start;
+               align-items: center;
+
+               label{
+                  margin-left: 10px;
+               }
             }
          }
 
@@ -94,6 +104,10 @@
                   flex-direction: row;
                   padding: 10px;
 
+                  a{
+                     color: rgb(var(--purple));
+                  }
+
                   .subscribe{
                      justify-content: flex-start;
                      text-decoration: none;
@@ -111,16 +125,19 @@
 
    .twins{
       position: relative;
+      width: fit-content;
+
 
       .title{
          font-family: var( --bold-font);
          z-index: 1;
+         width: fit-content;
       }
 
       .title-lign{
          position: absolute;
-         top: 22px;
-         width: 230px;
+         top: 33px;
+         width: 260px;
          height: 10px;
          padding: 0;
          margin: 0;
