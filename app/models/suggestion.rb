@@ -45,11 +45,13 @@ class Suggestion < ApplicationRecord
 
     user_sports.each do |sport|
       user_perf_score = SportUser.find_by(user:user, sport: sport).perf_score
-      users_around.each do |user_around|
-        record = SportUser.find_by(user:user_around,sport:sport)
-        unless record.nil?
-          if ((record.perf_score > (user_perf_score - 1)) && (record.perf_score < (user_perf_score  + 1)))
-            Suggestion.create(user: user,partner:user_around)
+      if users_around
+        users_around.each do |user_around|
+          record = SportUser.find_by(user:user_around,sport:sport)
+          unless record.nil?
+            if ((record.perf_score > (user_perf_score - 1)) && (record.perf_score < (user_perf_score  + 1)))
+              Suggestion.create(user: user,partner:user_around)
+            end
           end
         end
       end

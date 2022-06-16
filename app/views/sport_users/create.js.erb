@@ -1,0 +1,19 @@
+var tab = document.querySelector(".tab-active");
+console.log(tab)
+tab.innerHTML="";
+
+console.log("<%=@user%>%");
+switch(tab.id){
+    case "Climbing":
+    tab.insertAdjacentHTML("beforeend", "<%= j render 'users/performances/climbing_edit_form', user: current_user %>")
+    break;
+    case "Tennis":
+    tab.insertAdjacentHTML("beforeend", "<%= j render 'users/performances/tennis_edit_form', user: current_user %>")
+    break;
+    case "Running":
+    tab.insertAdjacentHTML("beforeend", "<%= j render 'users/performances/running_edit_form', user: current_user %>")
+    break;
+    case "Workout":
+    tab.insertAdjacentHTML("beforeend", "<%= j render 'users/performances/workout_edit_form', user: current_user %>")
+    
+}

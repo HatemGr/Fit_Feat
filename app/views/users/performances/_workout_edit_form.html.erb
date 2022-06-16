@@ -5,7 +5,11 @@
           <div class="input col-sm">
             <p class="input-name">Experience</p>
             <div class="input-wrapper">
+              <% if user.get_sport_user("Workout") %>
               <%= f.number_field :experience, value:user.get_sport_user("Workout").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%else%>
+              <%= f.number_field :experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%end%> 
               <i class="fa-solid fa-signal"></i>
             </div> 
           </div>
@@ -13,7 +17,12 @@
           <div class="input col-sm">
             <p class="input-name">Frequence</p>
             <div class="input-wrapper">
-              <%= f.number_field :frequency, value:user.get_sport_user("Workout").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
+
+              <% if user.get_sport_user("Workout") %>
+              <%= f.number_field :frequency, value:user.get_sport_user("Workout").frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%else%>
+              <%= f.number_field :frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%end%> 
               <i class="fa-solid fa-signal"></i>
             </div> 
           </div>
@@ -21,15 +30,23 @@
           <div class="input col-sm">
             <p class="input-name">Benchpress</p>
             <div class="input-wrapper">
-              <%= f.number_field :benchpress_weight, value:user.last_workout_perf.benchpress_weight , placeholder: "Rentrez votre vitesse" %>
-              <i class="fa-solid fa-table-picnic"></i>
+            <%if user.last_workout_perf%>
+              <%= f.number_field :benchpress_weight, value: user.last_workout_perf.benchpress_weight, placeholder: "Rentrez votre vitesse" %>
+             <%else%>
+              <%= f.number_field :benchpress_weight, placeholder: "Rentrez votre vitesse" %>
+             <%end%>
+            <i class="fa-solid fa-table-picnic"></i>
             </div> 
           </div>
 
           <div class="input col-sm">
             <p class="input-name">Squat</p>
             <div class="input-wrapper">
-              <%= f.number_field :squat_weight, value:user.last_workout_perf.squat_weight,placeholder: "Rentrez votre nombre de squat" %>
+              <%if user.last_workout_perf%>
+                <%= f.number_field :squat_weight, value: user.last_workout_perf.squat_weight, placeholder: "Rentrez votre vitesse" %>
+             <%else%>
+                <%= f.number_field :squat_weight, placeholder: "Rentrez votre vitesse" %>
+             <%end%>
              <i class="fa-solid fa-transporter"></i>
             </div> 
           </div>
