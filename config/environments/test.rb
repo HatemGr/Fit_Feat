@@ -41,6 +41,8 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  Rails.application.config.middleware.insert_before Warden::Manager, ActionDispatch::Cookies
+  Rails.application.config.middleware.insert_before Warden::Manager, ActionDispatch::Session::CookieStore 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
