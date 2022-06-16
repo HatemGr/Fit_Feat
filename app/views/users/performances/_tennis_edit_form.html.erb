@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="input col-sm">
-            <p class="input-name">Experience</p>
+            <p class="input-name">Experience (années)</p>
             <div class="input-wrapper">
             <% if user.get_sport_user("Tennis") %>
               <%= f.number_field :experience, value:user.get_sport_user("Tennis").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
@@ -15,7 +15,7 @@
           </div>
 
           <div class="input col-sm">
-            <p class="input-name">Frequence</p>
+            <p class="input-name">Frequence (par semaine)</p>
             <div class="input-wrapper">
               <% if user.get_sport_user("Tennis") %>
               <%= f.number_field :frequency, value:user.get_sport_user("Tennis").frequency , placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
