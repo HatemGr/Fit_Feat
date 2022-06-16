@@ -26,9 +26,10 @@
     <strong>City:</strong>
     <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
   </p>
-  <%= button_to 'Se Déconnecter', destroy_user_session_path, :method => :delete, class: 'button primary'%>
 
+<div class="user-show-btn mt-2">
   <%= link_to 'Edit', edit_user_path(@user), class:'button primary' %>
   <%= link_to 'Back', users_path, class: 'button primary' %>
+</div>
 
 </div>
