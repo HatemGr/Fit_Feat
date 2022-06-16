@@ -7,7 +7,7 @@
 .wrapper-not-meteo{
    display: flex;
    gap: 30px;
-   height: 180px;
+
 
    .notification-card{
       height: 100%;
@@ -18,6 +18,56 @@
       flex: 7;
       height: 100%;
    }
+}
+
+.wrapper-performance{
+   margin: 20px 0px;
+
+   .tabs-items{
+      margin-top: 10px;
+      flex: 1;
+
+      button{
+         color: black;
+      }
+
+      button.active{
+         background-color: var(--bg_running);
+         color: rgb(var(--text_running));
+      }
+   }
+    .tabs-content{
+      flex:9
+    }
+}
+
+.performance-show-items{
+   display: flex;
+   gap: 20px;
+   justify-content: space-evenly;
+
+   .performance-show-item{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .performance-show-title{
+
+         
+      }
+      .performance-show-data{
+         font-size: 1.875rem;
+         font-family: var(--black-font);
+         color: #454545;
+
+      }
+   }
+}
+
+.perf-divide{
+   width: 1px;
+   height: 80px;
+   background-color: var(--border-grey);
 }
 
 

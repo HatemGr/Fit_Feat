@@ -1,0 +1,23 @@
+
+
+<div class="performance-show-items">
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.climbing_exp%> ans </p>
+      <p class="performance-show-title"> D'experience </p>
+    </div>
+     <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.climbing_freq%> /sem  </p>
+      <p class="performance-show-title"> Frequence moyenne </p>
+    </div>
+     <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.last_climbing_perf.level %>  </p>
+      <p class="performance-show-title"> Niveau </p>
+    </div>
+    <div class="perf-divide"> </div>
+    <div class="performance-show-item">
+      <p class="performance-show-data"> <%= user.last_climbing_perf.block_color %>  </p>
+      <p class="performance-show-title"> Couleur favorite</p>
+    </div>
+</div>

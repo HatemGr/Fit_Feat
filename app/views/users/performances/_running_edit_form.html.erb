@@ -1,10 +1,25 @@
 <div class="flex-row-between-flex-start">
     <%=form_for :running_performances, url: running_performances_path, method: :post do |f|%>
+      <div class="input">
+        <p class="input-name">Experience</p>
+        <div class="input-wrapper">
+          <%= f.number_field :experience, value:user.get_sport_user("Running").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+          <i class="fa-solid fa-signal"></i>
+        </div> 
+      </div>
+
+      <div class="input">
+        <p class="input-name">Frequence</p>
+        <div class="input-wrapper">
+          <%= f.number_field :frequency, value:user.get_sport_user("Running").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
+          <i class="fa-solid fa-signal"></i>
+        </div> 
+      </div>
 
       <div class="input">
         <p class="input-name">Speed</p>
         <div class="input-wrapper">
-          <%= f.number_field :speed, placeholder: "Rentrez votre vitesse" %>
+          <%= f.number_field :speed, value:user.last_running_perf.speed ,placeholder: "Rentrez votre vitesse" %>
           <i class="fa-solid fa-gauge"></i>
         </div> 
       </div>
@@ -12,7 +27,7 @@
       <div class="input">
         <p class="input-name">Distance</p>
         <div class="input-wrapper">
-          <%= f.text_field :distance, placeholder: "Rentrez votre distance" %>
+          <%= f.text_field :distance, value:user.last_running_perf.distance ,placeholder: "Rentrez votre distance" %>
           <i class="fa-solid fa-ruler-horizontal"></i>
         </div> 
       </div>
