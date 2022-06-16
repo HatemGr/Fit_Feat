@@ -3,9 +3,12 @@
    flex-direction: row;
    justify-content: center;
    align-items: center;
-   height: 300px;
    background: var(--black);
    color: var(--grey);
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   margin-top: 20px;
 }
 
 .contain-lp{
@@ -15,12 +18,13 @@
 
 .title-alone{
    position: relative;
-   right: 130px;
+   right: 150px;
+   top: -5px;
 }
 
 .cowl{
-   padding: 60px;
    justify-content: space-between;
+   padding: 10px 150px;
 
    ul{
       padding: 0px;
@@ -28,6 +32,8 @@
 
    li{
       padding: 5px;
+      font-style: var(--medium-font);
+      color: var(--text-grey);
    }
 
 }
