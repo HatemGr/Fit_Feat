@@ -18,14 +18,7 @@ if (typeof mapElement != "undefined") {
 			.setLngLat([marker.lng, marker.lat])
 			.setPopup(
 				new mapboxgl.Popup({ offset: 25 }).setHTML(
-					"<div>" +
-						"<h1>" +
-						marker.name +
-						"</h1>" +
-						"<h3> ID:" +
-						marker.user_id +
-						"</h3>" +
-						"</div>"
+					"<div>" + "<h2>" + marker.name + "</h2>" + "</div>"
 				)
 			)
 			.addTo(map);
