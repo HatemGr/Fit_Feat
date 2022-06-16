@@ -9,6 +9,10 @@
       color: rgb(var(--white));
       cursor: pointer;
       font-family: var(--medium-font);
+
+      &:hover{
+         color: rgb(var(--white)) !important; 
+      }
    }
    
    .outlined{
@@ -20,6 +24,7 @@
    
    .primary{
       background-color: rgb(var(--purple));
+      color: rgb(var(--white));
    }
    .primary:hover{
       background-color: rgba(var(--purple), 0.8);
