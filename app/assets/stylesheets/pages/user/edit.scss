@@ -7,8 +7,22 @@
    flex-wrap: wrap;
 }
 
+.edit-profil-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  
+}
+
+.container{
+  max-width: none !important;
+}
+
 .tab {
    overflow: hidden;
+   margin-bottom: 20px;
 
  }
  

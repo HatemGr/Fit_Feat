@@ -1,5 +1,9 @@
 .container-dashboard{
    width: 100%;
    max-width: 80%;
-   padding:40px
+   padding:40px;
+
+   h1{
+      font-family:var(--black-font)
+   }
 }
