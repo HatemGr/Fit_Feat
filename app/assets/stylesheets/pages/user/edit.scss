@@ -46,7 +46,7 @@
  }
  
  /* Create an active/current tablink class */
- .tab button.active, .test {
+ .tab button.active, .first-tab {
    color: rgb(var(--purple));
    border-bottom: 3px solid rgb(var(--purple)) !important; 
    box-sizing: border-box;
