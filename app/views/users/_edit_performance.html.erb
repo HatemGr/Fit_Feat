@@ -19,7 +19,7 @@
         </div>
       <%else%>
         <div class="">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence l\'escalade !', sport_users_path(sport: :Climbing), method: :post%>
+        <%= link_to 'Je commence l\'escalade !', sport_users_path(sport: :Climbing), method: :post, :class => "btn-begin begin-#{"climbing"}"%>
       <%end%>
       </div>
 
@@ -29,7 +29,7 @@
         <div class="perf-container"><%= render partial: 'users/performances/running_perf', locals: {user: @user}%></div>
       <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Running !', sport_users_path(sport: :Running), method: :post%>
+        <%= link_to 'Je commence le Running !', sport_users_path(sport: :Running), method: :post, :class => "btn-begin begin-#{"running"}"%>
       <%end%>
       </div>
 
@@ -39,7 +39,7 @@
         <div class="perf-container"><%= render partial: 'users/performances/workout_perf', locals: {user: @user}%></div>
         <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Workout !', sport_users_path(sport: :Workout), method: :post%>
+        <%= link_to 'Je commence le Workout !', sport_users_path(sport: :Workout), method: :post, :class => "btn-begin begin-#{"Workout"}"%>
       <%end%>
       </div>
 
@@ -49,7 +49,7 @@
           <div class="perf-container"><%= render partial: 'users/performances/tennis_perf', locals: {user: @user}%></div>
         <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Tennis !', sport_users_path(sport: :Tennis), method: :post%>
+        <%= link_to 'Je commence le Tennis !', sport_users_path(sport: :Tennis), method: :post, :class => "btn-begin begin-#{"Tennis"}"%>
       <%end%>
       </div>
   </div>
