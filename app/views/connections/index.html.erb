@@ -1,10 +1,39 @@
 <div class="friends-list">
-    <h3>Amis</h3>
-    <ul>
-      <% current_user.friends.each do |friend|%>
-        <li>
-          <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
-        </li>
+  <h3>Amis</h3>
+  <ul>
+    <% current_user.friends.each do |friend|%>
+      <li>
+        <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
+      </li>
+    <%end%>
+  </ul>
+</div>
+
+<div class="suggestions-list">
+  <h3>Suggestions </h3>
+  <ul>
+    <% current_user.suggestions.each do |suggestion|%>
+    <li>
+      <%if suggestion.refused.nil? %>
+        <%=link_to suggestion.partner.full_name , user_path(suggestion.partner) %>
+        <%if suggestion.accepted %>
+            En attente de validation de l'autre côté
+          <%else%>
+            <%=link_to "Accepter", suggestion_path(suggestion, answer: "accepted"), method: :patch %>
+            <%=link_to "Refuser", suggestion_path(suggestion, answer: "refused"), method: :patch %>
+          <%end%>
+      </li>
       <%end%>
-    </ul>
-  </div>
+    <%end%>
+  </ul>
+</div>
+
+  <%if @user.longitude %>
+    <div id='map'
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+          data-markers="<%= @markers.to_json %>"
+          data-user-lng="<%= @user.longitude%>"
+          data-user-lat="<%= @user.latitude%>">
+    </div>
+  <%end%>
+<%= javascript_include_tag 'map_box'%>
