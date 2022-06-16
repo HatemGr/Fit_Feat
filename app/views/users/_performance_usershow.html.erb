@@ -10,13 +10,13 @@
             <div class="card">
                   <p class="card-title"> Performance </p>
                   <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
-                  <% if sport.name == "Workout"%>
+                  <% if sport.name == "Workout" && !@user.workout_perf.empty?%>
                         <div> <%= render partial: 'users/performances_show/workout_perf_show', locals: {user: @user}%> </div>
-                  <%elsif sport.name == "Running"%>
+                  <%elsif sport.name == "Running" && !@user.running_perf.empty?%>
                         <div> <%= render partial: 'users/performances_show/running_perf_show', locals: {user: @user}%> </div>
-                  <%elsif sport.name == "Tennis"%>
+                  <%elsif sport.name == "Tennis" && !@user.tennis_perf.empty?%>
                         <div> <%= render partial: 'users/performances_show/tennis_perf_show', locals: {user: @user}%> </div>
-                  <%elsif sport.name == "Climbing"%>
+                  <%elsif sport.name == "Climbing" && !@user.climbing_perf.empty?%>
                         <div> <%= render partial: 'users/performances_show/climbing_perf_show', locals: {user: @user}%> </div>
                   <%end%>
             </div>
