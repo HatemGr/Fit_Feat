@@ -17,6 +17,6 @@ function openPerf(e, perf) {
 	e.currentTarget.className += " active";
 }
 
-window.addEventListener("load", function () {
-	document.getElementById("defaultOpen").click();
-});
+// window.addEventListener("load", function () {
+// 	document.getElementById("defaultOpen").click();
+// });

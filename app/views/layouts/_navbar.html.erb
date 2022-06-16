@@ -10,7 +10,7 @@
 
             <% if current_page?(user_path(current_user))%>
                <%= render "layouts/tabs/home_tab" %>
-            <% elsif current_page?(connection_path(current_user))%>
+            <% elsif current_page?(user_connections_path(current_user))%>
                <%= render "layouts/tabs/friends_tab" %>
             <% elsif current_page?(edit_user_path(current_user))%>
                <%= render "layouts/tabs/edit_tab" %>

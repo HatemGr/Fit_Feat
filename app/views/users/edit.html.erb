@@ -3,7 +3,7 @@
 
   <%= render 'edit_performance', user: @user %>
   <br>
-  <%= render 'edit_info', user: @user %>
+  <%= render 'edit_info', user: @user, cities: @cities %>
 
 <div><%=link_to "Retour sur le Profil", user_path(@user)%></div>
 <div><%=link_to "Supprimer le compte", user_path(@user), method: :delete%></div>

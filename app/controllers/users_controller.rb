@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+
     if @user.latitude
       @markers = @user.nearbys(10).geocoded.map do |user|
         {
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @cities = City.all
   end
 
   def create
@@ -67,7 +69,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :encrypted_password, :description, :first_name, :last_name,:address)
+      params.require(:user).permit(:email, :encrypted_password, :description, :first_name, :last_name, :address, :city_id)
     end
 
     def authenticate_user

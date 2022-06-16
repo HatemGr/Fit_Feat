@@ -57,11 +57,10 @@
          </div> 
       </div>
 
-
       <div class="input">
          <p class="input-name">City</p>
          <div class="input-wrapper">
-         <%= form.text_field :city_id%>
+         <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, user.city ? [user.city.name, user.city.id] : nil)) %>
          <i class="fa-solid fa-location-dot"></i>
          </div> 
       </div>
