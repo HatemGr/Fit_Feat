@@ -1,31 +1,42 @@
 <div class="container-dashboard">
+  
+  <% if @user == current_user %>
   <div class="wrapper-not-meteo">
     <div class="notification-card card"></div>
     <div class="meteo-card card"></div>
   </div>
+  <%else%>
+      <div class="wrapper-not-meteo">
+    <div class="notification-card card">
+      <p>
+        <strong>First name:</strong>
+        <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
+      </p>
+      <p>
+        <strong>Last name:</strong>
+        <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %>
+      </p>
+    </div>
+    <div class="meteo-card card">
+      <p>
+        <strong>Description:</strong>
+        <%= @user.description ? @user.description : 'Donnee non renseignée' %>
+      </p>
+      <p>
+        <strong>Adresse:</strong>
+        <%= @user.address ? @user.address : 'Donnee non renseignée' %>
+      </p>
+      <p>
+        <strong>City:</strong>
+        <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
+      </p>
+    </div>
+  </div>
+  <%end%>
     <%= render 'performance_usershow'%>
 
   <p id="notice"><%= notice %></p>
-  <p>
-    <strong>First name:</strong>
-    <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
-  </p>
-  <p>
-    <strong>Last name:</strong>
-    <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= @user.description ? @user.description : 'Donnee non renseignée' %>
-  </p>
-  <p>
-    <strong>Adresse:</strong>
-    <%= @user.address ? @user.address : 'Donnee non renseignée' %>
-  </p>
-  <p>
-    <strong>City:</strong>
-    <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
-  </p>
+
 
 <div class="user-show-btn mt-2">
   <%= link_to 'Edit', edit_user_path(@user), class:'button primary' %>
