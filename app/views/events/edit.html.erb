@@ -1,6 +1,6 @@
 <h1>Editing Event</h1>
 
-<%= render 'form', event: @event %>
+<%= render partial: 'form', locals:{ event: @event, cities: @cities, sports: @sports} %>
 
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>

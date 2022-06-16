@@ -2,17 +2,17 @@
 
 <p>
   <strong>Admin:</strong>
-  <%= @event.admin %>
+  <%= @event.admin.full_name %>
 </p>
 
 <p>
   <strong>Sport:</strong>
-  <%= @event.sport %>
+  <%= @event.sport.name %>
 </p>
 
 <p>
   <strong>City:</strong>
-  <%= @event.city %>
+  <%= @event.city.name %>
 </p>
 
 <p>
@@ -35,15 +35,7 @@
   <%= @event.address %>
 </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
-</p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
