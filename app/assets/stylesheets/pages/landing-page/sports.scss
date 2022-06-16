@@ -1,8 +1,14 @@
-.features-wrapper{
+.sports-wrapper{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 80px;
+
    .title-lign {
-      top: 30px !important;
-      right: -30px !important;
-      width: 240px !important;
+      top: 33px;
+      right: -45px;
+      width: 200px;
    }
 }
 
