@@ -4,17 +4,25 @@
     <div class="container">
     <div class="row">
       <div class="input col-sm">
-        <p class="input-name">Experience</p>
+        <p class="input-name">Experience (années)</p>
         <div class="input-wrapper">
+        <%if user.get_sport_user("Climbing") %>
           <%= f.number_field :experience, value:user.get_sport_user("Climbing").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+        <%else%>
+          <%= f.number_field :experience ,placeholder: "Depuis combien d'année pratiques-tu ce sport ?" %>
+        <%end%>  
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
 
       <div class="input col-sm">
-        <p class="input-name">Frequence</p>
+        <p class="input-name">Frequence (par semaine)</p>
         <div class="input-wrapper">
-          <%= f.number_field :frequency, value:user.get_sport_user("Climbing").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
+            <% if user.get_sport_user("Climbing") %>
+              <%= f.number_field :frequency, value:user.get_sport_user("Climbing").frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%else%>
+              <%= f.number_field :frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%end%> 
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
@@ -22,16 +30,23 @@
       <div class="input col-sm">
         <p class="input-name">Level</p>
         <div class="input-wrapper">
-          <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level}, user.last_climbing_perf.level),placeholder: "Entrez votre niveau" %>
-          <i class="fa-solid fa-signal"></i>
+        <%if user.last_climbing_perf%>
+            <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level}, user.last_climbing_perf.level ),placeholder: "Entrez votre niveau" %>
+        <%else%>
+            <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level} ),placeholder: "Entrez votre niveau" %>
+          <%end%>
+        <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
 
       <div class="input col-sm">
         <p class="input-name">Block color</p>
         <div class="input-wrapper">
-          <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block| block.block_color}, user.last_climbing_perf.block_color) ,placeholder: "Rentrez votre couleur de block" %>
-          
+          <%if user.last_climbing_perf%>
+            <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block_color| block_color.block_color}, user.last_climbing_perf.block_color ),placeholder: "Entrez votre niveau" %>
+        <%else%>
+            <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block_color| block_color.block_color} ),placeholder: "Entrez votre niveau" %>
+          <%end%>
           <i class="fa-solid fa-paintbrush"></i>
         </div> 
       </div>

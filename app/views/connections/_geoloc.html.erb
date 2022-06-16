@@ -1,0 +1,19 @@
+
+<div class="card">
+   <p class="card-title"> Geolocalisation </p>
+   <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
+   <div class="container-geoloc">
+      <div class="list-container">
+         samlut
+      </div>
+      <%if @user.longitude %>
+         <div id='map' class="mapbox-container"
+               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+               data-markers="<%= @markers.to_json %>"
+               data-user-lng="<%= @user.longitude%>"
+               data-user-lat="<%= @user.latitude%>">
+         </div>
+      <%end%>
+   </div>
+</div>
+<%= javascript_include_tag 'map_box'%>

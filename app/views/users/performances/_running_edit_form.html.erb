@@ -3,17 +3,25 @@
     <div class="container">
     <div class="row">
       <div class="input col-sm">
-        <p class="input-name">Experience</p>
+        <p class="input-name">Experience (années)</p>
         <div class="input-wrapper">
-          <%= f.number_field :experience, value:user.get_sport_user("Running").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+          <% if user.get_sport_user("Running") %>
+              <%= f.number_field :experience, value:user.get_sport_user("Running").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%else%>
+              <%= f.number_field :experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%end%> 
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
 
       <div class="input col-sm">
-        <p class="input-name">Frequence</p>
+        <p class="input-name">Frequence (par semaine)</p>
         <div class="input-wrapper">
-          <%= f.number_field :frequency, value:user.get_sport_user("Running").frequency,placeholder: "Combien de fois par semaines en fait tu ?" %>
+          <% if user.get_sport_user("Running") %>
+              <%= f.number_field :frequency, value:user.get_sport_user("Running").frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%else%>
+              <%= f.number_field :frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <%end%> 
           <i class="fa-solid fa-signal"></i>
         </div> 
       </div>
@@ -21,7 +29,11 @@
       <div class="input col-sm">
         <p class="input-name">Speed</p>
         <div class="input-wrapper">
-          <%= f.number_field :speed, value:user.last_running_perf.speed ,placeholder: "Rentrez votre vitesse" %>
+        <%if user.last_running_perf%>
+            <%= f.number_field :speed, value:user.last_running_perf.speed ,placeholder: "Rentrez votre vitesse" %>
+          <%else%>
+            <%= f.number_field :speed,placeholder: "Rentrez votre vitesse" %>
+          <%end%>
           <i class="fa-solid fa-gauge"></i>
         </div> 
       </div>
@@ -29,8 +41,12 @@
       <div class="input col-sm">
         <p class="input-name">Distance</p>
         <div class="input-wrapper">
-          <%= f.number_field :distance, value:user.last_running_perf.distance ,placeholder: "Rentrez votre distance" %>
-          <i class="fa-solid fa-ruler-horizontal"></i>
+          <%if user.last_running_perf%>
+            <%= f.number_field :distance, value:user.last_running_perf.distance ,placeholder: "Rentrez votre vitesse" %>
+          <%else%>
+            <%= f.number_field :distance,placeholder: "Rentrez votre vitesse" %>
+          <%end%>
+           <i class="fa-solid fa-ruler-horizontal"></i>
         </div> 
       </div>
       </div>

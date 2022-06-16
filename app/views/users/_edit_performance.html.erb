@@ -2,20 +2,19 @@
       <p class="card-title"> Performance </p>
       <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
       
-
       <div class="tab">
-        <button class="tablinks test" onclick="openPerf(event, 'Climbing')" id="defaultOpen">Climbing</button>
+        <button class="tablinks first-tab" onclick="openPerf(event, 'Climbing')" id="defaultOpen">Climbing</button>
         <button class="tablinks" onclick="openPerf(event, 'Running')">Running</button>
         <button class="tablinks" onclick="openPerf(event, 'Workout')">Workout</button>
         <button class="tablinks" onclick="openPerf(event, 'Tennis')">Tennis</button>
       </div>
 
-      <div id="Climbing" class="tabcontent" style="display:block">
+      <div id="Climbing" class="tabcontent tab-active" style="display:block">
       <%if !@user.climbing_perf.empty?%>
         <%= render partial: 'users/performances/climbing_edit_form', locals: {user: @user} %>
       <%else%>
         <div class="">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence l\'escalade !', sport_users_path(sport: :Climbing), method: :post%>
+        <%= link_to 'Je commence l\'escalade !', sport_users_path(sport: :Climbing), method: :post, :class => "btn-begin begin-#{"climbing"}", remote: true%>
       <%end%>
       </div>
 
@@ -24,7 +23,7 @@
         <%= render partial: 'users/performances/running_edit_form', locals: {user: @user} %>
       <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Running !', sport_users_path(sport: :Running), method: :post%>
+        <%= link_to 'Je commence le Running !', sport_users_path(sport: :Running), method: :post, :class => "btn-begin begin-#{"running"}", remote: true%>
       <%end%>
       </div>
 
@@ -33,7 +32,7 @@
         <%= render partial: 'users/performances/workout_edit_form', locals: {user: @user} %>
         <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Workout !', sport_users_path(sport: :Workout), method: :post%>
+        <%= link_to 'Je commence le Workout !', sport_users_path(sport: :Workout), method: :post,:class => "btn-begin begin-#{"Workout"}", remote: true%>
       <%end%>
       </div>
 
@@ -42,7 +41,7 @@
       <%= render partial: 'users/performances/tennis_edit_form', locals: {user: @user} %>
         <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Tennis !', sport_users_path(sport: :Tennis), method: :post%>
+        <%= link_to 'Je commence le Tennis !', sport_users_path(sport: :Tennis), method: :post, :class => "btn-begin begin-#{"Tennis"}", remote: true%>
       <%end%>
       </div>
   </div>
