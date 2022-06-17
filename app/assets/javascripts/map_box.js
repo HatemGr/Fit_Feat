@@ -1,5 +1,5 @@
 var mapElement = document.getElementById("map");
-if (typeof mapElement != "undefined") {
+if (typeof mapElement != null) {
 	mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
 	var map = new mapboxgl.Map({
