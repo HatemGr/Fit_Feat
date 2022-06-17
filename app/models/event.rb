@@ -6,6 +6,7 @@ class Event < ApplicationRecord
 
   has_many :participations, dependent: :delete_all
   has_many :users, through: :participations
+  has_one_attached :image
 
   validate :start_after_now, on: :create
   validates :title, :date, presence: true
