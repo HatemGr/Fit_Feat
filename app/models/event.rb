@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  extend Geocoder::Model::ActiveRecord
   belongs_to :admin, class_name: "User"
   belongs_to :sport
   belongs_to :city
@@ -28,6 +29,10 @@ class Event < ApplicationRecord
 
   def is_after_today? 
     date > Date.today
+  end
+
+  def self.available_events(user)
+    Event.all.near(user.to_coordinates , 10, units: :km)
   end
 
 end
