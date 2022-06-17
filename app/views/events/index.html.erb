@@ -1,15 +1,13 @@
-<%=render 'events_around'%>
-
-<div class="card">
-  <p class="card-title"> Fait vivre la communauté en organisants des propres events </p>
-  <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
-  <div class="container-geoloc">
-    <div class="list-container">
-      <div class="container">
-        <h2> Tes evenements : </h2>
-        <%= render partial: 'event_list', locals: {events: @current_user_events}%>
-      </div>
+<div class="container-dashboard">
+    <div class="edit-profil-btn">
+      <h1> Events 🏅</h1> 
+      <%= link_to 'Crée un event', new_event_path, class:'button primary' %>
     </div>
-  </div>
-  <%= link_to 'New Event', new_event_path %>
+    <%=render 'events_around'%>
+    <br>
+    <div class="card">
+      <p class="card-title"> Fait vivre la communauté en organisants des propres events </p>
+      <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
+      <%= render partial: 'event_list', locals: {events: @current_user_events}%>
+    </div>
 </div>

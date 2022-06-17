@@ -12,7 +12,7 @@ body {
    /* BASE */
    --white :255, 255, 255; 
    --black :#000000;
-   --grey :#F9F9F9;
+   --grey :#f5f5f5;
    --grey-bg :#F4F4F4;
    --text-grey :#575757;
    --grey-bg :#F4F4F4;
@@ -66,6 +66,10 @@ body {
    --title: 3.438rem;
    --big: clamp(2rem, 4vw, 3rem);
    --medium: clamp(1.3rem, 4vw, 1.8rem);
+
+   --Xmedium: clamp(1.3rem, 4vw, 1.6rem);
+
+   --regular: clamp(1.3rem, 4vw, 1.4rem);
    --paragraphe: 1.3rem;
    --little: clamp(0.9rem, 4vw, 1rem);
 
@@ -79,6 +83,11 @@ body {
 
    h2{
       font-size: var(--medium);
+      font-family: var(--bold-font);
+   }
+
+   h3{
+      font-size: var(--Xmedium);
       font-family: var(--bold-font);
    }
    
