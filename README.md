@@ -1,24 +1,19 @@
-# README
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# FitFeat
 
-Things you may want to cover:
+### bienvenue sur FitFeat, le réseau social pour sportifs passionnés !
 
-* Ruby version
+Avec FitFeat tu pourras :
 
-* System dependencies
+- 📒 Sélectionner plusieurs sports et suivre tes performance
+- 💪 Rencontrer des sportifs autour de toi ayant un niveau similaire !
+- 🤾‍♂️ Créer des êvenements pour te motiver et rencontrer d'autres sportifs !
 
-* Configuration
+---
 
-* Database creation
+### N'hésite plus, rejoins nous !
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Check notre super appli : https://fit-feat.herokuapp.com
