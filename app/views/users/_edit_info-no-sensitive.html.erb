@@ -60,56 +60,10 @@
                <div class="input-wrapper">
                <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, user.city ? [user.city.name, user.city.id] : nil)) %>
                <i class="fa-solid fa-location-dot"></i>
-            </div> 
+               </div> 
+            </div>
          </div>
       </div>
-    <% end %>
-    <div class="container" style="margin:0 !important">
-      <div class="row">
-        <div class="input col-sm">
-          <p class="input-name">Email </p>
-          <div class="input-wrapper">
-            <%= form.text_field :email%>
-            <i class="fa-solid fa-user"></i>
-          </div>
-        </div>
-        <div class="input col-sm">
-          <p class="input-name">First name</p>
-          <div class="input-wrapper">
-            <%= form.text_field :first_name%>
-            <i class="fa-solid fa-user"></i>
-          </div>
-        </div>
-        <div class="input col-sm">
-          <p class="input-name">Last name</p>
-          <div class="input-wrapper">
-            <%= form.text_field :last_name%>
-            <i class="fa-solid fa-user"></i>
-          </div>
-        </div>
-        <div class="input col-sm">
-          <p class="input-name">Description</p>
-          <div class="input-wrapper">
-            <%= form.text_field :description, style:"height:70px; "%>
-            <i class="fa-solid fa-align-left"></i>
-          </div>
-        </div>
-        <div class="input col-sm">
-          <p class="input-name">Adresse</p>
-          <div class="input-wrapper">
-            <%= form.text_field :address%>
-            <i class="fa-solid fa-address-book"></i>
-          </div>
-        </div>
-        <div class="input col-sm">
-          <p class="input-name">City</p>
-          <div class="input-wrapper">
-            <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, user.city ? [user.city.name, user.city.id] : nil)) %>
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="input">
       <div class="actions" style="margin:15px 0px 0px 13px">
         <%= form.submit('Sauvegarder') %>
