@@ -5,9 +5,10 @@ class ConnectionsController < ApplicationController
   def index 
     @suggestions = current_user.suggestions
     @friends = current_user.friends
+    @users_around = current_user.nearbys(10)
 
     if @user.latitude
-      @markers = @user.nearbys(10).geocoded.map do |user|
+      @markers = @users_around.geocoded.map do |user|
         {
           lat: user.latitude,
           lng: user.longitude,
