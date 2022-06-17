@@ -94,7 +94,6 @@ Rails.application.configure do
   ## ADDED FOR MAILS BUG (HG)
   config.action_mailer.default_url_options = { :host => "https://fit-feat.herokuapp.com/" }
 
-  config.log_level = :warn
 
   config.raise_delivery_errors = true
 
