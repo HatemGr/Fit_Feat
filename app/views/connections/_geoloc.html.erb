@@ -2,15 +2,45 @@
 <div class="card">
    <p class="card-title"> Geolocalisation </p>
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
-   <div class="container-geoloc">
+   <div class="container-geoloc" >
       <div class="list-container">
-         <h2> List friends </h2>
-         
-         <% if @markers%>
+         <h2> Tes amis</h2>
+            <ul>
+               <% if current_user.friends.length == 0%>
+                     <p> Pas d'amis </p>
+               <%else%>
+                  <% current_user.friends.each do |friend|%>
+                     <li>
+                     <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
+                     </li>
+                  <%end%>
+               <%end%>
+            </ul>
+            <br>
+         <h2> Tes suggestions </h2>
+            <% current_user.suggestions.each do |suggestion|%>
+               <li class="suggest-friends"> 
+                  <div>
+                     <%= image_tag "avatar.png" %>
+                     <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>
+                  </div>
+                  <%if suggestion.accepted %>
+                     En attente de validation de l'autre côté
+                  <%else%>
+                  <%end%>
+               </li>
+         <%end%>
+         <br>
+         <h2> Autour de toi (scroll) </h2>
+            <% if @markers%>
+            <ul class="scrollable-list">
             <% @markers.each do |marker| %>
-               <li class="user-link"> <%= marker[:name] %> </li>
-            <%end%>
+               <li> 
+                  <%= link_to marker[:name], user_path(marker[:user_id]),  class:"user-link" %> 
+               </li>
           <%end%>
+          </ul>
+         <%end%>
       </div>
       <%if @user.longitude %>
          <div id='map' class="mapbox-container"
