@@ -7,12 +7,6 @@ class UserMailer < ApplicationMailer
         mail(to: @user.email, subject: 'Bienvenue sur Fit Feat !') 
     end
 
-    def password_email(user)
-        @user = user 
-        @url  = 'http://fit-feat.herokuapp.com/users/sign_in' 
-        mail(to: @user.email, subject: 'Changement de mot de passe !') 
-    end
-
     def notification_email(user)
         @user = user 
         @url  = 'http://fit-feat.herokuapp.com/users/sign_in' 
