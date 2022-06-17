@@ -1,18 +1,28 @@
-
 <div class='card container-friends-list'>
-   <p class="card-title"> Your friends </p>
-   <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
-   <div class="friends-list">
-  <ul>
-   <% if current_user.friends.length == 0%>
-         <p>Tu n'as pas encore d'amis, ajoute des suggestions ! </p>
-   <%else%>
-      <% current_user.friends.each do |friend|%>
-         <li>
-         <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
-         </li>
+  <p class="card-title"> Your friends </p>
+  <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p>
+  <div class="friends-list">
+    <ul>
+      <% if current_user.friends.length == 0%>
+        <p>Tu n'as pas encore d'amis, ajoute des suggestions ! </p>
+      <%else%>
+        <% current_user.friends.each do |friend|%>
+          <li>
+            <%if user.avatar.attached?%>
+              <div class="d-flex">
+                <div class="rond-small ml-2">
+                  <%if friend.avatar.attached?%>
+                    <%= image_tag friend.avatar, alt: 'avatar', :style => "width:50px;" %>
+                  <%else%>
+                    <%= image_tag "avatar.png" %>
+                  <%end%>
+                </div>
+              <%end%>
+              <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
+            </div>
+          </li>
+        <%end%>
       <%end%>
-    <%end%>
-  </ul>
-</div>
+    </ul>
+  </div>
 </div>

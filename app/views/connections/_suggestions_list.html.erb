@@ -1,33 +1,41 @@
 <div class='card container-suggestions-list'>
-   <p class="card-title"> Suggestion d'amis </p>
-   <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
-<div>
-  <%if current_user.suggestions.present?%>
-  <ul>
-    <% current_user.suggestions.each do |suggestion|%>
-    <li class="suggest-friends">
-      <%if suggestion.refused.nil? %>
-      <div>
-        <%= image_tag "avatar.png" %>
-        <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>
-      </div>
-        <%if suggestion.accepted %>
-            En attente de validation de l'autre côté
-          <%else%>
-          <div class="button-row">
-            
-            <%=link_to suggestion_path(suggestion, answer: "accepted"), class: 'button secondary', method: :patch do %>
-                  <i class="fa-solid fa-plus"></i> Ajouter
-            <%end%>
-            <%=link_to "Retirer", suggestion_path(suggestion, answer: "refused"), class:'button refuse-btn', method: :patch %>
-          </div>
+  <p class="card-title"> Suggestion d'amis </p>
+  <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p>
+  <div>
+    <%if current_user.suggestions.present?%>
+      <ul>
+        <% current_user.suggestions.each do |suggestion|%>
+          <li class="suggest-friends">
+            <%if suggestion.refused.nil? %>
+              <div>
+              
+                <div class="rond-small ml-2">
+                  <%if suggestion.partner.avatar.attached?%>
+                    <%= image_tag suggestion.partner.avatar, alt: 'avatar', :style => "width:50px;" %>
+                    <%else%>
+                    <%= image_tag "avatar.png" %>
+                    <%end%>
+                  </div>
+                
+                
+                <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>
+              </div>
+              <%if suggestion.accepted %>
+                En attente de validation de l'autre côté
+              <%else%>
+                <div class="button-row">
+                  <%=link_to suggestion_path(suggestion, answer: "accepted"), class: 'button secondary', method: :patch do %>
+                    <i class="fa-solid fa-plus"></i> Ajouter
+                  <%end%>
+                  <%=link_to "Retirer", suggestion_path(suggestion, answer: "refused"), class:'button refuse-btn', method: :patch %>
+                </div>
+              <%end%>
+            </li>
           <%end%>
-      </li>
-      <%end%>
+        <%end%>
+      </ul>
+    <%else%>
+      <p>Pas encore de sugestions autour de toi</p>
     <%end%>
-  </ul>
-  <%else%>
-  <p>Pas encore de sugestions autour de toi</p>
-  <%end%>
-</div>
+  </div>
 </div>
