@@ -16,8 +16,8 @@ class User < ApplicationRecord
   has_many :friends, through: :connections, class_name: "User"
 
   validates :first_name, :last_name, length: { maximum: 15 }
-
   after_create :welcome_send
+  before_update :remake_suggestions
 
   geocoded_by :full_address
   after_validation :geocode
@@ -38,6 +38,12 @@ class User < ApplicationRecord
   def full_address
     if city
       [address, city.name].compact.join(', ')
+    end
+  end
+
+  def remake_suggestions
+    if self.address_changed? || self.city_id_changed?
+      Suggestion.make_suggestions(self)
     end
   end
 
@@ -140,5 +146,6 @@ class User < ApplicationRecord
   def is_friend_with?(user)
     user.friends.include?(self)
   end
+
 
 end
