@@ -23,7 +23,7 @@
       }
 
 
-      input[type=text], input[type=password], input[type=email], input[type=number], textarea[type=text], select {
+      input[type=text], input[type=password], input[type=email], textarea[type=text], select {
          width: 450px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
@@ -75,4 +75,15 @@
 
 input[type=checkbox]{
    cursor: pointer;
+}
+
+input[type=number], input[type=datetime-local]{
+   width: 210px;
+   border: 1px solid var(--border-grey);
+   border-radius: 5px;
+   padding: 20px 0px;
+   padding-left: 20px;
+   transition: all 0.3s ease;
+   resize: none;
+
 }
