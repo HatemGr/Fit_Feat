@@ -1,19 +1,4 @@
-<div class="event-container"> 
-
-    <div class="event-container-right">
-      <div class="event-img"></div>
-    </div>
-  
-  <div class="event-container-left">
-      <div class="top-element">
-        <div class="twins">
-          <h1 class="title"> Créer un événement</h1>
-          <div class="title-lign"></div>
-        </div>  
-        <hr>
-      </div>
-
-      <div class="event-form-container">
+    <div class="event-form-container">
         <%= form_with(model: event, local: true) do |form| %>
           <% if event.errors.any? %>
             <div id="error_explanation">
@@ -62,9 +47,9 @@
           </div>
 
           <div class="input">
-            <p class="input-name">Duration</p>
+            <p class="input-name">Duration (en heure)</p>
             <div class="input-wrapper">
-              <%= form.date_field :duration %>
+              <%= form.number_field :duration, placeholder: "Selectionnez un chiffre" %> 
             </div>
           </div>
         </div>
@@ -86,18 +71,16 @@
           </div> 
         </div>
 
-      </div>
-      <div class="bottom">
+    </div>
+      <div class="bottom-event bottom">
         <div class="input">
           <div class="actions">
             <%= form.submit %>
           </div> 
         </div>  
-      </div>  
-      <div class="under-button">
-             <%= link_to 'Back', events_path %> 
-            </div> 
+          <div class="under-button-event under-button">
+              <%= link_to 'Back', events_path %> 
+          </div> 
+       </div>  
       <% end %> 
-      
-  </div>  
-</div>
+    
