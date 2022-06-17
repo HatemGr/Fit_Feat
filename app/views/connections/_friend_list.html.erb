@@ -8,7 +8,6 @@
       <%else%>
         <% current_user.friends.each do |friend|%>
           <li>
-            <%if user.avatar.attached?%>
               <div class="d-flex">
                 <div class="rond-small ml-2">
                   <%if friend.avatar.attached?%>
@@ -17,7 +16,6 @@
                     <%= image_tag "avatar.png" %>
                   <%end%>
                 </div>
-              <%end%>
               <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
             </div>
           </li>
