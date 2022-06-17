@@ -63,12 +63,11 @@ body {
    
    
    /* size */
-   --big: clamp(0.9rem, 4vw, 1rem);
-   --medium: clamp(0.9rem, 4vw, 1rem);
-   --normal: clamp(0.9rem, 4vw, 1rem);
-   --little: clamp(0.9rem, 4vw, 1rem);
-   --paragraphe: 1.3rem;
    --title: 3.438rem;
+   --big: clamp(2rem, 4vw, 3rem);
+   --medium: clamp(1.3rem, 4vw, 1.8rem);
+   --paragraphe: 1.3rem;
+   --little: clamp(0.9rem, 4vw, 1rem);
 
 
    /* weight */
@@ -76,6 +75,11 @@ body {
    h1, h2, h3, h4, h5, h6, p{
       margin: 0;
       width: fit-content;
+   }
+
+   h2{
+      font-size: var(--medium);
+      font-family: var(--bold-font);
    }
    
    /************************/

@@ -93,4 +93,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   ## ADDED FOR MAILS BUG (HG)
   config.action_mailer.default_url_options = { :host => "https://fit-feat.herokuapp.com/" }
+
+
+  config.raise_delivery_errors = true
+
 end
