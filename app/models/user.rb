@@ -137,4 +137,8 @@ class User < ApplicationRecord
     self.events ? self.events.where("date > ?", Date.today) : nil
   end
 
+  def is_friend_with?(user)
+    user.friends.include?(self)
+  end
+
 end
