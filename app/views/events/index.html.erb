@@ -1,35 +1,15 @@
-<%= link_to 'New Event', new_event_path %>
+<%=render 'events_around'%>
 
 <div class="card">
-  <p class="card-title"> Fit Feat Sports Events </p>
-  <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
+  <p class="card-title"> Fait vivre la communauté en organisants des propres events </p>
+  <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
   <div class="container-geoloc">
     <div class="list-container">
       <div class="container">
-        <h2> Les evenements autour de toi </h2>
-        <ul>
-        <% if @events%>
-          <% @events.each do |event| %>
-            <div class="row">
-              <div class="col-8">
-                <li class="event-link"> [<%=event.sport.name.capitalize%>] <%= link_to event.title, event_path(event) %>  qui se deroule le <%= event.date.strftime("%d-%m-%Y à %Hh%M")%>
-              </div>
-              <div class="col-4">
-                <% if find_participation(event,current_user)%>
-                  <%=button_to event_participation_path(event, find_participation(event,current_user)), method: :delete, :class => "button primary-outline" do %>
-                  <i class="bi bi-bookmark-check-fill"></i>&nbsp; Ne plus participer<%end%>
-                  </li>
-                  <%else%>
-                  <%=button_to event_participations_path(event),:class => "button primary" do %>
-                  <i class="bi bi-bookmark-plus"></i></i>&nbsp; Participer <%end%>
-                  </li>
-                <%end%>
-              </div>
-            </div>
-          <%end%> 
-        <%end%>
-        </ul>
+        <h2> Tes evenements : </h2>
+        <%= render partial: 'event_list', locals: {events: @current_user_events}%>
       </div>
     </div>
   </div>
+  <%= link_to 'New Event', new_event_path %>
 </div>

@@ -8,6 +8,7 @@
 
 require 'faker'
 
+Event.destroy_all
 RunningPerformance.all.destroy_all
 TennisPerformance.all.destroy_all
 WorkoutPerformance.all.destroy_all
@@ -20,6 +21,10 @@ Sport.all.destroy_all
 
 
 city = City.create(name:"Paris")
+City.create(name:"Colombes")
+City.create(name:"Massy")
+City.create(name:"Marseille")
+City.create(name:"Toulouse")
 
 User.create(email: "jf@thp.com", password: "password", first_name:"Joffrey", last_name:"Frexinet", city: city, address: "17 Rue de Rambouillet Paris")
 User.create(email: "fb@thp.com", password: "password",first_name:"Foucaut", last_name:"Beaumont", city: city , address: "61 Rue Rodier Paris")
@@ -91,6 +96,27 @@ User.all.each do |user|
     end
 end
 
+adresses[0..8].each do |address|
+Event.create!(admin: User.all.sample,
+            sport: Sport.all.sample,
+            title: Faker::Sports::Football.competition,
+            date: Faker::Time.between(from: DateTime.now + 500, to: DateTime.now + 30000, format: :long),
+            city: City.first,
+            address: address)
+end
+
+Event.create(admin: User.all.sample,
+    sport: Sport.all.sample,
+    title: Faker::Sports::Football.competition,
+    date: Faker::Time.between(from: DateTime.now + 500, to: DateTime.now + 30000, format: :long),
+    city: City.last,
+    address: "40, allées Charles de Fitte")
+
+"Events created"
+
+50.times do
+    Participation.create(event:Event.all.sample,user:User.all.sample)
+end
 puts "Seed performed!"
 
 

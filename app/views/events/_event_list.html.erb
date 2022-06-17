@@ -1,0 +1,12 @@
+
+        <ul>
+        <% if events%>
+          <% events.each do |event| %>
+            <div class="row">
+              <div class="col-12">
+                <li class="event-link"> [<%=event.sport.name.capitalize%>] <%= link_to event.title, event_path(event) %>  qui se deroule le <%= event.date.strftime("%d-%m-%Y à %Hh%M")%>
+              </div>
+            </div>
+          <%end%> 
+        <%end%>
+        </ul>
