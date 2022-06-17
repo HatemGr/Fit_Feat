@@ -1,0 +1,27 @@
+<h1> Profil de <%= @user.first_name%></h1>
+<div class="wrapper-not-meteo">
+  <div class="notification-card card">
+    <p>
+      <strong>First name:</strong>
+      <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
+    </p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %>
+    </p>
+  </div>
+  <div class="meteo-card card">
+    <p>
+      <strong>Description:</strong>
+      <%= @user.description ? @user.description : 'Donnee non renseignée' %>
+    </p>
+    <p>
+      <strong>Adresse:</strong>
+      <%= @user.address ? @user.address : 'Donnee non renseignée' %>
+    </p>
+    <p>
+      <strong>City:</strong>
+      <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
+    </p>
+  </div>
+</div>

@@ -26,4 +26,8 @@ class Event < ApplicationRecord
     end
   end
 
+  def is_after_today? 
+    date > Date.today
+  end
+
 end
