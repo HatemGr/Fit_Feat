@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user_events = @user.events_after_now.limit(5)
   end
 
   def new

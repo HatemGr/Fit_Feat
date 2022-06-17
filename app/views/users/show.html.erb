@@ -7,4 +7,16 @@
   <%if @user.sports.present?%>
     <%= render 'performance_usershow'%>
   <%end%>
+
+  <div class="card">
+  <p class="card-title"> Les prochaines evenements à venir pour <%= @user.full_name %> </p>
+  <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
+  <div class="container-geoloc">
+    <div class="list-container">
+      <div class="container">
+        <%= render partial: 'events/event_list', locals: {events: @user_events}%>
+      </div>
+    </div>
+  </div>
+
 </div>
