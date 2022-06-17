@@ -5,9 +5,9 @@
    <div class="container-geoloc" >
       <div class="list-container">
          <h2> Autour de toi (scroll) </h2>
-            <% if @markers%>
+            <% if @users_around%>
             <ul class="scrollable-list">
-            <% @markers.each do |marker| %>
+            <% @users_around.each do |user| %>
                <li> 
                <div class="d-flex">
                <div class="rond-small ml-2">
@@ -17,13 +17,14 @@
                     <%= image_tag "avatar.png" %>
                     <%end%>
                   </div>
-                  <%= link_to marker[:name], user_path(marker[:user_id]),  class:"user-link" %> 
+                  <%= link_to user.full_name, user_path(user),  class:"user-link" %> 
                   </div>
                </li>
           <%end%>
           </ul>
          <%end%>
       </div>
+
       <%if @user.longitude %>
          <div id='map' class="mapbox-container"
                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"

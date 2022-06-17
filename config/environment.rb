@@ -9,7 +9,7 @@ ActionMailer::Base.smtp_settings = {
     :password => ENV['MAILJET_SECRET_KEY'],
     :domain => 'fit-feat.com',
     :address => 'in-v3.mailjet.com', 
-    tls: true ,
+    :tls => true ,
     :port => '465',
     :authentication => :plain,
     :enable_starttls_auto => true

@@ -6,6 +6,9 @@
 
   <%= render 'edit_performance', user: @user %>
   <br>
-  <%= render 'edit_info', user: @user, cities: @cities %>
+
+  <%= render 'edit_info-no-sensitive', user: @user, cities: @cities %>
+  <br>
+  <%= render 'edit_info-sensitive', user: @user, cities: @cities %>
 
 </div>
