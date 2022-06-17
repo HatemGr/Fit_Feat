@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all.select{|e| current_user.admin_events.exclude?(e) && e.is_after_today?}
+    @events = Event.available_events(current_user).select{|e| current_user.admin_events.exclude?(e)}
     @current_user_events = current_user.admin_events.select{|e| e.is_after_today?}
   end
 
