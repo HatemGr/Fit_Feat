@@ -1,12 +1,8 @@
 <div class="container-dashboard">
   <% if @user == current_user %>
-      <div class="edit-profil-btn">
-        <h1> Hello <%= current_user.first_name%> 👋🏻</h1> 
-        <%= link_to 'Modifie ton profil', edit_user_path(@user), class:'button primary' %>
-      </div>
-      <%= render 'users/notif-meteo/notif_meteo'%>
+      <%= render 'current_user_show'%>
     <%else%>
-      <%= render 'other_user_info'%>
+      <%= render 'other_user_show'%>
     <%end%>
   <%if @user.sports.present?%>
     <%= render 'performance_usershow'%>
