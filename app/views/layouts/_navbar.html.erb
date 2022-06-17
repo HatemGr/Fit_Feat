@@ -4,8 +4,8 @@
       <div>
         <div class="user-name">
           <div class="rond ml-2">
-            <%if @user.avatar.attached?%>
-              <%= image_tag @user.avatar, alt: 'avatar', :style => "width:50px;" %>
+            <%if current_user.avatar.attached?%>
+              <%= image_tag current_user.avatar, alt: 'avatar', :style => "width:50px;" %>
             <%else%>
                <%= image_tag "avatar.png", :style => "width:50px;" %>
             <%end%>
