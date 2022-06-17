@@ -1,6 +1,13 @@
-<h1>Editing Event</h1>
+<div class="event-container form-container"> 
 
-<%= render partial: 'form', locals:{ event: @event, cities: @cities, sports: @sports} %>
+   <%= render 'image' %>
+  <div class="event-container-left form-container-right"> 
+      <%= render 'top_edit_element' %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+      <%= render partial: 'form_edit', locals:{ event: @event, cities: @cities, sports: @sports} %>
+   </div>
+    
+</div>
+
+
+

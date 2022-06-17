@@ -1,0 +1,87 @@
+    <div class="event-form-container">
+        <%= form_with(model: event, local: true) do |form| %>
+          <% if event.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+              <ul>
+              <% event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+        <div class="together">
+          <div class="input"> 
+            <p class="input-name">Titre</p>
+            <div class="input-wrapper">
+              <%= form.text_field :title, placeholder: "Rentrez un titre" %>
+              <i class="fa-solid fa-heading"></i>
+            </div>  
+          </div>
+
+          <div class="input">
+          <p class="input-name">Sport</p>
+            <div class="input-wrapper">
+                <%= form.select(:sport_id, options_for_select(sports.collect{ |s| [s.name, s.id] }, sports.first)) %>
+                <i class="fa-solid fa-bicycle"></i>
+            </div>  
+          </div>
+        </div>
+
+          <div class="input">
+            <p class="input-name">Description</p>
+            <div class="input-wrapper">
+              <%= form.text_field :description, placeholder: "Rentrez une description" %>
+              <i class="fa-solid fa-comment"></i>
+            </div>
+          </div>
+
+        <div class="together">
+          <div class="input">
+            <p class="input-name">Date</p>
+            <div class="input-wrapper">
+              <%= form.datetime_field :date %>
+            </div>
+          </div>
+
+          <div class="input">
+            <p class="input-name">Duration (en heure)</p>
+            <div class="input-wrapper">
+              <%= form.number_field :duration, placeholder: "Selectionnez un chiffre" %> 
+            </div>
+          </div>
+        </div>
+
+        <div class="together">
+          <div class="input">
+            <p class="input-name">Adresse</p>
+            <div class="input-wrapper">
+              <%= form.text_field :address, placeholder: "Rentrez une adresse" %>
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+          </div>
+
+          <div class="input">
+            <p class="input-name">City</p>
+            <div class="input-wrapper">
+            <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, cities.first)) %>
+            <i class="fa-solid fa-location-dot"></i>
+          </div> 
+        </div>
+
+    </div>
+      <div class="bottom-event bottom">
+        <div class="input">
+          <div class="actions">
+            <%= form.submit %>
+          </div> 
+        </div>  
+          <div class="under-button-event under-button">
+              <%= link_to 'Back', events_path %> 
+             | <%= link_to 'Show', @event %> 
+          </div> 
+       </div>  
+      <% end %> 
+    
