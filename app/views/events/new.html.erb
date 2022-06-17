@@ -1,2 +1,9 @@
-<%= render partial: 'form', locals:{ event: @event, cities: @cities, sports: @sports} %>
+<div class="event-container form-container"> 
 
+   <%= render 'image' %>
+  <div class="event-container-left form-container-right"> 
+      <%= render 'top_create_element' %>
+
+      <%= render partial: 'form_create', locals:{ event: @event, cities: @cities, sports: @sports} %>
+   </div>
+</div>

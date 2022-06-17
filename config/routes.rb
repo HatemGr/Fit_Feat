@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   resources :suggestions
   resources :events do
     resources :participations, only: [:create, :destroy]
+    resources :images, only: [:create]
   end
 
   resources :users do
     resources :connections
+    resources :avatars, only: [:create]
   end
 
   resources :cities

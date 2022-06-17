@@ -1,14 +1,22 @@
 <div class="card">
   <p class="card-title"> profil de <%=@user.first_name%> </p>
-  <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
+  <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p>
   <div class="user-primary-info">
     <div class="user-primary-image">
+      <%if @user.avatar.attached?%>
+        <%= image_tag @user.avatar, alt: 'avatar' %>
+      <%else%>
         <%= image_tag 'avatar.png' %>
+      <%end%>
     </div>
     <div class="user-primary-content">
       <h1> <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %> <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %></h1>
-      <p> <i class="fa-solid fa-align-left"></i> <%= @user.description ? @user.description : 'Aliquip duis voluptate nulla aute qui magna deserunt reprehenderit adipisicing nostrud.' %></p>
-      <p> <i class="fa-solid fa-location-dot"></i> <%= @user.address ? @user.address : 'Donnee non renseignée' %></p>
+      <p> <i class="fa-solid fa-align-left"></i> <%= @user.description ? @user.description : 'Pas de description' %></p>
+      <%if @user.is_friend_with?(current_user)%>
+        <p><strong> Vous etes amis, voici ces coordonnées pour aller vous entrainer ensemble :</strong></p>
+        <p> <i class="fa-solid fa-location-dot"></i> <%= @user.address ? @user.address : 'Donnee non renseignée' %></p>
+        <p> <i class="fa-solid fa-at"></i> <%= @user.email ? @user.email : 'Donnee non renseignée' %></p>
+      <%end%>
     </div>
   </div>
 </div>

@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :suggestions, dependent: :destroy
   has_many :connections, dependent: :destroy
   has_many :friends, through: :connections, class_name: "User"
+  has_one_attached :avatar
 
   validates :first_name, :last_name, length: { maximum: 15 }
   after_create :welcome_send
@@ -141,6 +142,10 @@ class User < ApplicationRecord
 
   def events_after_now
     self.events ? self.events.where("date > ?", Date.today) : nil
+  end
+
+  def is_friend_with?(user)
+    user.friends.include?(self)
   end
 
 
