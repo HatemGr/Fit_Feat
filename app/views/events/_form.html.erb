@@ -1,52 +1,103 @@
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="event-container"> 
 
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="event-container-right">
+      <div class="event-img"></div>
     </div>
-  <% end %>
+  
+  <div class="event-container-left">
+      <div class="top-element">
+        <div class="twins">
+          <h1 class="title"> Créer un événement</h1>
+          <div class="title-lign"></div>
+        </div>  
+        <hr>
+      </div>
 
+      <div class="event-form-container">
+        <%= form_with(model: event, local: true) do |form| %>
+          <% if event.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :sport_id %>
-    <%= form.select(:sport_id, options_for_select(sports.collect{ |s| [s.name, s.id] }, sports.first)) %>
-  </div>
+              <ul>
+              <% event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
+        <div class="together">
+          <div class="input"> 
+            <p class="input-name">Titre</p>
+            <div class="input-wrapper">
+              <%= form.text_field :title, placeholder: "Rentrez un titre" %>
+              <i class="fa-solid fa-heading"></i>
+            </div>  
+          </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+          <div class="input">
+          <p class="input-name">Sport</p>
+            <div class="input-wrapper">
+                <%= form.select(:sport_id, options_for_select(sports.collect{ |s| [s.name, s.id] }, sports.first)) %>
+                <i class="fa-solid fa-bicycle"></i>
+            </div>  
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+          <div class="input">
+            <p class="input-name">Description</p>
+            <div class="input-wrapper">
+              <%= form.text_field :description, placeholder: "Rentrez une description" %>
+              <i class="fa-solid fa-comment"></i>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_field :date %>
-  </div>
+        <div class="together">
+          <div class="input">
+            <p class="input-name">Date</p>
+            <div class="input-wrapper">
+              <%= form.datetime_field :date %>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+          <div class="input">
+            <p class="input-name">Duration</p>
+            <div class="input-wrapper">
+              <%= form.date_field :duration %>
+            </div>
+          </div>
+        </div>
 
-  <div class="input col-sm">
-    <p class="input-name">City</p>
-    <div class="input-wrapper">
-    <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, cities.first)) %>
-    <i class="fa-solid fa-location-dot"></i>
-  </div> 
+        <div class="together">
+          <div class="input">
+            <p class="input-name">Adresse</p>
+            <div class="input-wrapper">
+              <%= form.text_field :address, placeholder: "Rentrez une adresse" %>
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+          </div>
 
+          <div class="input">
+            <p class="input-name">City</p>
+            <div class="input-wrapper">
+            <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, cities.first)) %>
+            <i class="fa-solid fa-location-dot"></i>
+          </div> 
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+      </div>
+      <div class="bottom">
+        <div class="input">
+          <div class="actions">
+            <%= form.submit %>
+          </div> 
+        </div>  
+      </div>  
+      <div class="under-button">
+             <%= link_to 'Back', events_path %> 
+            </div> 
+      <% end %> 
+      
+  </div>  
+</div>
