@@ -12,15 +12,14 @@ if (typeof mapElement != "undefined") {
 	var markers = JSON.parse(mapElement.dataset.markers);
 
 	for (const marker of markers) {
+		const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+			"<div>" + "<h2>" + marker.name + "</h2>" + "</div>"
+		);
 		const el = document.createElement("div");
 		el.className = "marker";
 		new mapboxgl.Marker(el)
 			.setLngLat([marker.lng, marker.lat])
-			.setPopup(
-				new mapboxgl.Popup({ offset: 25 }).setHTML(
-					"<div>" + "<h2>" + marker.name + "</h2>" + "</div>"
-				)
-			)
+			.setPopup(popup)
 			.addTo(map);
 	}
 }
