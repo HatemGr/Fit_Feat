@@ -1,38 +1,8 @@
 <div class="container-dashboard">
   <% if @user == current_user %>
-      <div class="edit-profil-btn">
-        <h1> Hello <%= current_user.first_name%> 👋🏻</h1> 
-        <%= link_to 'Modifie ton profil', edit_user_path(@user), class:'button primary' %>
-      </div>
-      <%= render 'users/notif-meteo/notif_meteo'%>
+      <%= render 'current_user_show'%>
     <%else%>
-    <h1> Profil de <%= @user.first_name%></h1>
-        <div class="wrapper-not-meteo">
-          <div class="notification-card card">
-            <p>
-              <strong>First name:</strong>
-              <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
-            </p>
-            <p>
-              <strong>Last name:</strong>
-              <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %>
-            </p>
-          </div>
-          <div class="meteo-card card">
-            <p>
-              <strong>Description:</strong>
-              <%= @user.description ? @user.description : 'Donnee non renseignée' %>
-            </p>
-            <p>
-              <strong>Adresse:</strong>
-              <%= @user.address ? @user.address : 'Donnee non renseignée' %>
-            </p>
-            <p>
-              <strong>City:</strong>
-              <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
-            </p>
-          </div>
-        </div>
+      <%= render 'other_user_show'%>
     <%end%>
   <%if @user.sports.present?%>
     <%= render 'performance_usershow'%>
