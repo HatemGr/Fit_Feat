@@ -9,9 +9,10 @@
 .list-container {
    flex : 4;
 
-   .scrollable-list{
-      height: 400px; 
-      overflow:hidden; 
-      overflow-y:scroll
-   }
+}
+
+.scrollable-list{
+   height: 400px; 
+   overflow:hidden; 
+   overflow-y:scroll
 }
