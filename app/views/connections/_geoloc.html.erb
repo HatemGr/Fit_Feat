@@ -13,6 +13,11 @@
                data-user-lng="<%= @user.longitude%>"
                data-user-lat="<%= @user.latitude%>">
          </div>
+      <%else%>
+         <div>
+         <p> Carte non disponible</p>
+         <p> Renseigne ton adresse pour voir les fit featers autour de toi!</p> 
+         </div>
       <%end%>
    </div>
 </div>

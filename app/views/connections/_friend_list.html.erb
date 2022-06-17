@@ -5,7 +5,7 @@
    <div class="friends-list">
   <ul>
    <% if current_user.friends.length == 0%>
-         <p> tu n'as pas encore d'amis, ajoute des suggestions ! </p>
+         <p>Tu n'as pas encore d'amis, ajoute des suggestions ! </p>
    <%else%>
       <% current_user.friends.each do |friend|%>
          <li>
