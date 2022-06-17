@@ -9,7 +9,16 @@
             <ul class="scrollable-list">
             <% @users_around.each do |user| %>
                <li> 
+               <div class="d-flex">
+               <div class="rond-small ml-2">
+                  <%if User.find(marker[:user_id]).avatar.attached?%>
+                    <%= image_tag User.find(marker[:user_id]).avatar, alt: 'avatar', :style => "width:50px;" %>
+                    <%else%>
+                    <%= image_tag "avatar.png" %>
+                    <%end%>
+                  </div>
                   <%= link_to user.full_name, user_path(user),  class:"user-link" %> 
+                  </div>
                </li>
           <%end%>
           </ul>

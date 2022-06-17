@@ -1,35 +1,38 @@
 <%if current_user %>
-<div class="ghost-div">
-   <div class="navbar">
+  <div class="ghost-div">
+    <div class="navbar">
       <div>
-         <div class="user-name">
-            <span> <%= current_user.first_name%> </span>
-         </div>
-         <div class="separate-div" style="margin-left: 37px"></div>
-         <nav class="menu" role="tablist">
-
-            <% if current_page?(user_path(current_user))%>
-               <%= render "layouts/tabs/home_tab" %>
-            <% elsif current_page?(user_connections_path(current_user))%>
-               <%= render "layouts/tabs/friends_tab" %>
-            <% elsif current_page?(edit_user_path(current_user))%>
-               <%= render "layouts/tabs/edit_tab" %>
-            <% elsif current_page?(events_path)%>
-               <%= render "layouts/tabs/events_tab" %>
-            <% else %>
-               <%= render "layouts/tabs/inactive_tab" %>
-            <% end%>
-            
-
-         </nav>
+        <div class="user-name">
+          <div class="rond ml-2">
+            <%if @user.avatar.attached?%>
+              <%= image_tag @user.avatar, alt: 'avatar', :style => "width:50px;" %>
+            <%else%>
+               <%= image_tag "avatar.png", :style => "width:50px;" %>
+            <%end%>
+          </div>
+          <span> <%= current_user.first_name%> </span>
+        </div>
+        <div class="separate-div" style="margin-left: 37px"></div>
+        <nav class="menu" role="tablist">
+          <% if current_page?(user_path(current_user))%>
+            <%= render "layouts/tabs/home_tab" %>
+          <% elsif current_page?(user_connections_path(current_user))%>
+            <%= render "layouts/tabs/friends_tab" %>
+          <% elsif current_page?(edit_user_path(current_user))%>
+            <%= render "layouts/tabs/edit_tab" %>
+          <% elsif current_page?(events_path)%>
+            <%= render "layouts/tabs/events_tab" %>
+          <% else %>
+            <%= render "layouts/tabs/inactive_tab" %>
+          <% end%>
+        </nav>
       </div>
-
       <div class="nav-down">
-         <div class="separate-div"></div>
-         <%= link_to destroy_user_session_path, :method => :delete do %>
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter 
-         <% end%>
+        <div class="separate-div"></div>
+        <%= link_to destroy_user_session_path, :method => :delete do %>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter 
+        <% end%>
       </div>
-      </div>
-   </div>
+    </div>
+  </div>
 <%end%>
