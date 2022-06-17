@@ -8,17 +8,16 @@
           <li class="suggest-friends">
             <%if suggestion.refused.nil? %>
               <div>
-              
-                <div class="rond-small ml-2">
-                  <%if suggestion.partner.avatar.attached?%>
-                    <%= image_tag suggestion.partner.avatar, alt: 'avatar', :style => "width:50px;" %>
+                <div class="d-flex">
+                  <div class="rond-small ml-2">
+                    <%if suggestion.partner.avatar.attached?%>
+                      <%= image_tag suggestion.partner.avatar, alt: 'avatar', :style => "width:50px;" %>
                     <%else%>
-                    <%= image_tag "avatar.png" %>
+                      <%= image_tag "avatar.png" %>
                     <%end%>
                   </div>
-                
-                
-                <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>
+                  <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>
+                </div>
               </div>
               <%if suggestion.accepted %>
                 En attente de validation de l'autre côté
