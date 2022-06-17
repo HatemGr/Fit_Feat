@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_06_15_105402) do
     t.string "title"
     t.string "description"
     t.datetime "date"
-    t.string "duration"
+    t.integer "duration"
     t.string "address"
     t.float "longitude"
     t.float "latitude"

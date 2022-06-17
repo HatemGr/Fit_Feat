@@ -1,36 +1,27 @@
 .event-container{
-   display: flex;
    flex-direction: row-reverse;
-   width: 100vw;
-   height: 100vh;
+
+   .top-element{
+      position: relative;
+      top: 20px;
+      right: 160px;
+
+      .title-lign{
+         width: 370px;
+      }
+
+      
    }
-
-   .event-container-right{
-      flex: 6;
-      width: 100%;
-      height: 100%;
-      border: 15px solid var(--grey-bg);
-      box-sizing: border-box;
-
+}
          .event-img{
-         width: 100%;
-         height: 100%;
-         border-radius: 8px;
-         background: url(https://images.unsplash.com/photo-1608138278561-4b1ade407411?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
-         background-size: 100%;
-         background-repeat: no-repeat;
-         background-position: 20% 60%;
+         background: url(https://images.unsplash.com/photo-1608138278561-4b1ade407411?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80) !important;
+         background-repeat: no-repeat !important;
+         background-size: 100% !important;
+         background-position: 25% 70% !important; 
          }
-   }
 
    .event-container-left{
-      display: flex;
-      flex: 4;
-      flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      height: 100%;
 
       .event-form-container{
          position: relative;
@@ -41,28 +32,20 @@
          display: flex;
          flex-direction: row;
          gap: 10px;
-
       }
    }
 
-   .bottom{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+   .bottom-event{
       position: relative;
-      top: 50px;
-     
-      .action{
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-
-   }
+      top: 50px;   
 }
 
-.under-button{
-   display: flex;
-   flex-direction: row;
+.under-button-event{
    justify-content: flex-start;
    padding: 10px;
+}
+
+hr{
+	text-align: flex-start;
+	width: 200%;
 }
