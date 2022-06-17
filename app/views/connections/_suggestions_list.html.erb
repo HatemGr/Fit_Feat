@@ -2,6 +2,7 @@
    <p class="card-title"> Suggestion d'amis </p>
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
 <div>
+  <%if current_user.suggestions.present?%>
   <ul>
     <% current_user.suggestions.each do |suggestion|%>
     <li class="suggest-friends">
@@ -25,5 +26,8 @@
       <%end%>
     <%end%>
   </ul>
+  <%else%>
+  <p>Pas encore de sugestions autour de toi</p>
+  <%end%>
 </div>
 </div>

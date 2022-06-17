@@ -24,7 +24,11 @@ class User < ApplicationRecord
   # if: ->(obj){ obj.full_address.present? && obj.address_changed? }
 
   def full_name
+    if first_name.present? && last_name.present?
     "#{first_name} #{last_name}"
+    else
+      "Utilisateur anonyme"
+    end
   end
 
   def welcome_send
