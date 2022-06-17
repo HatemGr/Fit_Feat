@@ -8,4 +8,10 @@
 
 .list-container {
    flex : 4;
+
+   .scrollable-list{
+      height: 300px; 
+      overflow:hidden; 
+      overflow-y:scroll
+   }
 }

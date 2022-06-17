@@ -17,9 +17,9 @@
           <div class="button-row">
             
             <%=link_to suggestion_path(suggestion, answer: "accepted"), class: 'button secondary', method: :patch do %>
-                  <i class="fa-solid fa-circle-check"></i> accepter
+                  <i class="fa-solid fa-plus"></i> Ajouter
             <%end%>
-            <%=link_to "Refuser", suggestion_path(suggestion, answer: "refused"), class:'button refuse-btn', method: :patch %>
+            <%=link_to "Retirer", suggestion_path(suggestion, answer: "refused"), class:'button refuse-btn', method: :patch %>
           </div>
           <%end%>
       </li>
