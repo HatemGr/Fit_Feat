@@ -139,7 +139,9 @@ class User < ApplicationRecord
     !SportUser.find_by(user: self, sport: Sport.find_by(name:"Workout")).nil?
   end
 
+  def events_after_now
+    self.events ? self.events.where("date > ?", Date.today) : nil
+  end
 
-  
 
 end
