@@ -3,13 +3,15 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all.select{|e| current_user.admin_events.exclude?(e)}
+    @events = Event.all.select{|e| current_user.admin_events.exclude?(e) && e.is_after_today?}
+    @current_user_events = current_user.admin_events.select{|e| e.is_after_today?}
   end
 
   # GET /events/1 or /events/1.json
   def show
     @cities = City.all
     @sports = Sport.all
+    
   end
 
   # GET /events/new
