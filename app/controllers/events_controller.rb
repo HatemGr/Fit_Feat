@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :authenticate_user
 
   # GET /events or /events.json
   def index
@@ -79,4 +80,12 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:admin_id, :sport_id, :city_id, :title, :description, :date, :address, :longitude, :latitude)
     end
+
+    def authenticate_user
+      unless current_user
+        flash[:danger] = "Please log in."
+        redirect_to new_user_registration_path 
+      end
+    end
+    
 end
