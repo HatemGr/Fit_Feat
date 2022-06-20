@@ -23,7 +23,7 @@
       }
 
 
-      input[type=text], input[type=password], input[type=email], textarea[type=text], select {
+      input[type=text], input[type=password], input[type=email], textarea[type=text], textarea, select {
          width: 370px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
