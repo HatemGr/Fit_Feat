@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   
-  get 'notifications/index'
-  get 'notifications/create'
-  get 'notifications/update'
-  get 'notifications/destroy'
-  get 'participations/create'
-  get 'participations/destroy'
+  resources :messages
+  resources :notifications, only: [:index, :create, :destroy, :update]
+  resources :participations, only: [:create, :destroy]
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   root to: 'static_pages#new', as: 'home'

@@ -1,0 +1,3 @@
+<p class="px-3" id="message-<%=message.id%>" onclick="" style="cursor:pointer;">
+<%=link_to message.object, message_path(message, :read => true), remote: true, method: "put", :class => "read-#{message.read}", :id => "link-#{message.id}"%></p>
+<hr id="hr-<%=message.id%>">

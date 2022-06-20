@@ -15,6 +15,9 @@ class User < ApplicationRecord
   has_many :connections, dependent: :destroy
   has_many :friends, through: :connections, class_name: "User"
   has_many :notifications, dependent: :delete_all
+  has_many :messages
+  has_many :sent_messages, foreign_key: 'sender_id', class_name: "Message"
+  has_many :received_messages, foreign_key: 'recipient_id', class_name: "Message"
   has_one_attached :avatar
 
   validates :first_name, :last_name, length: { maximum: 15 }
