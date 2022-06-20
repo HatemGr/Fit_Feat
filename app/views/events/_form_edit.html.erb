@@ -87,8 +87,9 @@
         </div>  
           <div class="under-button-event under-button">
               <%= link_to 'Back', events_path %> 
-             | <%= link_to 'Show', @event %> 
+             |<%= link_to 'Show', @event %> 
           </div> 
+            <div><%=link_to "Annuler l'evenement", event_path(@event), class: 'button delete-btn', method: :delete, data: { confirm: 'Vous allez annuler cet evenement, êtes-vous sûr ?'}%></div>
        </div>  
       <% end %> 
     

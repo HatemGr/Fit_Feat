@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.notif-collapse{
+height: 100% !important;
+
+}
+
+.reverse-arrow{
+   transform: rotate(180deg);
+   margin-bottom: 10px;
+}
 
 .wrapper-not-meteo{
    display: flex;
@@ -10,12 +19,58 @@
 
 
    .notification-card{
-      height: 100%;
-      flex: 3;
+      height: 163px;
+      flex: 6;
+      position: relative;
+      overflow: hidden;
+
+      .read-all{
+         position: absolute;
+         right: 12px;
+         bottom: 9px;
+         font-size: 0.9rem;
+         color: rgb(var(--purple));
+         font-family: var(--bold-font);
+         cursor: pointer;
+
+         &:hover{
+            text-decoration: underline;
+         }
+      }
+      
+      ul{
+         margin-bottom: 20px;
+      }
+
+      .notif-list{
+         margin: 0px 0px 5px 0px;
+         line-height: 26px;
+
+         i{
+            color: var(--text-grey);
+         }
+
+      }
+
+      .arrow{
+         position: absolute;
+         bottom: 0px;
+         cursor: pointer;
+         background-color: white;
+         width: 90%;
+         height: 28px;
+         display: flex;
+         justify-content: center;
+
+         i{
+            margin: 0;
+            padding: 0;
+         }
+      }
    }
 
    .meteo-card{
-      flex: 7;
+      flex: 5;
       height: 100%;
    }
 }

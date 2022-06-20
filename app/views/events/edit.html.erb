@@ -1,13 +1,7 @@
 <div class="event-container form-container"> 
-
-   <%= render 'image' %>
+  <%= render 'image' %>
   <div class="event-container-left form-container-right"> 
-      <%= render 'top_edit_element' %>
-
-      <%= render partial: 'form_edit', locals:{ event: @event, cities: @cities, sports: @sports} %>
-   </div>
-    
+    <%= render 'top_edit_element' %>
+    <%= render partial: 'form_edit', locals:{ event: @event, cities: @cities, sports: @sports} %>
+  </div>
 </div>
-
-
-

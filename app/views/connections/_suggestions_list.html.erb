@@ -5,7 +5,7 @@
     <%if current_user.suggestions.present?%>
       <ul>
         <% current_user.suggestions.each do |suggestion|%>
-          <li class="suggest-friends">
+          <li class="suggest-friends all-suggestion-<%=suggestion.id%>">
             <%if suggestion.refused.nil? %>
               <div>
                 <div class="d-flex">
@@ -22,11 +22,11 @@
               <%if suggestion.accepted %>
                 En attente de validation de l'autre côté
               <%else%>
-                <div class="button-row">
-                  <%=link_to suggestion_path(suggestion, answer: "accepted"), class: 'button secondary', method: :patch do %>
+                <div class="button-row btns-suggestion-<%=suggestion.id%>">
+                  <%=link_to suggestion_path(suggestion, answer: "accepted"), class: 'button secondary btn-accept', method: :patch, remote: true do %>
                     <i class="fa-solid fa-plus"></i> Ajouter
                   <%end%>
-                  <%=link_to "Retirer", suggestion_path(suggestion, answer: "refused"), class:'button refuse-btn', method: :patch %>
+                  <%=link_to "Retirer", suggestion_path(suggestion, answer: "refused"), class:'button refuse-btn btn-refuse', method: :patch, remote: true %>
                 </div>
               <%end%>
             </li>

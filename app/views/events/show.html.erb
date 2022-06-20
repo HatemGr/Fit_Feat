@@ -1,73 +1,13 @@
 <div class="show-event-container form-container">
 
-  <div class="event-left-container form-container-left">
-    
-    <% if @event.image.attached? %> 
-    <div class="img-event"><%= image_tag @event.image %></div>
-    <%else%>
-     <div class="img-show img-fluid"></div>
-    <% end %>
-     
-  </div>
+  <%= render 'show_image' %>
 
   <div class="right-container right-content">
-    <div class="top-element">
-        <div class="twins">
-          <h1 class="title"> <strong>Title: </strong><%= @event.title %></h1>
-          <div class="title-lign"></div>
-        </div>  
-     </div>
+    <%= render 'show_title' %>
 
     <p id="notice"><%= notice %></p>
 
-    <div class="row1-container">
-    
-      <div class="box box-down cyan">
-        <h2>Organisateurs</h2>
-        <p><%= @event.admin.full_name %></p>
-        <i class="fa-solid fa-user" style="font-size: 1.2em"></i>
-      </div>
-
-      <div class="box red">
-        <h2>Sport</h2>
-        <p><%= @event.sport.name %></p>
-        <i class="fa-solid fa-volleyball" style="font-size: 1.2em"></i>
-      </div>
-
-      <div class="box box-down blue">
-        <h2>Description</h2>
-        <p><%= @event.description %></p>
-        <i class="fa-solid fa-comment" style="font-size: 1.2em"></i>
-      </div>
-
-    </div>
-    
-    <div class="row2-container">
-      <div class="box orange">
-        <h2>Date: </h2>
-        <p><%= @event.date %></p>
-        <i class="fa-solid fa-calendar" style="font-size: 1.2em"></i>
-      </div>
-    </div>
-    
-    <div class="row3-container">
-      <div class="box purple">
-        <h2>Adresse-City: </h2>
-        <p><%= @event.full_address %></p>
-        <i class="fa-solid fa-location-dot" style="font-size: 1.2em"></i>
-      </div>
-
-      <div class="box purple">
-        <h2>Durée: </h2>
-        <p><%= @event.duration %></p>
-        <i class="fa-solid fa-stopwatch" style="font-size: 1.2em"></i>
-      </div>
-    </div>
-
-    <div class="button-row">
-      <%= link_to 'Edit', edit_event_path(@event) %> |
-      <%= link_to 'Back', events_path%>
-    </div>  
+    <%= render 'show_info' %>
     
   </div>
 </div>
