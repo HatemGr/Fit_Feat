@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   def index
     @messages_received = Message.received_messages(current_user)
     @messages_sent = Message.sent_messages(current_user)
+    @message = Message.new
   end
 
   # GET /messages/1 or /messages/1.json
@@ -29,27 +30,42 @@ class MessagesController < ApplicationController
 
   # POST /messages or /messages.json
   def create
-    @message = Message.new(message_params.merge(sender: current_user))
-    @friends = current_user.friends
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to messages_path, notice: "Message was successfully sent." }
-        format.json {  }
+    puts params
+    #conversation has not begun yet
+    if params[:new]
+      puts "*"*50
+      puts params[:new]
+      puts params[:user]
+      @new_message = Message.new
+      puts "*"*50
+      if params[:recipient_id].to_i ==0
+        @recipient = User.find(params[:user].to_i)
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { }
+        @recipient = User.find(params[:recipient_id].to_i)
       end
+    else
+      #conversation exists
+      @already_conversation = true
+      if params[:recipient_id].to_i ==0
+        @recipient = User.find(params[:user].to_i)
+      else
+        @recipient = User.find(params[:recipient_id].to_i)
+      end
+      @new_message = Message.new
+      @message = Message.create(message_params.merge(sender: current_user, recipient_id: params[:recipient_id]))
+    end
+    respond_to do |format|
+        format.html { }
+        format.js { }
     end
   end
 
   # PATCH/PUT /messages/1 or /messages/1.json
   def update
-    @conversation = current_user.conversation(params[:user])
-    puts params
-    puts "*"*50
-    puts @conversation
-    puts "*"*50
+    @recipient = User.find(params[:user].to_i)
+    @conversation = current_user.conversation(@recipient.id)
     @message.update(read: params[:read])
+    @new_message = Message.new
     respond_to do |format|
         format.html { }
         format.js { }

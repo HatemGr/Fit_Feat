@@ -1,12 +1,13 @@
 <div class="row">
-  <%if @message.sender == current_user%>
+<%message.created_at%>
+  <%if message.sender == current_user%>
     <div class="col"></div>
     <div class="col">
-        <p>Moi: <%=@message.body%></p>
+      <p>Moi: <%=message.body%></p>
     </div>
-    <%else%>
+  <%else%>
     <div class="col">
-    <p><%=@message.sender.full_name%>: <%=@message.body%></p>
+      <p><%=message.sender.full_name%>: <%=message.body%></p>
     </div>
     <div class="col"></div>
   <%end%>

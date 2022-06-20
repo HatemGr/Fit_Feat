@@ -1,33 +1,10 @@
-<%= form_with(model: message, local: true) do |form| %>
-  <% if message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
-      <ul>
-      <% message.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field"> 
-    <%= form.label :recipient_id %>
-    <%= form.select :recipient_id, options_for_select(@friends.map{|friend| [friend.full_name, friend.id] } ),placeholder: "Choisis un ami" %>
-  </div>
-
+<%= form_with(model: message, remote: :true) do |form| %>
   <div class="field">
-    <%= form.label :object %>
-    <%= form.text_field :object %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
+    Message: 
     <%= form.text_area :body %>
   </div>
-  
-
+  <%= hidden_field_tag(:recipient_id, recipient.id) %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Envoyer"%>
   </div>
 <% end %>

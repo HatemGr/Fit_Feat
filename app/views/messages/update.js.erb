@@ -1,3 +1,5 @@
 console.log(document.getElementById("message-display"));
 document.getElementById("message-display").innerHTML = "";
 document.getElementById("message-display").insertAdjacentHTML("beforeend", "<%= j render 'conversation', {conversation: @conversation, user: @message.recipient}%> ");
+document.getElementById("form-message").innerHTML = "";
+document.getElementById("form-message").insertAdjacentHTML("beforeend", "<%= j render 'form', {message: @new_message, recipient: @recipient } %>  ");

@@ -7,14 +7,16 @@
       <h1>Messages</h1>
     </div>
     <div class="row align-items-start px-3">
-      <div class="col-5 card container-friends-list">
-        <div class="row mb-3">
+      <div class="col-5 card container-friends-list m-3">
+        <div id="friends-list" class="row mb-3">
           <%= render 'friends_list'%>
         </div>
       </div>
-      <div class="col-8 card sticky-top">
+      <div class="col-8 card sticky-top m-3">
         <h2 class="offset-md-1">Conversation</h2>
         <div class="p-3 " id="message-display"></div>
+        <div id="form-message">
+        </div>
       </div>
     </div>
-    </div>
+  </div>

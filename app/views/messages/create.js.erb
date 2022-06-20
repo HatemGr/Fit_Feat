@@ -1,0 +1,12 @@
+<%# document.getElementById("friends-list").innerHTML = "";
+document.getElementById("friends-list").insertAdjacentHTML("beforeend", "<%= j render 'friends-list'%> 
+
+document.getElementById("form-message").innerHTML = "";
+document.getElementById("form-message").insertAdjacentHTML("beforeend", "<%= j render 'form', {message: @new_message, recipient: @recipient}%> ")
+<%if @already_conversation%>
+    document.getElementById("message-display").insertAdjacentHTML("beforeend", "<%= j render 'message_display', message: @message%> ");
+<%else%>
+    document.getElementById("message-display").innerHTML = "";
+<%end%>
+
+
