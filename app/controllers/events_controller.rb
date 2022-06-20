@@ -32,6 +32,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.update(admin: current_user)
+    @event.update(max_participants: params[:event][:max_participants].to_i) if params[:event][:max_participants].present? 
     @sports = Sport.all
     @cities = City.all
     @event.image.attach(params[:image])
@@ -55,6 +56,7 @@ class EventsController < ApplicationController
     @sports = Sport.all
     respond_to do |format|
       if @event.update(event_params)
+        @event.update(max_participants: params[:event][:max_participants].to_i) if params[:event][:max_participants].present? 
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @event }
       else

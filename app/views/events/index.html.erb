@@ -10,7 +10,7 @@
       <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
       
       <%if @current_user_events.empty?%>
-      <p> Tu n'as encore crée d'event ! </p>
+      <p> Tu n'as pas encore crée d'event ! </p>
       <%= link_to new_event_path, class: "link-button" do %>
            Créer un event <i class="fa-solid fa-arrow-right"></i> 
       <%end%>

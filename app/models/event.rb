@@ -36,4 +36,8 @@ class Event < ApplicationRecord
     Event.all.near(user.to_coordinates , 10, units: :km)
   end
 
+  def is_full?
+    self.max_participants.present? &&  self.max_participants.to_i == self.participations.size
+  end
+
 end
