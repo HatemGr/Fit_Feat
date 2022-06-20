@@ -1,41 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="show-event-container form-container">
 
-<p>
-  <strong>Admin:</strong>
-  <%= @event.admin.full_name %>
-</p>
+  <div class="event-left-container form-container-left">
+    <div class="img-show img-fluid"></div>
+  </div>
 
-<p>
-  <strong>Sport:</strong>
-  <%= @event.sport.name %>
-</p>
+  <div class="right-container right-content">
+    <div class="top-element">
+        <div class="twins">
+          <h1 class="title"> <strong>Title: </strong><%= @event.title %></h1>
+          <div class="title-lign"></div>
+        </div>  
+  </div>
 
-<p>
-  <strong>City:</strong>
-  <%= @event.city.name %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<ul>
+    
+    <li>
+      <strong>Admin:</strong>
+      <p><%= @event.admin.full_name %></p>
+    </li>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <li>
+      <strong>Sport: </strong>
+      <p><%= @event.sport.name %></p>
+    </li>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+   <li>
+      <strong>City: </strong>
+      <p><%= @event.city.name %></p>
+    </li>
 
-<p>
-  <strong>Address:</strong>
-  <%= @event.address %>
-</p>
+    <li>
+      <strong>Description: </strong>
+      <p><%= @event.description %></p>
+    </li>
 
+    <li>
+      <strong>Date: </strong>
+     <p><%= @event.date %></p> 
+    </li>
 
+    <li>
+      <strong>Address: </strong>
+     <p><%= @event.address %></p> 
+    </li>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+</ul>
+
+    <%= link_to 'Edit', edit_event_path(@event) %> |
+    <%= link_to 'Back', events_path %>
+  </div>
+</div>
