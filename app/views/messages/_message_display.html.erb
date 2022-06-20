@@ -1,6 +1,13 @@
-<p>Expéditeur: <%=@message.sender.full_name%></p>
-<p>Destinataire: <%=@message.recipient.full_name%></p>
-<h4>Objet: <%=@message.object%></h4>
-<p>Message: <%=@message.body%></p>
-
-<%= render partial: "message_buttons", locals: {message: @message}%>
+<div class="row">
+  <%if @message.sender == current_user%>
+    <div class="col"></div>
+    <div class="col">
+        <p>Moi: <%=@message.body%></p>
+    </div>
+    <%else%>
+    <div class="col">
+    <p><%=@message.sender.full_name%>: <%=@message.body%></p>
+    </div>
+    <div class="col"></div>
+  <%end%>
+</div>

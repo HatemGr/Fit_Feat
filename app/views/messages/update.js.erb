@@ -1,18 +1,3 @@
+console.log(document.getElementById("message-display"));
 document.getElementById("message-display").innerHTML = "";
-document.getElementById("message-display").insertAdjacentHTML("beforeend", "<%= j render 'message_display', {message: @message, user: @message.recipient}%> ");
-console.log(<%=@message.read%>);
-
-if (<%=@message.read%> == true){
-  document.getElementById("enveloppe").className = "fa-solid fa-envelope";
-  document.getElementById("link-<%=@message.id%>").style.color="black";
-  document.getElementById("link-<%=@message.id%>").style.fontWeight="400";
-  document.getElementById("link-<%=@message.id%>").style.opacity=0.5;
-} 
-else {
-  document.getElementById("enveloppe").className = "";
-  document.getElementById("enveloppe").className = "fa-solid fa-envelope-open";
-  document.getElementById("link-<%=@message.id%>").style.color= "#007bff";
-  document.getElementById("link-<%=@message.id%>").style.fontWeight="bold";
-  document.getElementById("button-<%=@message.id%>").href = "/emails/<%=@message.id%>?read=true";
-  document.getElementById("link-<%=@message.id%>").style.opacity=1;
-}
+document.getElementById("message-display").insertAdjacentHTML("beforeend", "<%= j render 'conversation', {conversation: @conversation, user: @message.recipient}%> ");

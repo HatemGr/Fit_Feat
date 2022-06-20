@@ -1,0 +1,3 @@
+<% @conversation.each do |message| %>
+    <%= render partial: "message_display", locals: {message: message}%>
+<% end %>

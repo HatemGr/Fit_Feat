@@ -152,5 +152,13 @@ class User < ApplicationRecord
     user.friends.include?(self)
   end
 
+  def conversation(user_id)
+    Message.where(sender_id: user_id, recipient: self).or(Message.where(sender: self, recipient_id: user_id)).order(:created_at)
+  end
+
+  def last_message(user_id)
+    conversation(user_id).last
+  end
+
 
 end

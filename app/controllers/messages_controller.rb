@@ -44,6 +44,11 @@ class MessagesController < ApplicationController
 
   # PATCH/PUT /messages/1 or /messages/1.json
   def update
+    @conversation = current_user.conversation(params[:user])
+    puts params
+    puts "*"*50
+    puts @conversation
+    puts "*"*50
     @message.update(read: params[:read])
     respond_to do |format|
         format.html { }
@@ -54,10 +59,9 @@ class MessagesController < ApplicationController
   # DELETE /messages/1 or /messages/1.json
   def destroy
     @message.destroy
-
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: "Message was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { }
+      format.js { }
     end
   end
 
