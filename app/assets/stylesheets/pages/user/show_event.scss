@@ -12,6 +12,11 @@
          background-position: 25% 20%;
          background-repeat: no-repeat;
       }
+
+      .img-event{
+         display: flex;
+         justify-content: center;
+      }
    }
 
    .top-element{
@@ -21,11 +26,16 @@
       padding: 20px;
 
       .title-lign{
+         position: absolute;
          width: 300px;
+         top: 30px;
+         right: -60px;
       }
    }
 
-
+   .right-container{
+     padding: 20px;
+   }
    .box {
       border-radius: 5px;
       box-shadow: 0px 30px 40px -20px gray;
@@ -85,6 +95,12 @@
          justify-content: center;
          align-items: center;
       }
+      .row3-container {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+      }
       .box-down {
          position: relative;
          top: 150px;
@@ -94,10 +110,9 @@
       
       }
    }
+
+   .button-row{
+      padding: 10px;
+   }
 }
 
-.down-button{
-   position: relative;
-   bottom: 10px;
-   left: 10px;
-}
