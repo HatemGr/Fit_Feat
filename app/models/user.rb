@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :suggestions, dependent: :destroy
   has_many :connections, dependent: :destroy
   has_many :friends, through: :connections, class_name: "User"
-  has_many :notifications
+  has_many :notifications, dependent: :delete_all
   has_one_attached :avatar
 
   validates :first_name, :last_name, length: { maximum: 15 }
