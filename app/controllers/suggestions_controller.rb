@@ -30,17 +30,21 @@ class SuggestionsController < ApplicationController
   end
 
   def update
-    if params[:answer] == "accepted"
-      @suggestion.update(accepted: true)
-      if @suggestion.pair_suggestion.accepted
-        @suggestion.update(refused: false)
-        @suggestion.pair_suggestion.update(refused: false)
+    @job = params[:answer]
+    respond_to do |format|
+      if params[:answer] == "accepted"
+        @suggestion.update(accepted: true)
+        if @suggestion.pair_suggestion.accepted
+          @suggestion.update(refused: false)
+          @suggestion.pair_suggestion.update(refused: false)
+        end
+      else
+        @suggestion.update(refused: true)
+        @suggestion.pair_suggestion.update(refused: true)
       end
-    else
-      @suggestion.update(refused: true)
-      @suggestion.pair_suggestion.update(refused: true)
+      format.html { redirect_to user_connections_path(current_user), notice: "Suggestion was successfully updated." }
+      format.js { }
     end
-    redirect_to user_path(current_user)
     
     
     # respond_to do |format|
