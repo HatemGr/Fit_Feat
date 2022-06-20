@@ -1,11 +1,17 @@
 <div class="wrapper-not-meteo">
-<div class="notification-card card">
-   <p class="card-title"> Notifications </p>
-   <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
-   Ici tes notifications
-</div>
-<div class="meteo-card card"> Ici ta méteo
-   <p class="card-title"> Météo </p>
-   <p class="card-icon"> <i class="fa-solid fa-cloud-sun"></i> </p>
-</div>
+   <div class="notification-card card">
+      <p class="card-title"> Notifications </p>
+      <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
+      <% if @user_notifications%>
+      <ul>
+         <% @user_notifications.each do |notification|%>
+         <li><%= notification.content %></li>
+         <%end%>
+      </ul>
+      <%end%>
+   </div>
+   <div class="meteo-card card"> Ici ta méteo
+      <p class="card-title"> Météo </p>
+      <p class="card-icon"> <i class="fa-solid fa-cloud-sun"></i> </p>
+   </div>
 </div>
