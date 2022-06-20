@@ -27,6 +27,16 @@
       .event-form-container{
          position: relative;
          top: 70px;
+
+         textarea{
+            height: 50px;
+
+         }
+
+         .fa-comment{
+            position: absolute;
+            top: 18px;
+         }
       }
 
       .together{
@@ -50,3 +60,4 @@ hr{
 	text-align: flex-start;
 	width: 200%;
 }
+
