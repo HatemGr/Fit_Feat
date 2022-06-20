@@ -1,27 +1,28 @@
-<div class="container-geoloc">
-  <div class="list-container">
-    <div class="container">
-          <ul class="event-items">
-            <% if events%>
-              <% events.each do |event| %>
-                <div class="event-item">
-                  <div class="event-date-container"> 
-                     <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
-                     <p> <%= event.date.strftime("%B") %>  </p>
-                  </div>
-                  <div class="event-content"> 
-                    <h3> <%= link_to event.title, event_path(event) %>  </h3>
-                    <div class="event-partipants"> 0 partipants</div>
-                    <%= event.date.strftime("%Hh%M")%>
-                  </div>
 
-                  <div class="event-sport-tag"> <%=event.sport.name%> </div>
-                </div>
-              <%end%> 
-            <%end%>
-          </ul>
+  <div class="container-geoloc">
+    <div class="list-container">
+      <div class="container">
+            <ul class="event-items">
+              <% if events%>
+                <% events.each do |event| %>
+                  <div class="event-item">
+                    <div class="event-date-container"> 
+                      <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
+                      <p> <%= event.date.strftime("%B") %>  </p>
+                    </div>
+                    <div class="event-content"> 
+                      <h3> <%= link_to event.title, event_path(event) %>  </h3>
+                      <%= render partial: 'events/event_participations', locals: {event: event}%> 
+                      <%= event.date.strftime("%Hh%M")%>
+                    </div>
+
+                    <div class="event-sport-tag"> <%=event.sport.name%> </div>
+                  </div>
+                <%end%> 
+              <%end%>
+            </ul>
+      </div>
     </div>
   </div>
-</div>
   
 

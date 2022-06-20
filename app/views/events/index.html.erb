@@ -4,10 +4,18 @@
       <%= link_to 'Crée un event', new_event_path, class:'button primary' %>
     </div>
     <%=render 'events_around'%>
-    <br>
+
     <div class="card">
       <p class="card-title"> Fait vivre la communauté en organisants des propres events </p>
       <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
+      
+      <%if @current_user_events.empty?%>
+      <p> Tu n'as encore crée d'event ! </p>
+      <%= link_to new_event_path, class: "link-button" do %>
+           Créer un event <i class="fa-solid fa-arrow-right"></i> 
+      <%end%>
+      <%else%>
       <%= render partial: 'event_list', locals: {events: @current_user_events}%>
+      <%end%>
     </div>
 </div>

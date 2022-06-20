@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user_events = @user.events_after_now.limit(5)
+    @user_notifications = @user.notifications.order(created_at:'desc')
   end
 
   def new

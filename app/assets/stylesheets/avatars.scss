@@ -1,3 +1,17 @@
 // Place all the styles related to the avatars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.events-avatar{
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   object-fit: cover;
+   border: 2px solid rgb(241, 170, 37);
+   box-sizing: border-box;
+}
+
+.avatar-plus{
+   margin-left: 13px;
+   color: var(--text-grey);
+}
