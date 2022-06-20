@@ -2,12 +2,14 @@
    <div class="notification-card card">
       <p class="card-title"> Notifications </p>
       <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
-      <% if @user_notifications%>
-      <ul>
-         <% @user_notifications.each do |notification|%>
-         <li><%= notification.content %></li>
-         <%end%>
-      </ul>
+      <% if @user_notifications.empty?%>
+         <p> Tu n'as pas de notifications. </p>
+      <%else%>
+         <ul>
+            <% @user_notifications.each do |notification|%>
+            <li><%= notification.content %></li>
+            <%end%>
+         </ul>
       <%end%>
    </div>
    <div class="meteo-card card"> Ici ta méteo
