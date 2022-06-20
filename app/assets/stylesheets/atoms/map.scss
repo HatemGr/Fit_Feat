@@ -5,6 +5,13 @@
   border-radius: 10px;
 }
 
+#map-event {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border-radius: 10px;
+}
+
 .marker {
   background-image: url('pointer.png');
   background-size: cover;
@@ -21,8 +28,8 @@ max-width: 200px;
 
 .mapboxgl-popup-content {
   padding: 20px 25px 20px 15px;
-text-align: center;
-font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 
   h2{
     font-size: 1.1rem;

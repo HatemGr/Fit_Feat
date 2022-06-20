@@ -23,3 +23,21 @@ if (mapElement != null) {
 			.addTo(map);
 	}
 }
+
+var mapElementEvent = document.getElementById("map-event");
+if (mapElementEvent != null) {
+mapboxgl.accessToken = mapElementEvent.dataset.mapboxApiKey;
+
+var map = new mapboxgl.Map({
+	container: "map-event", //Container ID
+	style: "mapbox://styles/mapbox/dark-v10", //Map style
+	center: [mapElementEvent.dataset.eventLng, mapElementEvent.dataset.eventLat], //Starting postition
+	zoom: 15,
+});
+
+const el = document.createElement("div");
+el.className = "marker";
+new mapboxgl.Marker(el)
+	.setLngLat([mapElementEvent.dataset.eventLng, mapElementEvent.dataset.eventLat])
+	.addTo(map);
+}
