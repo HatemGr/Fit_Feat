@@ -11,7 +11,7 @@
                   </div>
                   <div class="event-content"> 
                     <h3> <%= link_to event.title, event_path(event) %>  </h3>
-                    <div class="event-partipants"> 0 partipants</div>
+                    <%= render partial: 'events/event_participations', locals: {event: event}%> 
                     <%= event.date.strftime("%Hh%M")%>
                   </div>
 

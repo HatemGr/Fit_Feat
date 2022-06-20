@@ -38,9 +38,17 @@
 .event-content{
    display: flex;
    flex-direction: column;
-   gap: 0px;
-   .event-participants{
 
+   gap: 3px;
+
+   .event-partipants{
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      
+      img{
+         margin-right: -10px;
+      }
    }
 }
 

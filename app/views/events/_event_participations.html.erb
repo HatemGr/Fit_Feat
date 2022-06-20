@@ -1,0 +1,24 @@
+<div class="event-partipants"> 
+   <% if event.participations.empty?%>
+      <p> 0 participant </p>
+   <%else%>
+       <% if event.participations.length <= 4%>
+         <% event.participations.each do |participation| %>                    
+               <%if participation.user.avatar.attached?%>
+                     <%= image_tag participation.user.avatar, alt: 'avatar', :class => "events-avatar" %>
+               <%else%>
+                     <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
+               <%end%>  
+         <%end%> 
+      <%else%>
+            <% event.participations.take(4).each do |participation| %>                    
+               <%if participation.user.avatar.attached?%>
+                     <%= image_tag participation.user.avatar, alt: 'avatar', :class => "events-avatar" %>
+               <%else%>
+                     <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
+               <%end%> 
+         <%end%> 
+             <span class="avatar-plus"> +<%=event.participations.length - 4 %> </span>
+      <%end%>
+   <%end%>
+</div>
