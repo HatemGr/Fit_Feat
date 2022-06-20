@@ -64,14 +64,13 @@ body {
    
    /* size */
    --title: 3.438rem;
-   --big: clamp(2rem, 4vw, 3rem);
+   --big: clamp(2rem, 4vw, 2.2rem);
    --medium: clamp(1.3rem, 4vw, 1.8rem);
-
    --Xmedium: clamp(1.3rem, 4vw, 1.6rem);
-
    --regular: clamp(1.3rem, 4vw, 1.4rem);
    --paragraphe: 1.3rem;
    --little: clamp(0.9rem, 4vw, 1rem);
+   --Xlittle: clamp(0.9rem, 4vw, 0.9rem);
 
 
    /* weight */
@@ -81,13 +80,18 @@ body {
       width: fit-content;
    }
 
+   h1{
+      font-size: var(--big);
+      font-family: var(--black-font);
+   }
+
    h2{
       font-size: var(--medium);
       font-family: var(--bold-font);
    }
 
    h3{
-      font-size: var(--Xmedium);
+      font-size: var(--regular);
       font-family: var(--bold-font);
    }
    
@@ -139,4 +143,13 @@ ul{
 form{
    width: fit-content;
    width: 100%;
+}
+
+
+/*********************************/
+/* 	    RESET BOOTSTRAP       */
+/*********************************/
+
+.container{
+   padding: 0 !important;
 }
