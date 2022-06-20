@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    redirect_to edit_user_path(current_user) unless current_user == @user
     @cities = City.all
   end
 
