@@ -15,3 +15,57 @@
    margin-left: 13px;
    color: var(--text-grey);
 }
+
+.change-avatar{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   margin-bottom: 30px;
+
+   img{
+      border-radius: 50%;
+      min-width: 70px;
+      min-height: 70px;
+      max-width: 70px;
+      max-height: 70px;
+      object-fit: cover;
+      border: 3px solid var(--orange);
+   }
+
+   form{
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      gap: 3px;
+      justify-content: flex-start;
+      align-items: flex-start;
+   }
+   
+
+   label{
+      cursor: pointer;
+      padding: 6px 11px 6px 10px;
+      border-radius: 10px;
+      color:rgba(var(--purple), 0.9) ;
+      border: 1px dashed rgba(var(--purple), 0.9);
+      box-sizing: border-box;
+      font-size: var(--Xlittle);
+
+      &:hover{
+         background-color: rgba(var(--purple), 0.9);
+         color: white;
+      }
+   }
+
+   input[type=file]{
+      display: none;
+   }
+
+   input[type=submit]{
+     border-style: none;
+     background-color: transparent;
+     color: rgb(var(--purple));
+     text-decoration: underline;
+     display: none;
+   }
+}

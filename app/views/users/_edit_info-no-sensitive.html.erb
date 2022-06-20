@@ -2,14 +2,21 @@
   <p class="card-title"> Profil </p>
   <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
   
-  <%if @user.avatar.attached?%>
-        <%= image_tag @user.avatar, alt: 'avatar', :style => "width:150px;" %>
+  <div class="change-avatar">
+      <%if @user.avatar.attached?%>
+            <%= image_tag @user.avatar, alt: 'avatar'%>
+      <%else%>
+            <%= image_tag "defaultavatar.png" %>
+      <%end%>
+      <%= form_tag user_avatars_path(@user), multipart: true do %>
+        <%= label_tag :avatar, id:"label-avatar" do %>
+         <i class="fa-solid fa-download"></i> Télécharger
         <%end%>
-  <p>Changer d'avatar ?</h3>
-<%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
-<% end %>
+        <%= file_field_tag :avatar %>
+        <%= submit_tag "Mettre à jour la photo", id:"submit-avatar" %>
+      <% end %>
+  </div>
+
   <%= form_with(model: user, local: true) do |form| %>
     <% if user.errors.any? %>
       <div id="error_explanation">
