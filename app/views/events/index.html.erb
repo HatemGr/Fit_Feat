@@ -3,7 +3,23 @@
       <h1> Events 🏅</h1> 
       <%= link_to 'Crée un event', new_event_path, class:'button primary' %>
     </div>
-    <%=render 'events_around'%>
+
+   <div class="card">
+  <p class="card-title"> Rencontre des gens lors d'evenements sportifs </p>
+  <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
+  <div class="container-geoloc">
+    <div class="list-container">
+      <div class="container">
+  <% if @events.empty?%>
+        <p> Tu n'as pas encore d'event autour de toi, renseigne ton addresse ! </p>
+  <%else%>
+        <h2> Les evenements autour de toi (scroll)</h2>
+        <%=render partial: 'events_around', locals: {events: @events}%>
+  <%end%>
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="card">
       <p class="card-title"> Fait vivre la communauté en organisants des propres events </p>

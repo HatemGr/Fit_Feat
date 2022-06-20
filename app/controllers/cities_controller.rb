@@ -8,6 +8,7 @@ class CitiesController < ApplicationController
 
   # GET /cities/1 or /cities/1.json
   def show
+    @events = @city.events
   end
 
   # GET /cities/new
