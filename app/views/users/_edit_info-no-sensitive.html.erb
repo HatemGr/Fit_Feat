@@ -9,7 +9,7 @@
             <%= image_tag "defaultavatar.png" %>
       <%end%>
       <%= form_tag user_avatars_path(@user), multipart: true do %>
-        <%= label_tag :avatar, id:"label-avatar" do %>
+        <%= label_tag :avatar, id:"label-avatar", onclick:"downloadPhoto()" do %>
          <i class="fa-solid fa-download"></i> Télécharger
         <%end%>
         <%= file_field_tag :avatar %>

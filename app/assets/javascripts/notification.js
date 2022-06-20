@@ -1,9 +1,7 @@
-window.onload = function () {
-	var notifCard = document.getElementById("notif-card");
+function openNotif() {
 	var arrowBtn = document.getElementById("arrow-btn");
+	var notifCard = document.getElementById("notif-card");
 
-	arrowBtn.addEventListener("click", function () {
-		notifCard.classList.toggle("notif-collapse");
-		arrowBtn.classList.toggle("reverse-arrow");
-	});
-};
+	notifCard.classList.toggle("notif-collapse");
+	arrowBtn.classList.toggle("reverse-arrow");
+}
