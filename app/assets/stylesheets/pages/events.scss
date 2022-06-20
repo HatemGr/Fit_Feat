@@ -1,3 +1,63 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+   .event-items{
+   display: flex;
+   flex-direction: column;
+   gap:20px
+   }
+.event-item{
+   padding: 15px; 
+   background-color: var(--grey);
+   width: 600px;
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   border-radius: 10px;
+   position: relative;
+
+}
+
+.event-date-container{
+   width: 75px;
+   height: 75px;
+   background-color: rgb(var(--white));
+   display: flex;
+   flex-direction: column;
+   border-radius: 5px;
+   justify-content: center;
+   align-items: center;
+
+   .event-date-day{
+      font-family: var(--bold-font);
+      font-size: var(--regular);
+   }
+}
+
+
+.event-content{
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   .event-participants{
+
+   }
+}
+
+
+
+.event-sport-tag{
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   background-color: rgb(161, 198, 247);
+   color: rgb(21, 75, 119);
+   border-radius: 7px;
+   padding: 7px 12px ;
+}
+
+.button-participate{
+   position: absolute;
+   right: 10px;
+   bottom: 10px;
+}
