@@ -8,6 +8,8 @@
 
 require 'faker'
 
+Notification.destroy_all
+Participation.destroy_all
 Event.destroy_all
 RunningPerformance.all.destroy_all
 TennisPerformance.all.destroy_all
