@@ -4,8 +4,6 @@ class MessagesController < ApplicationController
 
   # GET /messages or /messages.json
   def index
-    @messages_received = Message.received_messages(current_user)
-    @messages_sent = Message.sent_messages(current_user)
     @message = Message.new
   end
 
