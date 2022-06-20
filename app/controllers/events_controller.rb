@@ -69,6 +69,9 @@ class EventsController < ApplicationController
 
   # DELETE /events/1 or /events/1.json
   def destroy
+    @event.participations.each do |participation|
+      Notification.create(user: participation.user,content:"L'evenement #{@event.title} à été annulé.")
+    end
     @event.destroy
 
     respond_to do |format|
