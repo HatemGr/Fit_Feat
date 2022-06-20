@@ -1,0 +1,10 @@
+<%= form_with(model: message, remote: :true) do |form| %>
+  <div class="field">
+    Message: 
+    <%= form.text_area :body %>
+  </div>
+  <%= hidden_field_tag(:recipient_id, recipient.id) %>
+  <div class="actions">
+    <%= form.submit "Envoyer"%>
+  </div>
+<% end %>

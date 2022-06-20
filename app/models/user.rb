@@ -15,6 +15,9 @@ class User < ApplicationRecord
   has_many :connections, dependent: :destroy
   has_many :friends, through: :connections, class_name: "User"
   has_many :notifications, dependent: :delete_all
+  has_many :messages
+  has_many :sent_messages, foreign_key: 'sender_id', class_name: "Message"
+  has_many :received_messages, foreign_key: 'recipient_id', class_name: "Message"
   has_one_attached :avatar
 
   validates :first_name, :last_name, length: { maximum: 15 }
@@ -147,6 +150,14 @@ class User < ApplicationRecord
 
   def is_friend_with?(user)
     user.friends.include?(self)
+  end
+
+  def conversation(user_id)
+    Message.where(sender_id: user_id, recipient: self).or(Message.where(sender: self, recipient_id: user_id)).order(:created_at)
+  end
+
+  def last_message(user_id)
+    conversation(user_id).last
   end
 
 

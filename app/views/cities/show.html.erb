@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="city-show-container form-container">
+    <div class="top-city-container form-container-left">
+          <div class="city-img img-fluid"></div>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @city.name %>
-</p>
+  <div class="city-container-top form-container-right">
+    <div class="top-element">
+            <div class="twins">
+              <h1 class="title"> <%= @city.name %></h1>
+              <div class="title-lign"></div>
+            </div>  
+    </div>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @city.longitude %>
-</p>
+      
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @city.latitude %>
-</p>
+    <div class="event-city-show">
+         <div class="card">
+          <p class="card-title"> Rencontre des gens lors d'evenements sportifs </p>
+          <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
+          <div class="container-geoloc">
+            <div class="list-container">
+              <div class="container">
+               <% if @events.empty?%>
+        <p> Tu n'as pas encore d'event autour de toi, renseigne ton addresse ! </p>
+  <%else%>
+        <h2> Les evenements dans <%= @city.name %></h2>
+                <%=render partial: 'events/events_around', locals: {events: @events}%>
+          <% end%>      
+              </div>
+            </div>
+          </div>
+       </div> 
+      
+    </div>
 
-<%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', cities_path %>
+      <%= link_to 'Back', cities_path %>
+    
+  </div>
+</div>

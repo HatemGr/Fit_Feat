@@ -1,16 +1,4 @@
-<div class="show-event-container form-container">
-
-  <%= render 'show_image' %>
-
-
-
-  <div class="right-container right-content">
-    <%= render 'show_title' %>
-
-    <p id="notice"><%= notice %></p>
-
-
-    <div class="row1-container">
+<div class="row1-container">
     
       <div class="box box-down cyan">
         <h2>Organisateurs</h2>
@@ -30,7 +18,7 @@
         <i class="fa-solid fa-comment" style="font-size: 1.2em"></i>
       </div>
 
-    </div>
+ </div>
     
     <div class="row2-container">
       <div class="box orange">
@@ -54,34 +42,7 @@
       </div>
     </div>
 
-      <%if @event.longitude %>
-        <div id='map-event' class="mapbox-container"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-              data-event-lng="<%= @event.longitude%>"
-              data-event-lat="<%= @event.latitude%>">
-        </div>
-      <%end%>
-
-    <div class="button-participate">
-      <%if find_participation(@event,current_user) %>
-        <%=button_to event_participation_path(@event, find_participation(@event,current_user)), method: :delete, :class => "button primary-outline" do %>
-        <i class="bi bi-bookmark-check-fill"></i>&nbsp; Ne plus participer<%end%>
-        <% elsif @event.is_full? %>
-        <button>DESO C'EST PLEIN</button>
-        <%else%>
-        <%=button_to event_participations_path(@event),:class => "button primary" do %>
-        <i class="bi bi-bookmark-plus"></i></i>&nbsp; Participer <%end%>
-      <%end%>
-    </div>
-
     <div class="button-row">
       <%= link_to 'Edit', edit_event_path(@event) %> |
       <%= link_to 'Back', events_path%>
-    </div>      
-
-  </div>
-
-</div>
-
-
-<%= javascript_include_tag 'map_box'%>
+    </div>  

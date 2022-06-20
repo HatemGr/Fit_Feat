@@ -1,0 +1,20 @@
+<p class="card-title"> Tes conversations </p>
+<div class="friends-list">
+  <ul>
+    <% if current_user.friends.length == 0%>
+      <p>Tu n'as pas encore d'amis ! </p>
+    <%else%>
+      <% current_user.friends.each do |friend|%>
+        <li>
+          <div class="d-flex">
+            <%if current_user.conversation(friend).present?%>
+              <%= link_to friend.full_name, message_path(current_user.last_message(friend), user: friend), remote: :true, method: :patch, class: "friend-#{friend.id}"%>
+            <%else%>
+              <%= link_to friend.full_name, messages_path(@message, new: true, user: friend), remote: :true, method: :post, class: "friend-#{friend.id}" %>
+            <%end%>
+          </div>
+        </li>
+      <%end%>
+    <%end%>
+  </ul>
+</div>

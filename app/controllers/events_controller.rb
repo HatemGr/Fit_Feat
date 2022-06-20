@@ -12,7 +12,6 @@ class EventsController < ApplicationController
   def show
     @cities = City.all
     @sports = Sport.all
-    
   end
 
   # GET /events/new

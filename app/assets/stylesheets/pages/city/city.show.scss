@@ -1,0 +1,27 @@
+.city-show-container{
+   flex-direction: column !important;
+   width: 100vw;
+
+   .city-img{
+      background: url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80) !important;
+      background-position: 25% 18% !important;
+   }
+
+   .twins{
+      display: flex;
+      position: relative;
+      right: 40px;
+
+      .title-lign{
+         position: absolute;
+         right: -90px;
+         top: 28px;
+      }
+   }
+
+   .event-city-show{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
