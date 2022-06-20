@@ -24,6 +24,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    redirect_to user_path(current_user) unless current_user == @event.admin
     @cities = City.all
     @sports = Sport.all
   end
