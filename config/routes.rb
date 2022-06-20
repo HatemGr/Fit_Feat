@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'notifications/index'
+  get 'notifications/create'
+  get 'notifications/update'
+  get 'notifications/destroy'
   get 'participations/create'
   get 'participations/destroy'
   devise_for :users, :controllers => {:registrations => "registrations"}

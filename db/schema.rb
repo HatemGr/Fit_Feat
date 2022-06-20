@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_17_115028) do
+ActiveRecord::Schema.define(version: 2022_06_19_190136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2022_06_17_115028) do
     t.string "title"
     t.string "description"
     t.datetime "date"
+    t.integer "duration"
     t.string "address"
     t.float "longitude"
     t.float "latitude"
@@ -89,6 +90,15 @@ ActiveRecord::Schema.define(version: 2022_06_17_115028) do
     t.index ["admin_id"], name: "index_events_on_admin_id"
     t.index ["city_id"], name: "index_events_on_city_id"
     t.index ["sport_id"], name: "index_events_on_sport_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.boolean "viewed", default: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -185,6 +195,7 @@ ActiveRecord::Schema.define(version: 2022_06_17_115028) do
   add_foreign_key "climbing_performances", "sport_users", on_delete: :cascade
   add_foreign_key "events", "cities"
   add_foreign_key "events", "sports"
+  add_foreign_key "notifications", "users"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
   add_foreign_key "running_performances", "sport_users", on_delete: :cascade

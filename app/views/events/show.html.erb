@@ -10,45 +10,49 @@
           <h1 class="title"> <strong>Title: </strong><%= @event.title %></h1>
           <div class="title-lign"></div>
         </div>  
-  </div>
+     </div>
 
     <p id="notice"><%= notice %></p>
 
-<ul>
+    <div class="row1-container">
     
-    <li>
-      <strong>Admin:</strong>
-      <p><%= @event.admin.full_name %></p>
-    </li>
+      <div class="box box-down cyan">
+        <h2>Organisateurs</h2>
+        <p><%= @event.admin.full_name %></p>
+        <i class="fa-solid fa-user" style="font-size: 1.2em"></i>
+      </div>
 
-    <li>
-      <strong>Sport: </strong>
-      <p><%= @event.sport.name %></p>
-    </li>
+      <div class="box red">
+        <h2>Sport</h2>
+        <p><%= @event.sport.name %></p>
+        <i class="fa-solid fa-volleyball" style="font-size: 1.2em"></i>
+      </div>
 
-   <li>
-      <strong>City: </strong>
-      <p><%= @event.city.name %></p>
-    </li>
+      <div class="box box-down blue">
+        <h2>City</h2>
+        <p><%= @event.city.name %></p>
+        <i class="fa-solid fa-city" style="font-size: 1.2em"></i>
+      </div>
 
-    <li>
-      <strong>Description: </strong>
-      <p><%= @event.description %></p>
-    </li>
+    </div>
+    
+    <div class="row2-container">
+      <div class="box orange">
+        <h2>Date: </h2>
+        <p><%= @event.date %></p>
+        <i class="fa-solid fa-calendar" style="font-size: 1.2em"></i>
+      </div>
 
-    <li>
-      <strong>Date: </strong>
-     <p><%= @event.date %></p> 
-    </li>
+      <div class="box purple">
+        <h2>Adresse: </h2>
+        <p><%= @event.address %></p>
+        <i class="fa-solid fa-location-dot" style="font-size: 1.2em"></i>
+      </div>
+    </div>
 
-    <li>
-      <strong>Address: </strong>
-     <p><%= @event.address %></p> 
-    </li>
-
-</ul>
-
-    <%= link_to 'Edit', edit_event_path(@event) %> |
-    <%= link_to 'Back', events_path %>
+    <div class="down-button">
+      <%= link_to 'Edit', edit_event_path(@event), class: " button primary" %> |
+      <%= link_to 'Back', events_path, class: "button primary"%>
+    </div>
   </div>
 </div>
