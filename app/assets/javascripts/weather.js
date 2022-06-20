@@ -19,6 +19,6 @@ window.onload = function () {
 			temp.innerHTML = tempValue;
 			hum.innerHTML = humValue;
 			cloud.innerHTML = cloudValue;
-		})
-		.catch((err) => alert("erreur"));
+		});
+	// .catch((err) => alert("erreur"));
 };
