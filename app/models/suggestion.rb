@@ -5,7 +5,7 @@ class Suggestion < ApplicationRecord
   validates_uniqueness_of :partner, :scope => [:user]
   after_destroy :destroy_pair_suggestion
   after_create :create_pair_suggestion
-  after_update :check_suggestion_status, :notification_friend
+  after_update :check_suggestion_status
 
   def pair_suggestion
     Suggestion.find_by(user: partner, partner: user)
@@ -56,12 +56,6 @@ class Suggestion < ApplicationRecord
           end
         end
       end
-    end
-  end
-
-  def notification_friend
-    if self.accepted
-      UserMailer.notification_email(self.pair_suggestion.user).deliver_now
     end
   end
 
