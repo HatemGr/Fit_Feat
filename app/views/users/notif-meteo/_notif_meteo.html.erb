@@ -1,5 +1,5 @@
 <div class="wrapper-not-meteo">
-   <div class="notification-card card" id="notif-card">
+   <div onclick="openNotif()" class="notification-card card" id="notif-card">
       <p class="card-title"> Notifications </p>
       <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
       <div class="indicator-notif"> <%= @user_notifications.length%>  </div>
@@ -15,8 +15,12 @@
       <a class="read-all"> Marquer comme lu </a>
       <%end%>
    </div>
-   <div class="meteo-card card"> Ici ta méteo
+   <div class="meteo-card card">
       <p class="card-title"> Météo </p>
       <p class="card-icon"> <i class="fa-solid fa-cloud-sun"></i> </p>
+       <h2 id="city-name">  <%= @user.city.name%> </h2>
+       <p> Température : <span class="temp"> </span>° </p>
+       <p> Humidité : <span class="hum"> </span>% </p>
+       <p> Nuages : <span class="clouds"> </span>%</p>
    </div>
 </div>
