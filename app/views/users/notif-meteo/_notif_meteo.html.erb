@@ -1,15 +1,18 @@
 <div class="wrapper-not-meteo">
-   <div class="notification-card card">
+   <div class="notification-card card" id="notif-card">
       <p class="card-title"> Notifications </p>
       <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
+      <div class="indicator-notif"> <%= @user_notifications.length%>  </div>
       <% if @user_notifications.empty?%>
          <p> Tu n'as pas de notifications. </p>
       <%else%>
          <ul>
             <% @user_notifications.each do |notification|%>
-            <li><%= notification.content %></li>
+            <li class="notif-list" > <i class="fa-solid fa-envelope"></i> <%= notification.content %></li>
             <%end%>
          </ul>
+      <div class="arrow" id="arrow-btn"> <i class="fa-solid fa-angle-down"></i> </div>
+      <a class="read-all"> Marquer comme lu </a>
       <%end%>
    </div>
    <div class="meteo-card card"> Ici ta méteo

@@ -24,6 +24,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    redirect_to user_path(current_user) unless current_user == @event.admin
     @cities = City.all
     @sports = Sport.all
   end
@@ -68,6 +69,9 @@ class EventsController < ApplicationController
 
   # DELETE /events/1 or /events/1.json
   def destroy
+    @event.participations.each do |participation|
+      Notification.create(user: participation.user,content:"L'evenement #{@event.title} à été annulé.")
+    end
     @event.destroy
 
     respond_to do |format|
