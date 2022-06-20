@@ -1,0 +1,10 @@
+var suggestionPart = document.querySelector(".container-suggestions-list");
+if (suggestionPart != null) {
+  var suggestionId = "<%= @suggestion.id%>";
+  var job = "<%= @job %>"
+  if(job === "accepted") {
+    document.querySelector(`.btns-suggestion-${suggestionId}`).innerHTML = "En attente de validation de l'autre côté"
+  } else {
+  document.querySelector(`.btns-suggestion-${suggestionId}`).innerHTML = "Suggestion refusée"
+  }
+}
