@@ -2,7 +2,9 @@
    <div onclick="openNotif()" class="notification-card card" id="notif-card">
       <p class="card-title"> Notifications </p>
       <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
+      <%if @user_notifications.present?%>
       <div class="indicator-notif"> <%= @user_notifications.length%>  </div>
+      <%end%>
       <% if @user_notifications.empty?%>
          <p> Tu n'as pas de notifications. </p>
       <%else%>
@@ -11,8 +13,9 @@
             <li class="notif-list" > <i class="fa-solid fa-envelope"></i> <%= notification.content %></li>
             <%end%>
          </ul>
-      <div class="arrow" id="arrow-btn"> <i class="fa-solid fa-angle-down"></i> </div>
-      <a class="read-all"> Marquer comme lu </a>
+         <%= link_to notification_path, method: :patch, remote: true do %>
+         <div class="arrow" id="arrow-btn"> <i class="fa-solid fa-angle-down"></i> </div>
+         <%end%>
       <%end%>
    </div>
    <div class="meteo-card card">
