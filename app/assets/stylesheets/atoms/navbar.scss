@@ -61,6 +61,7 @@
    width: fit-content;
    min-width: 195px;
    border-radius: 7px;
+   font-size: var(--Xlittle);
 
    &:hover{
       background-color: rgba(var(--purple), 0.05);
@@ -70,7 +71,8 @@
 .menu a[aria-selected]{
    color: rgb(var(--purple));
    background-color: rgba(var(--purple), 0.05);
-   position:relative
+   position:relative;
+   font-size: var(--Xlittle);
 }
 
 // .indicator{

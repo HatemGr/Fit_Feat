@@ -9,7 +9,7 @@
 .event-item{
    padding: 15px; 
    background-color: var(--grey);
-   width: 600px;
+   width: 500px;
    display: flex;
    align-items: center;
    gap: 20px;
@@ -38,7 +38,7 @@
 .event-content{
    display: flex;
    flex-direction: column;
-   gap: 5px;
+   gap: 0px;
    .event-participants{
 
    }
@@ -53,7 +53,8 @@
    background-color: rgb(161, 198, 247);
    color: rgb(21, 75, 119);
    border-radius: 7px;
-   padding: 7px 12px ;
+   padding: 6px 10px ;
+   font-size: 0.8rem;
 }
 
 .button-participate{
