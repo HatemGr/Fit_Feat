@@ -1,72 +1,45 @@
 <div class="index container mb-5 text-center">
   <div class="row text-center">
-  <div class="container mb-5 text-center">
-    <%=link_to "Recevoir un message", messages_path, remote: true, method: :post, :class => "btn btn-primary"%>
-  </div>
-  <div class="row">
-    <p id="notice"><%= notice %></p>
-    <h1>Messages</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Object</th>
-          <th>Body</th>
-          <th>Sender</th>
-          <th>Recipient</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%if @messages %>
-          <% @messages.each do |message| %>
-            <tr>
-              <td><%= message.object %></td>
-              <td><%= message.body %></td>
-              <td><%= message.sender %></td>
-              <td><%= message.recipient %></td>
-              <td><%= link_to 'Show', message %></td>
-              <td><%= link_to 'Edit', edit_message_path(message) %></td>
-              <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        <%end%>
-      </tbody>
-    </table>
-    <br>
-    <%= link_to 'New Message', new_message_path %>
-  </div>
-  <div class="row align-items-start px-3">
-    <div class="col-5">
-      <div class="row">
-        <h2 class="offset-md-1">Liste de tes messages reçus</h2>
-        <hr>
-        <%# <p class="px-3 offset-md-2"><%= render partial: "menu_buttons"%>
-        <%# </p><hr> %>
-        <div id="messages-sent-list">
-          <%if @messages_received%>
-            <%@messages_received.each do |message|%>
-              <%= render partial: "message_object", locals: {message: message, user: sender}%>
+    <div class="container mb-5 text-center">
+      <%=link_to "Ecrire un message", new_message_path, :class => "btn btn-primary"%>
+    </div>
+    <div class="row mb-3">
+      <p id="notice"><%= notice %></p>
+      <h1>Messages</h1>
+    </div>
+    <div class="row align-items-start px-3">
+      <div class="col-5">
+        <div class="row mb-3">
+          <h2 class="offset-md-1">Liste de tes messages reçus</h2>
+          <hr>
+
+          <div id="messages-sent-list">
+            <%if @messages_received.present?%>
+              <%@messages_received.each do |message|%>
+                <%= render partial: "message_object", locals: {message: message, user: sender}%>
+              <%end%>
+            <%else%>
+              Pas encore de messages reçus
             <%end%>
-          <%end%>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <h2 class="offset-md-1">Liste de tes messages envoyés</h2>
+          <hr>
+          <div id="messages-received-list">
+            <%if @messages_sent.present?%>
+              <%@messages_sent.each do |message|%>
+                <%= render partial: "message_object", locals: {message: message, recipient: message.recipient}%>
+              <%end%>
+              <%else%>
+              Pas encore de messages envoyés
+            <%end%>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <h2 class="offset-md-1">Liste de tes messages envoyés</h2>
-        <hr>
-        <%# <p class="px-3 offset-md-2"><%= render partial: "menu_buttons"%>
-        <%# </p><hr> %>
-        <div id="messages-received-list">
-          <%if @messages_received%>
-            <%@messages_sent.each do |message|%>
-              <%= render partial: "message_object", locals: {message: message, user: recipient}%>
-            <%end%>
-          <%end%>
-        </div>
+      <div class="col sticky-top">
+        <h2 class="offset-md-1">Message sélectionné</h2>
+        <div class="p-3 " id="message-display"></div>
       </div>
     </div>
-    <div class="col sticky-top">
-      <h2 class="offset-md-1">Message sélectionné</h2>
-      <div class="p-3 " id="message-display"></div>
-    </div>
   </div>
-</div>

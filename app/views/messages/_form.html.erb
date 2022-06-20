@@ -13,7 +13,7 @@
 
   <div class="field"> 
     <%= form.label :recipient_id %>
-    <%= form.select :recipient_id, options_for_select(@friends.map{|friend| friend.name} ),placeholder: "Choisis un ami" %>
+    <%= form.select :recipient_id, options_for_select(@friends.map{|friend| [friend.full_name, friend.id] } ),placeholder: "Choisis un ami" %>
   </div>
 
   <div class="field">
@@ -25,12 +25,6 @@
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
-
-  <div class="field">
-    <%= form.label :sender_id %>
-    <%= form.text_field :sender_id %>
-  </div>
-
   
 
   <div class="actions">

@@ -1,0 +1,6 @@
+<%=link_to message_path(message), remote: true, method: :delete, :class => "btn btn-outline-danger" do%>
+<i class="fa-solid fa-trash"></i>
+<%end%>
+<%=link_to message_path(message, :read => false), remote: true, method: "put", :class => "btn btn-info ml-2", :id => "button-#{message.id}" do%>
+<i id="enveloppe" class="fa-solid fa-envelope"></i>
+<%end%>

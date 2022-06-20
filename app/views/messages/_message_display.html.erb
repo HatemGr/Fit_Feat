@@ -1,5 +1,6 @@
-<p><%=@message.user%></p>
-<h4><%=@message.object%></h4>
-<p><%=@message.body%></p>
+<p>Expéditeur: <%=@message.sender.full_name%></p>
+<p>Destinataire: <%=@message.recipient.full_name%></p>
+<h4>Objet: <%=@message.object%></h4>
+<p>Message: <%=@message.body%></p>
 
-<%= render partial: "message_buttons", locals: {message: message}%>
+<%= render partial: "message_buttons", locals: {message: @message}%>
