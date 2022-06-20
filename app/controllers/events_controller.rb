@@ -32,6 +32,10 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.update(admin: current_user)
+    @sports = Sport.all
+    @cities = City.all
+    @event.image.attach(params[:image])
+    
 
     respond_to do |format|
       if @event.save
@@ -78,7 +82,7 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:admin_id, :sport_id, :city_id, :title, :description, :date, :address, :longitude, :latitude)
+      params.require(:event).permit(:admin_id, :sport_id, :city_id, :title, :description, :date, :address, :longitude, :latitude, :image)
     end
 
     def authenticate_user
