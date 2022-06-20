@@ -3,7 +3,7 @@ class ConnectionsController < ApplicationController
   before_action :authenticate_user, only: [:index]
 
   def index 
-    @suggestions = current_user.suggestions
+    @suggestions = current_user.suggestions.limit(5)
     @friends = current_user.friends
     @users_around = current_user.nearbys(10)
 
