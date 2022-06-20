@@ -4,43 +4,45 @@
   <div class="container-geoloc">
     <div class="list-container">
       <div class="container">
-        <h2> Les evenements autour de toi (scroll)</h2>
-        <br>
-        <ul>
-        <% if @events%>
-          <ul class="event-items scrollable-list">
-              <% @events.each do |event| %>
-                <div class="event-item">
-                  <div class="event-date-container"> 
-                     <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
-                     <p> <%= event.date.strftime("%B") %>  </p>
-                  </div>
-                  <div class="event-content"> 
-                    <h3> <%= link_to event.title, event_path(event) %>  </h3>
+        <% if @events.empty?%>
+              <p> Tu n'as pas encore d'event autour de toi, renseigne ton addresse ! </p>
+        <%else%>
+              <h2> Les evenements autour de toi (scroll)</h2>
+              <br>
+              <ul>
+                <ul class="event-items scrollable-list">
+                    <% @events.each do |event| %>
+                      <div class="event-item">
+                        <div class="event-date-container"> 
+                          <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
+                          <p> <%= event.date.strftime("%B") %>  </p>
+                        </div>
+                        <div class="event-content"> 
+                          <h3> <%= link_to event.title, event_path(event) %>  </h3>
 
-                    <%= render partial: 'event_participations', locals: {event: event}%>
+                          <%= render partial: 'event_participations', locals: {event: event}%>
 
-                    <%= event.date.strftime("%Hh%M")%>
-                  </div>
-                  <div class="button-participate">
-                    <% if find_participation(event,current_user)%>
-                      <%=button_to event_participation_path(event, find_participation(event,current_user)), method: :delete, :class => "button primary-outline" do %>
-                      <i class="bi bi-bookmark-check-fill"></i>&nbsp; Ne plus participer<%end%>
-                      </li>
-                      <%else%>
-                      <%=button_to event_participations_path(event),:class => "button primary" do %>
-                      <i class="bi bi-bookmark-plus"></i></i>&nbsp; Participer <%end%>
-                      </li>
-                    <%end%>
-                  </div>
+                          <%= event.date.strftime("%Hh%M")%>
+                        </div>
+                        <div class="button-participate">
+                          <% if find_participation(event,current_user)%>
+                            <%=button_to event_participation_path(event, find_participation(event,current_user)), method: :delete, :class => "button primary-outline" do %>
+                            <i class="bi bi-bookmark-check-fill"></i>&nbsp; Ne plus participer<%end%>
+                            </li>
+                            <%else%>
+                            <%=button_to event_participations_path(event),:class => "button primary" do %>
+                            <i class="bi bi-bookmark-plus"></i></i>&nbsp; Participer <%end%>
+                            </li>
+                          <%end%>
+                        </div>
 
 
-                  <div class="event-sport-tag"> <%=event.sport.name%> </div>
-                </div>
-              <%end%> 
-            <%end%>
-          </ul>
-        </ul>
+                        <div class="event-sport-tag"> <%=event.sport.name%> </div>
+                      </div>
+                    <%end%> 
+                </ul>
+              </ul>
+          <%end%>
       </div>
     </div>
   </div>

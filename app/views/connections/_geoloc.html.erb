@@ -4,8 +4,8 @@
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
    <div class="container-geoloc" >
       <div class="list-container">
+         <% if @users_around%>
          <h2> Autour de toi (scroll) </h2>
-            <% if @users_around%>
             <ul class="scrollable-list">
             <% @users_around.each do |user| %>
                <li> 
@@ -17,6 +17,10 @@
                </li>
           <%end%>
           </ul>
+         <%else%>
+         <div>
+            <p> Renseigne ton adresse pour voir les fit featers autour de toi! </p>
+         </div>
          <%end%>
       </div>
 
@@ -26,11 +30,6 @@
                data-markers="<%= @markers.to_json %>"
                data-user-lng="<%= @user.longitude%>"
                data-user-lat="<%= @user.latitude%>">
-         </div>
-      <%else%>
-         <div>
-         <p> Carte non disponible</p>
-         <p> Renseigne ton adresse pour voir les fit featers autour de toi!</p> 
          </div>
       <%end%>
    </div>
