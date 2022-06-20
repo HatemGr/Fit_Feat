@@ -9,7 +9,7 @@ class ParticipationsController < ApplicationController
         format.html { redirect_to events_path, notice: "participation was successfully created." }
         format.json { }
       else 
-        format.html { redirect_to events_path, status: :unprocessable_entity,notice: "L'admin ne peut pas etre participant"}
+        format.html { redirect_to events_path, status: :unprocessable_entity,notice: @participation.errors }
         format.json { render json: @participation.errors, status: :unprocessable_entity }
       end
     end

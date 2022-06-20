@@ -24,6 +24,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    redirect_to user_path(current_user) unless current_user == @event.admin
     @cities = City.all
     @sports = Sport.all
   end
@@ -32,6 +33,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.update(admin: current_user)
+    @event.update(max_participants: params[:event][:max_participants].to_i) if params[:event][:max_participants].present? 
     @sports = Sport.all
     @cities = City.all
     @event.image.attach(params[:image])
@@ -55,6 +57,7 @@ class EventsController < ApplicationController
     @sports = Sport.all
     respond_to do |format|
       if @event.update(event_params)
+        @event.update(max_participants: params[:event][:max_participants].to_i) if params[:event][:max_participants].present? 
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -66,6 +69,9 @@ class EventsController < ApplicationController
 
   # DELETE /events/1 or /events/1.json
   def destroy
+    @event.participations.each do |participation|
+      Notification.create(user: participation.user,content:"L'evenement #{@event.title} à été annulé.")
+    end
     @event.destroy
 
     respond_to do |format|
