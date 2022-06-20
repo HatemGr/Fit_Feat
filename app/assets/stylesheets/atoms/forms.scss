@@ -4,8 +4,8 @@
    margin-bottom: 20px;
 
    .input-name{
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
 
       span{
          font-size: 0.8rem;
@@ -19,24 +19,18 @@
       height: fit-content;
 
       input[type=number], select{
-         width: 225px !important;
+         width: 160px !important;
       }
 
 
       input[type=text], input[type=password], input[type=email], textarea[type=text], select {
-         width: 450px;
+         width: 370px;
          border: 1px solid var(--border-grey);
          border-radius: 5px;
-         padding: 20px 0px;
+         padding: 15px 0px;
          padding-left: 15px;
          transition: all 0.3s ease;
          resize: none;
-
-         @media screen and (max-width: 1500px) {
-            width: 400px;
-            padding: 18px 0px;
-            padding-left: 15px;
-         }
    
    
          &::placeholder{
@@ -57,9 +51,9 @@
    }
 
    input[type=submit]{
-      padding: 10px 16px;
+      padding: 9px 15px;
       border-radius: 7px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       border-style: none;
       color: rgb(var(--white));
       background-color: rgb(var(--purple));
@@ -78,10 +72,10 @@ input[type=checkbox]{
 }
 
 input[type=number], input[type=datetime-local]{
-   width: 210px;
+
    border: 1px solid var(--border-grey);
    border-radius: 5px;
-   padding: 20px 0px;
+   padding: 12px 0px;
    padding-left: 20px;
    transition: all 0.3s ease;
    resize: none;
