@@ -3,10 +3,4 @@
           <h1 class="title"> Créer un événement</h1>
           <div class="title-lign"></div>
         </div>  
-        <div class="event-picture">
-          <%= form_tag event_images_path(:event_id), multipart: true do %>
-          <%= file_field_tag :image %>
-          <%= submit_tag "mettre à jour" %>
-          <% end %>
-        </div>
 </div>
