@@ -17,7 +17,7 @@ if (mapElement != null) {
 		);
 		const el = document.createElement("div");
 		el.className = "marker";
-		if (marker.sports !== null){
+		if (marker.sports != null){
 		marker.sports.forEach((sport) => {el.classList.add(sport)})
 		}
 		
