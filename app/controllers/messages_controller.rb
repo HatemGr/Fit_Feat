@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   # GET /messages or /messages.json
   def index
     @message = Message.new
+    @conversation = current_user.has_one_conversation
   end
 
   # GET /messages/1 or /messages/1.json
@@ -29,20 +30,16 @@ class MessagesController < ApplicationController
   # POST /messages or /messages.json
   def create
     puts params
-    #conversation has not begun yet
+    #request create when the conversation has not begun yet
     if params[:new]
-      puts "*"*50
-      puts params[:new]
-      puts params[:user]
       @new_message = Message.new
-      puts "*"*50
       if params[:recipient_id].to_i ==0
         @recipient = User.find(params[:user].to_i)
       else
         @recipient = User.find(params[:recipient_id].to_i)
       end
     else
-      #conversation exists
+      #request create chen conversation already exists
       @already_conversation = true
       if params[:recipient_id].to_i ==0
         @recipient = User.find(params[:user].to_i)
@@ -60,7 +57,9 @@ class MessagesController < ApplicationController
 
   # PATCH/PUT /messages/1 or /messages/1.json
   def update
+    #set the recipient for the form according the friend conversation
     @recipient = User.find(params[:user].to_i)
+    #load the conversation with the friend
     @conversation = current_user.conversation(@recipient.id)
     @message.update(read: params[:read])
     @new_message = Message.new

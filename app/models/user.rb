@@ -160,6 +160,18 @@ class User < ApplicationRecord
     conversation(user_id).last
   end
 
+
+  def has_one_conversation
+    if self.friends.present?
+      self.friends.each do |friend|
+        if self.conversation(friend).present?
+          return conversation(friend)
+        end
+      end
+    end
+  end
+
+
   def sports_list
     list = []
     self.sports.each do |sport|
@@ -167,5 +179,6 @@ class User < ApplicationRecord
     end
     return list
   end
+
 
 end

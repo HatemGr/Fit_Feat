@@ -1,6 +1,5 @@
-<%# document.getElementById("friends-list").innerHTML = "";
-document.getElementById("friends-list").insertAdjacentHTML("beforeend", "<%= j render 'friends-list'%> 
 
+document.getElementById("title-conversation").innerText="<%=@recipient.full_name%>"
 document.getElementById("form-message").innerHTML = "";
 document.getElementById("form-message").insertAdjacentHTML("beforeend", "<%= j render 'form', {message: @new_message, recipient: @recipient}%> ")
 <%if @already_conversation%>

@@ -1,4 +1,4 @@
-console.log(document.getElementById("message-display"));
+document.getElementById("title-conversation").innerText="<%=@recipient.full_name%>"
 document.getElementById("message-display").innerHTML = "";
 document.getElementById("message-display").insertAdjacentHTML("beforeend", "<%= j render 'conversation', {conversation: @conversation, user: @message.recipient}%> ");
 document.getElementById("form-message").innerHTML = "";
