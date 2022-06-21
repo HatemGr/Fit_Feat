@@ -2,10 +2,17 @@
 <div class="card">
    <p class="card-title"> Geolocalisation </p>
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
-   <% @sports.each do |sport|%>
-   <input type="checkbox" class="form-check-input category-checkboxes" id="<%=sport.name%>">
-   <label class="form-check-label" ><%=sport.name%></label>
-   <%end%>
+  
+   <div class="wrapper-container">
+      <% @sports.each do |sport|%>
+         <div class="form-check checkbox-container-<%=sport.name%>" id="checkbox-container-<%=sport.name%>">
+            <input type="checkbox" class="form-check-input category-checkboxes" id="<%=sport.name%>">
+            <label class="form-check-label" ><%=sport.name%></label>
+            <div class="ghost-check"> </div>
+         </div>
+      <%end%>
+   </div>
+
    <div class="container-geoloc" >
       <div class="list-container">
          <% if @users_around%>
