@@ -1,0 +1,6 @@
+var buttonDiv = document.querySelector(".btns-event-<%= @event.id %>")
+console.log(buttonDiv);
+if (buttonDiv != null) {
+console.log(buttonDiv);
+buttonDiv.innerHTML = "<%= j render 'unparticipate_button', event: @event %>"
+}

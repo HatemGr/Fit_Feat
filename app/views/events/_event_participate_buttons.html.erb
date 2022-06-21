@@ -1,0 +1,19 @@
+<% if current_user%>
+  <div class="button-participate btns-event-<%= event.id %>">
+    <%if find_participation(event,current_user) %>
+
+      <%=button_to event_participation_path(event, find_participation(event,current_user)), method: :delete, :class => "button primary-outline", remote: true do %>
+      <i class="bi bi-bookmark-check-fill"></i>&nbsp; Ne plus participer<%end%>
+
+      <% elsif event.is_full? %>
+
+      <button>DESO C'EST PLEIN</button>
+
+      <%else%>
+
+      <%=button_to event_participations_path(event),method: :post,:class => "button primary", remote: true do %>
+      <i class="bi bi-bookmark-plus"></i></i>&nbsp; Participer <%end%>
+
+    <%end%>
+  </div>
+<%end%>
