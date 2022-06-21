@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.available_events(current_user).select{|e| current_user.admin_events.exclude?(e)}
     @current_user_events = current_user.admin_events.select{|e| e.is_after_today?}
+    @cities = City.all.order(name:"asc")
   end
 
   # GET /events/1 or /events/1.json

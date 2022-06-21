@@ -1,0 +1,4 @@
+var buttonDiv = document.querySelector(".btns-event-<%= @event.id %>")
+if (buttonDiv != null) {
+buttonDiv.innerHTML = "<%= j render 'participate_button', event: @event %>"
+}
