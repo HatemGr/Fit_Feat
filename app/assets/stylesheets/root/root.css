@@ -1,0 +1,134 @@
+body {
+  margin: 0 auto;
+  background-color: var(--grey-bg);
+  font-family: var(--regular-font);
+}
+
+:root {
+  /************************/
+  /* 	    COLORS        */
+  /************************/
+  /* BASE */
+  --white:255, 255, 255;
+  --black:#000000;
+  --grey:#f5f5f5;
+  --grey-bg:#F4F4F4;
+  --text-grey:#575757;
+  --grey-bg:#F4F4F4;
+  --border-grey:#C8C8C8
+   ;
+  /* PRIMARY */
+  --purple: 147, 73, 241;
+  --purple_bg: rgba(var(--purple), 0.05);
+  /* SECONDARIES */
+  --orange: rgb(238, 177, 21);
+  --green: 102, 163, 92;
+  /* SPORTS TAGS */
+  --text_tennis: 249, 190, 38;
+  --bg_tennis: rgba(var(--text_tennis), 0.28);
+  --text_climbing: 118, 226, 52;
+  --bg_climbing:rgba(var(--text_climbing), 0.28);
+  --text_futsall: 222, 97, 120;
+  --bg_futsall: rgba(var(--text_futsall), 0.28);
+  --text_workout: 240, 105, 242;
+  --bg_workout: rgba(var(--text_workout), 0.28);
+  --text_running: 88, 74, 232;
+  --bg_running:rgba(var(--text_running), 0.28);
+  /* MESSAGES */
+  --warning: 212, 22, 22;
+  --danger: 227, 150, 6;
+  --info: 33, 102, 252;
+  --success: 41, 122, 0;
+  /************************/
+  /* 	    TYPO        */
+  /************************/
+  /* font */
+  --black-font: "sanasansaltw00-blackregular", "Arial", sans-serif;
+  --bold-font: "sanasansaltw00-boldregular", "Arial", sans-serif;
+  --medium-font: "sanasansaltw00-mediumregular", "Arial", sans-serif;
+  --regular-font: "sanasansaltw00-regularregular", "Arial", sans-serif;
+  /* size */
+  --title: 3.438rem;
+  --big: clamp(2rem, 4vw, 2.2rem);
+  --medium: clamp(1.3rem, 4vw, 1.8rem);
+  --Xmedium: clamp(1.3rem, 4vw, 1.6rem);
+  --regular: clamp(1.3rem, 4vw, 1.4rem);
+  --paragraphe: 1.3rem;
+  --little: clamp(0.9rem, 4vw, 1rem);
+  --Xlittle: clamp(0.9rem, 4vw, 0.9rem);
+  /* weight */
+  /* weight */
+  /************************/
+  /* 	    SPACING       */
+  /************************/
+  --clamp-vw: 4vw;
+}
+
+:root h1, :root h2, :root h3, :root h4, :root h5, :root h6, :root p {
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:root h1 {
+  font-size: var(--big);
+  font-family: var(--black-font);
+}
+
+:root h2 {
+  font-size: var(--medium);
+  font-family: var(--bold-font);
+}
+
+:root h3 {
+  font-size: var(--regular);
+  font-family: var(--bold-font);
+}
+
+/************************/
+/* 	    LINK       */
+/************************/
+a {
+  font-family: var(--medium-font);
+  font-size: var(--normal);
+  text-decoration: none;
+}
+
+/************************/
+/* 	    ICONS       */
+/************************/
+i {
+  margin-right: 10px;
+}
+
+/************************/
+/* 	    LISTS       */
+/************************/
+li {
+  list-style: none;
+  font-size: 1rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/************************/
+/* 	    FORM       */
+/************************/
+form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  width: 100%;
+}
+
+/*********************************/
+/* 	    RESET BOOTSTRAP       */
+/*********************************/
+.container {
+  padding: 0 !important;
+}
+/*# sourceMappingURL=root.css.map */

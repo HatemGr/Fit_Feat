@@ -1,0 +1,52 @@
+.footer-lp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--black);
+  color: var(--grey);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.contain-lp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.title-alone {
+  position: relative;
+  right: 150px;
+  top: -5px;
+}
+
+.cowl {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 150px;
+}
+
+.cowl ul {
+  padding: 0px;
+}
+
+.cowl li {
+  padding: 5px;
+  font-style: var(--medium-font);
+  color: var(--text-grey);
+}
+/*# sourceMappingURL=footer.css.map */
