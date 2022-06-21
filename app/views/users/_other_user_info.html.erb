@@ -2,11 +2,11 @@
 <div class="wrapper-not-meteo">
   <div class="notification-card card">
     <p>
-      <strong>First name:</strong>
+      <strong>Prénom:</strong>
       <%= @user.first_name ? @user.first_name : 'Donnee non renseignée' %>
     </p>
     <p>
-      <strong>Last name:</strong>
+      <strong>Nom de famille:</strong>
       <%= @user.last_name ? @user.last_name : 'Donnee non renseignée' %>
     </p>
   </div>
@@ -20,7 +20,7 @@
       <%= @user.address ? @user.address : 'Donnee non renseignée' %>
     </p>
     <p>
-      <strong>City:</strong>
+      <strong>Ville:</strong>
       <%= @user.city ? @user.city.name : 'Donnee non renseignée' %>
     </p>
   </div>
