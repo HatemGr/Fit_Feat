@@ -4,27 +4,27 @@
       <h1>Messages</h1>
     </div>
     <div class="row align-items-start px-3">
-      <div class="col-5 card container-friends-list m-3">
+      <div class="col-5 sticky-top card container-friends-list m-3">
         <div id="friends-list" class="row">
           <%= render 'friends_list'%>
         </div>
       </div>
       <div class="col-8 card sticky-top m-3">
         <p class="card-title"> Conversation </p>
-        <% if current_user.has_one_conversation %>
+        <% if current_user.has_one_conversation.present? %>
           <h2 id="title-conversation" class="offset-md-1">
             <%=current_user.has_one_conversation.first.friend_message(current_user).full_name%></h2>
           <div class="p-3 " id="message-display">
-          <%= render 'conversation', locals:  {conversation: @conversation } %>
+            <%= render 'conversation', locals:  {conversation: @conversation } %>
           </div>
+          <div id="form-message"></div>
         <%else%>
           <h2 id="title-conversation" class="offset-md-1"></h2>
           <p>Tu n'as pas encore de conversations ! </p>
           <div class="p-3 " id="message-display"></div>
+          <div id="form-message"></div>
         </div>
-      <%end%>
-      <div id="form-message">
-      </div>
+       <%end%>
     </div>
   </div>
 </div>
