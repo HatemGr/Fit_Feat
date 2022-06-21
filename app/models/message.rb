@@ -9,4 +9,12 @@ class Message < ApplicationRecord
   def self.received_messages(user)
     Message.where(recipient: user)
   end 
+
+  def friend_message(user)
+    if self.sender = user
+      self.recipient
+    else
+      self.sender
+    end
+  end
 end

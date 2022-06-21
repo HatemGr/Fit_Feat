@@ -160,5 +160,13 @@ class User < ApplicationRecord
     conversation(user_id).last
   end
 
+  def has_one_conversation
+    if self.friends.present?
+      self.friends.each do |friend|
+        return conversation(friend)
+      end
+    end
+  end
+
 
 end

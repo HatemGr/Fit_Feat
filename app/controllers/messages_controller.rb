@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   # GET /messages or /messages.json
   def index
     @message = Message.new
+    @conversation = current_user.has_one_conversation
   end
 
   # GET /messages/1 or /messages/1.json

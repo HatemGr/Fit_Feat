@@ -1,3 +1,46 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.conversation{
+    display: flex;
+    flex-direction: column;
+}
+
+.message-inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.own{
+    justify-content: flex-end;
+}
+
+.message-own{
+    min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+    margin: 6px 8px;
+    background-color: var(--bg_running);
+    color: rgb(var(--text_running));
+	border-radius: 16px 16px 0 16px;
+    align-self: flex-end;
+}
+
+.message-other{
+    min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+    margin: 6px 8px;
+	border-radius: 16px 16px 16px 0;
+    background-color: rgb(161, 198, 247);
+    color: rgb(21, 75, 119);
+    align-self: flex-start;
+}
+
+.message-time{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
