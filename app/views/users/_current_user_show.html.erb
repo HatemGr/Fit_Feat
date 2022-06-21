@@ -1,5 +1,5 @@
 <div class="edit-profil-btn">
-   <h1> Hello <%= current_user.first_name%> 👋🏻</h1> 
+   <h1> Bonjour <%= current_user.first_name%> 👋🏻</h1> 
    <%= link_to 'Modifie ton profil', edit_user_path(@user), class:'button primary' %>
 </div>
 <%= render 'users/notif-meteo/notif_meteo'%>
