@@ -12,6 +12,11 @@ class EventsController < ApplicationController
   def show
     @cities = City.all
     @sports = Sport.all
+
+    respond_to do |format|
+      format.html { redirect_to event_path(@event) }
+      format.js { }
+    end
   end
 
   # GET /events/new

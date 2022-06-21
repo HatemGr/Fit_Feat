@@ -1,0 +1,25 @@
+<div class="event-partipants-detail"> 
+   <% if event.participations.empty?%>
+      <p> 0 participant </p>
+   <%else%>
+      <% event.participations.each do |participation| %>  
+      <div class="d-flex gap-2">                  
+         <%if participation.user.avatar.attached?%>
+               <%= image_tag participation.user.avatar, alt: 'avatar', :class => "events-avatar" %>
+         <%else%>
+               <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
+         <%end%> 
+          <%=participation.user.first_name%> 
+          <%=participation.user.last_name%> 
+      </div>  
+
+      <%end%>
+         <% if current_user%>
+            <div class="button-participate btns-event-<%= event.id %> ">
+               <%=button_to event_participation_path(event, find_participation(event,current_user)), method: :delete, :class => "button primary-outline fix", remote: true do %>
+               <i class="bi bi-bookmark-check-fill"></i>&nbsp; Ne plus participer
+               <%end%>
+            </div>
+         <%end%>
+   <%end%>
+</div>

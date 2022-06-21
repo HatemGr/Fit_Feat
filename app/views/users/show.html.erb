@@ -21,7 +21,7 @@
   <%else%>
   <div class="d-flex justify-content-between">
     <%= render partial: 'events/event_list', locals: {events: @user_events}%>
-    <div class="event-card-show"></div>
+    <%= render partial: 'events/event_detail', locals: {events: @user_events}%>
   </div>
   <%end%>
 
