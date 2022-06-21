@@ -22,6 +22,8 @@
             <%= render "layouts/tabs/edit_tab" %>
           <% elsif current_page?(events_path)%>
             <%= render "layouts/tabs/events_tab" %>
+          <% elsif current_page?(messages_path)%>
+            <%= render "layouts/tabs/messages_tab" %>
           <% else %>
             <%= render "layouts/tabs/inactive_tab" %>
           <% end%>

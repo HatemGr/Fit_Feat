@@ -33,7 +33,7 @@ class Event < ApplicationRecord
   end
 
   def self.available_events(user)
-    Event.all.near(user.to_coordinates , 10, units: :km)
+    Event.all.order(date:'asc').near(user.to_coordinates , 10, units: :km)
   end
 
   def is_full?

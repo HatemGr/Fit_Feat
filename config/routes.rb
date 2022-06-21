@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   resources :suggestions
   resources :events do
-    resources :participations, only: [:create, :destroy]
+    resources :participations, only: [:create, :destroy, :update]
     resources :images, only: [:create]
   end
 
