@@ -7,5 +7,6 @@ document.getElementById("form-message").insertAdjacentHTML("beforeend", "<%= j r
 <%else%>
     document.getElementById("message-display").innerHTML = "";
 <%end%>
+document.getElementById("message-display").scrollTop = document.getElementById("message-display").scrollHeight;
 
 
