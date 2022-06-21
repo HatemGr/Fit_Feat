@@ -23,7 +23,7 @@
         <%= render partial: 'users/performances/running_edit_form', locals: {user: current_user} %>
       <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Running !', sport_users_path(sport: :Running), method: :post, :class => "btn-begin begin-#{"running"}", remote: true%>
+        <%= link_to 'Je commence le Running  !', sport_users_path(sport: :Running), method: :post, :class => "btn-begin begin-#{"running"}", remote: true%>
       <%end%>
       </div>
 
