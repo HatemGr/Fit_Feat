@@ -1,0 +1,8 @@
+var divParent = document.getElementById("event-show");
+var divChild = document.querySelector(".event-show-content")
+
+if(divChild) {
+    divChild.parentNode.removeChild(divChild);
+}
+
+divParent.innerHTML = "<%= j render 'show_event', event: @event %>";

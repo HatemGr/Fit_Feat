@@ -1,0 +1,28 @@
+<div class="event-show-content">
+   <div class="event-show-image">
+      <% if event.image.attached? %> 
+         <%= image_tag event.image %>
+      <%else%>
+         <%= image_tag 'eventdefault' %>
+    <% end %>
+   </div>
+
+   <div class="event-show-main">
+        <div class="event-date-container up"> 
+          <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
+          <p> <%= event.date.strftime("%B") %>  </p>
+        </div>
+        <div class="event-content"> 
+          <h3> <%= link_to event.title, controller: "events", action: "show", id: event.id %>  </h3>
+          <%if event.description == nil %>
+               <p> L'event n'a pas de description. </p>
+         <%else%>
+               <p> <%= event.description %>  </p>
+          <%end%>
+          <br>
+          <%= render partial: 'events/event_participations_detail', locals: {event: event}%> 
+          <%= render partial: 'events/event_participate_buttons', locals: {event: event}%>
+        </div>
+        <div class="event-sport-tag"> <%=event.sport.name%> </div>
+   </div>
+</div>
