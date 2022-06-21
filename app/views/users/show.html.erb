@@ -11,19 +11,19 @@
   <div class="card">
   <p class="card-title"> Les prochaines evenements à venir pour <%= @user.full_name %> </p>
   <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
-  <div class="container-geoloc">
-    <div class="list-container">
-      <div class="container">
-      <%if @user_events.empty?%>
-          <p> Tu n'as pas encore d'évènements à venir. </p>
-          <%= link_to events_path, class: "link-button" do %>
-           Voir les events <i class="fa-solid fa-arrow-right"></i> 
-          <%end%>
-      <%else%>
-        <%= render partial: 'events/event_list', locals: {events: @user_events}%>
+
+
+  <%if @user_events.empty?%>
+      <p> Tu n'as pas encore d'évènements à venir. </p>
+      <%= link_to events_path, class: "link-button" do %>
+        Voir les events <i class="fa-solid fa-arrow-right"></i> 
       <%end%>
-      </div>
-    </div>
+  <%else%>
+  <div class="d-flex justify-content-between">
+    <%= render partial: 'events/event_list', locals: {events: @user_events}%>
+    <div class="event-card-show"></div>
   </div>
+  <%end%>
+
 
 </div>
