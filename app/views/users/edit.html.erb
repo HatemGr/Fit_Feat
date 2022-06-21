@@ -4,7 +4,6 @@
     <div><%=link_to "Supprimer le compte", user_path(@user), class: 'button delete-btn', method: :delete, data: { confirm: 'Vous allez supprimer le compte, êtes-vous sûr ?'}%></div>
    </div>
 
-  <%= render 'edit_performance', user: @user %>
   <%= render 'edit_info-no-sensitive', user: @user, cities: @cities %>
   <%= render 'edit_info-sensitive', user: @user, cities: @cities %>
 
