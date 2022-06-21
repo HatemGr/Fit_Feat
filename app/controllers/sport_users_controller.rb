@@ -1,5 +1,9 @@
 class SportUsersController < ApplicationController
   
+  def show
+    
+  end
+
   def create
     @user = current_user
     @sport_user = SportUser.new

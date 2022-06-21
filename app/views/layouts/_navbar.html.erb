@@ -10,7 +10,7 @@
               <%= image_tag "defaultavatar.png", :style => "width:50px;" %>
             <%end%>
           </div>
-          <span> <%= current_user.first_name%> </span>
+          <span>  <%= link_to current_user.first_name, edit_user_path(current_user)%> </span>
         </div>
         <div class="separate-div" style="margin-left: 37px"></div>
         <nav class="menu" role="tablist">
@@ -18,8 +18,8 @@
             <%= render "layouts/tabs/home_tab" %>
           <% elsif current_page?(user_connections_path(current_user))%>
             <%= render "layouts/tabs/friends_tab" %>
-          <% elsif current_page?(edit_user_path(current_user))%>
-            <%= render "layouts/tabs/edit_tab" %>
+          <% elsif current_page?(sport_user_path(current_user))%>
+            <%= render "layouts/tabs/sport_user_tab" %>
           <% elsif current_page?(events_path)%>
             <%= render "layouts/tabs/events_tab" %>
           <% elsif current_page?(messages_path)%>
