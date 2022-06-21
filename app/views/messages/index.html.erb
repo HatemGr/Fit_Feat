@@ -14,14 +14,16 @@
         <% if current_user.has_one_conversation.present? %>
           <h2 id="title-conversation" class="offset-md-1">
             <%=current_user.has_one_conversation.first.friend_message(current_user).full_name%></h2>
-          <div class="p-3 " id="message-display">
+          <div class="p-3 scrollable-list " id="message-display">
             <%= render 'conversation', locals:  {conversation: @conversation } %>
           </div>
           <div id="form-message"></div>
         <%else%>
           <h2 id="title-conversation" class="offset-md-1"></h2>
           <div class="p-3 " id="message-display"></div>
-          <div id="form-message"></div>
+          <div id="form-message">
+            <%=render 'form'%>
+          </div>
         </div>
        <%end%>
     </div>
