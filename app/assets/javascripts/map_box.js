@@ -17,7 +17,9 @@ if (mapElement != null) {
 		);
 		const el = document.createElement("div");
 		el.className = "marker";
+		if (marker.sports !== null){
 		marker.sports.forEach((sport) => {el.classList.add(sport)})
+		}
 		
 		el.style.backgroundImage = marker.image;
 		new mapboxgl.Marker(el)
