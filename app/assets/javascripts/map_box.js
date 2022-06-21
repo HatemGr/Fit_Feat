@@ -17,6 +17,9 @@ if (mapElement != null) {
 		);
 		const el = document.createElement("div");
 		el.className = "marker";
+		marker.sports.forEach((sport) => {el.classList.add(sport)})
+		
+		el.style.backgroundImage = marker.image;
 		new mapboxgl.Marker(el)
 			.setLngLat([marker.lng, marker.lat])
 			.setPopup(popup)
