@@ -2,8 +2,6 @@
 
   <%= render 'show_image' %>
 
-
-
   <div class="right-container right-content">
     <%= render 'show_title' %>
 
@@ -62,17 +60,7 @@
         </div>
       <%end%>
 
-    <div class="button-participate">
-      <%if find_participation(@event,current_user) %>
-        <%=button_to event_participation_path(@event, find_participation(@event,current_user)), method: :delete, :class => "button primary-outline" do %>
-        <i class="bi bi-bookmark-check-fill"></i>&nbsp; Ne plus participer<%end%>
-        <% elsif @event.is_full? %>
-        <button>DESO C'EST PLEIN</button>
-        <%else%>
-        <%=button_to event_participations_path(@event),:class => "button primary" do %>
-        <i class="bi bi-bookmark-plus"></i></i>&nbsp; Participer <%end%>
-      <%end%>
-    </div>
+    <%= render partial: 'events/event_participate_buttons', locals: {event: @event}%>
 
     <div class="button-row">
       <%= link_to 'Edit', edit_event_path(@event) %> |

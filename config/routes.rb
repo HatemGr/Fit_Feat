@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  resources :events do
+    resources :participations, only: [:create, :destroy, :update]
+    resources :images, only: [:create]
+  end
+  
   resources :messages
   resources :notifications, only: [:index, :create, :destroy, :update]
   resources :participations, only: [:create, :destroy]
@@ -10,10 +15,6 @@ Rails.application.routes.draw do
 
   
   resources :suggestions
-  resources :events do
-    resources :participations, only: [:create, :destroy]
-    resources :images, only: [:create]
-  end
 
   resources :users do
     resources :connections

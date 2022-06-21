@@ -1,28 +1,19 @@
+<ul class="event-items">
+  <% if events%>
+    <% events.each do |event| %>
+      <div class="event-item">
+        <div class="event-date-container"> 
+          <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
+          <p> <%= event.date.strftime("%B") %>  </p>
+        </div>
+        <div class="event-content"> 
+          <h3> <%= link_to event.title, event_path(event), :remote => true %>  </h3>
+          <%= render partial: 'events/event_participations', locals: {event: event}%> 
+          <%= event.date.strftime("%Hh%M")%>
+        </div>
 
-  <div class="container-geoloc">
-    <div class="list-container">
-      <div class="container">
-            <ul class="event-items">
-              <% if events%>
-                <% events.each do |event| %>
-                  <div class="event-item">
-                    <div class="event-date-container"> 
-                      <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
-                      <p> <%= event.date.strftime("%B") %>  </p>
-                    </div>
-                    <div class="event-content"> 
-                      <h3> <%= link_to event.title, event_path(event) %>  </h3>
-                      <%= render partial: 'events/event_participations', locals: {event: event}%> 
-                      <%= event.date.strftime("%Hh%M")%>
-                    </div>
-
-                    <div class="event-sport-tag"> <%=event.sport.name%> </div>
-                  </div>
-                <%end%> 
-              <%end%>
-            </ul>
+        <div class="event-sport-tag"> <%=event.sport.name%> </div>
       </div>
-    </div>
-  </div>
-  
-
+    <%end%> 
+  <%end%>
+</ul>

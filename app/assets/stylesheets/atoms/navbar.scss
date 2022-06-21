@@ -121,6 +121,16 @@
 .user-name span{
    font-family: var(--black-font);
    font-size: 1.5rem;
+
+   a{
+      font-family: var(--black-font);
+      font-size: 1.5rem;
+      color: black;
+
+      &:hover{
+         text-decoration: underline;
+      }
+   }
 }
 
 .span-indicator1{

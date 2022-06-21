@@ -1,6 +1,6 @@
 <div class="container-dashboard">
     <div class="edit-profil-btn">
-      <h1> Events 🏅</h1> 
+      <h1> Events 📆</h1> 
       <%= link_to 'Crée un event', new_event_path, class:'button primary' %>
     </div>
 
@@ -31,7 +31,12 @@
            Créer un event <i class="fa-solid fa-arrow-right"></i> 
       <%end%>
       <%else%>
-      <%= render partial: 'event_list', locals: {events: @current_user_events}%>
+        <div class="d-flex justify-content-between mt-3">
+            <%= render partial: 'event_list', locals: {events: @current_user_events}%>
+            <%= render partial: 'events/event_detail', locals: {events: @user_events}%>
+        </div>
       <%end%>
     </div>
+
+   <%= render partial: 'city_index', locals: {cities: @cities} %>
 </div>
