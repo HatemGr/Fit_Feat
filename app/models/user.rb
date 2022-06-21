@@ -163,7 +163,9 @@ class User < ApplicationRecord
   def has_one_conversation
     if self.friends.present?
       self.friends.each do |friend|
-        return conversation(friend)
+        if self.conversation(friend).present?
+          return conversation(friend)
+        end
       end
     end
   end
