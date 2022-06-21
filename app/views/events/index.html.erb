@@ -35,25 +35,5 @@
       <%end%>
     </div>
 
-    <div class="card">
-    <p class="card-title"> Les villes disponibles </p>
-    <p class="card-icon"></p>
-     
-     <div class="city-index-container">
-        <% @cities.each do |city| %>
-            <div class="card"> 
-              <div class="card-title"><%= city.name %></div>
-                  <div class="title-lign"></div>  
-                 <img src="<%= city.image_url%>" alt="">
-                      <ul>
-                        <li> Nombre d'utilisateurs : <%= city.users.count%></li>
-                        <li> Nombre d'événement : <%= city.events.count%></li>
-                      </ul>
-                
-
-                  <%= link_to 'Voir les infos', city, class:'button primary' %>
-            </div> 
-        <% end %>
-      </div>
-    </div>
+   <%= render partial: 'city_index', locals: {cities: @cities} %>
 </div>
