@@ -11,7 +11,7 @@ class Message < ApplicationRecord
   end 
 
   def friend_message(user)
-    if self.sender = user
+    if self.sender == user
       self.recipient
     else
       self.sender
