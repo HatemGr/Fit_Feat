@@ -2,15 +2,18 @@
 <div class="card">
    <p class="card-title"> Geolocalisation </p>
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
+   <% @sports.each do |sport|%>
+   <input type="checkbox" class="form-check-input category-checkboxes" id="<%=sport.name%>">
+   <label class="form-check-label" ><%=sport.name%></label>
+   <%end%>
    <div class="container-geoloc" >
       <div class="list-container">
          <% if @users_around%>
          <h2> Autour de toi (scroll) </h2>
             <ul class="scrollable-list">
             <% @users_around.each do |user| %>
-               <li> 
+               <li class="user-list <%= user.sports_list.join(" ")%>"> 
                <div class="d-flex">
-
                   <%= link_to user.full_name, user_path(user),  class:"user-link" %> 
                   </div>
                </li>
@@ -35,3 +38,4 @@
    </div>
 </div>
 <%= javascript_include_tag 'map_box'%>
+<%= javascript_include_tag 'map_filter'%>

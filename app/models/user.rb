@@ -160,5 +160,12 @@ class User < ApplicationRecord
     conversation(user_id).last
   end
 
+  def sports_list
+    list = []
+    self.sports.each do |sport|
+      list << sport.name
+    end
+    return list
+  end
 
 end

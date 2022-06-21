@@ -6,6 +6,7 @@ class ConnectionsController < ApplicationController
     @suggestions = current_user.suggestions.limit(5)
     @friends = current_user.friends
     @users_around = current_user.nearbys(10)
+    @sports = Sport.all
 
     if @user.latitude
       @markers = @users_around.geocoded.map do |user|
@@ -14,6 +15,7 @@ class ConnectionsController < ApplicationController
           lng: user.longitude,
           name: user.full_name,
           user_id: user.id,
+          sports: user.sports_list
         }
       end
       @markers << {lat: @user.latitude,
