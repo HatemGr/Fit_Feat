@@ -19,7 +19,7 @@
         Voir les events <i class="fa-solid fa-arrow-right"></i> 
       <%end%>
   <%else%>
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mt-3">
     <%= render partial: 'events/event_list', locals: {events: @user_events}%>
     <%= render partial: 'events/event_detail', locals: {events: @user_events}%>
   </div>

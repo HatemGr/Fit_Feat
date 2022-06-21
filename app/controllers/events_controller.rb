@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @sports = Sport.all
 
     respond_to do |format|
-      format.html { redirect_to event_path(@event) }
+      format.html { }
       format.js { }
     end
   end
