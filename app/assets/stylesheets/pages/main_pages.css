@@ -4,6 +4,13 @@
   padding: 40px;
 }
 
+@media screen and (max-width: 800px) {
+  .container-dashboard {
+    max-width: 100%;
+    padding: 40px 20px;
+  }
+}
+
 .container-dashboard h1 {
   font-family: var(--black-font);
 }
