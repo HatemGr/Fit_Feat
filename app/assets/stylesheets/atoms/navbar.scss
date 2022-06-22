@@ -3,8 +3,9 @@
    height :100vh;
    background-color: rgb(var(--white));
    display: flex;
-   flex-direction: column;
    justify-content: space-between;
+   flex-wrap: nowrap;
+   flex-direction: column;
    position: fixed;
    top: 0px;
    left: 0px;

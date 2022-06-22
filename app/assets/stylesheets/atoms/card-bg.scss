@@ -10,15 +10,13 @@
 
 .card-icon{
    position: absolute;
-   right: 13px;
-   top: 15px;
+   left: 17px;
+   top: 12px;
    padding: 12px;
-   background-color: var(--grey-bg);
-   border-radius: 5px;
 
    i{
       margin: 0px;
-      color: var(--border-grey);
+      color: var(--black)!important;
    }
 }
 
@@ -40,8 +38,8 @@
 
 .card-title{
    position: absolute;
-   left: 25px;
+   left: 54px;
    top: 23px;
-   color: var(--border-grey);
+   color: var(--black);
    font-family: var(--bold-font);
 }
