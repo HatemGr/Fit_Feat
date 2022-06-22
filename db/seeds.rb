@@ -8,6 +8,7 @@
 
 require 'faker'
 
+Message.destroy_all
 Notification.destroy_all
 Participation.destroy_all
 Event.destroy_all
@@ -53,18 +54,21 @@ Sport.create(name: "Climbing")
 Sport.create(name: "Tennis")
 puts "Sports created"
 
+ClimbingBlockColor.destroy_all
 block_colors = ["vert", "bleu", "rouge", "violet", "orange"]
 block_colors.each do |color|
   ClimbingBlockColor.create(block_color: color)
 end
 puts "Climbing colors created"
 
+ClimbingLevel.destroy_all
 levels = [5,6,7,8]
 levels.each do |level|
   ClimbingLevel.create(level: level)
 end
 puts "Climbing levels created"
 
+TennisRank.destroy_all
 ranks = ["6", "15/1", "15/2", "15/3", "15/4", "15/5", "30", "30/1", "30/2", "30/3", "30/4", "40"]
 ranks.each do |rank|
   TennisRank.create(rank:rank)
