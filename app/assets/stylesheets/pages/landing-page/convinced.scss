@@ -1,13 +1,16 @@
 .convinced-container{
-   width: 100vw !important;
-   height: 314px !important;
+   width: 100% !important;
+   height: 5% !important;
    padding: 0px !important;
+   justify-content: center;
+   align-items: center;
 
    .convinced-content{
    background: url(https://images.unsplash.com/photo-1557564437-0995702f88fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80) !important;
    background-repeat: no-repeat !important;
    background-size: cover !important;
    background-position: 50% 75% !important;
+   align-items: center !important;
    
    border-radius: 0px !important;
 
@@ -27,6 +30,10 @@
    }
 
    .element-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 8px !important;
       padding-left: 50px;
       z-index: 1;
@@ -40,8 +47,28 @@
       font-family: var(--medium-font) !important;
       font-size: 1rem !important;
       max-width: 549px !important;
+   } 
+ }
+}
+
+@media screen and (max-width: 1200px) {
+   .convinced-container{
+      position: relative;
    }
-  
+
+   .convinced-content{
+      position: absolute;
+   }
    
 }
+
+@media screen and (max-width: 800px) {
+   .convinced-container{
+      position: relative;
+   }
+
+   .convinced-content{
+      position: absolute;
+   }
+   
 }

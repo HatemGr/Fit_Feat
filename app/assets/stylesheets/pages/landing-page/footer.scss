@@ -38,3 +38,34 @@
 
 }
 
+@media screen and (max-width:1600px){
+   .footer-lp{
+      position: relative;
+   }
+}
+
+@media screen and (max-width:1200px){
+   .footer-lp{
+      position: relative;
+   }
+
+  .cowl{
+     justify-content: center;
+     align-items: center;
+     padding: 10px;
+  }
+}
+
+@media screen and (max-width:900px){
+   .footer-lp{
+      position: relative;
+      justify-content: center;
+      margin: auto;
+   }
+
+  .cowl{
+     justify-content: center;
+     align-items: center;
+     padding: 10px;
+  }
+}
