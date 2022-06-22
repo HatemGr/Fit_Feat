@@ -6,7 +6,7 @@ class ClimbingPerformancesController < ApplicationController
         current_user.get_sport_user("Climbing").update(experience: experience, frequency: frequency)
         ClimbingPerformance.create(climbing_perf_params.merge(sport_user: current_user.get_sport_user("Climbing")))
         flash[:success] = "Le sport Climbing a bien été modifié"
-        redirect_to user_path(current_user)
+        redirect_to sport_user_path(current_user)
 
     end
 
