@@ -65,7 +65,7 @@
             <div class="input col-sm">
                <p class="input-name">Ville</p>
                <div class="input-wrapper">
-               <%= form.select(:city_id, options_for_select( ["Choisis ta ville" ].concat(cities.collect{ |u| [u.name, u.id] }) )) %>
+               <%= form.select(:city_id, options_for_select( ["Choisis ta ville" ].concat(cities.collect{ |u| [u.name, u.id] }), user.city ? [user.city.name, user.city.id] : nil )) %>
                <i class="fa-solid fa-location-dot"></i>
                </div> 
             </div>
