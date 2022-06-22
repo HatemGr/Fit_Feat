@@ -23,6 +23,13 @@
 .modify-email {
   margin-bottom: 45px;
 }
+@media screen and (max-width: 1600px){
+
+  .right-content{
+    padding: 40px;
+  }
+  
+}
 
 @media screen and (max-width: 1200px) {
     .signup-container{
@@ -31,8 +38,21 @@
     }
 
     .right-image{
-      max-height: 200px;
+      height: 500px!important;
     }
 
+    .right-content{
+      position: relative;
+      right: -50px;
+      
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .right-content{
+    position: relative;
+    left: 5px;
+  }
+  
 }
 /*# sourceMappingURL=sign_up.css.map */
