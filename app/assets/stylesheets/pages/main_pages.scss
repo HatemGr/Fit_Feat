@@ -3,6 +3,11 @@
    max-width: 80%;
    padding:40px;
 
+   @media screen and (max-width: 800px) {
+      max-width: 100%;
+      padding:40px 20px;
+   }
+
    h1{
       font-family:var(--black-font)
    }
