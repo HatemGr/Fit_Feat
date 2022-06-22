@@ -15,7 +15,7 @@
 .cart-contain {
    display: flex;
    flex-direction: row;
-   align-items: flex-start;
+   align-items: center;
    justify-content: flex-start;
    gap: 43px;
    border-left: 30px solid transparent;
@@ -27,6 +27,7 @@
 
    .cart{
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       justify-content: center;
       align-items: center;
