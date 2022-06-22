@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAA;EACd,OAAO,EAAE,IAAI;CACf;;AAED,AAAA,iBAAiB,CAAA;EACd,IAAI,EAAE,CAAC;CACT;;AAED,AAAA,eAAe,CAAC;EACb,IAAI,EAAG,CAAC;CAEV;;AAED,AAAA,gBAAgB,CAAA;EACb,MAAM,EAAE,KAAK;EACb,QAAQ,EAAC,MAAM;EACf,UAAU,EAAC,MACd;CAAC",
+    "sources": [
+        "geoloc.scss"
+    ],
+    "names": [],
+    "file": "geoloc.css"
+}
