@@ -23,4 +23,16 @@
 .modify-email {
   margin-bottom: 45px;
 }
+
+@media screen and (max-width: 1200px) {
+    .signup-container{
+      flex-direction: column !important;
+      position: relative !important;
+    }
+
+    .right-image{
+      max-height: 200px;
+    }
+
+}
 /*# sourceMappingURL=sign_up.css.map */
