@@ -22,11 +22,11 @@ User.all.destroy_all
 Sport.all.destroy_all
 
 
-city = City.create(name:"Paris")
-City.create(name:"Colombes")
-City.create(name:"Massy")
-City.create(name:"Marseille")
-City.create(name:"Toulouse")
+city = City.create(name:"Paris", image_url:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80")
+City.create(name:"Colombes", image_url:"https://images.unsplash.com/photo-1639409392973-2134fbb44f3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29sb21iZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60")
+City.create(name:"Massy", image_url:"https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1hc3N5JTIwY2l0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+City.create(name:"Marseille", image_url:"https://images.unsplash.com/photo-1566838217578-1903568a76d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFyc2VpbGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+City.create(name:"Toulouse", image_url:"https://images.unsplash.com/photo-1563517987331-3839f534b807?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dG91bG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60")
 
 User.create(email: "jf@thp.com", password: "password", first_name:"Joffrey", last_name:"Frexinet", city: city, address: "17 Rue de Rambouillet Paris")
 User.create(email: "fb@thp.com", password: "password",first_name:"Foucaut", last_name:"Beaumont", city: city , address: "61 Rue Rodier Paris")
