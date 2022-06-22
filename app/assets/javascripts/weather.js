@@ -12,7 +12,7 @@ window.onload = function () {
 		fetch(url)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
+				console.log({data});
 				var tempValue = data["main"]["temp"];
 				var humValue = data["main"]["humidity"];
 				var cloudValue = data["clouds"]["all"];
