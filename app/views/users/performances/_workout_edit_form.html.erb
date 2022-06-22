@@ -56,6 +56,7 @@
           <div class="input">
             <div class="actions" style="margin:15px 0px 0px 13px">
               <%= f.submit('Sauvegarder') %>
+              <%= link_to "Arreter ce sport", sport_user_path(user.get_sport_user("Workout")), method: :delete, class:"button delete-btn", data: { confirm: '"Toutes tes performances seront effacées, es tu sur ?'}%>
             </div>
           </div>
     <%end%>
