@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row justify-content-center my-5">
+  <div class="col-3">
+    <%=link_to "Go to index villes", admin_cities_path, method: :get, class:"btn btn-dark"%>
+  </div>
+  <div class="col-3">
+    <%=link_to "Go to index utilisateurs", admin_users_path, method: :get, class:"btn btn-dark"%>
+  </div>
+</div>
+
+
+<div class="row mx-3">
+<table class="table">
+
+<thead>
+  <th scope="col">Titre</th>
+  <th scope="col">Adresse</th>
+  <th scope="col">Ville</th>
+  <th scope="col">Participants</th>
+  <th scope="col">Supprimer</th>
+</thead>
+
+  <% @events.each do |event|%>
+    <tr>
+    <td><%=event.title%></td>
+    <td><%=event.address%></td>
+    <td><%=event.city.presence.try(&:name)%></td>
+    <td><%=event.participations.size%></td>
+    <td><%=button_to "Supprimer", admin_event_path(event), method: :delete, class:"btn btn-danger" %></td>
+    </tr>
+  <%end%>
+
+</table>
+</div>
+</div>

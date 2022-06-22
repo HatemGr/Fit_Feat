@@ -21,6 +21,12 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
   end
 
+  namespace :admin do 
+    resources :users, only: [:index, :destroy]
+    resources :events, only: [:index, :destroy]
+    resources :cities, only: [:index, :create ,:destroy]
+  end
+
   resources :cities
   resources :sports
   resources :sport_users
