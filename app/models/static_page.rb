@@ -1,8 +1,5 @@
 class StaticPage < ApplicationRecord
-   def index
-   end
- 
-   def new 
-   end
- 
- end
+  def index; end
+
+  def new; end
+end

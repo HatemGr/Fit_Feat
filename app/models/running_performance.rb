@@ -1,41 +1,41 @@
 class RunningPerformance < ApplicationRecord
   belongs_to :sport_user
 
-  validates :distance, :speed, numericality: { only_integer: true , :greater_than_or_equal_to => 0}
+  validates :distance, :speed, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   after_create :calc_perf_score, :remake_suggestions
 
   def remake_suggestions
-    Suggestion.make_suggestions(self.sport_user.user)
+    Suggestion.make_suggestions(sport_user.user)
   end
 
-  def calc_perf_score 
+  def calc_perf_score
     score = 0
-    if distance < 5
-      score +=2
-      elsif distance < 10
-        score +=4
-      elsif distance < 15
-        score +=6
-      elsif distance < 20
-        score +=8
-      else
-        score += 10
-    end
+    score += if distance < 5
+               2
+             elsif distance < 10
+               4
+             elsif distance < 15
+               6
+             elsif distance < 20
+               8
+             else
+               10
+             end
 
-    if speed < 5
-      score +=2
-      elsif speed < 7
-        score +=4
-      elsif speed < 9
-        score +=6
-      elsif speed < 12
-        score +=8
-      else
-        score += 10
-    end
+    score += if speed < 5
+               2
+             elsif speed < 7
+               4
+             elsif speed < 9
+               6
+             elsif speed < 12
+               8
+             else
+               10
+             end
 
     score /= 2
 
-    SportUser.find(self.sport_user_id).update(perf_score: score)
+    SportUser.find(sport_user_id).update(perf_score: score)
   end
 end

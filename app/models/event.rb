@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   extend Geocoder::Model::ActiveRecord
-  belongs_to :admin, class_name: "User"
+  belongs_to :admin, class_name: 'User'
   belongs_to :sport
   belongs_to :city
 
@@ -15,29 +15,23 @@ class Event < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode, :start_after_now
 
-
   def start_after_now
-    if date.present? && date < Date.today
-      errors.add(:date, "can't be in the past")
-    end
+    errors.add(:date, "can't be in the past") if date.present? && date < Date.today
   end
 
   def full_address
-    if city
-      [address, city.name].compact.join(', ')
-    end
+    [address, city.name].compact.join(', ') if city
   end
 
-  def is_after_today? 
+  def is_after_today?
     date > Date.today
   end
 
   def self.available_events(user)
-    Event.all.order(date:'asc').near(user.to_coordinates , 10, units: :km)
+    Event.all.order(date: 'asc').near(user.to_coordinates, 10, units: :km)
   end
 
   def is_full?
-    self.max_participants.present? &&  self.max_participants.to_i == self.participations.size
+    max_participants.present? && max_participants.to_i == participations.size
   end
-
 end

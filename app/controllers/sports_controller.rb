@@ -1,5 +1,5 @@
 class SportsController < ApplicationController
-  before_action :set_sport, only: %i[ show edit update destroy ]
+  before_action :set_sport, only: %i[show edit update destroy]
 
   # GET /sports or /sports.json
   def index
@@ -7,8 +7,7 @@ class SportsController < ApplicationController
   end
 
   # GET /sports/1 or /sports/1.json
-  def show
-  end
+  def show; end
 
   # GET /sports/new
   def new
@@ -16,8 +15,7 @@ class SportsController < ApplicationController
   end
 
   # GET /sports/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sports or /sports.json
   def create
@@ -25,7 +23,7 @@ class SportsController < ApplicationController
 
     respond_to do |format|
       if @sport.save
-        format.html { redirect_to sport_url(@sport), notice: "Sport was successfully created." }
+        format.html { redirect_to sport_url(@sport), notice: 'Sport was successfully created.' }
         format.json { render :show, status: :created, location: @sport }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class SportsController < ApplicationController
   def update
     respond_to do |format|
       if @sport.update(sport_params)
-        format.html { redirect_to sport_url(@sport), notice: "Sport was successfully updated." }
+        format.html { redirect_to sport_url(@sport), notice: 'Sport was successfully updated.' }
         format.json { render :show, status: :ok, location: @sport }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class SportsController < ApplicationController
     @sport.destroy
 
     respond_to do |format|
-      format.html { redirect_to sports_url, notice: "Sport was successfully destroyed." }
+      format.html { redirect_to sports_url, notice: 'Sport was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sport
-      @sport = Sport.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def sport_params
-      params.require(:sport).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sport
+    @sport = Sport.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def sport_params
+    params.require(:sport).permit(:name)
+  end
 end

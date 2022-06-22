@@ -1,18 +1,18 @@
 window.onload = function () {
-	var city = document.getElementById("city-name");
 	var temp = document.querySelector(".temp");
-	var hum = document.querySelector(".hum");
-	var cloud = document.querySelector(".clouds");
-	var wind = document.querySelector(".wind");
-	var img = document.querySelector(".temp-img");
 	if (temp != null) {
-		fetch(
-			"https://api.openweathermap.org/data/2.5/weather?q=" +
-				city.innerHTML +
-				"&units=metric&appid=b70377fc39863e8b80922c33f06fb98c"
-		)
+		var city = document.getElementById("city-name");
+		var hum = document.querySelector(".hum");
+		var cloud = document.querySelector(".clouds");
+		var wind = document.querySelector(".wind");
+		var img = document.querySelector(".temp-img");
+		var apiKey = "b70377fc39863e8b80922c33f06fb98c";
+		var url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent.trim()}&units=metric&appid=${apiKey}`
+		console.log(url);
+		fetch(url)
 			.then((response) => response.json())
 			.then((data) => {
+				console.log(data);
 				var tempValue = data["main"]["temp"];
 				var humValue = data["main"]["humidity"];
 				var cloudValue = data["clouds"]["all"];
@@ -40,6 +40,6 @@ window.onload = function () {
 					img.innerHTML = sunWeather;
 				}
 			})
-			.catch((err) => alert("erreur"));
+			.catch((err) => console.error(err));
 	}
 };

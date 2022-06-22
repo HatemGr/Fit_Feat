@@ -3,12 +3,12 @@ class ClimbingPerformance < ApplicationRecord
   after_create :calc_perf_score, :remake_suggestions
 
   def remake_suggestions
-    Suggestion.make_suggestions(self.sport_user.user)
+    Suggestion.make_suggestions(sport_user.user)
   end
 
-  def calc_perf_score 
+  def calc_perf_score
     score = 0
-    case level 
+    case level
     when 5
       score += 2
     when 6
@@ -20,19 +20,19 @@ class ClimbingPerformance < ApplicationRecord
     end
 
     case block_color
-    when "vert"
+    when 'vert'
       score += 2
-    when "bleu"
+    when 'bleu'
       score += 4
-    when "rouge"
+    when 'rouge'
       score += 6
-    when "violet"
+    when 'violet'
       score += 8
-    when "orange"
+    when 'orange'
       score += 10
     end
 
     score /= 2
-    SportUser.find(self.sport_user_id).update(perf_score: score)
+    SportUser.find(sport_user_id).update(perf_score: score)
   end
 end
