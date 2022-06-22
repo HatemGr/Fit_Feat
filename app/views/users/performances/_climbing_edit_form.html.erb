@@ -1,3 +1,5 @@
+
+
 <div class="flex-row-between-flex-start">
   <%=form_for :climbing_performances, url: climbing_performances_path, method: :post do |f|%>
 
@@ -6,8 +8,8 @@
       <div class="input col-sm">
         <p class="input-name">Experience (années)</p>
         <div class="input-wrapper">
-        <%if user.get_sport_user("Climbing") %>
-          <%= f.number_field :experience, value:user.get_sport_user("Climbing").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+        <%if @user.get_sport_user("Climbing") %>
+          <%= f.number_field :experience, value: @user.get_sport_user("Climbing").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
         <%else%>
           <%= f.number_field :experience ,placeholder: "Depuis combien d'année pratiques-tu ce sport ?" %>
         <%end%>  
@@ -18,8 +20,8 @@
       <div class="input col-sm">
         <p class="input-name">Frequence (par semaine)</p>
         <div class="input-wrapper">
-            <% if user.get_sport_user("Climbing") %>
-              <%= f.number_field :frequency, value:user.get_sport_user("Climbing").frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <% if @user.get_sport_user("Climbing") %>
+              <%= f.number_field :frequency, value: @user.get_sport_user("Climbing").frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%else%>
               <%= f.number_field :frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%end%> 
@@ -30,8 +32,8 @@
       <div class="input col-sm">
         <p class="input-name">Niveau</p>
         <div class="input-wrapper">
-        <%if user.last_climbing_perf%>
-            <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level}, user.last_climbing_perf.level ),placeholder: "Entrez votre niveau" %>
+        <%if @user.last_climbing_perf%>
+            <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level}, @user.last_climbing_perf.level ),placeholder: "Entrez votre niveau" %>
         <%else%>
             <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level} ),placeholder: "Entrez votre niveau" %>
           <%end%>
@@ -42,8 +44,8 @@
       <div class="input col-sm">
         <p class="input-name">Bloque de couleur</p>
         <div class="input-wrapper">
-          <%if user.last_climbing_perf%>
-            <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block_color| block_color.block_color}, user.last_climbing_perf.block_color ),placeholder: "Entrez votre niveau" %>
+          <%if @user.last_climbing_perf%>
+            <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block_color| block_color.block_color}, @user.last_climbing_perf.block_color ),placeholder: "Entrez votre niveau" %>
         <%else%>
             <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block_color| block_color.block_color} ),placeholder: "Entrez votre niveau" %>
           <%end%>
@@ -56,9 +58,12 @@
       <div class="input">
       <div class="actions" style="margin:15px 0px 0px 13px">
         <%= f.submit('Sauvegarder') %>
-        <%= link_to "Arreter ce sport", sport_user_path(user.get_sport_user("Climbing")), method: :delete, class:"button delete-btn", data: { confirm: '"Toutes tes performances seront effacées, es tu sur ?'}%>
+        <% if @user.get_sport_user("Climbing")%>
+        <%= link_to "Arreter ce sport", sport_user_path(@user.get_sport_user("Climbing")), method: :delete, class:"button delete-btn", data: { confirm: '"Toutes tes performances seront effacées, es tu sur ?'}%>
+      <%end%>
       </div>
       </div>
     <%end%>
     <div > <%= image_tag "climbing.png" %> </div>
 </div>
+

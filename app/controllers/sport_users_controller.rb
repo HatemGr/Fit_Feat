@@ -1,18 +1,21 @@
 class SportUsersController < ApplicationController
   
   def show
-    
+    @user= current_user
   end
 
   def create
     @user = current_user
     @sport_user = SportUser.new
-    sport = Sport.find_by(name: params[:sport])
-    sport_user = SportUser.find_by(sport:sport, user:current_user)
+    @sport = Sport.find_by(name: params[:sport])
+    sport_user = SportUser.find_by(sport:@sport, user:current_user)
     unless sport_user
-      sport_user = SportUser.create(user:current_user,sport: sport,experience:0,frequency:0, perf_score: 0)
+      sport_user = SportUser.create(user:current_user,sport: @sport,experience:0,frequency:0, perf_score: 0)
     end
-    case sport.name 
+    puts params
+    puts"*"*50
+    @url = "users/performances/#{@sport.name.downcase}_edit_form"
+    case @sport.name 
     when "Climbing"
       ClimbingPerformance.create(sport_user:sport_user,level:5,block_color:"vert")
     when "Running"
@@ -22,10 +25,11 @@ class SportUsersController < ApplicationController
     when "Tennis"
       TennisPerformance.create(sport_user:sport_user,rank:"6")
     end
-
+    
     respond_to do |format|
-      format.js { }
-      format.html { redirect_to sport_user_path(current_user)}
+
+format.js { }
+      # format.html { redirect_to sport_user_path(current_user)}
     end
 
   end
@@ -40,4 +44,8 @@ class SportUsersController < ApplicationController
 
     redirect_to sport_user_path(current_user)
   end
+
+
+
+
 end

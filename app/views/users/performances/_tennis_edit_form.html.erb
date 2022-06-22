@@ -5,8 +5,8 @@
           <div class="input col-sm">
             <p class="input-name">Experience (années)</p>
             <div class="input-wrapper">
-            <% if user.get_sport_user("Tennis") %>
-              <%= f.number_field :experience, value:user.get_sport_user("Tennis").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+            <% if @user.get_sport_user("Tennis") %>
+              <%= f.number_field :experience, value:@user.get_sport_user("Tennis").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%else%>
               <%= f.number_field :experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%end%> 
@@ -17,8 +17,8 @@
           <div class="input col-sm">
             <p class="input-name">Frequence (par semaine)</p>
             <div class="input-wrapper">
-              <% if user.get_sport_user("Tennis") %>
-              <%= f.number_field :frequency, value:user.get_sport_user("Tennis").frequency , placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+              <% if @user.get_sport_user("Tennis") %>
+              <%= f.number_field :frequency, value:@user.get_sport_user("Tennis").frequency , placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%else%>
               <%= f.number_field :frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%end%> 
@@ -29,8 +29,8 @@
           <div class="input col-sm">
             <p class="input-name">Rang</p>
             <div class="input-wrapper">
-            <%if user.last_tennis_perf %>
-              <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank} , user.last_tennis_perf.rank ),placeholder: "Entrez votre niveau" %>
+            <%if @user.last_tennis_perf %>
+              <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank} , @user.last_tennis_perf.rank ),placeholder: "Entrez votre niveau" %>
             <%else%>
             <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank}),placeholder: "Entrez votre niveau" %>
             <%end%>
@@ -40,7 +40,7 @@
           <div class="input">
             <div class="actions" style="margin:15px 0px 0px 1px">
               <%= f.submit('Sauvegarder') %>
-              <%= link_to "Arreter ce sport", sport_user_path(user.get_sport_user("Tennis")), method: :delete, class:"button delete-btn", data: { confirm: '"Toutes tes performances seront effacées, es tu sur ?'}%>
+              <%= link_to "Arreter ce sport", sport_user_path(@user.get_sport_user("Tennis")), method: :delete, class:"button delete-btn", data: { confirm: '"Toutes tes performances seront effacées, es tu sur ?'}%>
             </div>
           </div>
       </div>

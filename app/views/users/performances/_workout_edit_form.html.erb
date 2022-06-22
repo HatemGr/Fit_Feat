@@ -1,3 +1,4 @@
+
 <div class="flex-row-between-flex-start">
     <%=form_for :workout_performances, url: workout_performances_path, method: :post do |f|%>
       <div class="container">
@@ -5,8 +6,8 @@
           <div class="input col-sm">
             <p class="input-name">Experience (années)</p>
             <div class="input-wrapper">
-              <% if user.get_sport_user("Workout") %>
-              <%= f.number_field :experience, value:user.get_sport_user("Workout").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+              <% if @user.get_sport_user("Workout") %>
+              <%= f.number_field :experience, value:@user.get_sport_user("Workout").experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%else%>
               <%= f.number_field :experience ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%end%> 
@@ -18,8 +19,8 @@
             <p class="input-name">Frequence (par semaine)</p>
             <div class="input-wrapper">
 
-              <% if user.get_sport_user("Workout") %>
-              <%= f.number_field :frequency, value:user.get_sport_user("Workout").frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
+              <% if @user.get_sport_user("Workout") %>
+              <%= f.number_field :frequency, value:@user.get_sport_user("Workout").frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%else%>
               <%= f.number_field :frequency ,placeholder: "Depuis combien d'année pratique tu ce sport ?" %>
             <%end%> 
@@ -30,8 +31,8 @@
           <div class="input col-sm">
             <p class="input-name">Benchpress</p>
             <div class="input-wrapper">
-            <%if user.last_workout_perf%>
-              <%= f.number_field :benchpress_weight, value: user.last_workout_perf.benchpress_weight, placeholder: "Rentrez votre vitesse" %>
+            <%if @user.last_workout_perf%>
+              <%= f.number_field :benchpress_weight, value: @user.last_workout_perf.benchpress_weight, placeholder: "Rentrez votre vitesse" %>
              <%else%>
               <%= f.number_field :benchpress_weight, placeholder: "Rentrez votre vitesse" %>
              <%end%>
@@ -42,8 +43,8 @@
           <div class="input col-sm">
             <p class="input-name">Squat</p>
             <div class="input-wrapper">
-              <%if user.last_workout_perf%>
-                <%= f.number_field :squat_weight, value: user.last_workout_perf.squat_weight, placeholder: "Rentrez votre vitesse" %>
+              <%if @user.last_workout_perf%>
+                <%= f.number_field :squat_weight, value: @user.last_workout_perf.squat_weight, placeholder: "Rentrez votre vitesse" %>
              <%else%>
                 <%= f.number_field :squat_weight, placeholder: "Rentrez votre vitesse" %>
              <%end%>
@@ -56,7 +57,10 @@
           <div class="input">
             <div class="actions" style="margin:15px 0px 0px 13px">
               <%= f.submit('Sauvegarder') %>
-              <%= link_to "Arreter ce sport", sport_user_path(user.get_sport_user("Workout")), method: :delete, class:"button delete-btn", data: { confirm: '"Toutes tes performances seront effacées, es tu sur ?'}%>
+              <%sport=current_user.get_sport_user("Workout")%>
+              <% if sport%>
+              <%= link_to "Arreter ce sport", sport_user_path(sport), method: :delete, class:"button delete-btn", data: { confirm: '"Toutes tes performances seront effacées, es tu sur ?'}%>
+            <%end%>
             </div>
           </div>
     <%end%>
