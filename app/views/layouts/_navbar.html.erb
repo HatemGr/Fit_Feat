@@ -35,12 +35,15 @@
       </div>
       <div class="nav-down">
         <div class="separate-div"></div>
-        <%= link_to edit_user_path(current_user) do%>
-          <i class="fa-solid fa-gear"></i>  Editer ton profil
-        <%end%>
-        <%= link_to destroy_user_session_path, :method => :delete do %>
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter 
-        <% end%>
+        <div class="bottom-link">
+            <i class="fa-solid fa-gear"></i>
+             <%= link_to "Editer son profil", edit_user_path(current_user) %>
+        </div>
+
+        <div class="bottom-link">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+             <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete %>
+        </div>
       </div>
     </div>
   </div>
