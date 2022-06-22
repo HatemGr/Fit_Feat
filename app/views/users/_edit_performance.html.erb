@@ -18,7 +18,7 @@
         <%= render partial: 'users/graphs/climbing_graph', locals: {user: current_user} %>
       <%else%>
         <div class="">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence l\'escalade !', sport_users_path(sport: :Climbing), method: :post, :class => "btn-begin begin-#{"climbing"}"%>
+        <%= link_to 'Je commence l\'escalade !', sport_users_path(sport: :Climbing),remote: true,  method: :post, :class => "btn-begin begin-#{"climbing"}"%>
       <%end%>
       </div>
 
@@ -31,7 +31,7 @@
         <%= render partial: 'users/graphs/running_graph', locals: {user: current_user} %>
       <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Running  !', sport_users_path(sport: :Running), method: :post, :class => "btn-begin begin-#{"running"}"%>
+        <%= link_to 'Je commence le Running  !', sport_users_path(sport: :Running),remote: true, method: :post, :class => "btn-begin begin-#{"running"}"%>
       <%end%>
       </div>
 
@@ -44,7 +44,7 @@
         <%= render partial: 'users/graphs/workout_graph', locals: {user: current_user} %>
         <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Workout !', sport_users_path(sport: :Workout), method: :post,:class => "btn-begin begin-#{"Workout"}"%>
+        <%= link_to 'Je commence le Workout !', sport_users_path(sport: :Workout), remote: true,method: :post,:class => "btn-begin begin-#{"Workout"}"%>
       <%end%>
       </div>
 
@@ -57,7 +57,7 @@
       <%= render partial: 'users/graphs/tennis_graph', locals: {user: current_user} %>
         <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Tennis !', sport_users_path(sport: :Tennis), method: :post, :class => "btn-begin begin-#{"Tennis"}"%>
+        <%= link_to 'Je commence le Tennis !', sport_users_path(sport: :Tennis,format: "js"), remote: true,method: :post, :class => "btn-begin begin-#{"Tennis"}"%>
       <%end%>
       </div>
   </div>
