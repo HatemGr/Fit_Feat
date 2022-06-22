@@ -3,7 +3,12 @@
    <p class="card-title"> Geolocalisation </p>
    <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p> 
   
-   <div class="wrapper-container">
+
+
+   <div class="container-geoloc" >
+      <div class="list-container">
+         <% if @users_around%>
+            <div class="wrapper-container">
       <% @sports.each do |sport|%>
          <div class="form-check checkbox-container-<%=sport.name%>" id="checkbox-container-<%=sport.name%>">
             <input type="checkbox" class="form-check-input category-checkboxes" id="<%=sport.name%>">
@@ -12,11 +17,7 @@
          </div>
       <%end%>
    </div>
-
-   <div class="container-geoloc" >
-      <div class="list-container">
-         <% if @users_around%>
-         <h2> Autour de toi (scroll) </h2>
+         <h2> Les Fitters autour de toi: </h2>
             <ul class="scrollable-list">
             <% @users_around.each do |user| %>
                <li class="user-list <%= user.sports_list.join(" ")%>"> 
