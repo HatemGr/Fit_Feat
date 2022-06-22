@@ -77,3 +77,9 @@ gem "aws-sdk-s3", require: false
 gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 # paiement
 gem 'stripe'
+
+gem 'activeadmin'
+# Plus integrations with:
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'

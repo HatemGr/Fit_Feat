@@ -8,6 +8,7 @@
 
 require 'faker'
 
+Message.destroy_all
 Notification.destroy_all
 Participation.destroy_all
 Event.destroy_all
@@ -122,3 +123,4 @@ end
 puts "Seed performed!"
 
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

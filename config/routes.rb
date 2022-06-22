@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :events do
     resources :participations, only: [:create, :destroy, :update]
     resources :images, only: [:create]
