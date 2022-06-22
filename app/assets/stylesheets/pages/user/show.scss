@@ -17,6 +17,11 @@ height: 100% !important;
    display: flex;
    gap: 30px;
 
+   @media screen and (max-width: 1150px) {
+      flex-direction: column;
+      gap:0px
+   }
+
 
    .notification-card{
       height: 163px;
@@ -149,6 +154,14 @@ height: 100% !important;
    gap: 20px;
    justify-content: space-evenly;
 
+      @media screen and (max-width: 1180px) {
+         flex-wrap: wrap;
+      }
+
+      @media screen and (max-width: 900px) {
+         flex-direction: column;
+      }
+
    .performance-show-item{
       display: flex;
       flex-direction: column;
@@ -171,6 +184,10 @@ height: 100% !important;
    width: 1px;
    height: 80px;
    background-color: var(--border-grey);
+
+   @media screen and (max-width: 1180px) {
+      display: none;;
+   }
 }
 
 

@@ -1,4 +1,7 @@
-<%= link_to user_path(current_user), 'aria-selected' => true do %>
-   <i class='fa-solid fa-home'></i> Accueil 
-   <%= render "layouts/tabs/span_indicator" %>
- <% end%>
+
+
+<div class="item-nav">
+   <i class='fa-solid fa-home'></i>  
+   <%= link_to 'Accueil', user_path(current_user), 'aria-selected' => true %>
+</div>
+         <%= render "layouts/tabs/span_indicator" %>

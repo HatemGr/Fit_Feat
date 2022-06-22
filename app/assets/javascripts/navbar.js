@@ -1,6 +1,20 @@
 // const menu = document.querySelector(".menu");
 
 // const menuItems = Array.from(menu.querySelectorAll("a"));
+
+// console.log(menuItems);
+
+// for (let i = 0; i < menuItems.length; i++) {
+// 	if (menuItems[i].ariaSelected == true) {
+// 		menuItems[i].style.color = "transparent";
+// 		menuItems[i].firstChild.nextElementSibling.style.color =
+// 			"rgb(var(--purple))";
+// 	} else {
+// 		menuItems[i].style.color = "transparent";
+// 		menuItems[i].firstChild.nextElementSibling.style.color = "black";
+// 	}
+// }
+
 // let activeItem = menu.querySelector("[aria-selected]");
 // const indicator = document.createElement("span");
 

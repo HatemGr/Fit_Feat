@@ -31,7 +31,7 @@
            Créer un event <i class="fa-solid fa-arrow-right"></i> 
       <%end%>
       <%else%>
-        <div class="d-flex justify-content-between mt-3">
+        <div class="d-flex justify-content-between mt-3 ">
             <%= render partial: 'event_list', locals: {events: @current_user_events}%>
             <%= render partial: 'events/event_detail', locals: {events: @user_events}%>
         </div>

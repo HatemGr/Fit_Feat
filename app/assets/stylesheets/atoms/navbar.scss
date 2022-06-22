@@ -9,6 +9,11 @@
    position: fixed;
    top: 0px;
    left: 0px;
+   transition: all 0.3s ease;
+
+   @media screen and (max-width: 800px) {
+      width: 80px;
+   }
 }
 
 .rond {
@@ -43,6 +48,11 @@
    min-width: 290px;
    height :100vh;
    display: block;
+   transition: all 0.3s ease;
+
+   @media screen and (max-width: 800px) {
+      min-width: 80px;
+   }
 }
 
 
@@ -53,19 +63,37 @@
    padding-left: 37px;
 }
 
+.item-nav{
+   margin: 20px 0px;
+}
+
 .menu a {
-   padding: 18px 0px 18px 19px;
+
    text-decoration: none;
    color: var(--text_grey);
    transition: .3s;
-   margin-bottom: 18px;
+
    width: fit-content;
    min-width: 195px;
    border-radius: 7px;
    font-size: var(--Xlittle);
 
+   i{
+
+   }
+
+   @media screen and (max-width: 800px) {
+      min-width: 75px;
+      max-height: 58px;
+   }
+
    &:hover{
       background-color: rgba(var(--purple), 0.05);
+
+      @media screen and (max-width: 800px) {
+         max-width: 75px;
+         max-height: 58px;
+      }
    }
 }
 
@@ -74,6 +102,11 @@
    background-color: rgba(var(--purple), 0.05);
    position:relative;
    font-size: var(--Xlittle);
+   @media screen and (max-width: 800px) {
+      max-width: 10px;
+   }
+
+
 }
 
 // .indicator{
@@ -92,6 +125,10 @@
    border: 1px solid #ececec;
    width : 220px;
    margin-bottom: 20px;   
+
+   @media screen and (max-width: 800px) {
+      width: 0px;
+   }
 }
 
 .nav-down{
@@ -101,6 +138,11 @@
    padding-bottom: 60px;
    justify-content: flex-end;
    margin-left: 10px;
+
+
+   @media screen and (max-width: 800px) {
+      padding-left: 0px;
+   }
 }
 
 .nav-down a{
@@ -109,6 +151,7 @@
    color: var(--text_grey);
    justify-content: space-between;
    width: fit-content;
+   font-size: var(--Xlittle);
 }
 
 
@@ -117,11 +160,17 @@
    display: flex;
    align-items: center;
    margin-bottom: 30px;
+
+
 }
 
 .user-name span{
    font-family: var(--black-font);
    font-size: 1.5rem;
+
+   @media screen and (max-width: 800px) {
+      display: none;;
+   }
 
    a{
       font-family: var(--black-font);
@@ -140,8 +189,13 @@
    background-color:rgb(var(--purple)); 
    position:absolute; 
    top:0; 
-   left:-54px; 
+   left:-18px; 
    border-radius: 4px; 
+   transition: all 0.3s ease;
+
+   @media screen and (max-width: 800px) {
+      left:-5px;
+   }
 }
 
 // canvas{

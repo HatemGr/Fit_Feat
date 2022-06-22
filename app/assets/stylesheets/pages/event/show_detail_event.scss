@@ -1,6 +1,20 @@
 .event-show-content{
    width: 400px;
    position: relative;
+
+   @media screen and (min-width: 1150px) {
+      width: 400px;
+   }
+
+   @media screen and (max-width: 1350px) {
+      width: 300px;
+   }
+
+
+   @media screen and (min-width: 1700px) {
+      width: 680px;
+   }
+
 }
 
 .event-show-image{
