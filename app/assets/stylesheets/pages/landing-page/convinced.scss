@@ -47,8 +47,28 @@
       font-family: var(--medium-font) !important;
       font-size: 1rem !important;
       max-width: 549px !important;
+   } 
+ }
+}
+
+@media screen and (max-width: 1200px) {
+   .convinced-container{
+      position: relative;
    }
-  
+
+   .convinced-content{
+      position: absolute;
+   }
    
 }
+
+@media screen and (max-width: 800px) {
+   .convinced-container{
+      position: relative;
+   }
+
+   .convinced-content{
+      position: absolute;
+   }
+   
 }

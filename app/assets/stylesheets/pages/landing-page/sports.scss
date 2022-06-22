@@ -100,9 +100,13 @@
          .text-cart{
             padding-top: 15px;
          }
-
-      
-
    }
 
+}
+
+@media screen and (max-width: 900px){
+   .cart-contain{
+      border: none;
+   }
+  
 }
