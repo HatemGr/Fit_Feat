@@ -1,8 +1,7 @@
 var tab = document.querySelector(".tab-active");
-console.log(tab)
+
 tab.innerHTML="";
 
-console.log("<%=@user%>%");
 switch(tab.id){
     case "Climbing":
     tab.insertAdjacentHTML("beforeend", "<%= j render 'users/performances/climbing_edit_form', user: current_user %>")
