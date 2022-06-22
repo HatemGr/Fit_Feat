@@ -3,9 +3,9 @@
       <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
       
       <div class="tab">
-        <button class="tablinks first-tab" onclick="openPerf(event, 'Climbing')" id="defaultOpen">Climbing</button>
-        <button class="tablinks" onclick="openPerf(event, 'Running')">Running</button>
-        <button class="tablinks" onclick="openPerf(event, 'Workout')">Workout</button>
+        <button class="tablinks first-tab" onclick="openPerf(event, 'Climbing')" id="defaultOpen">Escalade</button>
+        <button class="tablinks" onclick="openPerf(event, 'Running')">Course</button>
+        <button class="tablinks" onclick="openPerf(event, 'Workout')">Musculation</button>
         <button class="tablinks" onclick="openPerf(event, 'Tennis')">Tennis</button>
       </div>
 
@@ -31,7 +31,7 @@
         <%= render partial: 'users/graphs/running_graph', locals: {user: current_user} %>
       <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Running !', sport_users_path(sport: :Running), method: :post, :class => "btn-begin begin-#{"running"}", remote: true%>
+        <%= link_to 'Je commence le Running  !', sport_users_path(sport: :Running), method: :post, :class => "btn-begin begin-#{"running"}", remote: true%>
       <%end%>
       </div>
 

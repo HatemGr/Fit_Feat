@@ -42,7 +42,11 @@ class User < ApplicationRecord
 
   def full_address
     if city
-      [address, city.name].compact.join(', ')
+      if address
+        [address, city.name].compact.join(', ')
+      else
+        city.name
+      end     
     end
   end
 
@@ -152,13 +156,34 @@ class User < ApplicationRecord
     user.friends.include?(self)
   end
 
-  def conversation(user_id)
-    Message.where(sender_id: user_id, recipient: self).or(Message.where(sender: self, recipient_id: user_id)).order(:created_at)
+  def conversation(user)
+    Message.where(sender: user, recipient: self).or(Message.where(sender: self, recipient: user)).order(:created_at)
   end
 
-  def last_message(user_id)
-    conversation(user_id).last
+  def last_message(user)
+    conversation(user).last
   end
+
+
+  def has_one_conversation
+    conversation = []
+    answer= false
+    if self.friends.present?
+      self.friends.each do |friend|
+        if self.conversation(friend).present?
+          conversation = self.conversation(friend)
+          answer=true
+        end
+      end
+    end
+    if answer
+      conversation
+    else
+      nil
+    end
+      
+  end
+
 
   def sports_list
     list = []
@@ -167,5 +192,6 @@ class User < ApplicationRecord
     end
     return list
   end
+
 
 end

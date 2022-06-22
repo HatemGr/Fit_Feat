@@ -1,14 +1,8 @@
-<div class="row">
-<%=message.created_at%>
-  <%if message.sender == current_user%>
-    <div class="col"></div>
-    <div class="col">
-      <p>Moi: <%=message.body%></p>
-    </div>
-  <%else%>
-    <div class="col">
-      <p><%=message.sender.full_name%>: <%=message.body%></p>
-    </div>
-    <div class="col"></div>
-  <%end%>
-</div>
+  <div class="message-inline <%if message.sender == current_user%>own<%end%>">
+      <div class="message-<%if message.sender == current_user%>own<%else%>other<%end%>">
+        <p><%if message.sender == current_user%>Moi<%else%><%=message.sender.full_name%><%end%>: <%=message.body%></p>
+        <div class="message-time">
+        <p><%=message.created_at.strftime("at %I:%M%p")%></p>
+        </div>
+      </div>
+  </div>

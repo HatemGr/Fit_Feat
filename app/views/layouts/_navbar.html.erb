@@ -10,7 +10,11 @@
               <%= image_tag "defaultavatar.png", :style => "width:50px;" %>
             <%end%>
           </div>
+          <% if current_user.first_name%>
           <span>  <%= link_to current_user.first_name, edit_user_path(current_user)%> </span>
+          <%else%>
+            <span>  <%= link_to "Toi", edit_user_path(current_user)%> </span>
+          <%end%>
         </div>
         <div class="separate-div" style="margin-left: 37px"></div>
         <nav class="menu" role="tablist">
@@ -31,6 +35,9 @@
       </div>
       <div class="nav-down">
         <div class="separate-div"></div>
+        <%= link_to edit_user_path(current_user) do%>
+          <i class="fa-solid fa-gear"></i>  Editer ton profil
+        <%end%>
         <%= link_to destroy_user_session_path, :method => :delete do %>
           <i class="fa-solid fa-arrow-right-from-bracket"></i>  Se déconnecter 
         <% end%>

@@ -20,10 +20,14 @@
    </div>
    <div class="meteo-card card">
       <p class="card-title"> Météo </p>
+      <% if @user.city %>
       <p class="card-icon"> <i class="fa-solid fa-cloud-sun"></i> </p>
        <h2 id="city-name">  <%= @user.city.name%> </h2>
        <p> Température : <span class="temp"> </span>° </p>
        <p> Humidité : <span class="hum"> </span>% </p>
        <p> Nuages : <span class="clouds"> </span>%</p>
+       <%else%>
+       <p>Pas de ville renseignée</p>
+       <%end%>
    </div>
 </div>
