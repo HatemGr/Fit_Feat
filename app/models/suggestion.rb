@@ -39,7 +39,7 @@ class Suggestion < ApplicationRecord
 
   def self.make_suggestions(user)
     if user.longitude
-      Suggestion.where(user: user).destroy_all
+      Suggestion.where(user: user).where(refused: nil).destroy_all
       users_around = user.nearbys(10).select{|u| user.friends.exclude?(u)}
       user_sports = user.sports
 
@@ -48,7 +48,7 @@ class Suggestion < ApplicationRecord
         if users_around
           users_around.each do |user_around|
             record = SportUser.find_by(user:user_around,sport:sport)
-            unless record.nil?
+            unless record.nil? || Suggestion.find_by(user: self, partner: user_around)
               if ((record.perf_score > (user_perf_score - 1)) && (record.perf_score < (user_perf_score  + 1)))
                 Suggestion.create(user: user,partner:user_around)
               end
