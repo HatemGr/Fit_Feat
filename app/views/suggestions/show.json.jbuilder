@@ -1,1 +1,1 @@
-json.partial! "suggestions/suggestion", suggestion: @suggestion
+json.partial! 'suggestions/suggestion', suggestion: @suggestion

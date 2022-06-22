@@ -1,8 +1,9 @@
 class SportUsersController < ApplicationController
-  
+
   def show
     @user= current_user
   end
+
 
   def create
     @user = current_user
@@ -12,8 +13,6 @@ class SportUsersController < ApplicationController
     unless sport_user
       sport_user = SportUser.create(user:current_user,sport: @sport,experience:0,frequency:0, perf_score: 0)
     end
-    puts params
-    puts"*"*50
     @url = "users/performances/#{@sport.name.downcase}_edit_form"
     case @sport.name 
     when "Climbing"
@@ -27,25 +26,17 @@ class SportUsersController < ApplicationController
     end
     
     respond_to do |format|
-
-format.js { }
-      # format.html { redirect_to sport_user_path(current_user)}
+      format.js { }
     end
-
   end
 
-  def update
-  end
+  def update; end
 
   def destroy
     @sport_user = SportUser.find(params[:id])
     @sport = @sport_user.sport.name
     @sport_user.destroy
-
     redirect_to sport_user_path(current_user)
   end
-
-
-
 
 end

@@ -1,1 +1,1 @@
-json.partial! "sports/sport", sport: @sport
+json.partial! 'sports/sport', sport: @sport

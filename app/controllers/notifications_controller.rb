@@ -1,9 +1,7 @@
 class NotificationsController < ApplicationController
-  def index
-  end
+  def index; end
 
-  def create
-  end
+  def create; end
 
   def update
     @user = User.find(params[:id])
@@ -14,6 +12,5 @@ class NotificationsController < ApplicationController
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 end

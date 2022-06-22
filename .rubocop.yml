@@ -1,0 +1,12 @@
+require: rubocop-rails
+
+Style/Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'client/node_modules/**/*'
+    - 'vendor/**/*'
+  NewCops: enable
+Style/FrozenStringLiteralComment:
+  Enabled: false
