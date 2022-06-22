@@ -1,55 +1,35 @@
-// const menu = document.querySelector(".menu");
+const menu = document.querySelector(".menu");
+const menuItems = Array.from(menu.querySelectorAll("a"));
 
-// const menuItems = Array.from(menu.querySelectorAll("a"));
-// let activeItem = menu.querySelector("[aria-selected]");
-// const indicator = document.createElement("span");
+function visible(textColor, iconColor) {
+	for (let i = 0; i < menuItems.length; i++) {
+		if (menuItems[i].ariaSelected) {
+			for (let i = 0; i < menuItems.length; i++) {
+				menuItems[i].style.color = textColor;
+				menuItems[i].firstChild.nextElementSibling.style.color = "black";
+			}
+			menuItems[i].style.color = iconColor;
+			menuItems[i].firstChild.nextElementSibling.style.color =
+				"rgb(var(--purple))";
+		} else {
+			menuItems[i].style.color = textColor;
+			menuItems[i].firstChild.nextElementSibling.style.color = "black";
+		}
+	}
+}
 
-// indicator.classList.add("indicator");
-// menu.appendChild(indicator);
-// console.log(getTransform(activeItem));
-// if (activeItem) {
-// 	indicator.style.setProperty("transform", getTransform(activeItem));
-// }
+const mediaQuery = "(min-width: 800px)";
 
-// /**
-//  *
-//  * @param {{currentTarget: HTMLElement}} e
-//  */
+window.matchMedia(mediaQuery).addEventListener("change", (e) => {
+	if (e.matches) {
+		visible("black", "rgb(var(--purple))");
+	} else {
+		visible("transparent", "transparent");
+	}
+});
 
-// function onItemClick(e) {
-// 	if (e.currentTarget === activeItem) {
-// 		return;
-// 	}
-
-// 	activeItem?.removeAttribute("aria-selected");
-// 	activeItem?.removeAttribute("style");
-
-// 	e.currentTarget.setAttribute(
-// 		"style",
-// 		"background-color: rgba(var(--purple), 0.05)"
-// 	);
-// 	e.currentTarget.setAttribute("aria-selected", "true");
-// 	indicator.animate([{ transform: getTransform(e.currentTarget) }], {
-// 		fill: "both",
-// 		duration: 600,
-// 		easing: "cubic-bezier(.48, 1.55, .28,1)",
-// 	});
-// 	activeItem = e.currentTarget;
-// }
-
-// /**
-//  *
-//  * @param {HTMLElement} element
-//  * @return {string}
-//  */
-// function getTransform(element) {
-// 	const transform = {
-// 		y: element.offsetTop,
-// 		scaleY: element.offsetHeight / 100,
-// 	};
-// 	return `translateY(${transform.y}px) scaleY(${transform.scaleY})`;
-// }
-
-// menuItems.forEach((item) => {
-// 	item.addEventListener("click", onItemClick);
-// });
+if (window.matchMedia("(min-width: 800px)").matches) {
+	visible("black", "rgb(var(--purple))");
+} else {
+	visible("transparent", "transparent");
+}

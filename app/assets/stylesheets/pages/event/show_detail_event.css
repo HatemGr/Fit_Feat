@@ -3,6 +3,24 @@
   position: relative;
 }
 
+@media screen and (min-width: 1150px) {
+  .event-show-content {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .event-show-content {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .event-show-content {
+    width: 680px;
+  }
+}
+
 .event-show-image {
   width: 100%;
 }

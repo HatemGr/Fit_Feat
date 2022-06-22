@@ -9,7 +9,7 @@
   <%end%>
 
   <div class="card">
-  <p class="card-title"> Les prochaines evenements à venir pour <%= @user.full_name %> </p>
+  <p class="card-title"> Tes prochains evenements  </p>
   <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
 
 
@@ -19,7 +19,7 @@
         Voir les events <i class="fa-solid fa-arrow-right"></i> 
       <%end%>
   <%else%>
-  <div class="d-flex justify-content-between mt-3">
+  <div class="d-flex justify-content-between mt-3 flex-wrap gap-5">
     <%= render partial: 'events/event_list', locals: {events: @user_events}%>
     <%= render partial: 'events/event_detail', locals: {events: @user_events}%>
   </div>

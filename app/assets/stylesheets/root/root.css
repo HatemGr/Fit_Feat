@@ -15,7 +15,7 @@ body {
   --grey-bg:#F4F4F4;
   --text-grey:#575757;
   --grey-bg:#F4F4F4;
-  --border-grey:#C8C8C8
+  --border-grey:#969494
    ;
   /* PRIMARY */
   --purple: 147, 73, 241;
@@ -49,7 +49,7 @@ body {
   --regular-font: "sanasansaltw00-regularregular", "Arial", sans-serif;
   /* size */
   --title: 3.438rem;
-  --big: clamp(2rem, 4vw, 2.2rem);
+  --big: clamp(1.7rem, 3.3vw, 2.2rem);
   --medium: clamp(1.3rem, 4vw, 1.8rem);
   --Xmedium: clamp(1.3rem, 4vw, 1.6rem);
   --regular: clamp(1.3rem, 4vw, 1.4rem);
