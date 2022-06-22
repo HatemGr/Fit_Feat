@@ -25,7 +25,7 @@ class SportUsersController < ApplicationController
 
     respond_to do |format|
       format.js { }
-      format.html { redirect_to user_path(@user)}
+      format.html { redirect_to sport_user_path(current_user)}
     end
 
   end
@@ -34,5 +34,10 @@ class SportUsersController < ApplicationController
   end
 
   def destroy
+    @sport_user = SportUser.find(params[:id])
+    @sport = @sport_user.sport.name
+    @sport_user.destroy
+
+    redirect_to sport_user_path(current_user)
   end
 end

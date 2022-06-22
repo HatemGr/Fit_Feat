@@ -72,6 +72,52 @@ height: 100% !important;
    .meteo-card{
       flex: 5;
       height: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 70px;
+      i{
+         color: #454545;
+      }
+
+      .temp-wrapper{
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+      }
+
+      .temp-para{
+         display: flex;
+         align-items: flex-start;
+         flex-direction: row;
+         font-size: 2rem;
+      }
+
+      .temp-img{
+         position: relative;
+         img{
+            width: 70px;
+            &:nth-child(2){
+               position: absolute;
+               right: 4px;
+               top: 22px;
+               width: 50px;
+            }
+         }
+      }
+
+      .temp{
+         font-family: var(--black-font);
+         font-size: var(--big);
+
+      }
+
+      div{
+         display: flex;
+         flex-direction: column;
+         gap: 7px;
+      }
    }
 }
 

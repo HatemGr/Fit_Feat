@@ -6,7 +6,7 @@ class TennisPerformancesController < ApplicationController
         TennisPerformance.create(tennis_perf_params.merge(sport_user: current_user.get_sport_user("Tennis")))
         current_user.get_sport_user("Tennis").update(experience: experience, frequency: frequency)
         flash[:success] = "Le sport Tennis a bien été modifié"
-        redirect_to user_path(current_user)
+        redirect_to sport_user_path(current_user)
     end
 
     private

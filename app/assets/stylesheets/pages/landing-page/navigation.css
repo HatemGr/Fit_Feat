@@ -1,0 +1,29 @@
+.navigation-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 34px;
+}
+
+.navigation-wrapper .logo {
+  font-family: var(--black-font);
+  font-size: 1.6rem;
+}
+
+.navigation-wrapper .navigation-list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 35px;
+}
+/*# sourceMappingURL=navigation.css.map */

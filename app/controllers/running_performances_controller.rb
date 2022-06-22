@@ -6,7 +6,7 @@ class RunningPerformancesController < ApplicationController
         current_user.get_sport_user("Running").update(experience: experience, frequency: frequency)
         RunningPerformance.create(running_perf_params.merge(sport_user: current_user.get_sport_user("Running")))
         flash[:success] = "Le sport Running a bien été modifié"
-        redirect_to user_path(current_user)
+        redirect_to sport_user_path(current_user)
     end
 
     private
