@@ -42,7 +42,11 @@ class User < ApplicationRecord
 
   def full_address
     if city
-      [address, city.name].compact.join(', ')
+      if address
+        [address, city.name].compact.join(', ')
+      else
+        city.name
+      end     
     end
   end
 
