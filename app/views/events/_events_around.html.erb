@@ -15,7 +15,9 @@
                     <%= event.date.strftime("%Hh%M")%>
                   </div>
 
-                  <%= render partial: 'events/event_participate_buttons', locals: {event: event}%>
+                  <div class="button-participate">
+                    <%= render partial: 'events/event_participate_buttons', locals: {event: event}%>
+                  </div>
 
 
                   <div class="event-sport-tag"> <%=event.sport.name%> </div>
