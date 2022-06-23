@@ -28,15 +28,15 @@
 }
 
 .title-alone {
-  position: relative;
-  right: 150px;
-  top: -5px;
+  /* position: relative;
+  left: 5px;
+  top: 15px; */
 }
 
 .cowl {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: center;
   padding: 10px 150px;
 }
 
@@ -89,4 +89,5 @@
     padding: 10px;
   }
 }
+
 /*# sourceMappingURL=footer.css.map */
