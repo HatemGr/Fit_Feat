@@ -81,4 +81,15 @@
     position: absolute;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .convinced-container {
+    position: relative;
+    max-width: 600px;
+    right: -50px;
+  }
+  .convinced-content {
+    position: absolute;
+  }
+}
 /*# sourceMappingURL=convinced.css.map */
