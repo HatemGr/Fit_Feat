@@ -8,16 +8,16 @@
       <div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="#navigation-features"> Features </a>
+            <%= link_to "Features", home_path(anchor: "navigation-features") %>
           </li>
           <li class="nav-item">
-            <a href="#navigation-sports"> Sports </a>
+            <%= link_to "Sport", home_path(anchor: "navigation-sports") %>
           </li>
           <li class="nav-item">
-            <a href="#navigation-testimonies"> Témoignages </a>
+            <%= link_to 'Témoignages', home_path(anchor: "navigation-testimonies") %>
           </li>
           <li class="nav-item">
-            <a href="#navigation-contact"> Contact </a>
+            <%= link_to 'Contact', home_path(anchor: "navigation-contact") %>
           </li>
         </ul>
       </div>

@@ -7,7 +7,7 @@
             <div class="card"> 
               <div class="card-title"><%= city.name %></div>
                   <div class="title-lign"></div>  
-                 <img src="<%= city.image_url%>" alt="">
+                  <%= image_tag city.image_url %>
                       <ul>
                         <li> Nombre d'utilisateurs : <%= city.users.count%></li>
                         <li> Nombre d'événement : <%= city.events.count%></li>
