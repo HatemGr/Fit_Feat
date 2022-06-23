@@ -1,4 +1,5 @@
 
+
 document.getElementById("title-conversation").innerText="<%=@recipient.full_name%>"
 document.getElementById("form-message").innerHTML = "";
 document.getElementById("form-message").insertAdjacentHTML("beforeend", "<%= j render 'form', {message: @new_message, recipient: @recipient}%> ")

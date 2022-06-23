@@ -20,10 +20,15 @@
   font-size: 1.6rem;
 }
 
+.navigation-list{
+  justify-content: space-between;
+}
+
 .navigation-wrapper .navigation-list ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 35px;
+  align-items: center;
 }
 /*# sourceMappingURL=navigation.css.map */

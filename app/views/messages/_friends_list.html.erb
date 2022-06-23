@@ -6,9 +6,16 @@
     <%else%>
       <% current_user.friends.each do |friend|%>
         <li>
-          <div class="d-flex">
+          <div class="d-flex gap-2">
             <%if current_user.conversation(friend).present?%>
-              <%= link_to friend.full_name, message_path(current_user.last_message(friend), user: friend), remote: :true, method: :patch, class: "friend-#{friend.id}"%>
+
+              <%if friend.avatar.attached?%>
+                <%= image_tag friend.avatar, alt: 'avatar', :class => "events-avatar" %>
+              <%else%>
+                <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
+              <%end%>
+
+              <%= link_to friend.full_name, message_path(current_user.last_message(friend), user: friend), remote: :true, method: :patch, class: "friend-#{friend.id} user-link"%>
             <%else%>
               <%= link_to friend.full_name, messages_path(@message, new: true, user: friend), remote: :true, method: :post, class: "friend-#{friend.id}" %>
             <%end%>

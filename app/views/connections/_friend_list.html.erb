@@ -8,15 +8,15 @@
       <%else%>
         <% current_user.friends.each do |friend|%>
           <li>
-              <div class="d-flex">
-                <div class="rond-small ml-2">
+              <div class="d-flex gap-2">
+                <div class="ml-2 mr-2">
                   <%if friend.avatar.attached?%>
-                    <%= image_tag friend.avatar, alt: 'avatar', :style => "width:50px;" %>
+                    <%= image_tag friend.avatar, alt: 'avatar', :class => "events-avatar" %>
                   <%else%>
-                    <%= image_tag "avatar.png" %>
+                      <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
                   <%end%>
                 </div>
-              <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id %>
+              <%= link_to friend.full_name, controller: "users", action: "show", id: friend.id, style: "user-link" %>
             </div>
           </li>
         <%end%>

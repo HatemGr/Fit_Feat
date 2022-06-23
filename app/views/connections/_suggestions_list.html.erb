@@ -9,11 +9,11 @@
             <%if suggestion.refused.nil? %>
               <div>
                 <div class="d-flex">
-                  <div class="rond-small ml-2">
+                  <div class=" ml-2">
                     <%if suggestion.partner.avatar.attached?%>
-                      <%= image_tag suggestion.partner.avatar, alt: 'avatar', :style => "width:50px;" %>
+                      <%= image_tag suggestion.partner.avatar, alt: 'avatar', :class => "events-avatar" %>
                     <%else%>
-                      <%= image_tag "avatar.png" %>
+                      <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
                     <%end%>
                   </div>
                   <%=link_to suggestion.partner.full_name , user_path(suggestion.partner), class:"user-link" %>

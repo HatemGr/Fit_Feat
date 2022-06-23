@@ -1,17 +1,30 @@
-<div class="navigation-wrapper">
-   <div class="logo">
-      FITFEAT
-   </div>
-   <div class="navigation-list">
-      <ul>
-         <a href="#navigation-features"> Features </a>
-         <a href="#navigation-sports"> Sports </a>
-         <a href="#navigation-testimonies"> Témoignages </a>
-         <a href="#navigation-contact"> Contact </a>
-      </ul>
-   </div>
-   <div class="button-row" >
-      <%= link_to 'Se connecter', new_user_session_path, class: 'button primary'%>
-      <%= link_to 'Créer un compte', new_user_registration_path, class: 'button primary'%>
-   </div>
-</div>
+<nav class=" navbar-expand-lg navbar-light bg-light navigation-wrapper">
+  <div class="container-fluid d-flex justify-content-between">
+    <%=link_to "FITFEAT", home_path, class: "navbar-brand logo"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navigation-list collapse navbar-collapse" id="navbarText">
+      <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="#navigation-features"> Features </a>
+          </li>
+          <li class="nav-item">
+            <a href="#navigation-sports"> Sports </a>
+          </li>
+          <li class="nav-item">
+            <a href="#navigation-testimonies"> Témoignages </a>
+          </li>
+          <li class="nav-item">
+            <a href="#navigation-contact"> Contact </a>
+          </li>
+        </ul>
+      </div>
+      <div class="button-row" >
+        <%= link_to 'Se connecter', new_user_session_path, class: 'button primary'%>
+        <%= link_to 'Créer un compte', new_user_registration_path, class: 'button primary'%>
+      </div>
+    </div>
+  </div>
+</nav>
