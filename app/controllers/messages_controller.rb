@@ -60,7 +60,7 @@ class MessagesController < ApplicationController
     @recipient = User.find(params[:user].to_i)
     # load the conversation with the friend
     @conversation = current_user.conversation(@recipient.id)
-    @message.update(read: params[:read])
+    @conversation.where(recipient: current_user, sender: @recipient).update_all(read: true)
     @new_message = Message.new
     respond_to do |format|
       format.html {}
