@@ -64,7 +64,7 @@
           </div>
 
           <div class="input">
-            <p class="input-name">Duration (en heure)</p>
+            <p class="input-name">Durée (en heure)</p>
             <div class="input-wrapper">
               <%= form.number_field :duration, placeholder: "Selectionnez un chiffre" %> 
             </div>
@@ -81,7 +81,7 @@
           </div>
 
           <div class="input">
-            <p class="input-name">City</p>
+            <p class="input-name">Ville</p>
             <div class="input-wrapper">
             <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, cities.first)) %>
             <i class="fa-solid fa-location-dot"></i>
@@ -92,11 +92,11 @@
       <div class="bottom-event bottom">
         <div class="input">
           <div class="actions">
-            <%= form.submit %>
+            <%= form.submit "Créer un événement" %>
           </div> 
         </div>  
           <div class="under-button-event under-button">
-              <%= link_to 'Back', events_path %> 
+              <%= link_to 'Retour', events_path %> 
           </div> 
        </div>  
       <% end %> 

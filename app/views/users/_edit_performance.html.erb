@@ -31,7 +31,7 @@
         <%= render partial: 'users/graphs/running_graph', locals: {user: current_user} %>
       <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Running  !', sport_users_path(sport: :Running),remote: true, method: :post, :class => "btn-begin begin-#{"running"}"%>
+        <%= link_to 'Je commence la Course  !', sport_users_path(sport: :Running),remote: true, method: :post, :class => "btn-begin begin-#{"running"}"%>
       <%end%>
       </div>
 
@@ -44,7 +44,7 @@
         <%= render partial: 'users/graphs/workout_graph', locals: {user: current_user} %>
         <%else%>
         <div class="tbd">Veux tu faire ce sport ?</div>
-        <%= link_to 'Je commence le Workout !', sport_users_path(sport: :Workout), remote: true,method: :post,:class => "btn-begin begin-#{"Workout"}"%>
+        <%= link_to 'Je commence la Musculation !', sport_users_path(sport: :Workout), remote: true,method: :post,:class => "btn-begin begin-#{"Workout"}"%>
       <%end%>
       </div>
 
