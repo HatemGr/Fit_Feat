@@ -47,11 +47,10 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to event_url(@event), notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
+        format.html { redirect_to event_url(@event), notice: " L'événement à bien été créé. " }
+
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.html { render :new }
       end
     end
   end
@@ -65,11 +64,11 @@ class EventsController < ApplicationController
         if params[:event][:max_participants].present?
           @event.update(max_participants: params[:event][:max_participants].to_i)
         end
-        format.html { redirect_to event_url(@event), notice: 'Event was successfully updated.' }
-        format.json { render :show, status: :ok, location: @event }
+        format.html { redirect_to event_url(@event), notice: " L'événement à bien été mis à jour. " }
+
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.html { render :edit }
+
       end
     end
   end
@@ -82,8 +81,8 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to events_url, notice: " L'événement à bien été détruit. " }
+
     end
   end
 
@@ -102,7 +101,7 @@ class EventsController < ApplicationController
 
   def authenticate_user
     unless current_user
-      flash[:danger] = 'Please log in.'
+      flash[:danger] = "Veuillez vous connecter"
       redirect_to new_user_registration_path
     end
   end
