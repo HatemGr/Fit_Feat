@@ -1,4 +1,4 @@
-<div class="features-wrapper">
+<div id="navigation-features" class="features-wrapper">
    <div class="title-container">
    <div class="twins">
       <h3 class="title"> Features </h3>
@@ -27,7 +27,7 @@
             <h3 class="feature-title" style="color:rgb(var(--white))"> Créer ou rejoignez des events sportif </h3>
             <p class="feature-text" style="color:rgb(var(--white))">Vous avez la possibilité d'organiser ou de rejoindre des événements créer par nos utilisateurs dans plusieurs villes. </p>
             <%= button_to 'Se connecter', new_user_session_path, class: 'button primary'%>
-         <p class="feature-number" style="left:-150px; color:rgba(var(--white), 0.5)"> 02 </p>
+            <p class="feature-number" style="color:rgba(var(--white), 0.5)"> 03 </p>
          </div>
       </div>
 
@@ -36,7 +36,7 @@
             <p class="feature-tag"> Feature 3 </p>
             <h3 class="feature-title" style="color:rgb(var(--white))"> Partagez la passion du sport avec des gens ayant la même expérience </h3>
             <p class="feature-text" style="color:rgb(var(--white))"> Le site vous propose automatiquement des personnes ayant des performances similaires aux votres dans le but d'apprendre et de s'entraider </p>
-            <%= button_to 'Se connecter', new_user_session_path, class: 'button primary'%>
+            <%=link_to 'Se connecter', new_user_session_path, class: 'button primary'%>
             <p class="feature-number" style="color:rgba(var(--white), 0.5)"> 03 </p>
          </div>
          <div class="img-wrapper"> <%= image_tag "feature3.png" %> </div>

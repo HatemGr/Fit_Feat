@@ -1,4 +1,4 @@
-<div class="contact-wrapper">
+<div id="navigation-contact" class="contact-wrapper">
     <div class="title-container">
       <div class="twins">
          <h3 class="title"> Contact </h3>
@@ -15,13 +15,11 @@
       </div>
 
       <div class="container-right">
-      <%# <form> %>
       <%= form_tag(team_index_path, :method => "post") do %>
     <div class="input">
       <p class="input-name">Email</p>
       <div class="input-wrapper">
       <%= email_field_tag :contact_email, params[:contact_email], placeholder: "Ton email" %>
-      <%# <input id="contact-email" type="email" name="contact-email" placeholder="Email Address" /> %>
       <i class="fa-solid fa-envelope"></i>
       </div>
     </div>
@@ -29,23 +27,19 @@
     <div class="input">
       <p class="input-name">Message</p>
       <div class="input-wrapper">
-         <%# <textarea type="text" name="contact-message" id="contact-message" placeholder="Message"></textarea> %>
          <%= text_field_tag :contact_message, params[:contact_message], placeholder: "Ton message" %>
          <i class="fa-solid fa-comment"></i>
       </div>
     </div>
 
-   <%# <%=link_to "ceci est mon formulaire", team_index_path, method: :post%> %>
-
     <div class="input">
       <div class="action">
-      <%# <button class="button primary" type="submit">Envoyer</button> %>
       </div>
     </div>
-    <%= submit_tag "Envoyer", :name => nil %>
+    <%= submit_tag "Envoyer", :name => nil , :class =>"button primary"%>
     <% end %>
     
-         <%# </form> %>
+
       </div>
    </div>  
 </div>
