@@ -5,3 +5,7 @@ document.getElementById("message-display").insertAdjacentHTML("beforeend", "<%= 
 document.getElementById("form-message").innerHTML = "";
 document.getElementById("form-message").insertAdjacentHTML("beforeend", "<%= j render 'form', {message: @new_message, recipient: @recipient } %>  ");
 document.getElementById("message-display").scrollTop = document.getElementById("message-display").scrollHeight;
+
+var friendId = '<%= @recipient.id %>'
+document.querySelector('.friend-'+friendId).classList.remove("unread");
+

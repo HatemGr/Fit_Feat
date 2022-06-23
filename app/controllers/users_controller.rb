@@ -53,6 +53,7 @@ class UsersController < ApplicationController
     redirect_to home_path
   end
 
+
   private
 
   def set_user

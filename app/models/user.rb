@@ -183,4 +183,9 @@ class User < ApplicationRecord
     end
     list
   end
+
+  def has_unread_message_with(user)
+    conversation = self.conversation(user)
+    return conversation.where(recipient: self, sender: user, read: nil).present?
+  end
 end
