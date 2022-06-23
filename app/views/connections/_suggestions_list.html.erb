@@ -20,7 +20,7 @@
                 </div>
               </div>
               <%if suggestion.accepted %>
-                En attente de validation de l'autre côté
+                Demande envoyée !
               <%else%>
                 <div class="button-row btns-suggestion-<%=suggestion.id%>">
                   <%=link_to suggestion_path(suggestion, answer: "accepted"), class: 'button secondary btn-accept', method: :patch, remote: true do %>

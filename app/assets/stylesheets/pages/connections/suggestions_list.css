@@ -5,6 +5,16 @@
   gap: 20px;
 }
 
+@media screen and (max-width: 1300px) {
+  .container-friend-suggestion {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0px;
+  }
+}
+
 .container-suggestions-list {
   -webkit-box-flex: 5;
       -ms-flex: 5;

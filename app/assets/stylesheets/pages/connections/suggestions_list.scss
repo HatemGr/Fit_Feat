@@ -2,6 +2,11 @@
    display: flex;
    gap: 20px;
 
+   @media screen and (max-width: 1300px){
+      flex-direction: column;
+      gap: 0px;
+
+   }
 }
 
 .container-suggestions-list{
