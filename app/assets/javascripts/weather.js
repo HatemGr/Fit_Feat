@@ -8,11 +8,9 @@ window.onload = function () {
 		var img = document.querySelector(".temp-img");
 		var apiKey = "b70377fc39863e8b80922c33f06fb98c";
 		var url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent.trim()}&units=metric&appid=${apiKey}`
-		console.log(url);
 		fetch(url)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				var tempValue = data["main"]["temp"];
 				var humValue = data["main"]["humidity"];
 				var cloudValue = data["clouds"]["all"];
