@@ -3,7 +3,16 @@
   <%= render 'show_image' %>
 
   <div class="right-container right-content">
-    <%= render 'show_title' %>
+    
+
+    <div class="relative-div">
+      <%= render 'show_title' %>
+      
+      <div class="button-participate-city-show">
+        <%= render partial: 'events/event_participate_buttons', locals: {event: @event}%>
+      </div>
+
+    </div>
 
     <p id="notice"><%= notice %></p>
 
@@ -47,10 +56,6 @@
         <p><%= @event.duration %></p>
         <i class="fa-solid fa-stopwatch" style="font-size: 1.2em"></i>
       </div>
-    </div>
-
-    <div>
-      <%= render partial: 'events/event_participate_buttons', locals: {event: @event}%>
     </div>
 
     <div class="container">
