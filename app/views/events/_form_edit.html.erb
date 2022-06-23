@@ -31,7 +31,7 @@
           <div class="input">
           <p class="input-name">Sport</p>
             <div class="input-wrapper">
-                <%= form.select(:sport_id, options_for_select(sports.collect{ |s| [s.name, s.id] }, sports.first)) %>
+                <%= form.select(:sport_id, options_for_select(sports.collect{ |s| [s.french, s.id] }, event.sport ? [event.sport.french, event.sport.id] : nil)) %>
                 <i class="fa-solid fa-bicycle"></i>
             </div>  
           </div>
@@ -73,7 +73,7 @@
           <div class="input">
             <p class="input-name">City</p>
             <div class="input-wrapper">
-            <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, cities.first)) %>
+            <%= form.select(:city_id, options_for_select(cities.collect{ |u| [u.name, u.id] }, event.city ? [event.city.name, event.city.id] : nil)) %>
             <i class="fa-solid fa-location-dot"></i>
           </div> 
         </div>

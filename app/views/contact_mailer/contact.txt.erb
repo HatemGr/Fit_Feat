@@ -1,4 +1,8 @@
-Bonjour <%=@post.name%>
+Bonjour cher admin de Fit Feat
 Comment ça va?
-
-<%=link_to city_path(@post) %>
+Un utilisateur vient de t'envoyer un message : 
+Son email : <%=@email%>
+Son messages : 
+<%=@message%>
+Jette un oeil sur ton site pour voir ce qu'il s'y passe !
+<%=link_to "voir les évenements de Paris", city_url(@city) %>

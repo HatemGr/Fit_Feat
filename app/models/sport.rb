@@ -3,4 +3,18 @@ class Sport < ApplicationRecord
   has_many :users, through: :sport_users
 
   validates_uniqueness_of :name
+
+
+  def french
+    case self.name
+    when "Climbing"
+      "Escalade"
+    when "Running"
+      "Course à pied"
+    when "Workout"
+      "Musculation"
+    else
+      self.name
+    end
+  end
 end
