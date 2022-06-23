@@ -2,7 +2,7 @@
       <div class="message-<%if message.sender == current_user%>own<%else%>other<%end%>">
         <p><%if message.sender == current_user%>Moi<%else%><%=message.sender.full_name%><%end%>: <%=message.body%></p>
         <div class="message-time">
-        <p><%=message.created_at.strftime("at %I:%M%p")%></p>
+        <p><%=message.created_at.strftime("à %kh%M")%></p>
         </div>
       </div>
   </div>
