@@ -1,0 +1,10 @@
+.container-friends-list {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.container-friends-list li {
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=friend_list.css.map */

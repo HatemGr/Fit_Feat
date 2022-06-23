@@ -12,7 +12,7 @@
       <div class="tab-pane fade active show" id="v-pills-<%= @user.sports.first.id%>" role="tabpanel" aria-labelledby="v-pills-<%= @user.sports[0].id%>-tab">
             <div class="card">
                   <p class="card-title"> Performance </p>
-                  <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
+                  <p class="card-icon"> <i class="fa-solid fa-trophy"></i> </p>
                   <% if @user.sports.first.name == "Workout" && @user.workout_perf.present?%>
                         <div> <%= render partial: 'users/performances_show/workout_perf_show', locals: {user: @user}%> </div>
                   <%elsif @user.sports.first.name == "Running" && @user.running_perf.present?%>
