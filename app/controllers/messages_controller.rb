@@ -46,8 +46,7 @@ class MessagesController < ApplicationController
       @new_message = Message.new
       @message = Message.create(message_params.merge(sender: current_user, recipient_id: params[:recipient_id]))
     end
-    Notification.create(user: @recipient, content: "Tu as reçu un message de #{current_user.full_name}.")
-
+ 
     respond_to do |format|
       format.html {}
       format.js {}
