@@ -4,7 +4,13 @@
    .event-items{
    display: flex;
    flex-direction: column;
+
    gap:20px
+   }
+
+   .event-around{
+      flex-wrap: wrap;
+      flex-direction: row !important;
    }
 .event-item{
    padding: 15px; 
@@ -24,6 +30,12 @@
    }
 
 
+}
+
+.with-button{
+   @media screen and (max-width: 785px) {
+      padding-bottom: 60px;
+   }
 }
 
 .event-date-container{
