@@ -41,7 +41,6 @@
   display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
-
 }
 
 div[class*="checkbox-container"] {
