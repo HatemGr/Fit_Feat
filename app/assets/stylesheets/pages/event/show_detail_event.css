@@ -32,7 +32,7 @@
 
 .event-show-main {
   position: absolute;
-  padding: 40px 22px 65px 22px;
+  padding: 40px 22px 32px 22px;
   top: -60px;
   height: 100%;
   background: #FFFFFF;
@@ -67,5 +67,6 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   gap: 9px;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=show_detail_event.css.map */

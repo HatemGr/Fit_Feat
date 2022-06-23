@@ -1,8 +1,8 @@
 
         <br>
-          <ul class="event-items scrollable-list">
+          <ul class="event-items event-around">
               <% events.each do |event| %>
-                <li class="event-item">
+                <li class="event-item with-button">
                   <div class="event-date-container"> 
                     <p class="event-date-day"> <%= event.date.strftime("%d")%> </p>
                     <p> <%= event.date.strftime("%B") %>  </p>

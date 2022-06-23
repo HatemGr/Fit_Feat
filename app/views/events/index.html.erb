@@ -5,7 +5,7 @@
     </div>
 
    <div class="card">
-  <p class="card-title"> Rencontre des gens lors d'evenements sportifs </p>
+  <p class="card-title"> Rencontre des sportifs </p>
   <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
   <div class="container-geoloc">
     <div class="list-container">
@@ -13,7 +13,7 @@
   <% if @events.empty?%>
         <p> Tu n'as pas encore d'event autour de toi, renseigne ton addresse ! </p>
   <%else%>
-        <h2> Les evenements autour de toi (scroll)</h2>
+        <h2> Les evenements autour de toi</h2>
         <%=render partial: 'events_around', locals: {events: @events}%>
   <%end%>
       </div>
@@ -22,7 +22,7 @@
 </div>
 
     <div class="card">
-      <p class="card-title"> Fait vivre la communauté en organisants des propres events </p>
+      <p class="card-title"> Organises tes propres events </p>
       <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
       
       <%if @current_user_events.empty?%>
