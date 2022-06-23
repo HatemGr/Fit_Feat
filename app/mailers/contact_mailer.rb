@@ -2,11 +2,11 @@ class ContactMailer < ApplicationMailer
     default to: 'no_reply-fit-feat@yopmail.com'
     default from: 'no_reply-fit-feat@yopmail.com'
 
-    def contact(email, message)
-        @email = email
+    def contact(email, contact, message)
+        @email = contact
         @message = message
         @city = City.first
-        mail(to: 'no_reply-fit-feat@yopmail.com', subject: 'Contact')
+        mail(to: email, subject: 'Contact')
     end
 
     def confirmation(email, message)
