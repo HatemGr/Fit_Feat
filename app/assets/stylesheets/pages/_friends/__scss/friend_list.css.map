@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,uBAAuB,CAAA;EACpB,IAAI,EAAE,CAAC;CAMT;;AAPD,AAGG,uBAHoB,CAGpB,EAAE,CAAA;EACC,aAAa,EAAE,IAAI;CACrB",
+    "sources": [
+        "friend_list.scss"
+    ],
+    "names": [],
+    "file": "friend_list.css"
+}

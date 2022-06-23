@@ -1,6 +1,6 @@
 <div class='card container-suggestions-list'>
   <p class="card-title"> Suggestion d'amis </p>
-  <p class="card-icon"> <i class="fa-solid fa-bell"></i> </p>
+  <p class="card-icon"> <i class="fa-solid fa-user"></i> </p>
   <div>
     <%if current_user.suggestions.present?%>
       <ul>
@@ -34,7 +34,7 @@
         <%end%>
       </ul>
     <%else%>
-      <p>Pas encore de sugestions autour de toi</p>
+      <p>Pas de suggestions, ajoute des sports et des performances !</p>
     <%end%>
   </div>
 </div>
