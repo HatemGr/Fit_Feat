@@ -39,7 +39,13 @@ max-width: 200px;
 
 .wrapper-container{
   display: flex;
+  flex-wrap: wrap;
   overflow-x: scroll;
+
+  @media screen and (max-width: 700px){
+
+
+}
 }
 
 div[class*="checkbox-container"]{
