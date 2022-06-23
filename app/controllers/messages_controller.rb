@@ -27,7 +27,6 @@ class MessagesController < ApplicationController
 
   # POST /messages or /messages.json
   def create
-    puts params
     # request create when the conversation has not begun yet
     if params[:new]
       @new_message = Message.new
@@ -47,6 +46,8 @@ class MessagesController < ApplicationController
       @new_message = Message.new
       @message = Message.create(message_params.merge(sender: current_user, recipient_id: params[:recipient_id]))
     end
+     Notification.create(user: User.find(params[:recipient_id].to_i), content: "Tu as reçu un message de #{current_user.full_name}.")
+
     respond_to do |format|
       format.html {}
       format.js {}
