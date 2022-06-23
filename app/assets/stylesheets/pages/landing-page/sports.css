@@ -139,6 +139,7 @@
 @media screen and (max-width: 900px) {
   .cart-contain {
     border: none;
+    max-width: 500px;
   }
 }
 /*# sourceMappingURL=sports.css.map */

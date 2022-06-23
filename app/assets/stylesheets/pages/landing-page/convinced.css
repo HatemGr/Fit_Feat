@@ -86,7 +86,6 @@
   .convinced-container {
     position: relative;
     max-width: 600px;
-    right: -50px;
   }
   .convinced-content {
     position: absolute;
