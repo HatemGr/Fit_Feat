@@ -7,9 +7,16 @@
   <div class="cowl">
     <h3>Liens utiles</h3>
     <ul>
-      <li>Features</li>
-      <li>Sports</li>
-      <li>Témoignages</li>
+      <li class="footer-item">
+       <a href="#navigation-features"> Features </a>
+        <%= link_to "Features", home_path(anchor: "navigation-features") %>
+      </li>
+      <li class="footer-item">
+     <%= link_to "Sports", home_path(anchor: "navigation-sports") %>
+      </li>
+      <li class="footer-item">
+       <%= link_to "Témoignages", home_path(anchor: "navigation-testimonies") %>
+      </li>
     </ul>
   </div>
 
