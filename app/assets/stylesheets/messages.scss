@@ -48,3 +48,28 @@
     flex-direction: column;
     justify-content: flex-end;
 }
+
+.container-card{
+    display: flex;
+    
+    @media screen and (max-width:1200px){
+        flex-direction: column;
+    }
+}
+
+.conversation-container{
+    @media screen and (max-width:1200px){
+        width: 100%;
+    }
+}
+.friend-list-container{
+    @media screen and (max-width:1200px){
+        width: 100%;
+    }
+}
+
+.messages-avatar{
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid orange;
+}

@@ -31,6 +31,10 @@
          padding-left: 15px;
          transition: all 0.3s ease;
          resize: none;
+
+         @media screen and (max-width: 600px) {
+            width: 330px;
+         }
    
    
          &::placeholder{
