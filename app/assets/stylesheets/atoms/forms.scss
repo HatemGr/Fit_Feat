@@ -81,3 +81,15 @@ input[type=number], input[type=datetime-local]{
    resize: none;
 
 }
+
+.message-area{
+   @media screen and (max-width: 1270px) {
+      width:500px !important;
+   }
+   @media screen and (max-width: 1270px) {
+      width:400px !important;
+   }
+   @media screen and (max-width: 980px) {
+      width:200px !important;
+   }
+}
