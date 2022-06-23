@@ -1,6 +1,6 @@
 .container-friends-list {
-  -webkit-box-flex: 7;
-      -ms-flex: 7;
-          flex: 7;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
 }
 /*# sourceMappingURL=friend_list.css.map */

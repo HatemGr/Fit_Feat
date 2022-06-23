@@ -3,13 +3,15 @@
     <div class="row mb-3">
       <h1>Messages</h1>
     </div>
-    <div class="row align-items-start px-3">
-      <div class="col-5 sticky-top card container-friends-list m-3">
+    <div class="row align-items-start px-3 container-card">
+      <div class="col-5 sticky-top card container-friends-list m-3 friend-list-container">
+        <p class="card-icon"> <i class="fa-solid fa-user"></i> </p> 
         <div id="friends-list" class="row">
           <%= render 'friends_list'%>
         </div>
       </div>
-      <div class="col-8 card sticky-top m-3">
+      <div class="col-8 card sticky-top m-3 conversation-container">
+        <p class="card-icon"> <i class="fa-solid fa-message"></i> </p> 
         <p class="card-title"> Conversation </p>
         <% if current_user.has_one_conversation.present? %>
           <h2 id="title-conversation" class="offset-md-1">
@@ -19,6 +21,7 @@
           </div>
           <div id="form-message"></div>
         <%else%>
+          <div id="image-conversation" class="offset-md-1"></div>
           <h2 id="title-conversation" class="offset-md-1"></h2>
           <div class="p-3 " id="message-display"></div>
           <div id="form-message">
