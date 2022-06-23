@@ -41,7 +41,6 @@ if (levelPerfs != null) {
 			],
 		},
 		options: {
-			responsive: true,
 			aspectRatio: 5,
 			maintainAspectRatio: true,
 		},

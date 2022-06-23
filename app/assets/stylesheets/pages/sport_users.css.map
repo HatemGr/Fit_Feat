@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAMM,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAF1C,AAAA,cAAc,CAAA;IAGL,OAAO,EAAE,IAAI;GAGpB",
     "sources": [
         "sport_users.scss"
     ],

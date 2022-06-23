@@ -1,3 +1,11 @@
 // Place all the styles related to the sport_users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.graph-wrapper{
+
+      @media screen and (max-width: 1100px) {
+         display: none;
+      }
+
+ }

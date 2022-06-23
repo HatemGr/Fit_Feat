@@ -1,12 +1,13 @@
-<div style="display:none" id="level-perf">
-   <% current_user.climbing_perf.each do |climbing|%>
-      <p>  <%= climbing.level%> </p>
-   <%end%>
-</div>
-<div style="display:none" id="date-perf-climbing">
-   <% current_user.climbing_perf.each do |climbing|%>
-      <p>  <%= climbing.created_at.strftime("%d/%m  %kh%M")%> </p>
-   <%end%>
-</div>
-   <br>
-<canvas id="climbingChart" width="100" height="100"></canvas>
+
+   <div style="display:none" id="level-perf">
+      <% current_user.climbing_perf.each do |climbing|%>
+         <p>  <%= climbing.level%> </p>
+      <%end%>
+   </div>
+   <div style="display:none" id="date-perf-climbing">
+      <% current_user.climbing_perf.each do |climbing|%>
+         <p>  <%= climbing.created_at.strftime("%d/%m  %kh%M")%> </p>
+      <%end%>
+   </div>
+      <br>
+   <canvas id="climbingChart" width="100" height="100"></canvas>

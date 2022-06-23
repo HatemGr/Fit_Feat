@@ -29,8 +29,7 @@
    margin-bottom: 20px;
 
  }
- 
- /* Style the buttons that are used to open the tab content */
+
  .tab button {
    background-color: inherit;
    margin-right: 5px;
@@ -41,25 +40,32 @@
    padding: 14px 16px 8px 16px;
    font-size: var(--normal);
    font-family: var(--bold-font);
+   
+   @media screen and (max-width: 700px) {
+    padding: 14px 7px 8px 7px;
+    margin-right: 1px;
+  }
  }
  
- /* Change background color of buttons on hover */
  .tab button:hover {
    background-color: rgba(var(--purple), 0.06);
    border-radius: 5px;
  }
  
- /* Create an active/current tablink class */
  .tab button.active, .first-tab {
    color: rgb(var(--purple));
    border-bottom: 3px solid rgb(var(--purple)) !important; 
    box-sizing: border-box;
  }
 
- 
- /* Style the tab content */
  .tabcontent {
    display: none;
    margin-top: 10px;
    padding: 6px 12px;
+
+   img{
+    @media screen and (max-width: 1270px) {
+      display: none;
+    }
+   }
  }
