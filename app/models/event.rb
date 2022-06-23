@@ -11,6 +11,7 @@ class Event < ApplicationRecord
   validate :start_after_now, on: :create
   validates :title, :date, presence: true
   validates :title, length: { in: 4..30 }
+  validates :address, presence: true
 
   geocoded_by :full_address
   after_validation :geocode, :start_after_now
