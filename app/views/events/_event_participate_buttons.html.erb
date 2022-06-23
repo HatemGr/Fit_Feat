@@ -1,5 +1,5 @@
 <% if current_user%>
-  <div class="button-participate btns-event-<%= event.id %>">
+  <div class="btns-event-<%= event.id %>">
     <%if find_participation(event,current_user) %>
 
       <%=button_to event_participation_path(event, find_participation(event,current_user)), method: :delete, :class => "button primary-outline fix", remote: true do %>

@@ -3,13 +3,20 @@
   <%= render 'show_image' %>
 
   <div class="right-container right-content">
-    <%= render 'show_title' %>
+    
+
+    <div class="relative-div">
+      <%= render 'show_title' %>
+      
+      <div class="button-participate-city-show">
+        <%= render partial: 'events/event_participate_buttons', locals: {event: @event}%>
+      </div>
+
+    </div>
 
     <p id="notice"><%= notice %></p>
 
-
     <div class="row1-container">
-    
       <div class="box box-down cyan">
         <h2>Organisateurs</h2>
         <p><%= @event.admin.full_name %></p>
@@ -27,7 +34,6 @@
         <p><%= @event.description %></p>
         <i class="fa-solid fa-comment" style="font-size: 1.2em"></i>
       </div>
-
     </div>
     
     <div class="row2-container">
@@ -52,24 +58,27 @@
       </div>
     </div>
 
-      <%if @event.longitude %>
-        <div id='map-event' class="mapbox-container"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
-              data-event-lng="<%= @event.longitude%>"
-              data-event-lat="<%= @event.latitude%>">
-        </div>
-      <%end%>
-
-    <%= render partial: 'events/event_participate_buttons', locals: {event: @event}%>
+    <div class="container">
+      <div class="row">
+        <%if @event.longitude %>
+          <div id='map-event' class="mapbox-container"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+                data-event-lng="<%= @event.longitude%>"
+                data-event-lat="<%= @event.latitude%>">
+          </div>
+        <%end%>
+      </div>
+    </div>
 
     <div class="button-row">
+      <%if current_user == @event.admin %>
       <%= link_to 'Edit', edit_event_path(@event) %> |
+      <%end%>
       <%= link_to 'Back', events_path%>
     </div>      
 
   </div>
 
 </div>
-
 
 <%= javascript_include_tag 'map_box'%>
