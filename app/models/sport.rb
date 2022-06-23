@@ -10,7 +10,7 @@ class Sport < ApplicationRecord
     when "Climbing"
       "Escalade"
     when "Running"
-      "Course à pied"
+      "Course"
     when "Workout"
       "Musculation"
     else

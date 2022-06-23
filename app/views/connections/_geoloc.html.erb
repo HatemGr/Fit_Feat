@@ -12,7 +12,7 @@
       <% @sports.each do |sport|%>
          <div class="form-check checkbox-container-<%=sport.name%>" id="checkbox-container-<%=sport.name%>">
             <input type="checkbox" class="form-check-input category-checkboxes" id="<%=sport.name%>">
-            <label class="form-check-label" ><%=sport.name%></label>
+            <label class="form-check-label" ><%=sport.french%></label>
             <div class="ghost-check"> </div>
          </div>
       <%end%>

@@ -189,6 +189,7 @@
     position: absolute;
     right: 40px;
     max-width: 600px;
+    
   }
   .cardy-1 {
     position: relative;
@@ -204,6 +205,45 @@
     position: relative;
     top: -260px;
     left: 5px;
+  }
+  .cardy-4 {
+    display: none;
+  }
+  .cardy-5 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .back-img {
+    position: relative;
+    max-width: 500px;
+    right: 10px;
+    margin-bottom: 0px;
+  }
+
+  img{
+    max-width: 500px;
+  }
+
+  .cardy {
+    width: min-content;
+    height: min-content;
+  }
+  
+  .cardy-1 {
+    position: relative;
+    top: -500px;
+    left: 5px;
+  }
+  .cardy-2 {
+    position: relative;
+    top: -400px;
+    left: 5px;
+  }
+  .cardy-3 {
+    display: none;
   }
   .cardy-4 {
     display: none;
