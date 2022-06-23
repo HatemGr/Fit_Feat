@@ -23,36 +23,34 @@
 .modify-email {
   margin-bottom: 45px;
 }
-@media screen and (max-width: 1600px){
 
-  .right-content{
+@media screen and (max-width: 1600px) {
+  .right-content {
     padding: 40px;
   }
-  
 }
 
 @media screen and (max-width: 1200px) {
-    .signup-container{
-      flex-direction: column !important;
-      position: relative !important;
-    }
-
-    .right-image{
-      height: 500px!important;
-    }
-
-    .right-content{
-      position: relative;
-      right: -50px;
-      
-    }
+  .signup-container {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    position: relative !important;
+  }
+  .right-image {
+    height: 500px !important;
+  }
+  .right-content {
+    position: relative;
+    right: -50px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  .right-content{
+  .right-content {
     position: relative;
     left: 5px;
   }
-  
 }
 /*# sourceMappingURL=sign_up.css.map */
