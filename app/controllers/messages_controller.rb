@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
                      User.find(params[:recipient_id].to_i)
                    end
     else
-      # request create chen conversation already exists
+      # request create when conversation already exists
       @already_conversation = true
       @recipient = if params[:recipient_id].to_i == 0
                      User.find(params[:user].to_i)
@@ -46,7 +46,7 @@ class MessagesController < ApplicationController
       @new_message = Message.new
       @message = Message.create(message_params.merge(sender: current_user, recipient_id: params[:recipient_id]))
     end
-     Notification.create(user: User.find(params[:recipient_id].to_i), content: "Tu as reçu un message de #{current_user.full_name}.")
+    Notification.create(user: @recipient, content: "Tu as reçu un message de #{current_user.full_name}.")
 
     respond_to do |format|
       format.html {}
