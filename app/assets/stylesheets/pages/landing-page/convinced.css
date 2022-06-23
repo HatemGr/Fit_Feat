@@ -1,7 +1,13 @@
 .convinced-container {
-  width: 100vw !important;
-  height: 314px !important;
+  width: 100% !important;
+  height: 5% !important;
   padding: 0px !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .convinced-container .convinced-content {
@@ -9,6 +15,9 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: 50% 75% !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
   border-radius: 0px !important;
 }
 
@@ -27,6 +36,19 @@
 }
 
 .convinced-container .convinced-content .element-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 8px !important;
   padding-left: 50px;
   z-index: 1;
@@ -40,5 +62,23 @@
   font-family: var(--medium-font) !important;
   font-size: 1rem !important;
   max-width: 549px !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .convinced-container {
+    position: relative;
+  }
+  .convinced-content {
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .convinced-container {
+    position: relative;
+  }
+  .convinced-content {
+    position: absolute;
+  }
 }
 /*# sourceMappingURL=convinced.css.map */
