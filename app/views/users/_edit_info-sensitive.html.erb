@@ -1,45 +1,13 @@
 <div class="card" >
-   <p class="card-title"> Profil </p>
-   <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
-   <%= form_with(model: user, local: true) do |form| %>
-      <% if user.errors.any? %>
-         <div id="error_explanation">
-            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <p class="card-title"> Profil </p>
+  <p class="card-icon"> <i class="fa-solid fa-pen-to-square" ></i> </p>
+  <br>
+  <div class="input">
+    <p>Ton email : <%=current_user.email%></p>
+  </div>
 
-            <ul>
-            <% user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-            </ul>
-         </div>
-      <% end %>
-
-      <div class="container" style="margin:0 !important">
-         <div class="row">
-            <div class="input col-sm">
-               <p class="input-name">Email </p>
-               <div class="input-wrapper">
-               <%= form.text_field :email%>
-               <i class="fa-solid fa-user"></i>
-               </div> 
-            </div>
-
-            <div class="input col-sm">
-               <p class="input-name">Mot de passe </p>
-               <div class="input-wrapper">
-               <%= form.password_field :password%>
-               <i class="fa-solid fa-user"></i>
-               </div> 
-            </div>
-         </div>
-      </div>
-
-      <div class="input">
-      <div class="actions" style="margin:15px 0px 0px 13px">
-        <%= form.submit('Sauvegarder') %>
-         </div>
-      </div>  
-   <% end %>
-
-
+  <div class="input">
+    <%=link_to "Modifier mon compte" , edit_user_registration_path , class: "button primary"%>
+  </div>
+  <br>
 </div>
