@@ -1,10 +1,19 @@
 <%= form_with(model: message, remote: :true) do |form| %>
-  <div class="field">
-    Message: 
-    <%= form.text_area :body %>
-  </div>
-  <%= hidden_field_tag(:recipient_id, recipient.id) %>
-  <div class="actions">
-    <%= form.submit "Envoyer"%>
-  </div>
+
+    <div class=" d-flex flex-wrap align-items-center gap-4 justify-content-center">
+
+        <div class="input">
+          <p class="input-name ">Message </p>
+          <div class="input-wrapper">
+            <%= form.text_area :body, class:"message-area" %>
+          </div>
+        </div>
+           <%= hidden_field_tag(:recipient_id, recipient.id) %>
+
+
+        <div class="actions">
+          <%= form.submit "Envoyer",class:'button primary chat-send'%>
+        </div>
+    </div>
+
 <% end %>
