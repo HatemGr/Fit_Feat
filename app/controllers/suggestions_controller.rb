@@ -19,10 +19,9 @@ class SuggestionsController < ApplicationController
     respond_to do |format|
       if @suggestion.save
         format.html { redirect_to suggestion_url(@suggestion), notice: 'Suggestion was successfully created.' }
-        format.json { render :show, status: :created, location: @suggestion }
+
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @suggestion.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,24 +43,14 @@ class SuggestionsController < ApplicationController
       format.js {}
     end
 
-    # respond_to do |format|
-    #   if @suggestion.update(suggestion_params)
-    #     format.html { redirect_to suggestion_url(@suggestion), notice: "Suggestion was successfully updated." }
-    #     format.json { render :show, status: :ok, location: @suggestion }
-    #   else
-    #     format.html { render :edit, status: :unprocessable_entity }
-    #     format.json { render json: @suggestion.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
-  # DELETE /suggestions/1 or /suggestions/1.json
+
   def destroy
     @suggestion.destroy
 
     respond_to do |format|
       format.html { redirect_to suggestions_url, notice: 'Suggestion was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

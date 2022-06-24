@@ -24,10 +24,8 @@ class SportsController < ApplicationController
     respond_to do |format|
       if @sport.save
         format.html { redirect_to sport_url(@sport), notice: 'Sport was successfully created.' }
-        format.json { render :show, status: :created, location: @sport }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @sport.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,10 +35,8 @@ class SportsController < ApplicationController
     respond_to do |format|
       if @sport.update(sport_params)
         format.html { redirect_to sport_url(@sport), notice: 'Sport was successfully updated.' }
-        format.json { render :show, status: :ok, location: @sport }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @sport.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -51,7 +47,6 @@ class SportsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to sports_url, notice: 'Sport was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
