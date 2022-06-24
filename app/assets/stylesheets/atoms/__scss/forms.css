@@ -1,0 +1,99 @@
+.input {
+  margin-bottom: 20px;
+}
+.input .input-name {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+.input .input-name span {
+  font-size: 0.8rem;
+}
+.input .input-wrapper {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.input .input-wrapper input[type=number], .input .input-wrapper select {
+  width: 160px !important;
+}
+.input .input-wrapper input[type=text], .input .input-wrapper input[type=password], .input .input-wrapper input[type=email], .input .input-wrapper textarea[type=text], .input .input-wrapper textarea, .input .input-wrapper select {
+  width: 370px;
+  border: 1px solid var(--border-grey);
+  border-radius: 5px;
+  padding: 15px 0px;
+  padding-left: 15px;
+  transition: all 0.3s ease;
+  resize: none;
+}
+@media screen and (max-width: 600px) {
+  .input .input-wrapper input[type=text], .input .input-wrapper input[type=password], .input .input-wrapper input[type=email], .input .input-wrapper textarea[type=text], .input .input-wrapper textarea, .input .input-wrapper select {
+    width: 330px;
+  }
+}
+.input .input-wrapper input[type=text]::-moz-placeholder, .input .input-wrapper input[type=password]::-moz-placeholder, .input .input-wrapper input[type=email]::-moz-placeholder, .input .input-wrapper textarea[type=text]::-moz-placeholder, .input .input-wrapper textarea::-moz-placeholder, .input .input-wrapper select::-moz-placeholder {
+  font-size: 0.8rem;
+  color: var(--border-grey);
+  font-family: var(--regular-font);
+}
+.input .input-wrapper input[type=text]:-ms-input-placeholder, .input .input-wrapper input[type=password]:-ms-input-placeholder, .input .input-wrapper input[type=email]:-ms-input-placeholder, .input .input-wrapper textarea[type=text]:-ms-input-placeholder, .input .input-wrapper textarea:-ms-input-placeholder, .input .input-wrapper select:-ms-input-placeholder {
+  font-size: 0.8rem;
+  color: var(--border-grey);
+  font-family: var(--regular-font);
+}
+.input .input-wrapper input[type=text]::placeholder, .input .input-wrapper input[type=password]::placeholder, .input .input-wrapper input[type=email]::placeholder, .input .input-wrapper textarea[type=text]::placeholder, .input .input-wrapper textarea::placeholder, .input .input-wrapper select::placeholder {
+  font-size: 0.8rem;
+  color: var(--border-grey);
+  font-family: var(--regular-font);
+}
+.input .input-wrapper i {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  color: var(--border-grey);
+}
+.input input[type=submit] {
+  padding: 9px 15px;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  border-style: none;
+  color: rgb(var(--white));
+  background-color: rgb(var(--purple));
+  cursor: pointer;
+  font-family: var(--medium-font);
+}
+.input input[type=submit]:hover {
+  background-color: rgba(var(--purple), 0.8);
+}
+
+input[type=checkbox] {
+  cursor: pointer;
+}
+
+input[type=number], input[type=datetime-local] {
+  border: 1px solid var(--border-grey);
+  border-radius: 5px;
+  padding: 12px 0px;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+@media screen and (max-width: 1270px) {
+  .message-area {
+    width: 500px !important;
+  }
+}
+@media screen and (max-width: 1270px) {
+  .message-area {
+    width: 400px !important;
+  }
+}
+@media screen and (max-width: 980px) {
+  .message-area {
+    width: 200px !important;
+  }
+}/*# sourceMappingURL=forms.css.map */

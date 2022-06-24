@@ -1,0 +1,229 @@
+.testimonies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+.testimonies-container .title-lign {
+  top: 30px !important;
+  right: -30px !important;
+  width: 380px !important;
+}
+
+.image-container {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 19px 16px;
+  gap: 10px;
+  width: 450px;
+  height: 210px;
+  border: 15px solid white;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: white;
+  justify-content: space-between;
+}
+.cardy .top-cardy {
+  display: flex;
+  flex-direction: row;
+}
+.cardy .top-cardy h4 {
+  padding: 5px;
+}
+.cardy .top-cardy .fa {
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+}
+.cardy .top-cardy .checked {
+  color: rgba(255, 255, 0, 0.542);
+}
+
+.cardy-1 {
+  position: absolute;
+  top: 70px;
+  left: -200px;
+}
+
+.cardy-2 {
+  position: absolute;
+  top: 70px;
+  left: 720px;
+}
+
+.cardy-3 {
+  position: absolute;
+  bottom: 350px;
+  left: -300px;
+}
+
+.cardy-4 {
+  position: absolute;
+  bottom: 350px;
+  right: -300px;
+}
+
+.cardy-5 {
+  position: absolute;
+  bottom: 100px;
+  left: 200px;
+}
+
+@media screen and (max-width: 1600px) {
+  .image-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardy-1 {
+    position: absolute;
+    left: -100px;
+    opacity: 0.96;
+  }
+
+  .cardy-2 {
+    position: absolute;
+    left: 500px;
+    opacity: 0.96;
+  }
+
+  .cardy-3 {
+    position: absolute;
+    left: -90px;
+    opacity: 0.96;
+  }
+
+  .cardy-4 {
+    position: absolute;
+    left: 450px;
+    opacity: 0.96;
+  }
+
+  .cardy-5 {
+    opacity: 0.99;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .image-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardy-1 {
+    position: absolute;
+    right: 100px;
+    opacity: 0.96;
+  }
+
+  .cardy-2 {
+    position: absolute;
+    left: 500px;
+    opacity: 0.96;
+  }
+
+  .cardy-3 {
+    position: absolute;
+    left: -90px;
+    opacity: 0.96;
+  }
+
+  .cardy-4 {
+    position: absolute;
+    left: 450px;
+    opacity: 0.96;
+  }
+
+  .cardy-5 {
+    opacity: 0.99;
+  }
+}
+@media screen and (max-width: 900px) {
+  .back-img {
+    position: absolute;
+    right: 40px;
+    max-width: 600px;
+  }
+
+  .cardy-1 {
+    position: relative;
+    top: -100px;
+    left: 5px;
+  }
+
+  .cardy-2 {
+    position: relative;
+    top: 200px;
+    left: 5px;
+  }
+
+  .cardy-3 {
+    position: relative;
+    top: -260px;
+    left: 5px;
+  }
+
+  .cardy-4 {
+    display: none;
+  }
+
+  .cardy-5 {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .back-img {
+    position: relative;
+    max-width: 500px;
+    max-height: auto;
+    right: 10px;
+    margin-bottom: 0px;
+    bottom: 10px;
+  }
+
+  img {
+    max-width: 500px;
+  }
+
+  .cardy {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    width: 90%;
+  }
+
+  .cardy-1 {
+    position: relative;
+    top: -500px;
+    left: 5px;
+  }
+
+  .cardy-2 {
+    position: relative;
+    top: -400px;
+    left: 5px;
+  }
+
+  .cardy-3 {
+    display: none;
+  }
+
+  .cardy-4 {
+    display: none;
+  }
+
+  .cardy-5 {
+    display: none;
+  }
+}/*# sourceMappingURL=testimonies.css.map */

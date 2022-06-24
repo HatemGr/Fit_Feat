@@ -1,0 +1,91 @@
+.sports-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+.sports-wrapper .title-lign {
+  top: 33px;
+  right: -45px;
+  width: 200px;
+}
+
+.cart-contain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 43px;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 500px;
+  overflow-y: hidden;
+}
+.cart-contain .cart {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background-color: white;
+  border-radius: 5px;
+}
+.cart-contain .cart .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 311px;
+  height: 241px;
+  position: relative;
+  background: var(--grey-bg);
+  border-radius: 5px;
+  z-index: 0;
+}
+.cart-contain .cart .back .circle {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: -1;
+}
+.cart-contain .cart .back .circle:nth-child(1) {
+  top: 55px;
+  left: 80px;
+}
+.cart-contain .cart .back .circle:nth-child(2) {
+  top: 80px;
+  left: 112px;
+}
+.cart-contain .cart .back .circle-futsal {
+  background: rgba(147, 73, 241, 0.21);
+}
+.cart-contain .cart .back .circle-workout {
+  background: rgba(243, 83, 227, 0.21);
+}
+.cart-contain .cart .back .circle-running {
+  background: rgba(147, 73, 241, 0.21);
+}
+.cart-contain .cart .back .circle-climbing {
+  background: rgba(66, 185, 10, 0.21);
+}
+.cart-contain .cart .back .circle-tennis {
+  background: rgba(147, 73, 241, 0.21);
+}
+.cart-contain .cart .back .cart-img {
+  display: flex;
+  justify-content: center;
+}
+.cart-contain .cart .text-cart {
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .cart-contain {
+    border: none;
+  }
+}/*# sourceMappingURL=sports.css.map */

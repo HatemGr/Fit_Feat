@@ -1,0 +1,78 @@
+.conversation {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-inline {
+  display: flex;
+  flex-direction: row;
+}
+
+.own {
+  justify-content: flex-end;
+}
+
+.message-own {
+  min-width: 60px;
+  max-width: 700px;
+  padding: 14px 18px;
+  margin: 6px 8px;
+  background-color: var(--bg_running);
+  color: rgb(var(--text_running));
+  border-radius: 16px 16px 0 16px;
+  align-self: flex-end;
+}
+
+.message-other {
+  min-width: 60px;
+  max-width: 700px;
+  padding: 14px 18px;
+  margin: 6px 8px;
+  border-radius: 16px 16px 16px 0;
+  background-color: rgb(161, 198, 247);
+  color: rgb(21, 75, 119);
+  align-self: flex-start;
+}
+
+.message-time {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.container-card {
+  display: flex;
+}
+@media screen and (max-width: 1200px) {
+  .container-card {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .conversation-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .friend-list-container {
+    width: 100%;
+  }
+}
+
+.messages-avatar {
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid orange;
+}
+
+.unread {
+  color: red !important;
+  font-weight: 900;
+}/*# sourceMappingURL=messages.css.map */

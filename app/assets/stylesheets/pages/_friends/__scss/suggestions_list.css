@@ -1,0 +1,20 @@
+.container-friend-suggestion {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 1300px) {
+  .container-friend-suggestion {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.container-suggestions-list {
+  flex: 7;
+}
+
+.suggest-friends {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=suggestions_list.css.map */

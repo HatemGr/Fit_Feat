@@ -1,0 +1,100 @@
+.show-event-container {
+  flex-direction: column !important;
+}
+.show-event-container .event-left-container {
+  display: flex;
+  flex-direction: column;
+}
+.show-event-container .event-left-container .img-show {
+  background: url(https://images.unsplash.com/photo-1530818021323-3d2bf2af7a87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  background-size: 100%;
+  background-position: 25% 20%;
+  background-repeat: no-repeat;
+}
+.show-event-container .event-left-container .img-event {
+  display: flex;
+  justify-content: center;
+}
+.show-event-container .top-element {
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+  padding: 20px;
+}
+.show-event-container .top-element .title-lign {
+  position: absolute;
+  width: 300px;
+  top: 30px;
+  right: -60px;
+}
+.show-event-container .right-container {
+  padding: 20px;
+}
+.show-event-container .box {
+  border-radius: 5px;
+  box-shadow: 0px 30px 40px -20px gray;
+  padding: 30px;
+  margin: 20px;
+}
+.show-event-container i {
+  float: right;
+}
+@media (max-width: 700px) {
+  .show-event-container .box {
+    height: 200px;
+  }
+}
+@media (max-width: 1000px) and (min-width: 450px) {
+  .show-event-container .box {
+    text-align: center;
+    height: 180px;
+  }
+}
+.show-event-container .cyan {
+  border-top: 3px solid var(--orange);
+}
+.show-event-container .red {
+  border-top: 3px solid var(--orange);
+}
+.show-event-container .blue {
+  border-top: 3px solid var(--orange);
+}
+.show-event-container .orange {
+  border-top: 3px solid var(--orange);
+}
+.show-event-container .purple {
+  border-top: 3px solid var(--orange);
+}
+.show-event-container h2 {
+  color: var(--varyDarkBlue);
+  font-weight: var(--weight3);
+}
+@media (min-width: 950px) {
+  .show-event-container .row1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .show-event-container .row2-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .show-event-container .row3-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .show-event-container .box-down {
+    position: relative;
+    top: 150px;
+  }
+  .show-event-container .box {
+    width: 20%;
+  }
+}
+.show-event-container .button-row {
+  padding: 10px;
+}/*# sourceMappingURL=show_event.css.map */

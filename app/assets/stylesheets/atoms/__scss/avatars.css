@@ -1,0 +1,64 @@
+.events-avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid rgb(241, 170, 37);
+  box-sizing: border-box;
+}
+
+.avatar-plus {
+  margin-left: 13px;
+  color: var(--text-grey);
+}
+
+.change-avatar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.change-avatar img {
+  border-radius: 50%;
+  min-width: 70px;
+  min-height: 70px;
+  max-width: 70px;
+  max-height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 3px solid var(--orange);
+}
+.change-avatar form {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 3px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.change-avatar label {
+  cursor: pointer;
+  padding: 6px 11px 6px 10px;
+  border-radius: 10px;
+  color: rgba(var(--purple), 0.9);
+  border: 1px dashed rgba(var(--purple), 0.9);
+  box-sizing: border-box;
+  font-size: var(--Xlittle);
+}
+.change-avatar label:hover {
+  background-color: rgba(var(--purple), 0.9);
+  color: white;
+}
+.change-avatar input[type=file] {
+  display: none;
+}
+.change-avatar input[type=submit] {
+  border-style: none;
+  background-color: transparent;
+  color: rgb(var(--purple));
+  text-decoration: underline;
+  display: none;
+}/*# sourceMappingURL=avatars.css.map */

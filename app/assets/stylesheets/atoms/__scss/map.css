@@ -1,0 +1,181 @@
+#map {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+#map-event {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.marker {
+  background-image: url("pointer.png");
+  background-size: cover;
+  width: 30px;
+  height: 53px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  padding: 20px 25px 20px 15px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+.mapboxgl-popup-content h2 {
+  font-size: 1.1rem;
+  font-family: var(--black-font);
+}
+
+.wrapper-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: scroll;
+}
+div[class*=checkbox-container] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px 10px 5px 0px;
+  padding: 8px 12px;
+  width: 75px;
+  height: 40px;
+  font-size: small;
+  position: relative;
+}
+div[class*=checkbox-container] input[type=checkbox]:not(:checked), div[class*=checkbox-container] input[type=checkbox]:checked {
+  cursor: pointer;
+  position: absolute;
+  margin: 0;
+  z-index: 7;
+  opacity: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transform: scaleX(37) scaleY(2.5);
+}
+div[class*=checkbox-container] .ghost-check {
+  border: 1px solid black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  border-radius: 5px;
+}
+div[class*=checkbox-container] label {
+  position: absolute;
+  z-index: 3;
+  color: black;
+  font-weight: 500;
+}
+
+.checkbox-container-Running:hover {
+  background-color: var(--bg_running) !important;
+  border-radius: 5px;
+}
+.checkbox-container-Running:hover > .ghost-check {
+  border: none;
+  border-radius: 5px;
+}
+.checkbox-container-Running:hover > label {
+  color: white;
+}
+.checkbox-container-Running input[type=checkbox]:checked ~ .ghost-check {
+  background-color: var(--bg_running) !important;
+  border: none;
+}
+.checkbox-container-Running input[type=checkbox]:checked ~ label {
+  color: rgb(var(--text_running));
+}
+
+.checkbox-container-Workout:hover {
+  background-color: var(--bg_workout) !important;
+  border-radius: 5px;
+}
+.checkbox-container-Workout:hover > .ghost-check {
+  border: none;
+  border-radius: 5px;
+}
+.checkbox-container-Workout:hover > label {
+  color: white;
+}
+.checkbox-container-Workout input[type=checkbox]:checked ~ .ghost-check {
+  background-color: var(--bg_workout) !important;
+  border: none;
+}
+.checkbox-container-Workout input[type=checkbox]:checked ~ label {
+  color: rgb(var(--text_workout));
+}
+
+.checkbox-container-Futsal:hover {
+  background-color: var(--bg_futsall) !important;
+  border-radius: 5px;
+}
+.checkbox-container-Futsal:hover > .ghost-check {
+  border: none;
+  border-radius: 5px;
+}
+.checkbox-container-Futsal:hover > label {
+  color: white;
+  border-radius: 5px;
+}
+.checkbox-container-Futsal input[type=checkbox]:checked ~ .ghost-check {
+  background-color: var(--bg_futsall) !important;
+  border: none;
+}
+.checkbox-container-Futsal input[type=checkbox]:checked ~ label {
+  color: rgb(var(--text_futsall));
+}
+
+.checkbox-container-Climbing:hover {
+  background-color: var(--bg_climbing) !important;
+  border-radius: 5px;
+}
+.checkbox-container-Climbing:hover > .ghost-check {
+  border: none;
+  border-radius: 5px;
+}
+.checkbox-container-Climbing:hover > label {
+  color: white;
+}
+.checkbox-container-Climbing input[type=checkbox]:checked ~ .ghost-check {
+  background-color: var( --bg_climbing) !important;
+  border: none;
+}
+.checkbox-container-Climbing input[type=checkbox]:checked ~ label {
+  color: rgb(var(--text_climbing));
+}
+
+.checkbox-container-Tennis:hover {
+  background-color: var(--bg_tennis) !important;
+  border-radius: 5px;
+}
+.checkbox-container-Tennis:hover > .ghost-check {
+  border: none;
+  border-radius: 5px;
+}
+.checkbox-container-Tennis:hover > label {
+  color: white;
+  border-radius: 5px;
+}
+.checkbox-container-Tennis input[type=checkbox]:checked ~ .ghost-check {
+  background-color: var(--bg_tennis) !important;
+  border: none;
+}
+.checkbox-container-Tennis input[type=checkbox]:checked ~ label {
+  color: rgb(var(--text_tennis));
+}/*# sourceMappingURL=map.css.map */

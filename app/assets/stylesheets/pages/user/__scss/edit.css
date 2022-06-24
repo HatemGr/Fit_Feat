@@ -1,0 +1,126 @@
+.user-info_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.edit-profil-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .edit-profil-btn {
+    flex-wrap: wrap;
+    gap: 17px;
+  }
+}
+
+.container {
+  max-width: none !important;
+}
+
+.tab {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tab button {
+  background-color: inherit;
+  margin-right: 5px;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px 8px 16px;
+  font-size: var(--normal);
+  font-family: var(--bold-font);
+}
+@media screen and (max-width: 700px) {
+  .tab button {
+    padding: 14px 7px 8px 7px;
+    margin-right: 1px;
+  }
+}
+
+.tab button:hover {
+  background-color: rgba(var(--purple), 0.06);
+  border-radius: 5px;
+}
+
+.tab button.active, .first-tab {
+  color: rgb(var(--purple));
+  border-bottom: 3px solid rgb(var(--purple)) !important;
+  box-sizing: border-box;
+}
+
+.tabcontent {
+  display: none;
+  margin-top: 10px;
+  padding: 6px 12px;
+}
+@media screen and (max-width: 1270px) {
+  .tabcontent img {
+    display: none;
+  }
+}
+
+.modalpop {
+  display: none;
+  min-width: 700px !important;
+  background-color: rgb(184, 184, 184);
+  position: absolute;
+  z-index: 999;
+  left: 45%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+@media screen and (max-width: 900px) {
+  .modalpop {
+    max-width: 500px !important;
+    min-width: 500px !important;
+    width: 500px !important;
+    left: 45%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .modalpop {
+    max-width: 400px !important;
+    min-width: 400px !important;
+    width: 400px !important;
+    left: 38%;
+  }
+}
+@-webkit-keyframes slidein {
+  from {
+    top: 25%;
+  }
+  to {
+    top: 30%;
+  }
+}
+@keyframes slidein {
+  from {
+    top: 25%;
+  }
+  to {
+    top: 30%;
+  }
+}
+
+#layer-dark {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.19);
+}/*# sourceMappingURL=edit.css.map */

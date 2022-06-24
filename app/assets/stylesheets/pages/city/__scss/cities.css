@@ -1,0 +1,33 @@
+.city-container {
+  flex-direction: row !important;
+}
+.city-container .twins {
+  position: relative;
+  top: 20px;
+  right: 30px;
+}
+.city-container .twins .title-lign {
+  width: 100px;
+}
+.city-container .picture-container {
+  display: flex;
+  flex: 6;
+}
+.city-container .city-img {
+  background: url(https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  height: 100vh !important;
+  background-position: 40% 70% !important;
+}
+.city-container .card-container {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+.city-container .card-title {
+  font-style: var(--medium-font);
+  color: var(--black);
+  position: absolute;
+  left: 10px;
+}/*# sourceMappingURL=cities.css.map */

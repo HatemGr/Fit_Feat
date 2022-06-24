@@ -1,0 +1,82 @@
+/************************/
+/* 	    BUTTON       */
+/************************/
+.button {
+  padding: 9px 15px;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  border-style: none;
+  color: rgb(var(--white));
+  cursor: pointer;
+  font-family: var(--medium-font);
+}
+.button:hover {
+  color: rgb(var(--white)) !important;
+}
+
+.primary {
+  background-color: rgb(var(--purple));
+  color: rgb(var(--white));
+}
+
+.primary:hover {
+  background-color: rgba(var(--purple), 0.8);
+}
+
+.primary-outline {
+  background-color: white;
+  color: rgb(var(--purple));
+  border: solid rgb(var(--purple)) 1px;
+}
+
+.primary-outline:hover {
+  background-color: rgb(var(--purple));
+  color: white;
+  border: solid rgb(var(--purple)) 1px;
+}
+
+.secondary {
+  padding: 7px 12px !important;
+  background-color: rgb(var(--green));
+}
+
+.secondary:hover {
+  padding: 7px 12px !important;
+  background-color: rgba(var(--green), 0.8);
+}
+
+.delete-btn {
+  background-color: rgb(var(--warning));
+}
+
+.refuse-btn {
+  background-color: var(--grey-bg);
+  color: black;
+}
+
+.refuse-btn:hover {
+  background-color: rgb(214, 214, 214);
+  color: black !important;
+}
+
+.link-button {
+  color: rgb(var(--purple));
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.fix {
+  width: 174px !important;
+  height: 42px !important;
+  padding: 0 !important;
+}
+
+.chat-send {
+  height: 65px !important;
+  width: 110px;
+}/*# sourceMappingURL=buttons.css.map */

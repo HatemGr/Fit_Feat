@@ -1,0 +1,93 @@
+.event-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-around {
+  flex-wrap: wrap;
+  flex-direction: row !important;
+}
+
+.event-item {
+  padding: 15px;
+  background-color: var(--grey);
+  width: 500px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+@media screen and (max-width: 1350px) {
+  .event-item {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .event-item {
+    width: 330px;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .with-button {
+    padding-bottom: 60px;
+  }
+}
+
+.event-date-container {
+  width: 75px;
+  height: 75px;
+  background-color: rgb(var(--white));
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.event-date-container .event-date-day {
+  font-family: var(--bold-font);
+  font-size: var(--regular);
+}
+
+.event-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.event-content .event-partipants {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.event-content .event-partipants img {
+  margin-right: -10px;
+}
+
+.event-sport-tag {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgb(161, 198, 247);
+  color: rgb(21, 75, 119);
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+.button-participate {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.button-participate-city-show {
+  text-align: center;
+}
+
+.relative-div {
+  position: relative;
+}/*# sourceMappingURL=events.css.map */

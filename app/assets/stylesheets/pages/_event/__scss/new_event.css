@@ -1,0 +1,54 @@
+.event-container {
+  flex-direction: column !important;
+}
+.event-container .top-element .title-lign {
+  width: 370px;
+}
+
+.event-picture {
+  position: relative;
+  top: 30px;
+}
+
+.event-img {
+  background: url(https://images.unsplash.com/photo-1517637633369-e4cc28755e01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  background-position: 25% 70% !important;
+  height: 600px !important;
+}
+
+.event-container-left {
+  justify-content: flex-start;
+}
+.event-container-left .event-form-container {
+  position: relative;
+  top: 70px;
+}
+.event-container-left .event-form-container textarea {
+  height: 50px;
+}
+.event-container-left .event-form-container .fa-comment {
+  position: absolute;
+  top: 18px;
+}
+.event-container-left .together {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.bottom-event {
+  position: relative;
+  top: 50px;
+}
+
+.under-button-event {
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+hr {
+  text-align: flex-start;
+  width: 200%;
+}/*# sourceMappingURL=new_event.css.map */

@@ -1,0 +1,7 @@
+.user-link {
+  color: rgb(var(--purple)) !important;
+  margin-left: 8px;
+}
+.user-link:hover {
+  color: rgba(var(--purple), 0.7);
+}/*# sourceMappingURL=user.css.map */
