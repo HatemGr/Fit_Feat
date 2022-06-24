@@ -56,10 +56,11 @@ div[class*="checkbox-container"]{
   width: fit-content;
   margin:0px 10px 5px 0px;
   padding: 8px 12px;
-  border-radius: 20px;
-  width: 90px;
-  height: 40px;
+  border-radius: 5px;
+  width: 75px;
+  height: 35px;
   position: relative;
+  font-size: small;
 
   input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked{
      cursor: pointer;
@@ -79,7 +80,7 @@ div[class*="checkbox-container"]{
      left: 0;
      right: 0;
      z-index: 0;
-     border-radius: 20px;
+     border-radius: 5px;
   }
 
   label{
@@ -92,7 +93,7 @@ div[class*="checkbox-container"]{
 
 .checkbox-container-Running {
   &:hover{
-     background-color: pink !important;
+     background-color: var(--bg_running) !important;
   }
   &:hover > .ghost-check{
      border : none;
@@ -101,36 +102,36 @@ div[class*="checkbox-container"]{
      color: white;
   }
   input[type="checkbox"]:checked ~ .ghost-check{
-     background-color: pink !important;
+     background-color: var(--bg_running) !important;
      border: none;
   }
   input[type="checkbox"]:checked ~ label{
-     color: white;
+     color: rgb(var(--text_running));
   }
 }
 
 .checkbox-container-Futsal {
   &:hover{
-     background-color: yellow !important;
+     background-color: var(--bg_futsall)  !important;
   }
   &:hover > .ghost-check{
      border : none;
   }
   &:hover > label{
-     color: black;
+     color: white;
   }
   input[type="checkbox"]:checked ~ .ghost-check{
-     background-color: yellow !important;
+     background-color: var(--bg_futsall)  !important;
      border: none;
   }
   input[type="checkbox"]:checked ~ label{
-     color: black;
+     color: rgb(var(--text_futsall));
   }
 }
 
 .checkbox-container-Workout {
   &:hover{
-     background-color: palevioletred !important;
+     background-color: var(--bg_workout) !important;
   }
   &:hover > .ghost-check{
      border : none;
@@ -139,17 +140,17 @@ div[class*="checkbox-container"]{
      color: white;
   }
   input[type="checkbox"]:checked ~ .ghost-check{
-     background-color: palevioletred !important;
+     background-color: var(--bg_workout) !important;
      border: none;
   }
   input[type="checkbox"]:checked ~ label{
-     color: white;
+     color: rgb(var(--text_workout));
   }
 }
 
 .checkbox-container-Climbing {
   &:hover{
-     background-color: purple !important;
+     background-color: var(--bg_climbing) !important;
   }
   &:hover > .ghost-check{
      border : none;
@@ -158,17 +159,17 @@ div[class*="checkbox-container"]{
      color: white;
   }
   input[type="checkbox"]:checked ~ .ghost-check{
-     background-color: purple !important;
+     background-color: var(--bg_climbing) !important;
      border: none;
   }
   input[type="checkbox"]:checked ~ label{
-     color: white;
+     color: rgb(var(--text_climbing))
   }
 }
 
 .checkbox-container-Tennis {
   &:hover{
-     background-color: darkblue !important;
+     background-color: var(--bg_tennis) !important;
   }
   &:hover > .ghost-check{
      border : none;
@@ -177,10 +178,10 @@ div[class*="checkbox-container"]{
      color: white;
   }
   input[type="checkbox"]:checked ~ .ghost-check{
-     background-color: darkblue !important;
+     background-color: var(--bg_tennis) !important;
      border: none;
   }
   input[type="checkbox"]:checked ~ label{
-     color: white;
+     color: rgb(var(--text_tennis));
   }
 }
