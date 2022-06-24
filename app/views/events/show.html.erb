@@ -4,6 +4,12 @@
 
   <div class="right-container right-content">
     
+    <div class="button-row">
+      <%if current_user == @event.admin %>
+      <%= link_to 'Modifier', edit_event_path(@event) %> |
+      <%end%>
+      <%= link_to 'Retour', events_path%>
+    </div> 
 
     <div class="relative-div">
       <%= render 'show_title' %>
@@ -66,14 +72,7 @@
           </div>
         <%end%>
       </div>
-    </div>
-
-    <div class="button-row">
-      <%if current_user == @event.admin %>
-      <%= link_to 'Edit', edit_event_path(@event) %> |
-      <%end%>
-      <%= link_to 'Back', events_path%>
-    </div>      
+    </div>     
 
   </div>
 
