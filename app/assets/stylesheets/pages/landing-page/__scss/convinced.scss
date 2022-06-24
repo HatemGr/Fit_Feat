@@ -40,12 +40,12 @@
    }
 
    h1{
-      font-size: 3rem !important;
+      font-size: var(--title) !important;
    }
 
    p{
       font-family: var(--medium-font) !important;
-      font-size: 1rem !important;
+      font-size: var( --paragraphe) !important;
       max-width: 549px !important;
    } 
  }
