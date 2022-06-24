@@ -17,11 +17,15 @@
 
   <body style="display:flex">
   
+  <%= javascript_tag do %>
+      weatherApiKey = "<%= ENV["WEATHER_API_KEY"] %>"
+   <% end %>
         <%= render 'layouts/navbar' %>
          <%= render "layouts/alert" %>
         <%= yield%>
         
     <%= javascript_include_tag 'application' %>
+
   </body>
 
 
