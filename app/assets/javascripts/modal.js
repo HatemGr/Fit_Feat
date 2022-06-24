@@ -30,7 +30,8 @@ if (modalpop != null) {
 		let urlStorageHeroku = `https://fit-feat.herokuapp.com/users/${userId}/edit`;
 
 		console.log(userId);
-		console.log(urlStorage);
+		console.log(urlStorageLocal);
+		console.log(urlStorageHeroku);
 
 		if (
 			window.location.href == urlStorageLocal ||
