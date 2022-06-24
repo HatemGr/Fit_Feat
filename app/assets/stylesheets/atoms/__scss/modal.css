@@ -1,0 +1,63 @@
+.modalpop {
+  display: none;
+  min-width: 700px !important;
+  background-color: #b8b8b8;
+  position: absolute;
+  z-index: 999;
+  left: 45%;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+@media screen and (max-width: 900px) {
+  .modalpop {
+    max-width: 500px !important;
+    min-width: 500px !important;
+    width: 500px !important;
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modalpop {
+    max-width: 400px !important;
+    min-width: 400px !important;
+    width: 400px !important;
+    left: 38%;
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    top: 25%;
+  }
+  to {
+    top: 30%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    top: 25%;
+  }
+  to {
+    top: 30%;
+  }
+}
+
+#layer-dark {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.19);
+}
+/*# sourceMappingURL=modal.css.map */

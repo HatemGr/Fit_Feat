@@ -1,0 +1,72 @@
+.event-show-content {
+  width: 400px;
+  position: relative;
+}
+
+@media screen and (min-width: 1150px) {
+  .event-show-content {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .event-show-content {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .event-show-content {
+    width: 680px;
+  }
+}
+
+.event-show-image {
+  width: 100%;
+}
+
+.event-show-image img {
+  border-radius: 15px;
+  width: 100%;
+}
+
+.event-show-main {
+  position: absolute;
+  padding: 40px 22px 32px 22px;
+  top: -60px;
+  height: 100%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.13);
+  border-radius: 22px 22px 9px 9px;
+  position: relative;
+}
+
+.event-show-main .event-content p:nth-child(1) {
+  margin-bottom: 10px !important;
+}
+
+.event-show-main .up {
+  position: absolute;
+  left: 22px;
+  top: -50px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.13);
+}
+
+.event-show-main .event-partipants-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=show_detail_event.css.map */

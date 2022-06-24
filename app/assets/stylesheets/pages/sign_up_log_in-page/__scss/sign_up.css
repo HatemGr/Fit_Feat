@@ -1,0 +1,56 @@
+.signup-container {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: reverse !important;
+      -ms-flex-direction: row-reverse !important;
+          flex-direction: row-reverse !important;
+}
+
+.right-image {
+  background: url(https://images.unsplash.com/photo-1507034589631-9433cc6bc453?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  background-position: 25% 70% !important;
+}
+
+.modif-lign {
+  width: 360px !important;
+}
+
+.bottom-signup {
+  margin-top: 40px !important;
+}
+
+.modify-email {
+  margin-bottom: 45px;
+}
+
+@media screen and (max-width: 1600px) {
+  .right-content {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .signup-container {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    position: relative !important;
+  }
+  .right-image {
+    height: 500px !important;
+  }
+  .right-content {
+    position: relative;
+    right: -50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .right-content {
+    position: relative;
+    left: 5px;
+  }
+}
+/*# sourceMappingURL=sign_up.css.map */
