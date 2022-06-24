@@ -24,18 +24,22 @@
     <div class="card">
       <p class="card-title"> Organises tes propres events </p>
       <p class="card-icon"> <i class="fa-solid fa-calendar-plus"></i></i> </p> 
+
+      
       
       <%if @current_user_events.empty?%>
       <p> Tu n'as pas encore crée d'event ! </p>
-      <%= link_to new_event_path, class: "link-button" do %>
-           Créer un event <i class="fa-solid fa-arrow-right"></i> 
-      <%end%>
       <%else%>
         <div class="d-flex justify-content-between mt-3 ">
             <%= render partial: 'event_list', locals: {events: @current_user_events}%>
             <%= render partial: 'events/event_detail', locals: {events: @user_events}%>
         </div>
       <%end%>
+      <div class="input mt-3">
+      <%= link_to new_event_path, class: "link-button" do %>
+           Créer un event <i class="fa-solid fa-arrow-right"></i> 
+      <%end%>
+      </div>
     </div>
 
    <%= render partial: 'city_index', locals: {cities: @cities} %>
