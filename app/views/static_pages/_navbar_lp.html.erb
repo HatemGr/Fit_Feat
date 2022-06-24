@@ -1,10 +1,16 @@
 <nav class=" navbar-expand-lg navbar-light bg-light navigation-wrapper">
-  <div class="container-fluid d-flex justify-content-between">
-    <%=link_to "FITFEAT", home_path, class: "navbar-brand logo"%>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navigation-list collapse navbar-collapse" id="navbarText">
+  <div class="container-fluid d-flex justify-content-between flex-wrap">
+    <div class="container-fluid d-flex flex-row justify-content-between">
+      <div class="d-flex flex-row">
+        <div><%=image_tag "FF_logo_white.png", style: "width:55px"%></div>
+        <%=link_to "FITFEAT", home_path, class: "navbar-brand logo"%>
+      </div>
+      <div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="navigation-list collapse navbar-collapse" id="navbarText">
       <div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -21,10 +27,11 @@
           </li>
         </ul>
       </div>
-      <div class="button-row" >
+      <div class="button-row d-flex flex-wrap" >
         <%= link_to 'Se connecter', new_user_session_path, class: 'button primary'%>
         <%= link_to 'Créer un compte', new_user_registration_path, class: 'button primary'%>
       </div>
+    </div>
     </div>
   </div>
 </nav>
