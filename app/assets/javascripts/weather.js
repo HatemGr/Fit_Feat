@@ -6,8 +6,8 @@ window.onload = function () {
 		var cloud = document.querySelector(".clouds");
 		var wind = document.querySelector(".wind");
 		var img = document.querySelector(".temp-img");
-		var apiKey = "b70377fc39863e8b80922c33f06fb98c";
-		var url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent.trim()}&units=metric&appid=${apiKey}`
+		var apiKey = weatherApiKey;
+		var url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent.trim()}&units=metric&appid=${apiKey}`;
 		fetch(url)
 			.then((response) => response.json())
 			.then((data) => {
