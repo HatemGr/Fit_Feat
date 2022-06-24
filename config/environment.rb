@@ -16,7 +16,3 @@ ActionMailer::Base.smtp_settings = {
 }
 
 ActionMailer::Base.delivery_method = :smtp
-
-if Rails.env.staging?
-  WEATHER_API_KEY = ENV['WEATHER_API_KEY']
-end
