@@ -133,6 +133,8 @@
             align-items: center;
   }
   .img-left {
+    width: 700px;
+    max-width: 700px;
     height: auto;
   }
   .container-right {
@@ -162,8 +164,8 @@
     gap: 0px;
   }
   .img-left {
-    width: 100%;
-    max-width: 700px;
+    width: 550px;
+    max-width: 550px;
     height: auto;
   }
   .container-right {

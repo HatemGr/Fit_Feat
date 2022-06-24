@@ -31,6 +31,12 @@
           justify-content: center;
 }
 
+.show-event-container .event-left-container .img-event img {
+  -o-object-fit: cover;
+     object-fit: cover;
+     max-width: 70%;
+}
+
 .show-event-container .top-element {
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;

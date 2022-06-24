@@ -106,6 +106,12 @@
 }
 
 @media screen and (max-width:1200px){
+
+   .feature{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
    .feature-number{
       left: -10px;
      }
@@ -121,6 +127,12 @@
 
 
 @media screen and (max-width:900px) {
+
+   .black-layer{
+      max-width: 600px;
+      width: 600px;
+   }
+
    .feature{
       flex-direction: column;
       justify-content: center;
