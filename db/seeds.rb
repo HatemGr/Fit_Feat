@@ -22,32 +22,31 @@ SportUser.all.destroy_all
 User.all.destroy_all
 Sport.all.destroy_all
 
-city = City.create(name: 'Paris', image_url: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80')
+paris = City.create(name: 'Paris', image_url: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80')
 City.create(name: 'Colombes', image_url: 'https://images.unsplash.com/photo-1639409392973-2134fbb44f3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29sb21iZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')
-City.create(name: 'Massy', image_url: 'https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1hc3N5JTIwY2l0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')
 City.create(name: 'Marseille', image_url: 'https://images.unsplash.com/photo-1566838217578-1903568a76d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFyc2VpbGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')
-City.create(name: 'Toulouse', image_url: 'https://images.unsplash.com/photo-1563517987331-3839f534b807?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dG91bG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')
+toulouse = City.create(name: 'Toulouse', image_url: 'https://images.unsplash.com/photo-1563517987331-3839f534b807?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dG91bG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')
+lille = City.create(name: 'Lille', image_url: 'https://images.france.fr/zeaejvyq9bhj/4lykvx2hoI6YksIo0YOiwe/9958cc7c0b4ca3d4efb16b8e7f49fbac/Grand_Place__OTCL_Lille_-_Laurent_Ghesqui__re.jpg?w=1120&h=490&q=70&fm=webp&fit=fill')
 
-User.create(email: 'jf@thp.com', password: 'password', first_name: 'Joffrey', last_name: 'Frexinet', city: city,
-            address: '17 Rue de Rambouillet Paris')
-User.create(email: 'fb@thp.com', password: 'password', first_name: 'Foucaut', last_name: 'Beaumont', city: city,
-            address: '61 Rue Rodier Paris')
-User.create(email: 'hg@thp.com', password: 'password', first_name: 'Hatem', last_name: 'Gribi', city: city,
-            address: '27 Rue de Fontarabie Paris')
-User.create(email: 'll@thp.com', password: 'password', first_name: 'Lydia', last_name: 'Valena', city: city,
-            address: '47 Rue de Laborde Paris')
+User.create(email: 'jf@yopmail.com', password: 'password', first_name: 'Joffrey', last_name: 'Frexinet', city: toulouse,
+            address: 'Rue des lois',is_admin: true)
+User.create(email: 'fb@yopmail.com', password: 'password', first_name: 'Foucaut', last_name: 'Beaumont', city: lille,
+            address: 'Rue Massena',is_admin: true)
+User.create(email: 'hg@yopmail.com', password: 'password', first_name: 'Hatem', last_name: 'Gribi', city: paris,
+            address: 'Avenue des Champs Elysees',is_admin: true)
+User.create(email: 'll@yopmail.com', password: 'password', first_name: 'Lydia', last_name: 'Valena', city: toulouse,
+            address: 'Place de Capitole',is_admin: true)
 
 puts 'Team created'
 
 adresses = ['34 Boulevard de Clichy', '29 Rue Vieille du Temple', '40 Rue Notre-Dame de Lorette', '54 Rue Saint-Denis',
             "1-5 Rue d'Argentine", '11 Rue de Cambrai',
-            '21 Rue Andre del Sarte', '147 Boulevard Lefebvre', '32 Rue de la Rochefoucauld', '10 Rue Boulle', '90 Rue de Tolbiac',
-            '100 Rue Saint-Martin', '10 Avenue George V', '12 Rue Marie et Louise', '125 Avenue des Champs-Elysees', '2 Rue Cauchy', '19 Rue Pavee', '28 Boulevard Diderot', '35 Rue de la Grange aux Belles', '88 Rue Blanche', " 	40 Rue Saint-Louis en l'Ile"]
+            '21 Rue Andre del Sarte', '147 Boulevard Lefebvre', '32 Rue de la Rochefoucauld']
 
 adresses.each do |address|
   prenom = Faker::Name.first_name
   User.create(email: "#{prenom}@thp.com", password: 'password', first_name: prenom, last_name: Faker::Name.last_name,
-              address: "#{address} Paris", city: city)
+              address: address, city: paris)
   puts 'User created'
 end
 
@@ -91,7 +90,7 @@ User.all.each do |user|
   end
 end
 
-adresses[0..8].each do |address|
+adresses[0..4].each do |address|
   Event.create!(admin: User.all.sample,
                 sport: Sport.all.sample,
                 title: Faker::Sports::Football.competition,
@@ -99,13 +98,6 @@ adresses[0..8].each do |address|
                 city: City.first,
                 address: address)
 end
-
-Event.create(admin: User.all.sample,
-             sport: Sport.all.sample,
-             title: Faker::Sports::Football.competition,
-             date: Faker::Time.between(from: DateTime.now + 500, to: DateTime.now + 30_000, format: :long),
-             city: City.last,
-             address: '40, allées Charles de Fitte')
 
 'Events created'
 
