@@ -127,6 +127,12 @@
 
 
 @media screen and (max-width:900px) {
+
+   .black-layer{
+      max-width: 600px;
+      width: 600px;
+   }
+
    .feature{
       flex-direction: column;
       justify-content: center;

@@ -17,6 +17,11 @@
       .img-event{
          display: flex;
          justify-content: center;
+
+         img{
+         object-fit: cover;
+         max-width: 70%;
+         }
       }
    }
 

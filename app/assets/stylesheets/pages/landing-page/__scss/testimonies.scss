@@ -121,34 +121,38 @@
 }
 
 @media screen and (max-width: 1200px) {
-   .back-img {
-     position: absolute;
-     right: 40px;
-     max-width: 600px;
-     
-   }
-   .cardy-1 {
-     position: relative;
-     top: -100px;
-     left: 5px;
-   }
-   .cardy-2 {
-     position: relative;
-     top: 200px;
-     left: 5px;
-   }
-   .cardy-3 {
-     position: relative;
-     top: -260px;
-     left: 5px;
-   }
-   .cardy-4 {
-     display: none;
-   }
-   .cardy-5 {
-     display: none;
-   }
- }
+  .back-img {
+    position: absolute;
+    right: 40px;
+  }
+
+  .img-testimonial{
+     max-width: 700px;
+     width: 700px;
+  }
+
+  .cardy-1 {
+    position: relative;
+    top: -100px;
+    left: 5px;
+  }
+  .cardy-2 {
+    position: relative;
+    top: 200px;
+    left: 5px;
+  }
+  .cardy-3 {
+    position: relative;
+    top: -260px;
+    left: 5px;
+  }
+  .cardy-4 {
+    display: none;
+  }
+  .cardy-5 {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 900px) {
   .back-img {
@@ -157,6 +161,7 @@
     max-width: 600px;
     
   }
+  
   .cardy-1 {
     position: relative;
     top: -100px;

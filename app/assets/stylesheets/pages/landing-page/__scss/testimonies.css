@@ -151,36 +151,34 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .image-container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .back-img {
+    position: absolute;
+    right: 40px;
+  }
+  .img-testimonial {
+    max-width: 700px;
+    width: 700px;
   }
   .cardy-1 {
-    position: absolute;
-    right: 100px;
-    opacity: 0.96;
+    position: relative;
+    top: -100px;
+    left: 5px;
   }
   .cardy-2 {
-    position: absolute;
-    left: 500px;
-    opacity: 0.96;
+    position: relative;
+    top: 200px;
+    left: 5px;
   }
   .cardy-3 {
-    position: absolute;
-    left: -90px;
-    opacity: 0.96;
+    position: relative;
+    top: -260px;
+    left: 5px;
   }
   .cardy-4 {
-    position: absolute;
-    left: 450px;
-    opacity: 0.96;
+    display: none;
   }
   .cardy-5 {
-    opacity: 0.99;
+    display: none;
   }
 }
 
