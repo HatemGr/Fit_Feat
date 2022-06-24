@@ -2,6 +2,9 @@ class SportUsersController < ApplicationController
 
   def show
     @user= current_user
+    @ranks = ['6', '15/1', '15/2', '15/3', '15/4', '15/5', '30', '30/1', '30/2', '30/3', '30/4', '40']
+    @levels = [5,6,7,8]
+    @block_colors = ["vert","bleu","rouge","violet","orange"]
   end
 
 
