@@ -8,10 +8,6 @@ class Event < ApplicationRecord
   has_many :users, through: :participations
   has_one_attached :image
 
-  # validates :title, :date, presence: true
-  # validates :title, length: { in: 4..30 }
-  # validates :address, presence: true
-
   geocoded_by :full_address
   after_validation :geocode, :start_after_now, :has_city, :has_sport, :has_address, :has_title
 

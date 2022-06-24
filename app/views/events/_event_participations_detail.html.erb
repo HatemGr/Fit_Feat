@@ -1,16 +1,16 @@
 <div class="event-partipants-detail"> 
-   <% if event.participations.empty?%>
-      <p> 0 participant </p>
-   <%else%>
-      <% event.participations.each do |participation| %>  
-      <div class="d-flex gap-2">                  
-         <%if participation.user.avatar.attached?%>
-               <%= image_tag participation.user.avatar, alt: 'avatar', :class => "events-avatar" %>
-         <%else%>
-               <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
-         <%end%> 
-         <%= link_to participation.user.full_name, controller: "users", action: "show", id: participation.user.id  %>
-      </div>  
-      <%end%>
-   <%end%>
+  <% if event.participations.empty?%>
+    <p> 0 participant </p>
+  <%else%>
+    <% event.participations.each do |participation| %>  
+    <div class="d-flex gap-2">                  
+      <%if participation.user.avatar.attached?%>
+        <%= image_tag participation.user.avatar, alt: 'avatar', :class => "events-avatar" %>
+      <%else%>
+        <%= image_tag "defaultavatar.png", alt: 'avatar', :class => "events-avatar" %>
+      <%end%> 
+      <%= link_to participation.user.full_name, controller: "users", action: "show", id: participation.user.id  %>
+    </div>  
+    <%end%>
+  <%end%>
 </div>
