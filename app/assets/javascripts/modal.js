@@ -17,8 +17,6 @@ if (modalpop != null) {
 		if (localStorage.getItem("firstSession?") === null) {
 			openModal();
 			localStorage.setItem("firstSession?", true);
-		} else {
-			openModal();
 		}
 	}
 
