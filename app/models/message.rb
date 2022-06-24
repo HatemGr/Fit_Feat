@@ -7,7 +7,7 @@ class Message < ApplicationRecord
 
   def set_time
     time_paris = Time.now
-    self.update(time: time_paris.strftime("à %kh%M"))
+    self.update(time: time_paris.strftime("à %kh%M le %d/%m"))
   end
 
   after_create :create_notification

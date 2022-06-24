@@ -32,7 +32,7 @@
    border: 15px solid white;
    box-sizing: border-box;
    border-radius: 8px;
-   background: var(--white);
+   background: white;
    justify-content: space-between;
 
    .top-cardy{
@@ -196,8 +196,14 @@
     bottom: 10px;
   }
 
+  .img-testimonial {
+    max-width: 500px;
+    width: 500px;
+  }
+
   img{
     max-width: 500px;
+
   }
 
   .cardy {
