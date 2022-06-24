@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,4BAA4B,CAAA;EACzB,OAAO,EAAE,IAAI;EACb,GAAG,EAAE,IAAI;CAOX;;AALE,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAJvC,AAAA,4BAA4B,CAAA;IAKtB,cAAc,EAAE,MAAM;IACtB,GAAG,EAAE,GAAG;GAGb;;;AAED,AAAA,2BAA2B,CAAA;EACxB,IAAI,EAAE,CAAC;CAET;;AACD,AAAA,gBAAgB,CAAA;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;CAErB",
+    "sources": [
+        "suggestions_list.scss"
+    ],
+    "names": [],
+    "file": "suggestions_list.css"
+}
