@@ -33,9 +33,9 @@
         <p class="input-name">Niveau</p>
         <div class="input-wrapper">
         <%if @user.last_climbing_perf%>
-            <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level}, @user.last_climbing_perf.level ),placeholder: "Entrez votre niveau" %>
+            <%= f.select :level, options_for_select(@levels, @user.last_climbing_perf.level ),placeholder: "Entrez votre niveau" %>
         <%else%>
-            <%= f.select :level, options_for_select(ClimbingLevel.all.map{|level| level.level} ),placeholder: "Entrez votre niveau" %>
+            <%= f.select :level, options_for_select(@levels ),placeholder: "Entrez votre niveau" %>
           <%end%>
         <i class="fa-solid fa-signal"></i>
         </div> 
@@ -45,9 +45,9 @@
         <p class="input-name">Bloque de couleur</p>
         <div class="input-wrapper">
           <%if @user.last_climbing_perf%>
-            <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block_color| block_color.block_color}, @user.last_climbing_perf.block_color ),placeholder: "Entrez votre niveau" %>
+            <%= f.select :block_color, options_for_select(@block_colors, @user.last_climbing_perf.block_color ),placeholder: "Entrez votre niveau" %>
         <%else%>
-            <%= f.select :block_color, options_for_select(ClimbingBlockColor.all.map{|block_color| block_color.block_color} ),placeholder: "Entrez votre niveau" %>
+            <%= f.select :block_color, options_for_select(@block_colors),placeholder: "Entrez votre niveau" %>
           <%end%>
           <i class="fa-solid fa-paintbrush"></i>
         </div> 

@@ -30,9 +30,9 @@
             <p class="input-name">Rang</p>
             <div class="input-wrapper">
             <%if @user.last_tennis_perf %>
-              <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank} , @user.last_tennis_perf.rank ),placeholder: "Entrez votre niveau" %>
+              <%= f.select :rank, options_for_select(@ranks , @user.last_tennis_perf.rank ),placeholder: "Entrez votre niveau" %>
             <%else%>
-            <%= f.select :rank, options_for_select(TennisRank.all.map{|rank| rank.rank}),placeholder: "Entrez votre niveau" %>
+            <%= f.select :rank, options_for_select(@ranks),placeholder: "Entrez votre niveau" %>
             <%end%>
               <i class="fa-solid fa-calendar-range"></i>
             </div> 
