@@ -1,45 +1,37 @@
 <div class="show-event-container form-container">
-
   <%= render 'show_image' %>
-
   <div class="right-container right-content">
-    
     <div class="button-row">
       <%if current_user == @event.admin %>
-      <%= link_to 'Modifier', edit_event_path(@event) %> |
+        <%= link_to 'Modifier', edit_event_path(@event) %> |
       <%end%>
       <%= link_to 'Retour', events_path%>
-    </div> 
-
+    </div>
     <div class="relative-div">
       <%= render 'show_title' %>
-      
-      <div class="button-participate-city-show">
-        <%= render partial: 'events/event_participate_buttons', locals: {event: @event}%>
-      </div>
-
+      <%if current_user != @event.admin %>
+        <div class="button-participate-city-show">
+          <%= render partial: 'events/event_participate_buttons', locals: {event: @event}%>
+        </div>
+      <%end%>
     </div>
-
     <div class="row1-container">
       <div class="box box-down cyan">
         <h2>Organisateurs</h2>
         <p><%= @event.admin.full_name %></p>
         <i class="fa-solid fa-user" style="font-size: 1.2em"></i>
       </div>
-
       <div class="box red">
         <h2>Sport</h2>
         <p><%= @event.sport.name %></p>
         <i class="fa-solid fa-volleyball" style="font-size: 1.2em"></i>
       </div>
-
       <div class="box box-down blue">
         <h2>Description</h2>
         <p><%= @event.description %></p>
         <i class="fa-solid fa-comment" style="font-size: 1.2em"></i>
       </div>
     </div>
-    
     <div class="row2-container">
       <div class="box orange">
         <h2>Date: </h2>
@@ -47,21 +39,18 @@
         <i class="fa-solid fa-calendar" style="font-size: 1.2em"></i>
       </div>
     </div>
-    
     <div class="row3-container">
       <div class="box purple">
         <h2>Adresse: </h2>
         <p><%= @event.full_address %></p>
         <i class="fa-solid fa-location-dot" style="font-size: 1.2em"></i>
       </div>
-
       <div class="box purple">
         <h2>Durée: </h2>
         <p><%= @event.duration %></p>
         <i class="fa-solid fa-stopwatch" style="font-size: 1.2em"></i>
       </div>
     </div>
-
     <div class="container">
       <div class="row">
         <%if @event.longitude %>
@@ -72,10 +61,7 @@
           </div>
         <%end%>
       </div>
-    </div>     
-
+    </div>
   </div>
-
 </div>
-
 <%= javascript_include_tag 'map_box'%>
