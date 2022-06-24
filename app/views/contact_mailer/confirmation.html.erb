@@ -4,4 +4,5 @@
 <p>Ton message a bien été envoyé : </p>
 <p><%=@message%></p>
 <p>Incris-toi vite sur le site pour voir ce qu'il s'y passe !</p>
-<a href="<%= @url %>">Clique ici pour t'inscrire</a>
+<!-- <a href="<%= @url %>">Clique ici pour t'inscrire</a> -->
+<%= link_to "Clique ici pour t'inscrire", new_user_registration_url %>
