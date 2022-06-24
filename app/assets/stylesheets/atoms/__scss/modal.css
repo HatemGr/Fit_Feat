@@ -1,19 +1,26 @@
-.modalpop {
+.modalmain {
   display: none;
-  min-width: 700px !important;
-  background-color: #b8b8b8;
   position: absolute;
   z-index: 999;
-  left: 45%;
-  top: 30%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  -webkit-animation-name: slidein;
-          animation-name: slidein;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
+}
+
+.modalmain img {
+  position: absolute;
+  max-width: 120px;
+}
+
+.modalpop {
+  min-width: 700px !important;
+  left: 45%;
+  top: 30%;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
 }
 
 @media screen and (max-width: 900px) {
@@ -49,6 +56,122 @@
   }
   to {
     top: 30%;
+  }
+}
+
+.modalpop2 {
+  min-width: 300px !important;
+  left: 1%;
+  top: 15%;
+  -webkit-animation-name: slidein2;
+          animation-name: slidein2;
+}
+
+.modalpop2 img {
+  right: -140px;
+  top: 120px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@media screen and (max-width: 800px) {
+  .modalpop2 img {
+    left: 0px;
+    top: 300px;
+    transform: rotate(70deg);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modalpop2 {
+    max-width: 450px !important;
+    min-width: 450px !important;
+    width: 500px !important;
+    left: 37%;
+  }
+}
+
+@-webkit-keyframes slidein2 {
+  from {
+    top: 12%;
+  }
+  to {
+    top: 15%;
+  }
+}
+
+@keyframes slidein2 {
+  from {
+    top: 12%;
+  }
+  to {
+    top: 15%;
+  }
+}
+
+.modalpop3 {
+  min-width: 300px !important;
+  left: 300px;
+  top: 32%;
+  -webkit-animation-name: slidein3;
+          animation-name: slidein3;
+}
+
+.modalpop3 img {
+  left: -140px;
+  top: 200px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@media screen and (max-width: 800px) {
+  .modalpop3 img {
+    left: -120px;
+    top: 120px;
+  }
+}
+
+@media screen and (max-width: 1370px) {
+  .modalpop3 {
+    left: 300px;
+  }
+}
+
+@media screen and (max-width: 904px) {
+  .modalpop3 {
+    left: 300px;
+  }
+}
+
+@media screen and (max-width: 1172px) {
+  .modalpop3 {
+    left: 300px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modalpop3 {
+    left: 250px;
+  }
+}
+
+@-webkit-keyframes slidein3 {
+  from {
+    top: 30%;
+  }
+  to {
+    top: 32%;
+  }
+}
+
+@keyframes slidein3 {
+  from {
+    top: 30%;
+  }
+  to {
+    top: 32%;
   }
 }
 
