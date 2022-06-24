@@ -1,0 +1,47 @@
+
+ .modalpop{
+   display: none;
+   min-width: 700px !important;
+   background-color: rgb(184, 184, 184);
+   position: absolute;
+   z-index: 999;
+   left: 45%;
+   top: 30%;
+   transform: translate(-50%, -50%);
+   transition: all 0.2s ease;
+   animation-name: slidein;
+   animation-duration: 0.5s;
+ 
+   @media screen and (max-width:900px){
+     max-width: 500px !important;
+     min-width: 500px !important;
+     width: 500px !important;
+     left: 45%;
+   }
+   @media screen and (max-width:600px){
+     max-width: 400px !important;
+     min-width: 400px !important;
+     width: 400px !important;
+     left: 38%;
+   }
+ 
+   @keyframes slidein {
+     from {
+         top: 25%;
+     }
+   
+     to {
+         top: 30%;
+     }
+   }
+ 
+  }
+ 
+  #layer-dark{
+   position: fixed;
+   display: none;
+   width: 100vw;
+   height: 100vh;
+   z-index: 999;
+   background-color: rgba(0, 0, 0, 0.19);
+  }
