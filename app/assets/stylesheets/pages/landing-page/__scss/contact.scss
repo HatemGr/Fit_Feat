@@ -82,14 +82,14 @@ width: 100vw;
    
 
 
-@media screen and (max-width: 1200px ) {
+@media screen and (max-width: 1200px) {
    .contact-wrapper{
       display: flex;
       flex-direction: column;
       position: relative;
       
    }
-
+ 
    .element-contain{
       flex-direction: column; 
    }
@@ -99,17 +99,19 @@ width: 100vw;
       justify-content: center;
       align-items: center;
    }
-
+ 
    .img-left{
+     width: 700px;
+     max-width: 700px;
       height: auto;
    }
-
+ 
    .container-right{
       top: -60px;
       right: 10px;
     }
    
-}
+ }
 
 @media screen and (max-width: 900px) {
    .contact-wrapper{
