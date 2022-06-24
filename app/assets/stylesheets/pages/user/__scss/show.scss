@@ -67,7 +67,7 @@ max-height: 100% !important;
          position: absolute;
          bottom: 0px;
          cursor: pointer;
-         background-color: white;
+         background-color: var(--white);
          width: 90%;
          height: 28px;
          display: flex;
@@ -140,7 +140,7 @@ max-height: 100% !important;
 
       
       button{
-         color: black;
+         color: var(--black);
          text-align: start;
 
       }

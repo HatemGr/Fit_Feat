@@ -220,6 +220,12 @@
     margin-bottom: 0px;
     bottom: 10px;
   }
+
+  .img-testimonial {
+    max-width: 500px;
+    width: 500px;
+  }
+
   img {
     max-width: 500px;
   }

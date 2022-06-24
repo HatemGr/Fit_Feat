@@ -1,18 +1,18 @@
 <div class="row1-container">
     
-      <div class="box box-down cyan">
+      <div class="box box-down orange">
         <h2>Organisateurs</h2>
         <p><%= @event.admin.full_name %></p>
         <i class="fa-solid fa-user" style="font-size: 1.2em"></i>
       </div>
 
-      <div class="box red">
+      <div class="box orange">
         <h2>Sport</h2>
         <p><%= @event.sport.french %></p>
         <i class="fa-solid fa-volleyball" style="font-size: 1.2em"></i>
       </div>
 
-      <div class="box box-down blue">
+      <div class="box box-down orange">
         <h2>Description</h2>
         <p><%= @event.description %></p>
         <i class="fa-solid fa-comment" style="font-size: 1.2em"></i>
@@ -29,13 +29,13 @@
     </div>
     
     <div class="row3-container">
-      <div class="box purple">
+      <div class="box orange">
         <h2>Adresse: </h2>
         <p><%= @event.full_address %></p>
         <i class="fa-solid fa-location-dot" style="font-size: 1.2em"></i>
       </div>
 
-      <div class="box purple">
+      <div class="box orange">
         <h2>Durée: </h2>
         <p><%= @event.duration %></p>
         <i class="fa-solid fa-stopwatch" style="font-size: 1.2em"></i>
