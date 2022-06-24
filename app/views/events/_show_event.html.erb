@@ -20,13 +20,21 @@
       <%end%>
       <br>
       <%= render partial: 'events/event_participations_detail', locals: {event: event}%>
-      <%if event.admin != current_user %>
-        <%= render partial: 'events/event_participate_buttons', locals: {event: event}%>
-      <%end%>
-      <div class ="input">
-        <%= link_to "Voir l'évenement", event_path(event), class: "button primary"  %>
-      </div>
+      
+      <div class="container">
+        <div class="row d-flex text-center">
+          <%if event.admin != current_user %>
+            <%= render partial: 'events/event_participate_buttons', locals: {event: event}%>
+          <%end%>
+        </div>
+        <div class="row mt-3 d-flex text-center">
+          <div class ="input">
+            <%= link_to "Voir l'évenement", event_path(event), class: "button primary"  %>
+          </div>
+        </div>
     </div>
+    </div>
+    
     <div class="event-sport-tag"> <%=event.sport.name%> </div>
   </div>
 </div>

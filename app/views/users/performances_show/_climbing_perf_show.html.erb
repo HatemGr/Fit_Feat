@@ -3,7 +3,7 @@
 <div class="performance-show-items">
     <div class="performance-show-item">
       <p class="performance-show-title"> Experience </p>
-      <p class="performance-show-data"> <%= user.climbing_exp%> ans </p>
+      <p class="performance-show-data"><%= pluralize( user.climbing_exp, "an")%> </p>
     </div>
      <div class="perf-divide"> </div>
     <div class="performance-show-item">

@@ -1,7 +1,7 @@
 <div class="performance-show-items">
     <div class="performance-show-item">
       <p class="performance-show-title"> Experience </p>
-      <p class="performance-show-data"> <%= user.running_exp %> ans </p>
+      <p class="performance-show-data"> <%= pluralize( user.running_exp, "an")%> </p>
     </div>
     <div class="perf-divide"> </div>
     <div class="performance-show-item">
@@ -11,11 +11,11 @@
     <div class="perf-divide"> </div>
     <div class="performance-show-item">
       <p class="performance-show-title"> Vitesse moyenne </p>
-      <p class="performance-show-data"> <%= user.last_running_perf.speed %>km/h  </p>
+      <p class="performance-show-data"> <%= user.last_running_perf.speed %> km/h  </p>
     </div>
     <div class="perf-divide"> </div>
     <div class="performance-show-item">
       <p class="performance-show-title"> Distance moyenne </p>
-      <p class="performance-show-data"> <%= user.last_running_perf.distance %>km  </p>
+      <p class="performance-show-data"> <%= user.last_running_perf.distance %> km  </p>
     </div>
 </div>
